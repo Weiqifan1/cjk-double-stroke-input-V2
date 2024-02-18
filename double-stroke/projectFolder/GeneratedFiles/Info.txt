@@ -1,0 +1,2 @@
+﻿//this file if for a JSON filed containing a serialized IDS dictionay generaated here:
+//\cjk-double-stroke-input\test-double-stroke\testIds\test_ids.cs
