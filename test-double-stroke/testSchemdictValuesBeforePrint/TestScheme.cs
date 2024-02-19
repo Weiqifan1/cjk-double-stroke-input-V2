@@ -13,13 +13,14 @@ public class TestScheme: testSetup
             .schemeFromDictionary(foundExceptions, junda, tzai);
     }
     
+    
     [Test]
     public void handNoCombo()
     {
         SchemeRecord hand = schemeRecList.FirstOrDefault(
             x => x.character == "手");
         
-        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"s"}));
+        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"s", "tf"}));
         Assert.IsTrue(hand.code6.SetEquals(new HashSet<string>{"tf"}));
         Assert.IsTrue(hand.exceptionLetter == "s");
         Assert.IsTrue(hand.foundExceptionElems.SetEquals(new HashSet<string>{"手"}));
@@ -43,13 +44,14 @@ public class TestScheme: testSetup
         Assert.IsTrue(hand.tzaiNumber == 931);
     }
     
+    
     [Test]
     public void eyeNoCombo()
     {
         SchemeRecord hand = schemeRecList.FirstOrDefault(
             x => x.character == "目");
         
-        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"d"}));
+        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"d", "ngg"}));
         Assert.IsTrue(hand.code6.SetEquals(new HashSet<string>{"ngg"}));
         Assert.IsTrue(hand.exceptionLetter == "d");
         Assert.IsTrue(hand.foundExceptionElems.SetEquals(new HashSet<string>{"目"}));
@@ -74,13 +76,14 @@ public class TestScheme: testSetup
         Assert.IsTrue(hand.tzaiNumber == null);
     }
     
+    
     [Test]
     public void footNoCombo()
     {
         SchemeRecord hand = schemeRecList.FirstOrDefault(
             x => x.character == "足");
         
-        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"f"}));
+        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"f", "nfdy"}));
         Assert.IsTrue(hand.code6.SetEquals(new HashSet<string>{"nfdy"}));
         Assert.IsTrue(hand.exceptionLetter == "f");
         Assert.IsTrue(hand.foundExceptionElems.SetEquals(new HashSet<string>{"足"}));
@@ -105,13 +108,14 @@ public class TestScheme: testSetup
     }
     
     
+    
     [Test]
     public void footAlternativeNoCombo()
     {
         SchemeRecord hand = schemeRecList.FirstOrDefault(
             x => x.character == "𧾷");
         
-        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"f"}));
+        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"f", "nfa", "nffg"}));
         Assert.IsTrue(hand.code6.SetEquals(new HashSet<string>{"nfa", "nffg"}));
         Assert.IsTrue(hand.exceptionLetter == "f");
         Assert.IsTrue(hand.foundExceptionElems.SetEquals(new HashSet<string>{"𧾷"}));
@@ -120,13 +124,14 @@ public class TestScheme: testSetup
         Assert.IsTrue(hand.tzaiNumber == null);
     }
     
+    
     [Test]
     public void insectNoCombo()
     {
         SchemeRecord hand = schemeRecList.FirstOrDefault(
             x => x.character == "虫");
         
-        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"j"}));
+        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"j", "nfs"}));
         Assert.IsTrue(hand.code6.SetEquals(new HashSet<string>{"nfs"}));
         Assert.IsTrue(hand.exceptionLetter == "j");
         Assert.IsTrue(hand.foundExceptionElems.SetEquals(new HashSet<string>{"虫"}));
@@ -150,13 +155,14 @@ public class TestScheme: testSetup
         Assert.IsTrue(hand.tzaiNumber == null);
     }
     
+    
     [Test]
     public void treeNoCombo()
     {
         SchemeRecord hand = schemeRecList.FirstOrDefault(
             x => x.character == "木");
         
-        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"k"}));
+        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"k", "fw"}));
         Assert.IsTrue(hand.code6.SetEquals(new HashSet<string>{"fw"}));
         Assert.IsTrue(hand.exceptionLetter == "k");
         Assert.IsTrue(hand.foundExceptionElems.SetEquals(new HashSet<string>{"木", "朩"}));
@@ -165,6 +171,7 @@ public class TestScheme: testSetup
         Assert.IsTrue(hand.tzaiNumber == 39692);
     }
     
+    
     //朩
     [Test]
     public void treeAlternativeNoCombo()
@@ -172,7 +179,7 @@ public class TestScheme: testSetup
         SchemeRecord hand = schemeRecList.FirstOrDefault(
             x => x.character == "朩");
         
-        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"k"}));
+        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"k", "fw"}));
         Assert.IsTrue(hand.code6.SetEquals(new HashSet<string>{"fw"}));
         Assert.IsTrue(hand.exceptionLetter == "k");
         Assert.IsTrue(hand.foundExceptionElems.SetEquals(new HashSet<string>{"木", "朩"}));
@@ -202,7 +209,7 @@ public class TestScheme: testSetup
         SchemeRecord hand = schemeRecList.FirstOrDefault(
             x => x.character == "竹");
         
-        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"l"}));
+        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"l", "tvf"}));
         Assert.IsTrue(hand.code6.SetEquals(new HashSet<string>{"tvf"}));
         Assert.IsTrue(hand.exceptionLetter == "l");
         Assert.IsTrue(hand.foundExceptionElems.SetEquals(new HashSet<string>{"竹"}));
@@ -244,13 +251,15 @@ public class TestScheme: testSetup
         Assert.IsTrue(hand.tzaiNumber == null);
     }
     
+    
+    
     [Test]
     public void goldNoCombo()
     {
         SchemeRecord hand = schemeRecList.FirstOrDefault(
             x => x.character == "金");
         
-        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"t"}));
+        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"t", "wgbt"}));
         Assert.IsTrue(hand.code6.SetEquals(new HashSet<string>{"wgbt"}));
         Assert.IsTrue(hand.exceptionLetter == "t");
         Assert.IsTrue(hand.foundExceptionElems.SetEquals(new HashSet<string>{"金"}));
@@ -274,13 +283,14 @@ public class TestScheme: testSetup
         Assert.IsTrue(hand.tzaiNumber == 168867);
     }
     
+    
     [Test]
     public void eatNoCombo()
     {
         SchemeRecord hand = schemeRecList.FirstOrDefault(
             x => x.character == "食");
         
-        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"y"}));
+        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"y", "wagw", "wpgw"}));
         Assert.IsTrue(hand.code6.SetEquals(new HashSet<string>{"wagky", "wpgky"}));
         Assert.IsTrue(hand.exceptionLetter == "y");
         Assert.IsTrue(hand.foundExceptionElems.SetEquals(new HashSet<string>{"食", "飠"}));
@@ -289,13 +299,14 @@ public class TestScheme: testSetup
         Assert.IsTrue(hand.tzaiNumber == 22222);
     }
 
+    
     [Test]
     public void eatAlternativeNoCombo()
     {
         SchemeRecord hand = schemeRecList.FirstOrDefault(
             x => x.character == "飠");
 
-        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string> { "y" }));
+        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string> { "y", "wagl", "wpgl" }));
         Assert.IsTrue(hand.code6.SetEquals(new HashSet<string> { "wagl", "wpgl" }));
         Assert.IsTrue(hand.exceptionLetter == "y");
         Assert.IsTrue(hand.foundExceptionElems.SetEquals(new HashSet<string> { "飠", "食" }));
@@ -319,13 +330,14 @@ public class TestScheme: testSetup
         Assert.IsTrue(hand.tzaiNumber == 1829);
     }
 
+    
     [Test]
     public void carNoCombo()
     {
         SchemeRecord hand = schemeRecList.FirstOrDefault(
             x => x.character == "車");
 
-        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"g"}));
+        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"g", "fhgx"}));
         Assert.IsTrue(hand.code6.SetEquals(new HashSet<string>{"fhgx"}));
         Assert.IsTrue(hand.exceptionLetter == "g");
         Assert.IsTrue(hand.foundExceptionElems.SetEquals(new HashSet<string>{"車"}));
@@ -349,13 +361,14 @@ public class TestScheme: testSetup
         Assert.IsTrue(hand.tzaiNumber == 7731);
     }
 
+    
     [Test]
     public void threadNoCombo()
     {
         SchemeRecord hand = schemeRecList.FirstOrDefault(
             x => x.character == "糸");
 
-        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"h"}));
+        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"h", "muw"}));
         Assert.IsTrue(hand.code6.SetEquals(new HashSet<string>{"muw"}));
         Assert.IsTrue(hand.exceptionLetter == "h");
         Assert.IsTrue(hand.foundExceptionElems.SetEquals(new HashSet<string>{"糹", "糸"}));
@@ -379,36 +392,39 @@ public class TestScheme: testSetup
         Assert.IsTrue(hand.tzaiNumber == 1261);
     }
 
+    
     [Test]
     public void sayNoCombo()
     {
         SchemeRecord hand = schemeRecList.FirstOrDefault(
             x => x.character == "言");
 
-        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"v"}));
+        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"v", "ggng", "ygng"}));
         Assert.IsTrue(hand.code6.SetEquals(new HashSet<string>{"ggng", "ygng"}));
         Assert.IsTrue(hand.exceptionLetter == "v");
-        Assert.IsTrue(hand.foundExceptionElems.SetEquals(new HashSet<string>{"言", "訁"}));
+        Assert.IsTrue(hand.foundExceptionElems.SetEquals(new HashSet<string>{"言", "訁", "糸", "火"}));
         Assert.IsTrue(hand.rawCodepoint == "(1|4)111251");
         Assert.IsTrue(hand.jundaNumber == 120308);
         Assert.IsTrue(hand.tzaiNumber == 136534);
     }
 
+    
     [Test]
     public void sayAlternativeNoCombo()
     {
         SchemeRecord hand = schemeRecList.FirstOrDefault(
             x => x.character == "訁");
 
-        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"v"}));
+        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"v", "ggng", "ygng"}));
         Assert.IsTrue(hand.code6.SetEquals(new HashSet<string>{"ggng", "ygng"}));
         Assert.IsTrue(hand.exceptionLetter == "v");
-        Assert.IsTrue(hand.foundExceptionElems.SetEquals(new HashSet<string>{"言", "訁"}));
+        Assert.IsTrue(hand.foundExceptionElems.SetEquals(new HashSet<string>{"言", "訁", "糸", "火"}));
         Assert.IsTrue(hand.rawCodepoint == "(1|4)111251");
         Assert.IsTrue(hand.jundaNumber == null);
         Assert.IsTrue(hand.tzaiNumber == null);
     }
 
+    
     [Test]
     public void sayCombo()
     {
@@ -418,19 +434,20 @@ public class TestScheme: testSetup
         Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"vkqe", "vlae"}));
         Assert.IsTrue(hand.code6.SetEquals(new HashSet<string>{"ggnaee", "ggnaye", "ygnaee", "ygnaye"}));
         Assert.IsTrue(hand.exceptionLetter == "v");
-        Assert.IsTrue(hand.foundExceptionElems.SetEquals(new HashSet<string>{"言", "訁"}));
+        Assert.IsTrue(hand.foundExceptionElems.SetEquals(new HashSet<string>{"言", "訁", "糸", "火"}));
         Assert.IsTrue(hand.rawCodepoint == "(1|4)111251(533533|541541)34333");
         Assert.IsTrue(hand.jundaNumber == 3);
         Assert.IsTrue(hand.tzaiNumber == 3290);
     }
 
+    
     [Test]
     public void horseNoCombo()
     {
         SchemeRecord hand = schemeRecList.FirstOrDefault(
             x => x.character == "馬");
 
-        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"b"}));
+        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"b", "fgno", "xgno"}));
         Assert.IsTrue(hand.code6.SetEquals(new HashSet<string>{"fgnoo", "xgnoo"}));
         Assert.IsTrue(hand.exceptionLetter == "b");
         Assert.IsTrue(hand.foundExceptionElems.SetEquals(new HashSet<string>{"馬"}));
@@ -454,13 +471,14 @@ public class TestScheme: testSetup
         Assert.IsTrue(hand.tzaiNumber == 39690);
     }
 
+    
     [Test]
     public void gateNoCombo()
     {
         SchemeRecord hand = schemeRecList.FirstOrDefault(
             x => x.character == "門");
 
-        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"n"}));
+        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"n", "ngng"}));
         Assert.IsTrue(hand.code6.SetEquals(new HashSet<string>{"ngng"}));
         Assert.IsTrue(hand.exceptionLetter == "n");
         Assert.IsTrue(hand.foundExceptionElems.SetEquals(new HashSet<string>{"門"}));

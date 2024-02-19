@@ -1,21 +1,75 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=3d814e32_002D7bd3_002D4376_002D858b_002D6945e7b54228/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="generateAndSaveSchemaMaps" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=1c14e99c_002Dce9e_002D4ccf_002D9617_002Db824a53ab69b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="generateAndSaveSchemaMaps #5" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Or&gt;&#xD;
+    &lt;TestAncestor&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::22C37435-433A-4511-A761-5AE6FF66343E::net8.0::test_double_stroke.testSchemeDict.TestGenerateSchema.generateAndSaveSchemaMaps&lt;/TestId&gt;&#xD;
+    &lt;/TestAncestor&gt;&#xD;
+    &lt;ProjectFile&gt;22C37435-433A-4511-A761-5AE6FF66343E/d:test-double-stroke/d:testSchemdictValuesBeforePrint/f:TestScheme.cs&lt;/ProjectFile&gt;&#xD;
+    &lt;ProjectFolder&gt;22C37435-433A-4511-A761-5AE6FF66343E/d:test-double-stroke/d:testAlphabetGeneratorDictionary&lt;/ProjectFolder&gt;&#xD;
+    &lt;ProjectFolder&gt;22C37435-433A-4511-A761-5AE6FF66343E/d:test-double-stroke/d:testExceptions&lt;/ProjectFolder&gt;&#xD;
+    &lt;ProjectFolder&gt;22C37435-433A-4511-A761-5AE6FF66343E/d:test-double-stroke/d:testGeneratedFies&lt;/ProjectFolder&gt;&#xD;
+    &lt;ProjectFolder&gt;22C37435-433A-4511-A761-5AE6FF66343E/d:test-double-stroke/d:testSchemdictValuesBeforePrint&lt;/ProjectFolder&gt;&#xD;
+    &lt;ProjectFolder&gt;22C37435-433A-4511-A761-5AE6FF66343E/d:test-double-stroke/d:testStaticFiles&lt;/ProjectFolder&gt;&#xD;
+  &lt;/Or&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=3b2ab952_002Dd9b6_002D4096_002Da3bd_002Df7dae01b5e21/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="sayAlternativeNoCombo #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::22C37435-433A-4511-A761-5AE6FF66343E::net8.0::test_double_stroke.testSchemeDict.TestScheme.sayAlternativeNoCombo&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::22C37435-433A-4511-A761-5AE6FF66343E::net8.0::test_double_stroke.testSchemeDict.TestGenerateSchema.generateAndSaveSchemaMaps&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4ebb1a99_002D2773_002D49e2_002Db456_002D5fdeea5bad37/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="sayAlternativeNoCombo #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::22C37435-433A-4511-A761-5AE6FF66343E::net8.0::test_double_stroke.testSchemeDict.TestScheme.sayAlternativeNoCombo&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::22C37435-433A-4511-A761-5AE6FF66343E::net8.0::test_double_stroke.testSchemeDict.TestGenerateSchema.generateAndSaveSchemaMaps&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=5ce9fa7b_002Dfd15_002D4677_002D9b2e_002Daf18d7712fa8/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="generateAndSaveSchemaMaps" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::22C37435-433A-4511-A761-5AE6FF66343E::net8.0::test_double_stroke.testSchemeDict.TestGenerateSchema.generateAndSaveSchemaMaps&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=582e942d_002D40e9_002D42d0_002Db280_002D03bf5a5510a4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="FirstAlphabetGeneratorTest_21" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=625bb40a_002D5082_002D4c5e_002Db7cb_002D9eee2f3fc5f7/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="generateAndSaveSchemaMaps #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::22C37435-433A-4511-A761-5AE6FF66343E::net8.0::test_double_stroke.testAlphabetGeneratorDictionary.AlphabetgeneratorTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::22C37435-433A-4511-A761-5AE6FF66343E::net8.0::test_double_stroke.testSchemeDict.TestGenerateSchema.generateAndSaveSchemaMaps&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=74915fc6_002Df40f_002D4d4e_002D96df_002D163d39f692bc/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="AlphabetgeneratorTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;Or&gt;&#xD;
-    &lt;TestAncestor&gt;&#xD;
-      &lt;TestId&gt;NUnit3x::22C37435-433A-4511-A761-5AE6FF66343E::net8.0::test_double_stroke.testAlphabetGeneratorDictionary.AlphabetgeneratorTest&lt;/TestId&gt;&#xD;
-      &lt;TestId&gt;NUnit3x::22C37435-433A-4511-A761-5AE6FF66343E::net8.0::test_double_stroke.testSchemeDict.TestGenerateSchema.generateAndSaveSchemaMaps&lt;/TestId&gt;&#xD;
-      &lt;TestId&gt;NUnit3x::22C37435-433A-4511-A761-5AE6FF66343E::net8.0::test_double_stroke.testIds.test_ids.generateAndSaveIdsMap&lt;/TestId&gt;&#xD;
-    &lt;/TestAncestor&gt;&#xD;
-    &lt;ProjectFolder&gt;22C37435-433A-4511-A761-5AE6FF66343E/d:test-double-stroke/d:testExceptions&lt;/ProjectFolder&gt;&#xD;
-  &lt;/Or&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a24aeba5_002D56be_002D4ff7_002D83a7_002D438dbf9073f5/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="generateAndSaveSchemaMaps #4" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::22C37435-433A-4511-A761-5AE6FF66343E::net8.0::test_double_stroke.testSchemeDict.TestGenerateSchema.generateAndSaveSchemaMaps&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ae3f65c5_002D9388_002D4cca_002Db235_002D4957a1ee9476/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="sayAlternativeNoCombo #5" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::22C37435-433A-4511-A761-5AE6FF66343E::net8.0::test_double_stroke.testSchemeDict.TestScheme.sayAlternativeNoCombo&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::22C37435-433A-4511-A761-5AE6FF66343E::net8.0::test_double_stroke.testSchemeDict.TestGenerateSchema.generateAndSaveSchemaMaps&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c4250fd9_002D8417_002D4c18_002D96a3_002Daadd3dd15e1f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="sayAlternativeNoCombo #4" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::22C37435-433A-4511-A761-5AE6FF66343E::net8.0::test_double_stroke.testSchemeDict.TestScheme.sayAlternativeNoCombo&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::22C37435-433A-4511-A761-5AE6FF66343E::net8.0::test_double_stroke.testSchemeDict.TestGenerateSchema.generateAndSaveSchemaMaps&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c8d421c9_002D1ceb_002D4644_002Db64b_002D1452f7b5a349/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="generateAndSaveSchemaMaps #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::22C37435-433A-4511-A761-5AE6FF66343E::net8.0::test_double_stroke.testSchemeDict.TestGenerateSchema.generateAndSaveSchemaMaps&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ca538752_002Dda15_002D4d6e_002Db706_002D5b9ab3e656eb/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="footNoCombo" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::22C37435-433A-4511-A761-5AE6FF66343E::net8.0::test_double_stroke.testSchemeDict.TestScheme.footNoCombo&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f251e7bd_002D86a7_002D4124_002Db7d6_002Daa688baef57f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="sayAlternativeNoCombo" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::22C37435-433A-4511-A761-5AE6FF66343E::net8.0::test_double_stroke.testSchemeDict.TestScheme.sayAlternativeNoCombo&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::22C37435-433A-4511-A761-5AE6FF66343E::net8.0::test_double_stroke.testSchemeDict.TestGenerateSchema.generateAndSaveSchemaMaps&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f8fefe54_002De01f_002D4301_002D9ea8_002Dc49620914e93/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="eatNoCombo" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::22C37435-433A-4511-A761-5AE6FF66343E::net8.0::test_double_stroke.testSchemeDict.TestScheme.eatNoCombo&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

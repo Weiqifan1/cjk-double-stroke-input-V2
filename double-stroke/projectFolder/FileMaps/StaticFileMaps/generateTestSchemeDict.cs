@@ -97,7 +97,7 @@ public static class generateTestSchemeDict
         KeyValuePair<string, CodepointWithExceptionRecord> variable, 
         AlphabetGenerator alphaGen)
     {
-        if (variable.Key.Equals("𧾷"))
+        if (variable.Key.Equals("訁"))
         {
             string test = "";
         }
@@ -111,19 +111,32 @@ public static class generateTestSchemeDict
                     alphaGen.gen21(x)).ToHashSet();
             HashSet<string> tailMergedString = tailAlphabetStrings.Select(x => 
                     firstLetter + x).ToHashSet();
+            //ig the characters code is only one letter, add the codea for the raw strokes.
+            if (tailMergedString.Count == 1 && tailMergedString.ToList()[0].Length == 1)
+            {
+                HashSet<string> fullCodes = codes31Generated(variable.Value.originalCodepoint.rawCodepoint, alphaGen);
+                tailMergedString.UnionWith(fullCodes);
+                var test = "";
+            }
             return tailMergedString;
         }
         else
         {
             //string firstLetter = variable.Value.codepointExceptions.alphabetLetter.Value;
-            HashSet<string> tailRollout =
-                RolloutStrokes.rolloutString(variable.Value.originalCodepoint.rawCodepoint);
-            HashSet<string> tailAlphabetStrings = tailRollout.Select(x => 
-                alphaGen.gen31(x)).ToHashSet();
+            HashSet<string> tailAlphabetStrings = codes31Generated(variable.Value.originalCodepoint.rawCodepoint, alphaGen);
             //HashSet<string> tailMergedString = tailAlphabetStrings.Select(x => 
             //    firstLetter + x).ToHashSet();
             return tailAlphabetStrings;
         }
+    }
+
+    private static HashSet<string> codes31Generated(string rawCodepoint, AlphabetGenerator alphaGen)
+    {
+        HashSet<string> tailRollout =
+            RolloutStrokes.rolloutString(rawCodepoint);
+        HashSet<string> tailAlphabetStrings = tailRollout.Select(x => 
+            alphaGen.gen31(x)).ToHashSet();
+        return tailAlphabetStrings;
     }
 
     private static long? generateTzaiForScheme(
