@@ -16,10 +16,10 @@ public class TestSchemaBeforePrintSetup
     public static JsonSerializerOptions options = new JsonSerializerOptions();
     public static string testDirectory = TestContext.CurrentContext.TestDirectory;
     public static string charToSchemaPath = Path.Combine(testDirectory,
-        @"..\..\..\..\" + FilePaths.charToSchemaPathStr);    
+        FilePaths.dotsAndSlash + FilePaths.charToSchemaPathStr);    
     //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\charToSchemaMap.txt");
     public static string codeToSchemaPath = Path.Combine(testDirectory,
-        @"..\..\..\..\" + FilePaths.codeToSchemaPathStr);    
+        FilePaths.dotsAndSlash + FilePaths.codeToSchemaPathStr);    
     //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\codeToSchemaMap.txt");
     public Dictionary<string, SchemeRecord> charToSchemaDict;
     public Dictionary<string, HashSet<SchemeRecord>> codeToSchemaDich;

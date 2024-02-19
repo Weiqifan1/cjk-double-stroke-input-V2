@@ -546,12 +546,12 @@ public class TestScheme: testSetup
         Assert.IsTrue(hand.rolledOutWithShape.SequenceEqual(
             new List<string>{"⿱", "日", "⿱", "一", "龰"}));
         Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"ngfw"}));
-        Assert.IsTrue(hand.code6.SetEquals(new HashSet<string>{"wnbtnl", "inbtnl"}));
+        Assert.IsTrue(hand.code6.SetEquals(new HashSet<string>{"ngfdy"}));
         Assert.IsTrue(hand.exceptionLetter == null);
         Assert.IsTrue(hand.foundExceptionElems == null);
-        Assert.IsTrue(hand.rawCodepoint == "(34|43)25243125111(5|21)54");
-        Assert.IsTrue(hand.jundaNumber == 209);
-        Assert.IsTrue(hand.tzaiNumber == 14);
+        Assert.IsTrue(hand.rawCodepoint == "251112134");
+        Assert.IsTrue(hand.jundaNumber == 2615490);
+        Assert.IsTrue(hand.tzaiNumber == 3200626);
     }
     
 }
