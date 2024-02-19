@@ -1,5 +1,16 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=1c14e99c_002Dce9e_002D4ccf_002D9617_002Db824a53ab69b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="generateAndSaveSchemaMaps #5" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=043140e4_002D80ae_002D413f_002Db7ea_002D6c076392fb79/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="sayAndRoadCombo" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::22C37435-433A-4511-A761-5AE6FF66343E::net8.0::test_double_stroke.testSchemeDict.TestScheme.sayAndRoadCombo&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=122adc83_002Dc84c_002D49b8_002Da95d_002D3ffbd3a9269c/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="HasSay" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;ProjectFolder&gt;22C37435-433A-4511-A761-5AE6FF66343E/d:test-double-stroke&lt;/ProjectFolder&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=13011a5b_002Dd31e_002D4e78_002D948f_002D3c19fd5d1105/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="HasSay #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;ProjectFolder&gt;22C37435-433A-4511-A761-5AE6FF66343E/d:test-double-stroke&lt;/ProjectFolder&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=1c14e99c_002Dce9e_002D4ccf_002D9617_002Db824a53ab69b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="generateAndSaveSchemaMaps #5" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Or&gt;&#xD;
     &lt;TestAncestor&gt;&#xD;
       &lt;TestId&gt;NUnit3x::22C37435-433A-4511-A761-5AE6FF66343E::net8.0::test_double_stroke.testSchemeDict.TestGenerateSchema.generateAndSaveSchemaMaps&lt;/TestId&gt;&#xD;

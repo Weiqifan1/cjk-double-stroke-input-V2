@@ -173,7 +173,8 @@ public class CodeExceptions
                 new UnicodeCharacter("言").Value, 
                 new UnicodeCharacter("訁").Value,
                 new UnicodeCharacter("糸").Value,
-                new UnicodeCharacter("火").Value
+                new UnicodeCharacter("火").Value,
+                new UnicodeCharacter("辶").Value 
             },
             new List<string>()
         );

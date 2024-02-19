@@ -402,7 +402,8 @@ public class TestScheme: testSetup
         Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"v", "ggng", "ygng"}));
         Assert.IsTrue(hand.code6.SetEquals(new HashSet<string>{"ggng", "ygng"}));
         Assert.IsTrue(hand.exceptionLetter == "v");
-        Assert.IsTrue(hand.foundExceptionElems.SetEquals(new HashSet<string>{"言", "訁", "糸", "火"}));
+        Assert.IsTrue(hand.foundExceptionElems.SetEquals(
+            new HashSet<string>{"言", "訁", "糸", "火", "辶"}));
         Assert.IsTrue(hand.rawCodepoint == "(1|4)111251");
         Assert.IsTrue(hand.jundaNumber == 120308);
         Assert.IsTrue(hand.tzaiNumber == 136534);
@@ -418,7 +419,7 @@ public class TestScheme: testSetup
         Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"v", "ggng", "ygng"}));
         Assert.IsTrue(hand.code6.SetEquals(new HashSet<string>{"ggng", "ygng"}));
         Assert.IsTrue(hand.exceptionLetter == "v");
-        Assert.IsTrue(hand.foundExceptionElems.SetEquals(new HashSet<string>{"言", "訁", "糸", "火"}));
+        Assert.IsTrue(hand.foundExceptionElems.SetEquals(new HashSet<string>{"言", "訁", "糸", "火", "辶"}));
         Assert.IsTrue(hand.rawCodepoint == "(1|4)111251");
         Assert.IsTrue(hand.jundaNumber == null);
         Assert.IsTrue(hand.tzaiNumber == null);
@@ -434,12 +435,31 @@ public class TestScheme: testSetup
         Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"vkqe", "vlae"}));
         Assert.IsTrue(hand.code6.SetEquals(new HashSet<string>{"ggnaee", "ggnaye", "ygnaee", "ygnaye"}));
         Assert.IsTrue(hand.exceptionLetter == "v");
-        Assert.IsTrue(hand.foundExceptionElems.SetEquals(new HashSet<string>{"言", "訁", "糸", "火"}));
+        Assert.IsTrue(hand.foundExceptionElems.SetEquals(new HashSet<string>{"言", "訁", "糸", "火", "辶"}));
         Assert.IsTrue(hand.rawCodepoint == "(1|4)111251(533533|541541)34333");
         Assert.IsTrue(hand.jundaNumber == 3);
         Assert.IsTrue(hand.tzaiNumber == 3290);
     }
 
+    //這
+    [Test]
+    public void sayAndRoadCombo()
+    {
+        SchemeRecord hand = schemeRecList.FirstOrDefault(
+            x => x.character == "這");
+
+        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"vpy", "vol", "vpl"}));
+        Assert.IsTrue(hand.code6.SetEquals(new HashSet<string>
+        {
+            "ggnsl", "ggnspy", "ggnsmy", "ygnsl", "ygnspy", "ygnsmy"
+        }));
+        Assert.IsTrue(hand.exceptionLetter == "v");
+        Assert.IsTrue(hand.foundExceptionElems.SetEquals(new HashSet<string>{"言", "訁", "糸", "火", "辶"}));
+        Assert.IsTrue(hand.rawCodepoint == "(1|4)111251(454|4454|4554)");
+        Assert.IsTrue(hand.jundaNumber == 483);
+        Assert.IsTrue(hand.tzaiNumber == 986130);
+    }
+    
     
     [Test]
     public void horseNoCombo()

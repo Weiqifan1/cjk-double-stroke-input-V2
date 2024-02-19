@@ -38,7 +38,7 @@ public class TestGenerateSchema : testSetup
         
         Assert.IsTrue(schemeRecList.Count == charToSchema.Count);
         Assert.IsTrue(schemeRecList.Count == 28098);
-        Assert.IsTrue(codeToSchemas.Count == 62875);
+        Assert.IsTrue(codeToSchemas.Count == 62878);
     }
     
     [Test]
