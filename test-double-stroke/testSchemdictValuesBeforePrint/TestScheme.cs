@@ -376,7 +376,23 @@ public class TestScheme: testSetup
         Assert.IsTrue(hand.jundaNumber == null);
         Assert.IsTrue(hand.tzaiNumber == 146);
     }
+    
 
+    [Test]
+    public void threadAlternativeNoCombo()
+    {
+        SchemeRecord hand = schemeRecList.FirstOrDefault(
+            x => x.character == "糹");
+
+        Assert.IsTrue(hand.code4.SetEquals(new HashSet<string>{"h", "moo"}));
+        Assert.IsTrue(hand.code6.SetEquals(new HashSet<string>{"moo"}));
+        Assert.IsTrue(hand.exceptionLetter == "h");
+        Assert.IsTrue(hand.foundExceptionElems.SetEquals(new HashSet<string>{"糹", "糸"}));
+        Assert.IsTrue(hand.rawCodepoint == "554444");
+        Assert.IsTrue(hand.jundaNumber == null);
+        Assert.IsTrue(hand.tzaiNumber == null);
+    }
+    
     [Test]
     public void threadCombo()
     {
@@ -440,8 +456,7 @@ public class TestScheme: testSetup
         Assert.IsTrue(hand.jundaNumber == 3);
         Assert.IsTrue(hand.tzaiNumber == 3290);
     }
-
-    //這
+    
     [Test]
     public void sayAndRoadCombo()
     {
