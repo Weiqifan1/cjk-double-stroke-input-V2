@@ -2,6 +2,10 @@
 
 public enum WritingSystemEnum
 {
-    Simplified,
-    Traditional
+    HeisigSimplified,
+    HeisigTraditional,
+    Gukja,
+    Hongkong,
+    JISX0208,
+    Joyo
 }

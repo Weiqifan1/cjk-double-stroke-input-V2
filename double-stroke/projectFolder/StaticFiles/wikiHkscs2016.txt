@@ -1,0 +1,7858 @@
+Hong Kong Supplementary Character Set – 2016
+Office of the Government Chief Information Officer &
+Official Languages Division, Civil Service Bureau
+The Government of the Hong Kong Special Administrative Region
+May 2017
+Table of Contents
+Preface
+Section 1 Overview……………….…………………………………………….... 1 - 1
+
+Section 2 Coding Scheme of the HKSCS-2016….………………………………. 2 - 1
+
+Section 3 HKSCS-2016 under the Architecture of the ISO/IEC 10646…………. 3 - 1
+
+Table 1: Code Table of the HKSCS-2016…………………………………........ i - 1
+
+Table 2: Newly Included Characters in the HKSCS-2016...……………………. ii - 1
+
+Table 3: Compatibility Characters in the HKSCS-2016…......…………………. iii - 1
+
+
+Preface
+After the first release of the Hong Kong Supplementary Character Set (HKSCS) in 1999,
+there have been three updated versions. The HKSCS-2001, HKSCS-2004 and
+HKSCS-2008 were published with 116, 123 and 68 new characters added respectively. A
+total of 5 009 characters were included in the HKSCS-2008. These publications formed the
+foundation for promoting the adoption of the ISO/IEC 10646 international coding standard,
+and were widely supported and adopted by the IT sector and members of the public.
+The ISO/IEC 10646 international coding standard is developed by the International
+Organization for Standardization (ISO) to provide a common technical basis for the storage
+and exchange of electronic information. It provides a unified standard for the coding of
+characters in all major languages in the world including traditional and simplified Chinese
+characters. Containing more than 80 000 Han characters, the ISO/IEC 10646:2014 provides
+computer platforms with comprehensive support. However, supporting a character set with
+over 80 000 Han characters will unnecessarily increase the cost and time of product
+development. Hence, vendors of font or input method software will select an appropriate
+number of characters in the light of the requirements of individual countries and regions in
+developing supporting products.
+All the characters in the HKSCS-2016 have already been included in the ISO/IEC 10646
+international coding standard. ISO/IEC 10646 will continue adding new characters that
+have not been included in its character set but are used in the Hong Kong Special
+Administrative Region (HKSAR) (i.e. the addition of new characters through vertical
+extension). Furthermore, for characters already included in the ISO/IEC 10646, information
+about the characters and glyphs commonly used in Hong Kong will be added to reflect the
+actual use of these characters locally (i.e. the addition of information to existing characters
+through horizontal extension). This will not only facilitate the development of vendor
+support for Chinese characters actually used in Hong Kong and the relevant localised
+technology, but will also reduce the time and cost of development, enabling the IT industry to
+develop more products suitable for Hong Kong.
+Compared with the HKSCS-2008, the HKSCS-2016 has 23 more Chinese characters and one
+more symbol, further fulfilling the needs of local electronic communication in Chinese.
+i
+
+Coding Scheme as the Foundation of Electronic Communication
+Information stored in a computer or transmitted in electronic communication is coded
+according to a pre-defined coding scheme. For information in Chinese, as early as the
+1990s, there were different coding schemes including Big-5, GB (Guo Biao) and the
+ISO/IEC 10646 international coding standard. At that time, as the coding schemes did not
+cover all the Chinese characters commonly used in Hong Kong, users might need to create
+unencoded characters on their computers and assign internal codes for them in the
+user-defined area. Some characters were used in the names of persons and places while
+some in the Cantonese dialect. This worked well in stand-alone computers, but when
+computers were connected to each other, such user-defined characters might give rise to
+problems in communication and data exchange.
+Common Chinese Language Interface
+Under the Digital 21 Strategy for IT Development, the Hong Kong Special Administrative
+Region Government (the Government) has developed an open and common Chinese
+language interface for the HKSAR, with the objective of achieving more accurate electronic
+communication in Chinese. A pivotal element of the open and common Chinese language
+interface is the adoption of the ISO/IEC 10646 international coding standard.
+Development of the HKSCS
+To facilitate electronic communication within the Government, the then Hong Kong
+Government developed the Government Common Character Set (GCCS) in 1995. The
+release of the GCCS marked the first step in coordinating the adoption of user-defined
+Chinese characters and it was well received by the public as a supplement to the standard
+character set of Big-5. This common character set was later enhanced by the Government in
+collaboration with the Chinese Language Interface Advisory Committee (CLIAC), which
+comprises representatives from academia, language and linguistics associations, the
+information technology industry and the publishing industry. The enhanced character set
+included characters collected from various sectors in the HKSAR and represented a common
+set for the community. It was named the Hong Kong Supplementary Character Set (HKSCS)
+and was published in September 1999. This version had 4 702 characters and was also
+ii
+
+known as the HKSCS-1999 for aligning with the versions published afterwards.
+The Government recognised the need for the public and government departments to include
+new characters in the HKSCS from time to time. In collaboration with CLIAC, the
+Government published the procedures and principles for the inclusion of characters in the
+HKSCS in April 2000. CLIAC meets regularly to consider applications for inclusion of
+characters in the HKSCS. Once approved, the new HKSCS characters will be submitted to
+the Ideographic Rapporteur Group, a working group under the ISO, for inclusion in the future
+releases of the ISO/IEC 10646 standard.
+The HKSCS has subsequently been updated three times and a total of 5 009 characters were
+included in the HKSCS-2008. There were two code allocation schemes for each of the four
+versions of the HKSCS: one for the Big-5 which was used in Hong Kong at that time and the
+other for ISO/IEC 10646. This arrangement aimed at a gradual migration of computing
+platforms from Big-5 to ISO/IEC 10646.
+With the increased popularity of platforms and products supporting ISO/IEC 10646, the
+Government promulgated the revised procedures and principles for the inclusion of
+characters in the HKSCS in April 2008. Since then, only code points of the characters in
+ISO/IEC 10646 will be provided and no Big-5 code points will be assigned for newly
+included HKSCS characters. Furthermore, the ISO/IEC 10646:2011 has included all
+characters in the HKSCS-2008, indicating a complete integration of HKSCS-2008 with
+ISO/IEC 10646 and marking a milestone for the full adoption of the ISO/IEC 10646.
+In order to reflect the local use of Han characters in the ISO/IEC 10646, the CLIAC revised
+the procedures and principles for the inclusion of characters in the HKSCS in December 2015
+and started to prepare for the HKSCS-2016.
+The coding scheme and code table of the HKSCS-2016 are provided in this document.
+Other mapping tables of the HKSCS-2016, and the documents stipulating the procedures and
+principles for the inclusion of characters in the HKSCS can be found at the Common Chinese
+Language Interface website at:
+https://www.ogcio.gov.hk/en/business/tech_promotion/ccli/hkscs/ .
+iii
+Acknowledgement
+This specification was completed with invaluable assistance from CLIAC. We would like to
+thank the following committee members for their contribution: current members Ms.
+Michelle CHEUNG, Mr. CHEUNG To, Mr. Ricky CHUN, Dr. FUNG Suk Yee Roxana, Mr.
+Alan KAN, Dr. LEE Ka Kui, Miss LEUNG Wai Chu Judy, Professor LU Qin, M.H., Dr.
+MAN Ying Ha, Dr. TANG Pui Ling, Mr. Wilson WONG, and former committee members: Mr.
+CHIU Leung Fai Fritz, Dr. FONG Kin Kiu Ken, Mr. Raymond HUNG, Mr. LEUNG Shung
+Yu and Mr. Jonathan SHEA.
+We would also like to thank the working group chaired by Professor LU Qin, and Ms.
+XIONG Dan and Mr. Roy YU of Professor LU’s project team of the Hong Kong Polytechnic
+University for their great efforts. The working group consists of some CLIAC members and
+Dr. CHEUNG Kwan Hin, Mr. LAI Tat Kiu Alex, Mr. LEE Kin Hong, Dr. LUN Suen Caesar,
+Professor WONG Yiu Kwan and representative from the Education Bureau.
+iv
+Section 1 Overview
+1.1 This document provides the characters in the HKSCS-2016 and their corresponding
+code points in ISO/IEC 10646, and explains the overall coding architecture of the
+HKSCS-2016 in the ISO/IEC 10646 international coding standard. The
+HKSCS-2016 is fully compatible with the GCCS and the previous versions of the
+HKSCS.
+1.2 The HKSCS-2016 contains 5 033 characters, including 5 009 characters from the
+HKSCS-2008, and the newly added 23 Chinese characters and one symbol.
+1.3 The HKSCS-2016 is a coded character set. It is not meant to be a glyph standard.
+For glyph guidelines, please consult the Reference Glyphs for Chinese Computer
+Systems in Hong Kong, which is available at:
+https://www.ogcio.gov.hk/en/business/tech_promotion/ccli/download_area/ .
+1.4 For the purpose of this document, the following definitions of terms will apply:
+Term Definition
+Basic Multilingual Plane
+(BMP, Plane 0)
+The first code plane in the ISO/IEC 10646 coding
+framework (i.e. “Plane 0” or basic plane). Code points are
+from 0000 to FFFF.
+Block A collection
+characteristics.
+of characters that share common
+Character A member of a set of elements used for the organisation,
+control or representation of data.
+Character Glyph In ISO/IEC 10646, it refers to a Han character in its abstract
+form as an image. It is independent of any specific image.
+The basic elements to form an ideograph are strokes,
+radicals, components and their relative positions.
+1 - 1
+
+
+
+
+Term Definition
+Character Set
+CJK Compatibility
+Ideographs
+CJK Compatibility
+Ideographs Supplement
+CJK Ideographs Main
+Block
+CJK Ideograph Source
+A defined set of characters.
+An area defined in the BMP (Plane 0) for compatibility with
+CJK Ideographs Blocks. This area is used to include the
+variants or duplicate characters already coded in CJK
+Ideograph Sources which would otherwise not be coded in
+ISO/IEC 10646. Code points are from F900 to FAFF. In
+ISO/IEC 10646, these variants and their corresponding
+standard characters are unified. However, they are
+assigned different code points in their respective CJK
+Ideograph Sources already. Therefore, this special area is
+defined to avoid having one character with multiple code
+points in CJK Ideographs Blocks and at the same time allow
+round-trip conversion for backward compatibility. Every
+Compatibility Ideograph has a corresponding standard
+character coded in CJK Ideographs Blocks.
+An extended area defined in the Supplementary Ideographic
+Plane (SIP, Plane 2) for compatibility with CJK Ideographs
+Blocks. Code points are from 2F800 to 2FA1F. The Han
+characters in the compatibility blocks and Ideographs
+Supplement are collectively referred to as “compatibility
+characters” in this document.
+The first block assigned to the unified ideographs, including
+Chinese, Japanese and Korean characters. Code points are
+from 4E00 to 9FFF.
+The CJK ideographs in the ISO/IEC 10646 international
+coding standard are defined based on the original computer
+character standards of China, Japan, Korea and other
+countries and regions. The original computer character
+1 - 2
+
+
+
+Term Definition
+standard or specification is called CJK Ideograph Source.
+The countries and regions are represented by letters as
+follows: Mainland China (G), Hong Kong (H), Japan (J),
+South Korea (K), Singapore (S), Taiwan (T) and Vietnam
+(V).
+CJK Unified Ideographs A set of ideographs defined in the ISO/IEC 10646
+international coding standard in accordance with the
+unification rules. The ideographs are derived from the
+original character standards of China, Japan, Korea, and
+other countries and regions. As the first version of the
+standard includes ideographs mainly from China, Japan and
+Korea, the name “CJK” has been used ever since. In this
+document, these ideographs are also referred to as “Han
+characters”.
+Code Point An assigned hexadecimal code value to represent a
+character.
+Coded Character Set A character set established under a set of unambiguous
+rules. It defines the relationship between the characters of
+the set and their coded representation.
+CJK Ideographs
+Extension Blocks
+The blocks developed as extensions to the CJK Ideographs
+Main Block. Extension A Block is placed on the BMP and
+the subsequent extension blocks are on the Supplementary
+Ideographic Plane (SIP, Plane 2).
+Government Common
+Character Set (GCCS)
+A coded character set developed by the then Hong Kong
+Government in 1995 for exchanging and processing
+Chinese information within the Government.
+1 - 3
+
+Term Definition
+Horizontal Extension
+H-Column
+Ideograph
+ISO/IEC 10646
+Source Reference
+Supplementary
+Ideographic Plane (SIP,
+Plane 2)
+Unification
+This refers to the addition of information and source
+reference to the characters already included in the ISO/IEC
+10646.
+Each code point of the CJK Unified ideographs has multiple
+glyphs and these glyphs are listed in individual columns.
+This multi-column format aims to support and define the
+characters used in a particular country or region. The
+Chinese characters used in Hong Kong are listed in the
+H-column.
+Refers to a character in a writing system in which the scripts
+are not primarily used to represent sound, but to represent
+meaning. Chinese characters are ideographs.
+An ISO standard on a coded character set. It aims at
+providing one single character set to encompass the
+characters of all major languages.
+A reference established by associating a CJK Ideograph
+code point with one or several values in the source
+standards from which the CJK Unified Ideographs in
+ISO/IEC 10646 are derived.
+Plane 2 is assigned under the ISO/IEC 10646 coding
+framework for CJK ideograph extensions. Code points are
+from 20000 to 2FFFF.
+The process of assigning one code point to two or more
+character glyphs which, though seemingly different, are
+actually variants representing the same element in data
+representation. Consequently, only one of the variants is
+1 - 4
+
+Term Definition
+selected as the representative.
+Vertical Extension	 A method for adding new ideographs to the CJK Ideographs
+Main Block and other extension blocks. Source references
+are required when new ideographs are added.
+1 - 5
+
+Section 2 Coding Scheme of the HKSCS-2016
+2.1	 The HKSCS-2016 consists of 5 033 characters, including 4 602 Chinese characters
+and 431 symbols. All these characters have been reviewed for use on computer
+platforms. Unlike the HKSCS-2008, the HKSCS-2016 provides code points of the
+characters in the ISO/IEC 10646 only. The code table can be found at Table 1.
+2.2	 The HKSCS-2016 contains all the 4 579 Chinese characters and 430 symbols from
+the HKSCS-2008, and the newly added 23 Chinese characters and one symbol already
+included in the ISO/IEC 10646, so as to reflect the actual use of these characters in
+the HKSAR. These 23 Chinese characters are included in the CJK Ideographs Main
+Block and the symbol is in the block for currency symbols. The newly included
+characters are listed in Table 2.
+2.3	 According to the resolution made by the working group under the ISO/IEC JTC1/SC2,
+two characters from the HKSCS-2008 should have their code points in the ISO/IEC
+10646 re-assigned as follows:
+Glyph
+(source reference) HKSCS-2008 HKSCS-2016
+(H-9D73) 4CA4 9FD0
+(H-91B5) 3D1D 2A3ED
+The new code point 9FD0 has been adopted in the amendment 2 of the
+ISO/IEC 10646:2014, published in 2016.
+Code points 4CA4 and 3D1D are kept as compatibility points to enable computer
+systems yet to adopt the latest version of the ISO/IEC 10646 to continue using them.
+2.4	 The table below shows the relationship between the HKSCS and the character blocks
+of the ISO/IEC 10646 coding standard. The names of the blocks given are for ease
+of reference only and may not be the same as those used in the ISO/IEC 10646
+international coding standard document.
+2 - 1
+
+
+ISO/IEC 10646
+Character block
+Number of characters in the
+HKSCS-2008
+Number of characters in the
+HKSCS-2016
+Symbols 430 431
+CJK Ideographs
+Main Block 2 291 2 315
+Extension A 574 572
+Extension B 1 701 1 702
+Extension C 1 1
+Extension D - -
+Extension E - -
+Compatibility
+Ideograph Block 12 12
+Total 5 009 5 033
+2.5	 The ISO/IEC 10646 document provides compatible characters for characters included
+in the CJK Compatibility Ideograph Block, in which 12 are HKSCS-2016 characters.
+These 12 characters and their corresponding characters are listed in Table 3 for
+reference.
+2.6	 As most of the existing computer platforms support ISO/IEC 10646,
+persons-in-charge are recommended to upgrade their systems to support ISO/IEC
+10646 as soon as possible to enable more efficient and convenient use of the most
+comprehensive Chinese character set for communication and information exchange.
+2 - 2
+
+Section 3 HKSCS-2016 under the Architecture of the
+ISO/IEC 10646
+3.1	 Under the architecture of the ISO/IEC 10646 international coding standard, Han
+characters refer to the CJK unified ideographs. Each code point of the CJK Unified
+ideographs has multiple glyphs listed in individual columns. This multi-column
+format serves to support and define the characters needed in a particular country or
+region. The Chinese characters used in Hong Kong are listed in the H-column.
+Details of the ISO/IEC 10646 international coding standard are available at:
+http://standards.iso.org/ittf/PubliclyAvailableStandards/ .
+3.2	 All the HKSCS-2016 characters have been included in the ISO/IEC 10646
+international coding standard. Characters used in Hong Kong but not included in the
+standard will be added through vertical extension. For characters already in the
+standard, information will be added to specify which characters are used in Hong
+Kong and the glyphs used locally will be included through horizontal extension, so as
+to reflect the actual use of Chinese characters in Hong Kong.
+3.3	 Based on the HKSCS-2008, the HKSCS-2016 has newly included 23 Chinese
+characters already in the ISO/IEC 10646. These characters are denoted as
+“HD-XXXX”, where “XXXX” is the code point of the character in ISO/IEC 10646.
+The preferred glyphs used in Hong Kong and the source reference are also added to
+the H-column.
+3.4	 The HKSCS-2016 also contains one new symbol, which is already included in the
+ISO/IEC 10646. This symbol is denoted in the form of “HE-XXXX”, where
+“XXXX” is the code point of the symbol in the ISO/IEC 10646.
+3.5	 For any HKSCS character to be added to the ISO/IEC 10646 in the future, the source
+reference will be given in the form of “HC-0001” to “HC-9999”, denoting that the
+character is included in the ISO/IEC 10646 through vertical extension. The
+HKSCS-2016 does not include characters with source reference denoted in the form
+of “HC-”.
+3 - 1
+
+
+3.6	 Under the architecture of the ISO/IEC 10646, the H-column lists not only the
+characters in the HKSCS, but also those included in the Big-5 coding scheme. The
+source reference of such Big-5 characters is provided in the form of “HB0-XXXX”,
+“HB1-XXXX” and “HB2-XXXX ”, where “XXXX” is the code point of the character
+under the Big-5 coding scheme, denoting characters from the Big-5 symbol area,
+frequently used characters and less frequently used characters respectively.
+Information on the mapping of the Big-5 and Unicode is available at the following
+website:
+http://www.unicode.org .
+3 - 2
+
+Table 1: Code Table of the HKSCS-2016
+The HKSCS-2016 contains 5 033 characters, including 5 009 characters from the
+HKSCS-2008, and 24 newly added characters (23 Chinese characters and one symbol).
+The following are examples of typical cells in the code table of the HKSCS-2016:
+9C02
+H-916F
+ISO/IEC 10646
+code point
+“H-” indicates that the
+character is included in
+the HKSCS-2008
+5151
+HD-5151
+ISO/IEC 10646
+code point
+“HD-” and “HE-”
+indicate that the Chinese
+character and the
+symbol are already
+included in the
+ISO/IEC 10646
+respectively
+i - 1
+00A8 043D
+
+00A8
+¨
+H-C6D8
+00E8
+è
+H-886F
+00FC
+ü
+H-88A2
+014D
+ō
+H-8874
+01D8
+ǘ
+H-887D
+0283
+ʃ
+H-C8F5
+0416
+Ж
+H-C7FA
+0420
+Р
+H-C845
+042A
+Ъ
+H-C84F
+0434
+д
+H-C859
+00C0
+À
+H-8859
+00E9
+é
+H-886D
+0100
+Ā
+H-8856
+0153
+
+H-C8FA
+01DA
+ǚ
+H-887E
+028A
+ʊ
+H-C8FD
+0417
+З
+H-C7FB
+0421
+С
+H-C846
+042B
+Ы
+H-C850
+0435
+е
+H-C85A
+00C1
+Á
+H-8857
+00EA
+ê
+H-88A7
+0101
+ā
+H-8867
+016B
+ū
+H-8878
+01DC
+ǜ
+H-88A1
+02C6
+
+H-C6D9
+0418
+И
+H-C7FC
+0422
+Т
+H-C847
+042C
+Ь
+H-C851
+0436
+ж
+H-C85C
+00C8
+È
+H-885D
+00EC
+ì
+H-8873
+0112
+Ē
+H-885A
+01CD
+Ǎ
+H-8858
+0250
+ɐ
+H-C8F6
+0401
+Ё
+H-C7F9
+0419
+Й
+H-C7FD
+0423
+У
+H-C848
+042D
+Э
+H-C852
+0437
+з
+H-C85D
+00C9
+É
+H-885B
+00ED
+í
+H-8871
+0113
+ē
+H-886C
+01CE
+ǎ
+H-8869
+0251
+ɑ
+H-886B
+0410
+А
+H-C7F3
+041A
+К
+H-C7FE
+0424
+Ф
+H-C849
+042E
+Ю
+H-C853
+0438
+и
+H-C85E
+00CA
+Ê
+H-8866
+00F2
+ò
+H-8877
+011A
+Ě
+H-885C
+01D0
+ǐ
+H-8872
+0254
+ɔ
+H-C8F8
+0411
+Б
+H-C7F4
+041B
+Л
+H-C840
+0425
+Х
+H-C84A
+042F
+Я
+H-C854
+0439
+й
+H-C85F
+00D2
+Ò
+H-8861
+00F3
+ó
+H-8875
+011B
+ě
+H-886E
+01D1
+Ǒ
+H-8860
+025B
+ɛ
+H-C8F7
+0412
+В
+H-C7F5
+041C
+М
+H-C841
+0426
+Ц
+H-C84B
+0430
+а
+H-C855
+043A
+к
+H-C860
+00D3
+Ó
+H-885F
+00F8
+ø
+H-C8FB
+012B
+ī
+H-8870
+01D2
+ǒ
+H-8876
+0261
+ɡ
+H-88A8
+0413
+Г
+H-C7F6
+041D
+Н
+H-C842
+0427
+Ч
+H-C84C
+0431
+б
+H-C856
+043B
+л
+H-C861
+00E0
+à
+H-886A
+00F9
+ù
+H-887B
+014B
+ŋ
+H-C8FC
+01D4
+ǔ
+H-887A
+026A
+ɪ
+H-C8FE
+0414
+Д
+H-C7F7
+041E
+О
+H-C843
+0428
+Ш
+H-C84D
+0432
+в
+H-C857
+043C
+м
+H-C862
+00E1
+á
+H-8868
+00FA
+ú
+H-8879
+014C
+Ō
+H-885E
+01D6
+ǖ
+H-887C
+0275
+ɵ
+H-C8F9
+0415
+Е
+H-C7F8
+041F
+П
+H-C844
+0429
+Щ
+H-C84E
+0433
+г
+H-C858
+043D
+н
+H-C863
+i - 2
+043E 2E88
+
+043E
+о
+H-C864
+0448
+ш
+H-C86E
+1EBF
+ế
+H-88A4
+2174
+ⅴ
+H-C6B9
+23DB
+⏛
+H-88AA
+2469
+⑩
+H-C6AA
+247D
+⑽
+H-C6B4
+2559
+╙
+H-F9F5
+2563
+╣
+H-F9E2
+256D
+╭
+H-F9FA
+043F
+п
+H-C865
+0449
+щ
+H-C86F
+1EC0
+Ề
+H-8865
+2175
+ⅵ
+H-C6BA
+2460
+①
+H-C6A1
+2474
+⑴
+H-C6AB
+2550
+═
+H-F9F9
+255A
+╚
+H-F9E3
+2564
+╤
+H-F9E7
+256E
+╮
+H-F9FB
+0440
+р
+H-C866
+044A
+ъ
+H-C870
+1EC1
+ề
+H-88A6
+2176
+ⅶ
+H-C6BB
+2461
+②
+H-C6A2
+2475
+⑵
+H-C6AC
+2551
+║
+H-F9F8
+255B
+╛
+H-F9EE
+2565
+╥
+H-F9F0
+256F
+╯
+H-F9FD
+0441
+с
+H-C867
+044B
+ы
+H-C871
+20AC
+€
+HE-20AC
+2177
+ⅷ
+H-C6BC
+2462
+③
+H-C6A3
+2476
+⑶
+H-C6AD
+2552
+╒
+H-F9E6
+255C
+╜
+H-F9F7
+2566
+╦
+H-F9DE
+2570
+╰
+H-F9FC
+0442
+т
+H-C868
+044C
+ь
+H-C872
+2116
+№
+H-C8D2
+2178
+ⅸ
+H-C6BD
+2463
+④
+H-C6A4
+2477
+⑷
+H-C6AE
+2553
+╓
+H-F9EF
+255D
+╝
+H-F9E5
+2567
+╧
+H-F9ED
+273D
+✽
+H-C6E6
+0443
+у
+H-C869
+044D
+э
+H-C873
+2121
+℡
+H-C8D3
+2179
+ⅹ
+H-C6BE
+2464
+⑤
+H-C6A5
+2478
+⑸
+H-C6AF
+2554
+╔
+H-F9DD
+255E
+╞
+H-F9E9
+2568
+╨
+H-F9F6
+2E80
+⺀
+H-C8D6
+0444
+ф
+H-C86A
+044E
+ю
+H-C874
+2170
+ⅰ
+H-C6B5
+21B8
+↸
+H-C877
+2465
+⑥
+H-C6A6
+2479
+⑹
+H-C6B0
+2555
+╕
+H-F9E8
+255F
+╟
+H-F9F2
+2569
+╩
+H-F9E4
+2E84
+⺄
+H-C8D7
+0445
+х
+H-C86B
+044F
+я
+H-C875
+2171
+ⅱ
+H-C6B6
+21B9
+↹
+H-C878
+2466
+⑦
+H-C6A7
+247A
+⑺
+H-C6B1
+2556
+╖
+H-F9F1
+2560
+╠
+H-F9E0
+256A
+╪
+H-F9EA
+2E86
+⺆
+H-C8D8
+0446
+ц
+H-C86C
+0451
+ё
+H-C85B
+2172
+ⅲ
+H-C6B7
+21E7
+⇧
+H-C876
+2467
+⑧
+H-C6A8
+247B
+⑻
+H-C6B2
+2557
+╗
+H-F9DF
+2561
+╡
+H-F9EB
+256B
+╫
+H-F9F3
+2E87
+⺇
+H-C8D9
+0447
+ч
+H-C86D
+1EBE
+Ế
+H-8863
+2173
+ⅳ
+H-C6B8
+23DA
+⏚
+H-88A9
+2468
+⑨
+H-C6A9
+247C
+⑼
+H-C6B3
+2558
+╘
+H-F9EC
+2562
+╢
+H-F9F4
+256C
+╬
+H-F9E1
+2E88
+⺈
+H-C8DA
+i - 3
+2E8A 3089
+
+2E8A
+⺊
+H-C8DB
+2EAE
+⺮
+H-C8E5
+2ED7
+⻗
+H-C8EF
+3044
+い
+H-C6EA
+304E
+ぎ
+H-C6F4
+3058
+じ
+H-C6FE
+3062
+ぢ
+H-C749
+306C
+ぬ
+H-C753
+3076
+ぶ
+H-C75D
+3080
+む
+H-C767
+2E8C
+⺌
+H-C8DC
+2EB6
+⺶
+H-C8E6
+2EDE
+⻞
+H-C8F0
+3045
+ぅ
+H-C6EB
+304F
+く
+H-C6F5
+3059
+す
+H-C740
+3063
+っ
+H-C74A
+306D
+ね
+H-C754
+3077
+ぷ
+H-C75E
+3081
+め
+H-C768
+2E8D
+⺍
+H-C8DD
+2EBC
+⺼
+H-C8E7
+2EE3
+⻣
+H-C8F1
+3046
+う
+H-C6EC
+3050
+ぐ
+H-C6F6
+305A
+ず
+H-C741
+3064
+つ
+H-C74B
+306E
+の
+H-C755
+3078
+へ
+H-C75F
+3082
+も
+H-C769
+2E95
+⺕
+H-C8DE
+2EBE
+⺾
+H-C8E8
+2F33
+⼳
+H-C6CD
+3047
+ぇ
+H-C6ED
+3051
+け
+H-C6F7
+305B
+せ
+H-C742
+3065
+づ
+H-C74C
+306F
+は
+H-C756
+3079
+べ
+H-C760
+3083
+ゃ
+H-C76A
+2E9C 2EC6 3005 3048 3052 305C 3066 3070 307A 3084
+⺜ ⻆ 々 え げ ぜ て ば ぺ や
+H-C8DF H-C8E9 H-C6E0 H-C6EE H-C6F8 H-C743 H-C74D H-C757 H-C761 H-C76B
+2E9D
+⺝
+H-C8E0
+2ECA
+⻊
+H-C8EA
+3006
+〆
+H-C6E1
+3049
+ぉ
+H-C6EF
+3053
+こ
+H-C6F9
+305D
+そ
+H-C744
+3067
+で
+H-C74E
+3071
+ぱ
+H-C758
+307B
+ほ
+H-C762
+3085
+ゅ
+H-C76C
+2EA5 2ECC 3007 304A 3054 305E 3068 3072 307C 3086
+⺥ ⻌ 〇 お ご ぞ と ひ ぼ ゆ
+H-C8E1 H-C8EB H-C6E2 H-C6F0 H-C6FA H-C745 H-C74F H-C759 H-C763 H-C76D
+2EA7
+⺧
+H-C8E2
+2ECD
+⻍
+H-C8EC
+3041
+ぁ
+H-C6E7
+304B
+か
+H-C6F1
+3055
+さ
+H-C6FB
+305F
+た
+H-C746
+3069
+ど
+H-C750
+3073
+び
+H-C75A
+307D
+ぽ
+H-C764
+3087
+ょ
+H-C76E
+2EAA 2ECF 3042 304C 3056 3060 306A 3074 307E 3088
+⺪ ⻏ あ が ざ だ な ぴ ま よ
+H-C8E3 H-C8ED H-C6E8 H-C6F2 H-C6FC H-C747 H-C751 H-C75B H-C765 H-C76F
+2EAC
+⺬
+H-C8E4
+2ED6
+⻖
+H-C8EE
+3043
+ぃ
+H-C6E9
+304D
+き
+H-C6F3
+3057
+し
+H-C6FD
+3061
+ち
+H-C748
+306B
+に
+H-C752
+3075
+ふ
+H-C75C
+307F
+み
+H-C766
+3089
+ら
+H-C770
+i - 4
+308A 30F6
+
+308A
+り
+H-C771
+309B
+゛
+H-C8D4
+30A7
+ェ
+H-C7A3
+30B1
+ケ
+H-C7AD
+30BB
+セ
+H-C7B7
+30C5
+ヅ
+H-C7C1
+30CF
+ハ
+H-C7CB
+30D9
+ベ
+H-C7D5
+30E3
+ャ
+H-C7DF
+30ED
+ロ
+H-C7E9
+308B
+る
+H-C772
+309C
+゜
+H-C8D5
+30A8
+エ
+H-C7A4
+30B2
+ゲ
+H-C7AE
+30BC
+ゼ
+H-C7B8
+30C6
+テ
+H-C7C2
+30D0
+バ
+H-C7CC
+30DA
+ペ
+H-C7D6
+30E4
+ヤ
+H-C7E0
+30EE
+ヮ
+H-C7EA
+308C
+れ
+H-C773
+309D
+ゝ
+H-C6DC
+30A9
+ォ
+H-C7A5
+30B3
+コ
+H-C7AF
+30BD
+ソ
+H-C7B9
+30C7
+デ
+H-C7C3
+30D1
+パ
+H-C7CD
+30DB
+ホ
+H-C7D7
+30E5
+ュ
+H-C7E1
+30EF
+ワ
+H-C7EB
+308D
+ろ
+H-C774
+309E
+ゞ
+H-C6DD
+30AA
+オ
+H-C7A6
+30B4
+ゴ
+H-C7B0
+30BE
+ゾ
+H-C7BA
+30C8
+ト
+H-C7C4
+30D2
+ヒ
+H-C7CE
+30DC
+ボ
+H-C7D8
+30E6
+ユ
+H-C7E2
+30F0
+ヰ
+H-C7EC
+308E
+ゎ
+H-C775
+30A1
+ァ
+H-C77B
+30AB
+カ
+H-C7A7
+30B5
+サ
+H-C7B1
+30BF
+タ
+H-C7BB
+30C9
+ド
+H-C7C5
+30D3
+ビ
+H-C7CF
+30DD
+ポ
+H-C7D9
+30E7
+ョ
+H-C7E3
+30F1
+ヱ
+H-C7ED
+308F 30A2 30AC 30B6 30C0 30CA 30D4 30DE 30E8 30F2
+わ ア ガ ザ ダ ナ ピ マ ヨ ヲ
+H-C776 H-C77C H-C7A8 H-C7B2 H-C7BC H-C7C6 H-C7D0 H-C7DA H-C7E4 H-C7EE
+3090
+ゐ
+H-C777
+30A3
+ィ
+H-C77D
+30AD
+キ
+H-C7A9
+30B7
+シ
+H-C7B3
+30C1
+チ
+H-C7BD
+30CB
+ニ
+H-C7C7
+30D5
+フ
+H-C7D1
+30DF
+ミ
+H-C7DB
+30E9
+ラ
+H-C7E5
+30F3
+ン
+H-C7EF
+3091 30A4 30AE 30B8 30C2 30CC 30D6 30E0 30EA 30F4
+ゑ イ ギ ジ ヂ ヌ ブ ム リ ヴ
+H-C778 H-C77E H-C7AA H-C7B4 H-C7BE H-C7C8 H-C7D2 H-C7DC H-C7E6 H-C7F0
+3092
+を
+H-C779
+30A5
+ゥ
+H-C7A1
+30AF
+ク
+H-C7AB
+30B9
+ス
+H-C7B5
+30C3
+ッ
+H-C7BF
+30CD
+ネ
+H-C7C9
+30D7
+プ
+H-C7D3
+30E1
+メ
+H-C7DD
+30EB
+ル
+H-C7E7
+30F5
+ヵ
+H-C7F1
+3093 30A6 30B0 30BA 30C4 30CE 30D8 30E2 30EC 30F6
+ん ウ グ ズ ツ ノ ヘ モ レ ヶ
+H-C77A H-C7A2 H-C7AC H-C7B6 H-C7C0 H-C7CA H-C7D4 H-C7DE H-C7E8 H-C7F2
+i - 5
+30FC 36C3
+
+30FC
+ー
+H-C6E3
+31C7
+㇇
+H-884A
+3435
+㐵
+H-9277
+3496
+㒖
+H-8F5D
+3506
+㔆
+H-8A6E
+3578
+㕸
+H-8AD3
+35C7
+㗇
+H-89E6
+35FB
+㗻
+H-8AEB
+363E
+㘾
+H-92E9
+36A5
+㚥
+H-9EBB
+30FD
+ヽ
+H-C6DA
+31C8
+㇈
+H-884D
+3440
+㑀
+H-96DF
+34A5
+㒥
+H-89DC
+353E
+㔾
+H-8BC8
+3584
+㖄
+H-92DB
+35CA
+㗊
+H-9D46
+35FE
+㗾
+H-9FD7
+3647
+㙇
+H-9AEC
+36AA
+㚪
+H-94DE
+30FE 31C9 344A 34AF 3551 3597 35CE 3609 3648 36AC
+ヾ ㇉ 㑊 㒯 㕑 㖗 㗎 㘉 㙈 㚬
+H-C6DB H-884F H-8CF4 H-96F7 H-89E8 H-94DB H-9DEE H-8B6A H-8FAB H-9EB8
+31C0 31CA 344C 34BC 3553 3598 35D2 3618 3649 36B0
+㇀ ㇊ 㑌 㒼 㕓 㖘 㗒 㘘 㙉 㚰
+H-8840 H-8850 H-89D5 H-8ADA H-89EA H-89F9 H-A07E H-9C5C H-FA48 H-97BA
+31C1 31CB 3464 34C1 3559 35A1 35D6 361A 364E 36B1
+㇁ ㇋ 㑤 㓁 㕙 㖡 㗖 㘚 㙎 㚱
+H-8841 H-8851 H-93CD H-8BDC H-8C4B H-FB7A H-A068 H-8BB1 H-8E45 H-FB65
+31C2 31CC 3473 34C8 3561 35A5 35DB 3623 365F 36B5
+㇂ ㇌ 㑳 㓈 㕡 㖥 㗛 㘣 㙟 㚵
+H-8842 H-8852 H-9BDF H-97DB H-FB70 H-89FB H-98E9 H-FB5E H-9C6F H-95D6
+31C3
+㇃
+H-8843
+31CD
+㇍
+H-8854
+347A
+㑺
+H-FA68
+34DF
+㓟
+H-9E53
+356D
+㕭
+H-89ED
+35AD
+㖭
+H-9EFC
+35DD
+㗝
+H-8B68
+3625
+㘥
+H-8770
+3661
+㙡
+H-8D5C
+36B9
+㚹
+H-9CBB
+31C4 31CE 347D 34E4 3570 35BF 35F1 362D 367A 36BC
+㇄ ㇎ 㑽 㓤 㕰 㖿 㗱 㘭 㙺 㚼
+H-8844 H-8855 H-89DA H-9DAA H-94DD H-89FC H-8DFD H-9DF3 H-9EDE H-97DA
+31C5 31CF 347E 34E6 3572 35C1 35F2 3635 3681 36C1
+㇅ ㇏ 㑾 㓦 㕲 㗁 㗲 㘵 㚁 㛁
+H-8846 H-C879 H-8F59 H-87BE H-89EE H-89BF H-8BBE H-A0D0 H-89EF H-8F45
+31C6 3231 3493 34FB 3577 35C5 35F3 3639 369A 36C3
+㇆ ㈱ 㒓 㓻 㕷 㗅 㗳 㘹 㚚 㛃
+H-8849 H-C8D1 H-89DB H-9BEA H-9EB4 H-89FE H-9FD9 H-FC66 H-96E9 H-FB7D
+i - 6
+36C4 3AF2
+
+36C4 36E5 3723 3762 380F 38CC 3963 39B8 3A06 3A5E
+㛄 㛥 㜣 㝢 㠏 㣌 㥣 㦸 㨆 㩞
+H-9158 H-FDA2 H-91F9 H-9BC2 H-8D64 H-FACD H-FC64 H-8D78 H-8AD1 H-94B5
+36C5 36E6 3725 376F 3819 38D1 3978 39DC 3A17 3A66
+㛅 㛦 㜥 㝯 㠙 㣑 㥸 㧜 㨗 㩦
+H-FE64 H-FBB6 H-8FF1 H-9A7B H-9269 H-93DD H-8CF3 H-9EB9 H-FCB4 H-FCC2
+36C7 36F5 372C 3797 3820 38D4 3980 39E2 3A18 3A67
+㛇 㛵 㜬 㞗 㠠 㣔 㦀 㧢 㨘 㩧
+H-9856 H-92FA H-9745 H-8B60 H-8D67 H-8D52 H-9060 H-955A H-8B47 H-8A6B
+36C8 3701 372D 37A0 382D 38FA 3989 39E5 3A29 3A97
+㛈 㜁 㜭 㞠 㠭 㣺 㦉 㧥 㨩 㪗
+H-9B4D H-9357 H-9853 H-934B H-FBEA H-8BCC H-8D74 H-91B4 H-93A4 H-8DAB
+36D3 3703 3730 37B9 3836 3908 398A 39EC 3A2A 3AAB
+㛓 㜃 㜰 㞹 㠶 㤈 㦊 㧬 㨪 㪫
+H-935B H-8BA6 H-FE78 H-9ABD H-FBEF H-8D6D H-97C3 H-8A48 H-9EDA H-FAE8
+36D4 3708 3732 37BE 3838 3914 3992 39F8 3A34 3ABD
+㛔 㜈 㜲 㞾 㠸 㤔 㦒 㧸 㨴 㪽
+H-95C7 H-FBB9 H-FBC1 H-91B7 H-8D68 H-8D6E H-8AD0 H-8D7D H-8A51 H-8DAD
+36D6 370A 3733 37D6 3863 3927 3999 39FB 3A4B 3ADE
+㛖 㜊 㜳 㟖 㡣 㤧 㦙 㧻 㩋 㫞
+H-97E7 H-97B0 H-9251 H-8D4B H-93EB H-96A8 H-9274 H-8A7D H-8DA6 H-FC49
+36DD 370D 373A 37F2 3875 3932 399B 39FE 3A52 3AE0
+㛝 㜍 㜺 㟲 㡵 㤲 㦛 㧾 㩒 㫠
+H-9359 H-FDC4 H-9DAD H-95B4 H-877A H-FCA6 H-9BBE H-8AC2 H-9EC5 H-93C1
+36E1 371C 3740 37F8 38A0 393F 39A1 3A01 3A57 3AF0
+㛡 㜜 㝀 㟸 㢠 㤿 㦡 㨁 㩗 㫰
+H-91F5 H-9CA1 H-FD6C H-FEC5 H-FC42 H-8D6F H-9CC8 H-FD4A H-FCC4 H-906F
+36E2 3722 3743 37FB 38C3 394D 39A4 3A03 3A5C 3AF2
+㛢 㜢 㝃 㟻 㣃 㥍 㦤 㨃 㩜 㫲
+H-97B8 H-91F2 H-FA6B H-9EF0 H-9166 H-8D70 H-9CBA H-8DA1 H-A078 H-8DB0
+i - 7
+3AF5 3ED1
+
+3AF5 3B71 3BBE 3C11 3CEB 3D5F 3D8F 3DCD 3DFD 3EAD
+㫵 㭱 㮾 㰑 㳫 㵟 㶏 㷍 㷽 㺭
+H-87A2 H-8DBB H-9BB8 H-9CF8 H-FDA3 H-FC59 H-9449 H-94A1 H-9669 H-95B0
+3AFB 3B72 3BC2 3C15 3CEF 3D62 3D91 3DD3 3E06 3EB1
+㫻 㭲 㯂 㰕 㳯 㵢 㶑 㷓 㸆 㺱
+H-947E H-8DBA H-FBF0 H-9252 H-8DDB H-96D6 H-8DF5 H-8F63 H-9F70 H-9464
+3B0E 3B7B 3BC4 3C18 3D12 3D69 3DA5 3DDB 3E40 3EB8
+㬎 㭻 㯄 㰘 㴒 㵩 㶥 㷛 㹀 㺸
+H-90FA H-8DBC H-93E9 H-A0E8 H-8CEA H-97C5 H-9872 H-A0DA H-FC6A H-936F
+3B19 3B7C 3BD7 3C54 3D13 3D6A 3DAD 3DE7 3E43 3EBF
+㬙 㭼 㯗 㱔 㴓 㵪 㶭 㷧 㹃 㺿
+H-9479 H-9044 H-93F6 H-9CA5 H-8EAF H-8DEF H-8E6B H-9253 H-8AC7 H-94B9
+3B22 3B80 3BDD 3C8B 3D32 3D6F 3DB4 3DE8 3E48 3EC2
+㬢 㮀 㯝 㲋 㴲 㵯 㶴 㷨 㹈 㻂
+H-8DB2 H-FD4C H-8DC5 H-8C56 H-FD49 H-97D7 H-FAFD H-FDE9 H-89D7 H-95EC
+3B2B 3B95 3BEC 3CCB 3D3B 3D75 3DBF 3DEB 3E55 3EC7
+㬫 㮕 㯬 㳋 㴻 㵵 㶿 㷫 㹕 㻇
+H-FCEE H-874B H-8DCA H-8DD6 H-FDD1 H-8DF0 H-8F50 H-9DB5 H-FE4D H-91EE
+3B39 3B96 3BF2 3CCD 3D46 3D7D 3DC6 3DF3 3E74 3ECA
+㬹 㮖 㯲 㳍 㵆 㵽 㷆 㷳 㹴 㻊
+H-997B H-93E4 H-8DCC H-97C0 H-8DEB H-96A6 H-9DCC H-9879 H-9EDD H-98C3
+3B42 3B99 3BF3 3CD1 3D4C 3D85 3DC7 3DF4 3EA8 3ECC
+㭂 㮙 㯳 㳑 㵌 㶅 㷇 㷴 㺨 㻌
+H-8DB4 H-93E0 H-FD5D H-A0DE H-97C6 H-FBBF H-FC65 H-876A H-FEFB H-95F6
+3B58 3BA1 3BF4 3CD6 3D4E 3D88 3DC9 3DF7 3EA9 3ED0
+㭘 㮡 㯴 㳖 㵎 㶈 㷉 㷷 㺩 㻐
+H-8DB7 H-FD53 H-93B5 H-97D2 H-FDCE H-8CDF H-8C44 H-9D5D H-98BC H-8FFD
+3B60 3BBC 3C0D 3CDC 3D51 3D8A 3DCC 3DFC 3EAA 3ED1
+㭠 㮼 㰍 㳜 㵑 㶊 㷌 㷼 㺪 㻑
+H-91B3 H-8DC3 H-FD61 H-FAA5 H-90FC H-8DF3 H-996E H-8D63 H-FACC H-98C5
+i - 8
+3ED6 439A
+
+3ED6 3EEC 3F07 3FD7 4045 40BB 4109 4190 4223 42B9
+㻖 㻬 㼇 㿗 䁅 䂻 䄉 䆐 䈣 䊹
+H-9766 H-877E H-8D47 H-98DB H-98E8 H-8AB8 H-9940 H-93C2 H-8C60 H-90B7
+3ED7 3EF0 3F0E 3FDC 4053 40BF 410E 41B2 4240 42BC
+㻗 㻰 㼎 㿜 䁓 䂿 䄎 䆲 䉀 䊼
+H-FE6E H-98CC H-98D0 H-98DD H-8A4D H-9EE7 H-94C9 H-9948 H-8F74 H-9743
+3EDA 3EF3 3F53 3FE5 4057 40C8 4131 41C4 4260 42F4
+㻚 㻳 㽓 㿥 䁗 䃈 䄱 䇄 䉠 䋴
+H-97DD H-9469 H-98D1 H-98A8 H-9257 H-94BC H-87C6 H-994B H-9955 H-95CD
+3EDB 3EF4 3F58 3FED 4062 40D8 4132 41CA 426A 42FB
+㻛 㻴 㽘 㿭 䁢 䃘 䄲 䇊 䉪 䋻
+H-8CAA H-98CD H-9475 H-8A6D H-95DF H-FCD1 H-94D3 H-8E55 H-9544 H-97C9
+3EDE 3EFA 3F59 3FF9 4065 40DF 4167 41CF 4276 42FC
+㻞 㻺 㽙 㿹 䁥 䃟 䅧 䇏 䉶 䋼
+H-92D2 H-98CE H-FAE0 H-8AFB H-A0AC H-9CC6 H-9946 H-994E H-8CCB H-FD50
+3EE1 3EFC 3F63 3FFA 406A 40F8 416C 41DB 427A 430A
+㻡 㻼 㽣 㿺 䁪 䃸 䅬 䇛 䉺 䌊
+H-9761 H-95FC H-9472 H-8AAE H-98EB H-8D4A H-90C0 H-8EFE H-9956 H-87AA
+3EE2 3EFF 3F7C 4004 406F 40FA 416E 41ED 428C 432B
+㻢 㻿 㽼 䀄 䁯 䃺 䅮 䇭 䊌 䌫
+H-98CB H-94A3 H-98D6 H-FBC9 H-98EC H-9E7E H-94D1 H-8D5F H-9959 H-8EB9
+3EE7 3F00 3F93 4009 4071 4102 417C 41EF 4294 436E
+㻧 㼀 㾓 䀉 䁱 䄂 䅼 䇯 䊔 䍮
+H-95F0 H-9662 H-8AF0 H-8C5D H-8CC3 H-8D44 H-8D4E H-8E59 H-995B H-95C6
+3EE9 3F04 3FC0 401D 40A8 4103 417F 41F9 42A2 4397
+㻩 㼄 㿀 䀝 䂨 䄃 䅿 䇹 䊢 䎗
+H-975D H-FEB6 H-98D9 H-98E4 H-98F4 H-98FE H-9573 H-94EC H-8CC4 H-9967
+3EEB 3F06 3FC8 4039 40B4 4104 4181 4211 42B5 439A
+㻫 㼆 㿈 䀹 䂴 䄄 䆁 䈑 䊵 䎚
+H-91E3 H-9463 H-8D5A H-98E6 H-87D9 H-FDE8 H-87CE H-94EF H-FA45 H-8CE3
+i - 9
+43BA 489B
+
+43BA 4425 44BD 44E9 451B 4551 4578 4615 46F5 47A6
+䎺 䐥 䒽 䓩 䔛 䕑 䕸 䘕 䛵 䞦
+H-8AB9 H-99A5 H-8D5E H-FCF7 H-8D55 H-9470 H-8744 H-8FEB H-95B2 H-FAFA
+43C1 442D 44C0 44EA 451D 4552 4585 4617 46F7 47D5
+䏁 䐭 䓀 䓪 䔝 䕒 䖅 䘗 䛷 䟕
+H-8DFC H-99A7 H-965C H-9562 H-8EA2 H-FB4B H-90D7 H-99CF H-8D4C H-8A52
+43D9 447A 44C3 44EB 4527 4555 45A6 465B 4713 47ED
+䏙 䑺 䓃 䓫 䔧 䕕 䖦 䙛 䜓 䟭
+H-8A76 H-8EED H-8CE0 H-97CD H-8F7A H-FDCA H-8743 H-8FC2 H-8FDB H-99E1
+43DF 448F 44C5 44EC 452E 4558 45B3 467A 4718 47F4
+䏟 䒏 䓅 䓬 䔮 䕘 䖳 䙺 䜘 䟴
+H-9D51 H-99AD H-FD7A H-9E64 H-97AE H-8CEF H-8747 H-92C9 H-9BE3 H-8A67
+43ED 4491 44CE 44F4 4533 455C 45DA 4680 4736 4800
+䏭 䒑 䓎 䓴 䔳 䕜 䗚 䚀 䜶 䠀
+H-9973 H-C87E H-97FE H-924C H-96C8 H-8EC7 H-8758 H-97DC H-874C H-8BB5
+43F0 449F 44DD 4503 4536 4561 45E9 46A1 4744 480B
+䏰 䒟 䓝 䔃 䔶 䕡 䗩 䚡 䝄 䠋
+H-8740 H-946E H-92BD H-8EC9 H-8CE4 H-8D54 H-9EDF H-875D H-874D H-8AAC
+43F2 44A0 44DE 4504 453B 4562 45EA 46AE 474E 4837
+䏲 䒠 䓞 䔄 䔻 䕢 䗪 䚮 䝎 䠷
+H-9D4F H-8F70 H-8D5D H-99BC H-99C3 H-A0F9 H-8D59 H-87CC H-9E7A H-99E9
+4401 44A2 44DF 4509 453D 456A 4603 46BB 474F 485D
+䐁 䒢 䓟 䔉 䔽 䕪 䘃 䚻 䝏 䡝
+H-997A H-FAD0 H-97FD H-9DA5 H-90D6 H-8FA9 H-8742 H-8D45 H-8757 H-FBCA
+4402 44B0 44E1 450B 453F 456D 4606 46CF 477C 4871
+䐂 䒰 䓡 䔋 䔿 䕭 䘆 䛏 䝼 䡱
+H-9564 H-99B3 H-87DB H-8F54 H-9CBE H-8D51 H-99CE H-95B3 H-9BEE H-97DE
+4413 44B7 44E4 4516 4543 4577 460F 46D0 4798 489B
+䐓 䒷 䓤 䔖 䕃 䕷 䘏 䛐 䞘 䢛
+H-99A1 H-A053 H-8F64 H-8F7C H-8F76 H-99C7 H-8FBA H-9C79 H-99DE H-95D1
+i - 10
+48AD 4E2C
+
+48AD 4925 4953 4A0F 4AFF 4B7E 4C04 4C6D 4CE1 4D91
+䢭 䤥 䥓 䨏 䫿 䭾 䰄 䱭 䳡 䶑
+H-99F5 H-9664 H-FE7D H-90D5 H-9145 H-A0E6 H-A06F H-9A79 H-9EEE H-9D78
+48AE 492A 4965 4A1D 4B10 4B8E 4C07 4C77 4CE2 4D9C
+䢮 䤪 䥥 䨝 䬐 䮎 䰇 䱷 䳢 䶜
+H-FC4A H-9055 H-90AA H-9641 H-8C58 H-92D7 H-A06A H-8CF2 H-8749 H-9D7B
+48D0 492D 496A 4A24 4B19 4B90 4C0E 4C7B 4CED 4E04
+䣐 䤭 䥪 䨤 䬙 䮐 䰎 䱻 䳭 丄
+H-9BA9 H-96D4 H-9A50 H-9A5A H-9A63 H-9675 H-915F H-8D57 H-FB43 H-9EB3
+48DD 492F 4972 4A35 4B20 4B93 4C32 4C7D 4D07 4E1A
+䣝 䤯 䥲 䨵 䬠 䮓 䰲 䱽 䴇 业
+H-FBDC H-87C4 H-9347 H-9A5C H-8C49 H-93D4 H-8741 H-9DCE H-875B H-9EB2
+48ED 4930 4989 4A96 4B2C 4B96 4C3B 4C81 4D09 4E1C
+䣭 䤰 䦉 䪖 䬬 䮖 䰻 䲁 䴉 东
+H-FE56 H-87AE H-8ED8 H-97C2 H-8BB6 H-91BB H-9FA5 H-8CD2 H-9EC9 H-9DD6
+48F3 4935 49A1 4AA4 4B37 4B97 4C3E 4C85 4D10 4E21
+䣳 䤵 䦡 䪤 䬷 䮗 䰾 䲅 䴐 両
+H-9EA4 H-977C H-90C9 H-875C H-FCCF H-9679 H-89BA H-8759 H-FBD3 H-994F
+48FA 493C 49A7 4AB4 4B6F 4B9D 4C40 4CAE 4D34 4E24
+䣺 䤼 䦧 䪴 䭯 䮝 䱀 䲮 䴴 两
+H-9D49 H-964D H-9A55 H-8ABB H-966B H-9A70 H-874F H-96B9 H-91AE H-89CE
+4906 493E 49DF 4AB8 4B70 4BBD 4C47 4CB0 4D76 4E28
+䤆 䤾 䧟 䪸 䭰 䮽 䱇 䲰 䵶 丨
+H-95DB H-97E1 H-90BC H-9BAA H-9A6E H-9678 H-874E H-96BC H-8D58 H-8BC0
+4911 4945 49E5 4AD1 4B72 4BBE 4C57 4CB7 4D77 4E2A
+䤑 䥅 䧥 䫑 䭲 䮾 䱗 䲷 䵷 个
+H-89C5 H-9A48 H-9A58 H-90F5 H-914F H-91CD H-8755 H-9CD1 H-8746 H-9FC4
+491E 4951 49E7 4AE4 4B7B 4BC0 4C5B 4CCD 4D89 4E2C
+䤞 䥑 䧧 䫤 䭻 䯀 䱛 䳍 䶉 丬
+H-99F8 H-9A49 H-8BB8 H-9A60 H-9746 H-9C4A H-9ECD H-89B7 H-8D56 H-8BD4
+i - 11
+4E2F 51B5
+
+4E2F 4E80 4EBB 4F1A 4F8A 4FE5 5056 50D0 5151 519A
+丯 亀 亻 会 侊 俥 偖 僐 兑 冚
+H-8C72 H-89D0 H-8BC7 H-894E H-926F H-92AC H-9F73 H-90E3 HD-5151 H-9E52
+4E36
+丶
+H-C6BF
+4E81
+亁
+H-89CF
+4EBC
+亼
+H-926B
+4F28
+伨
+H-894F
+4FA2
+侢
+H-92A3
+4FF0
+俰
+H-8C70
+5058
+偘
+H-92AD
+50D9
+僙
+H-A0A6
+5156
+兖
+H-8951
+519C
+农
+H-8953
+4E37
+丷
+H-8BF9
+4E85
+亅
+H-C6C1
+4EBF
+亿
+H-89D2
+4F29
+伩
+H-9278
+4FA8
+侨
+H-8950
+4FF2
+俲
+H-9F6E
+5066
+偦
+H-9BE9
+50DF
+僟
+H-94AB
+5160
+兠
+H-FA6F
+51A7
+冧
+H-9E55
+4E3D 4E87 4ECE 4F32 4FAB 4FF9 506C 50E1 516A 51A8
+丽 亇 从 伲 侫 俹 偬 僡 兪 冨
+H-8946 H-89D1 H-9FCF H-91B6 H-FA57 H-8EF2 H-92A9 H-FC72 H-FA71 H-92BA
+4E3F 4E89 4EEA 4F37 4FB0 4FFD 5081 50F4 5174 51AB
+丿 争 仪 伷 侰 俽 傁 僴 兴 冫
+H-C6C0 H-89E2 H-9DA9 H-89D4 H-9866 H-9F6C H-92AA H-97C4 H-8952 H-C6C5
+4E49 4E98 4EEB 4F39 4FB4 5003 5088 50FC 5179 51AE
+义 亘 仫 伹 侴 倃 傈 僼 兹 冮
+H-FAE5 H-927E H-89D3 H-9FD2 H-8CF8 H-89D8 H-89D9 H-92AE H-945A H-8C5B
+4E5A 4E9A 4EEE 4F42 4FBD 5008 5090 5101 5182 51B2
+乚 亚 仮 佂 侽 倈 傐 儁 冂 冲
+H-C87B H-9DBA H-99E2 H-92A7 H-89D6 H-FA59 H-FD56 H-FA67 H-C6C3 H-FA7D
+4E5B 4EA0 4EF8 4F45 4FC8 502E 50A6 510D 5186 51B3
+乛 亠 仸 佅 俈 倮 傦 儍 円 决
+H-8BC6 H-C6C2 H-9267 H-95A2 H-98B2 H-92A8 H-9FA8 H-92A2 H-89DD H-FAA8
+4E6A 4EA3 4F03 4F4B 4FCC 5034 50BC 510E 5188 51B4
+乪 亣 伃 佋 俌 倴 傼 儎 冈 冴
+H-9C57 H-8C6F H-92A4 H-926E H-92AB H-9163 H-8C71 H-FA69 H-C8A2 H-9A68
+4E78
+乸
+H-9AFB
+4EB7
+亷
+H-FBF8
+4F17
+众
+H-8C73
+4F72
+佲
+H-96EA
+4FE4
+俤
+H-96DE
+503B
+倻
+H-8C40
+50CD
+働
+H-92A1
+512B
+儫
+H-9268
+5196
+冖
+H-C6C4
+51B5
+况
+H-FA47
+i - 12
+51B8 5432
+
+51B8 51E2 5220 5273 52B9 5327 5364 53A6 53C5 53F7
+冸 凢 删 剳 効 匧 卤 厦 叅 号
+H-FA7E H-FAA9 H-A0E7 H-9FAC H-FAB6 H-89E5 H-9AF1 H-FBF7 H-FAE3 H-8FAD
+51C3 51E4 5226 5279 52C5 532C 5367 53A8 53CC 53FE
+凃 凤 刦 剹 勅 匬 卧 厨 双 叾
+H-92BB H-8954 H-FAB1 H-89E3 H-FAB7 H-9F7D H-9EB7 H-FBFA H-90C8 H-FB59
+51C7 51ED 5227 528F 52CC 5332 5369 53A9 53D0 5413
+凇 凭 刧 劏 勌 匲 卩 厩 叐 吓
+H-FDB6 H-FAAB H-89A6 H-9BD3 H-9EDC H-A0A9 H-C6C8 H-89E7 H-92DA H-FAEF
+51C9 51F4 5234 5290 52D0 5333 536D 53AA 53D1 5414
+凉 凴 刴 劐 勐 匳 卭 厪 发 吔
+H-FAA2 H-FC7A H-9EFA H-89E4 H-FBC4 H-FAC4 H-FAD1 H-A07A H-8959 H-96EF
+51CF 51FC 523C 5294 52D1 5338 5374 53AB 53D2 5416
+减 凼 刼 劔 勑 匸 却 厫 叒 吖
+H-FAA3 H-89E0 H-FAB2 H-FAB5 H-9F71 H-C6C7 H-FAD2 H-FADC H-9CF5 H-9DEC
+51D1 51FE 524F 529A 52E0 533B 537D 53AE 53D8 541A
+凑 凾 剏 劚 勠 医 卽 厮 变 吚
+H-FAA4 H-9F4F H-87BC H-9FD5 H-FABA H-8957 H-9EBA H-FADD H-895A H-9DCA
+51D2 5202 5257 52A1 52E1 5342 537E 53B0 53D9 5421
+凒 刂 剗 务 勡 卂 卾 厰 叙 吡
+H-9BB4 H-C87D H-FAB4 H-8955 H-92C7 H-FAAA H-FAD4 H-89E9 H-FAE7 H-FD6D
+51D3 5205 5259 52A4 52F9 534E 5393 53B6 53DA 5423
+凓 刅 剙 劤 勹 华 厓 厶 叚 吣
+H-FAA6 H-89E1 H-92C4 H-92C5 H-C6C6 H-8958 H-FAD9 H-C6C9 H-9FA2 H-89EC
+51DB 520B 5260 52A8 5301 535D 53A0 53C1 53E0 542F
+凛 刋 剠 动 匁 卝 厠 叁 叠 启
+H-89DF H-FAB0 H-9F6F H-8956 H-9A4C H-8BE3 H-FADB H-FAE2 H-FAEA H-FB44
+51DF 521F 5268 52B5 5324 535F 53A2 53C2 53F6 5432
+凟 刟 剨 劵 匤 卟 厢 参 叶 吲
+H-FDDB H-9FCD H-8BB0 H-FAB3 H-8C68 H-8B61 H-9CE0 H-89EB H-FAED H-9DE2
+i - 13
+5434 56E2
+
+5434 5493 54CB 5518 555D 55B0 55EC 5622 5654 569E
+吴 咓 哋 唘 啝 喰 嗬 嘢 噔 嚞
+H-8C75 H-89F0 H-925D H-89F6 H-FAF7 H-9148 H-8F52 H-9DCF H-9A5F H-925E
+543F 5494 54CC 551E 5569 55B4 55F0 5623 565D 569F
+吿 咔 哌 唞 啩 喴 嗰 嘣 噝 嚟
+HD-543F H-9E47 H-8B51 H-9E57 H-9E4E H-92DE H-9DF5 H-98E1 H-9EF5 H-91C1
+544B 5497 54CD 5523 556B 55B9 55F1 5625 5661 56A1
+呋 咗 响 唣 啫 喹 嗱 嘥 噡 嚡
+H-9EC0 H-9DF7 H-92E0 H-89F7 H-94DC H-8B53 H-9DF0 H-9DE5 H-8FB7 H-8AC5
+544C 549C 54D0 5525 5571 55BA 55F5 562D 567A 56A4
+呌 咜 哐 唥 啱 喺 嗵 嘭 噺 嚤
+H-87C5 H-9FD3 H-89F4 H-8A41 H-95DA H-9DF6 H-99E7 H-9DC8 H-9AD2 H-97A3
+544D 549E 54DA 5528 5572 55BC 55FB 5637 567B 56AF
+呍 咞 哚 唨 啲 喼 嗻 嘷 噻 嚯
+H-9E56 H-9ACA H-9FD4 H-89F8 H-9DF8 H-9BDA H-8BBD H-FB4F H-9E6A H-8B6C
+5469 54A3 54E3 552B 5573 55C1 5605 5643 567C 56B1
+呩 咣 哣 唫 啳 嗁 嘅 噃 噼 嚱
+H-9F79 H-89F1 H-8A79 H-FAF1 H-9F6A H-9D7E H-9DEF H-9DEB H-9EE8 H-8D7E
+546A 54A4 54EF 553F 5579 55D7 5611 564D 5689 56B9
+呪 咤 哯 唿 啹 嗗 嘑 噍 嚉 嚹
+H-9AC7 H-FAF9 H-89F5 H-89FA H-8AB7 H-89FD H-9FB7 H-FB54 H-8BBF H-9C54
+546D 54B2 5502 5547 5586 55D8 561E 564F 568A 56BF
+呭 咲 唂 啇 喆 嗘 嘞 噏 嚊 嚿
+H-FAF4 H-8E5A H-97A7 H-FB42 H-FB46 H-99E4 H-9DD0 H-FB55 H-91C2 H-9DBD
+5485 54B4 550D 5549 5590 55DE 5620 5650 568B 56D6
+咅 咴 唍 啉 喐 嗞 嘠 噐 嚋 囖
+H-98A1 H-89F2 H-93BA H-FABF H-8A46 H-9E43 H-9FEB H-9AA2 H-9D62 H-9CC5
+548F 54B9 5513 5553 55A9 55EA 5621 5652 5692 56E2
+咏 咹 唓 啓 喩 嗪 嘡 噒 嚒 团
+H-FAF8 H-89F3 H-9E58 H-FBA3 H-FB47 H-9DE9 H-8DA9 H-8AD6 H-9260 H-895B
+i - 14
+56ED 59EB
+
+56ED 573F 577E 57B3 57EF 5847 589A 58E0 5911 599F
+园 圿 坾 垳 埯 塇 墚 壠 夑 妟
+H-FB5C H-9BD4 H-98A5 H-87C3 H-99A9 H-944E H-9EBD H-FB71 H-FE42 H-9BB6
+56EF 5742 577F 57B4 57FE 585C 58A7 58F0 591D 59AC
+囯 坂 坿 垴 埾 塜 墧 声 夝 妬
+H-FB5B H-FB64 H-92E8 H-996F H-FAE6 H-FB6E H-9EE6 H-895C H-8768 H-9AB9
+56F1 5743 5788 57BB 5803 585F 58AA 58F2 591F 59B0
+囱 坃 垈 垻 堃 塟 墪 売 够 妰
+H-FB57 H-FB76 H-9BBC H-96F1 H-FB69 H-99DF H-FB6F H-98F0 H-FB7B H-97B3
+56FB 5746 578A 57BE 5812 5869 58B0 58F3 5932 59B7
+囻 坆 垊 垾 堒 塩 墰 壳 夲 妷
+H-8765 H-FB60 H-96F3 H-8E41 H-97E5 H-98E3 H-8EE1 H-96F2 H-895F H-9F74
+56FD 5754 578D 57C4 5818 586C 58B5 58FB 5934 59B8
+国 坔 垍 埄 堘 塬 墵 壻 头 妸
+H-98C7 H-99E5 H-92E7 H-954A H-87C8 H-9254 H-9B7D H-FB74 H-8960 H-92F1
+5700 5757 5790 57C8 5822 5872 58B6 5902 5965 59BF
+圀 块 垐 埈 堢 塲 墶 夂 奥 妿
+H-FB5A H-9AC2 H-FC67 H-97E6 H-967D H-967B H-9C7E H-8BC1 H-9BCD H-8CFA
+5715 575B 579C 57D7 5826 5873 58BB 5904 5975 59C4
+圕 坛 垜 埗 堦 塳 墻 处 奵 姄
+H-9CEE H-91FB H-8B7D H-96F5 H-FB6C H-8AAF H-F9D9 H-895D H-9DD3 H-97DF
+571D 575F 57A1 57DD 583A 5892 58CB 5905 5989 59C9
+圝 坟 垡 埝 堺 墒 壋 夅 妉 姉
+H-92E2 H-A073 H-9BF4 H-92E6 H-99A2 H-8C77 H-92EA H-89DE H-984C H-FBA6
+5732 5767 57A7 57DE 5840 5896 58D0 5907 5994 59D9
+圲 坧 垧 埞 塀 墖 壐 备 妔 姙
+H-94A7 H-9F72 H-9EF7 H-9F42 H-9ABB H-87B0 H-8C78 H-895E H-9752 H-FBAB
+573D 577A 57AA 57E6 5844 5899 58DC 590A 599A 59EB
+圽 坺 垪 埦 塄 墙 壜 夊 妚 姫
+H-8CCC H-9FCC H-9EC1 H-FB67 H-9A65 H-8BAF H-FB72 H-C6CA H-95C3 H-9877
+i - 15
+59EF 5CC2
+
+59EF 5A24 5A63 5A88 5ACE 5B11 5B68 5B9E 5C05 5C5E
+姯 娤 婣 媈 嫎 嬑 孨 实 尅 属
+H-9854 H-FBA2 H-FBB5 H-FDEF H-9741 H-964B H-8BB4 H-8962 H-FBD4 H-98ED
+59F0 5A27 5A68 5A91 5ACF 5B15 5B6D 5B9F 5C13 5C78
+姰 娧 婨 媑 嫏 嬕 孭 実 尓 屸
+H-95C5 H-9C51 H-9271 H-FDC1 H-92F4 H-8CAC H-9DC0 H-8963 H-FBD6 H-8CE9
+59F8 5A2A 5A6B 5A96 5AD1 5B1F 5B74 5BAA 5C14 5C85
+姸 娪 婫 媖 嫑 嬟 孴 宪 尔 岅
+H-9D55 H-94E9 H-9365 H-FBBA H-8772 H-A0FA H-8E48 H-FC7D H-FBD8 H-FBDD
+59F9 5A2B 5A6E 5A99 5AD3 5B2B 5B76 5BB7 5C1C 5C99
+姹 娫 婮 媙 嫓 嬫 孶 宷 尜 岙
+H-FBB2 H-985C H-985B H-92EB H-FBBC H-9575 H-FBC5 H-8773 H-8B5D H-8DF2
+5A02 5A2C 5A71 5AA0 5AE4 5B41 5B7C 5BC3 5C1E 5C9A
+娂 娬 婱 媠 嫤 孁 孼 寃 尞 岚
+H-957E H-92F0 H-9850 H-FC73 H-9577 H-90DA H-FBC7 H-9F6B H-934C H-8964
+5A0B 5A3D 5A79 5AA1 5AF0 5B44 5B80 5BD5 5C20 5C9C
+娋 娽 婹 媡 嫰 孄 宀 寕 尠 岜
+H-9742 H-944C H-97BC H-97B7 H-9EE2 H-9367 H-C6CB H-FBCC H-9AE2 H-FDF2
+5A0D 5A45 5A7E 5AA4 5AF2 5B46 5B82 5BD7 5C23 5C9E
+娍 婅 婾 媤 嫲 孆 宂 寗 尣 岞
+H-94E6 H-916B H-92F3 H-876F H-8F78 H-FEA4 H-FA79 H-FEAE H-8BC9 H-934D
+5A12 5A54 5A81 5AAA 5AFA 5B4A 5B90 5BDB 5C49 5CBA
+娒 婔 媁 媪 嫺 孊 宐 寛 屉 岺
+H-92F5 H-8B78 H-9340 HD-5AAA H-F9DC H-90DF H-9E67 H-876D H-FBDB H-FBE7
+5A1A 5A59 5A82 5AAB 5AFE 5B4F 5B96 5BF3 5C4A 5CC1
+娚 婙 媂 媫 嫾 孏 宖 寳 届 峁
+H-8CC5 H-94E2 H-984D H-FBB4 H-9672 H-9354 H-8CD9 H-FBD1 H-9FC9 H-A0F2
+5A21 5A61 5A86 5AC3 5B0D 5B66 5B9D 5BFF 5C53 5CC2
+娡 婡 媆 嫃 嬍 学 宝 寿 屓 峂
+H-92FD H-984F H-9572 H-90A7 H-9EB5 H-8961 H-FBD2 H-FB75 H-9F44 H-9868
+i - 16
+5CD1 6119
+
+5CD1 5D2C 5D78 5DD7 5E7A 5EF8 5F4D 5FA7 604A 60D7
+峑 崬 嵸 巗 幺 廸 彍 徧 恊 惗
+H-9F58 H-9C75 H-8CEC H-FBE8 H-FBF4 H-9059 H-95B8 H-FC57 H-FACB H-8D71
+5CD5 5D2F 5D7B 5DDB 5E7F 5EF9 5F50 5FB1 6052 60DE
+峕 崯 嵻 巛 广 廹 彐 徱 恒 惞
+H-8CE6 H-9878 H-8CD4 H-C6CC H-C6CE H-FC40 H-C6D0 H-9B70 H-F9DA H-FD64
+5CE5 5D3E 5D85 5DF5 5E83 5EFB 5F51 5FBA 6075 60E3
+峥 崾 嶅 巵 広 廻 彑 徺 恵 惣
+H-8D73 H-8D60 H-9CEB H-9FCE H-FBC3 H-FC41 H-8BCA H-A051 H-937A H-99BA
+5CE9 5D46 5D8B 5E09 5E86 5EFC 5F5C 5FC2 6077 60E7
+峩 嵆 嶋 帉 庆 廼 彜 忂 恷 惧
+H-FBDE H-FBE5 H-FBE0 H-FBFC H-8965 H-FC43 H-987A H-8C7C H-A0E0 H-9AD0
+5CEF 5D48 5D8E 5E0B 5E92 5F0C 5F61 5FC4 607E 60E8
+峯 嵈 嶎 帋 庒 弌 彡 忄 恾 惨
+H-FBDF H-8D61 H-9F51 H-9AE4 H-8C7A H-9361 H-C6D1 H-8BCB H-936B H-9A61
+5CF5 5D56 5DA4 5E12 5E99 5F0D 5F63 5FDB 609E 60E9
+峵 嵖 嶤 帒 庙 弍 彣 忛 悞 惩
+H-8C48 H-8D62 H-8D65 H-9F75 H-8C7B H-FC46 H-FC51 H-936E H-FC6B H-A0E5
+5CFC 5D57 5DAB 5E2E 5EBD 5F0E 5F72 5FDF 60A4 60FD
+峼 嵗 嶫 帮 庽 弎 彲 忟 悤 惽
+H-8774 H-A0A1 H-9CF1 H-FBF1 H-8D6A H-9362 H-FC54 H-FCD5 H-A0DC H-A05B
+5D10 5D5B 5DB6 5E42 5ECD 5F25 5F7B 6023 60A6 6107
+崐 嵛 嶶 幂 廍 弥 彻 怣 悦 愇
+H-FBE3 H-9C40 H-FC58 H-8D69 H-9353 H-8D6B H-FAAF H-FCA9 HD-60A6 H-96AC
+5D15 5D70 5DB9 5E48 5ED0 5F3A 5F83 6031 60A7 610C
+崕 嵰 嶹 幈 廐 强 徃 怱 悧 愌
+H-8DA8 H-98AD H-8D66 H-934F H-9DFB H-FC4C H-8D6C H-FC61 H-9468 H-9740
+5D18 5D74 5DC1 5E5E 5EF4 5F3B 5FA4 603B 60B3 6119
+崘 嵴 巁 幞 廴 弻 徤 总 悳 愙
+H-FBE4 H-9EEA H-9654 H-934E H-FBFD H-8CFE H-FA61 H-8966 H-FC6D H-9EF1
+i - 17
+6120 6589
+
+6120 616F 61C0 6268 62D5 636C 63F8 6471 64E1 6535
+愠 慯 懀 扨 拕 捬 揸 摱 擡 攵
+HD-6120 H-A074 H-9374 H-9F5A H-FCB0 H-FCB2 H-FCB6 H-93A1 H-FCBF H-8BCE
+6122 617D 61CF 6282 62DF 6379 63FB 647C 64E5 654D
+愢 慽 懏 抂 拟 捹 揻 摼 擥 敍
+H-8C4D H-A071 H-8D77 H-9FF4 H-FA51 H-8AC1 H-8DA3 H-8AC6 H-FCC0 H-FCC5
+6130 6181 61D0 6285 62E5 637F 63FC 648D 64E7 655A
+愰 憁 懐 抅 拥 捿 揼 撍 擧 敚
+H-9F7E H-FC79 H-FCA5 H-9FBA H-8D7B H-9FB4 H-9E4B H-8A5B H-8EE6 HD-655A
+613D 6187 61D3 6290 6318 638B 63FE 6491 64EA 655F
+愽 憇 懓 抐 挘 掋 揾 撑 擪 敟
+H-8D72 H-FC7C H-FCA2 H-8D7A H-8D7C H-FCAC H-9E4D H-894D H-8AA4 H-FCCB
+6142 6195 61DA 629D 632E 63B9 6407 64AF 650A 656B
+慂 憕 懚 抝 挮 掹 搇 撯 攊 敫
+H-FC76 H-9C50 H-90C3 H-9E45 H-9ED6 H-9E4C H-8DA4 H-FED4 H-8943 H-93B3
+6150 6198 61E2 62A4 6331 63C1 6432 64B4 6511 656D
+慐 憘 懢 护 挱 揁 搲 撴 攑 敭
+H-96A9 H-9379 H-A079 H-93B0 H-93AC H-8FC5 H-8AFD H-8A78 H-93F3 H-FCCA
+6159 6199 622C 62A6 6335 63D1 6438 64B6 651E 6585
+慙 憙 戬 抦 挵 揑 搸 撶 攞 斅
+H-A06E H-9378 H-8D79 H-A075 H-9F5B H-93AD H-FCB5 H-93AB H-FCAB H-FCC9
+615C 619C 6237 62C1 6337 63DE 643A 64C0 651F 6586
+慜 憜 户 拁 挷 揞 携 擀 攟 斆
+H-FCAA H-A0DD H-8BFC H-87DD H-93A9 H-9DC3 H-FCC3 H-8DA7 H-9EA2 H-8DAC
+6160 61B7 6239 62C3 635D 63E2 643B 64D3 6530 6588
+慠 憷 戹 拃 捝 揢 搻 擓 攰 斈
+H-FBCD H-8D75 H-A076 H-9B46 HD-635D H-8DA2 H-93B2 H-9F45 H-9DC7 H-FBC6
+6164 61B9 624C 62C5 6364 63E6 645A 64DD 6534 6589
+慤 憹 扌 担 捤 揦 摚 擝 攴 斉
+H-FC74 H-8D76 H-8BCD H-FCAE H-A07C H-9D4A H-8DA5 H-8A56 H-C6D2 H-8967
+i - 18
+658B 691A
+
+658B 6623 6667 66B3 6716 676E 67F9 681E 6865 68C5
+斋 昣 晧 暳 朖 杮 柹 栞 桥 棅
+H-8C7E H-FE63 H-FCDF H-FB4D H-8DB3 H-8775 H-9250 H-93E8 H-896A H-96A5
+65B5 6630 666B 66B6 6719 6782 67FE 6822 6884 68CA
+斵 昰 晫 暶 朙 枂 柾 栢 梄 棊
+H-FCCD H-93D5 H-93D3 H-9CBF H-8C52 H-87BA H-8968 H-FCF8 H-8DB9 H-FEE0
+65BE 6644 6673 66BF 671E 678F 6800 6836 6888 6900
+斾 晄 晳 暿 朞 枏 栀 栶 梈 椀
+H-9CF3 H-FCDA H-FCE1 H-9B72 H-9AE8 H-93E5 H-8DB6 H-9CE3 H-917E H-FD48
+65D1 6648 667D 66CD 6725 67A0 6801 6837 6898 6901
+旑 晈 晽 曍 朥 枠 栁 样 梘 椁
+H-FCD0 H-9B71 H-8E76 H-FB50 H-8EDC H-9A59 H-FCFB H-FDA9 H-93F4 H-FD47
+65D4 664B 6685 66CE 6736 67A4 6802 683E 68A6 6902
+旔 晋 暅 曎 朶 枤 栂 栾 梦 椂
+H-95BB H-FCDD H-FC62 H-93BE H-9CF9 H-8DB5 H-A07D H-FC44 H-FB7C H-FEF2
+65E0 664D 668E 66E7 6744 67AC 6803 6847 68B6 6903
+无 晍 暎 曧 杄 枬 栃 桇 梶 椃
+H-FCD3 H-8764 H-93D1 H-8CDB H-FA50 H-FD4D H-98FC H-9640 H-93E7 H-FE6A
+65E3 6653 6692 66F1 6761 67B1 6804 684A 68B9 6909
+旣 晓 暒 曱 条 枱 栄 桊 梹 椉
+H-FCD4 H-8DAF H-8DB1 H-9DF1 H-98E7 H-FD5E H-8969 H-8DB8 H-97EF H-8DBD
+65FF 6657 669A 6702 6762 67BF 680D 6855 68BD 6918
+旿 晗 暚 朂 杢 枿 栍 桕 梽 椘
+H-8DAE H-FAF2 H-9859 H-FCEB H-FCF3 H-8F7D H-FE4F H-9B4A H-FE4A H-9BA1
+6618 6660 66A4 670C 6767 67D6 6810 6856 68C1 6919
+昘 晠 暤 朌 杧 柖 栐 桖 棁 椙
+H-FCD7 H-87B5 H-FB52 H-A0BB H-FCF2 H-9547 H-9256 H-8FB9 HD-68C1 H-8CA2
+661E 6663 66AD 670E 676B 67D7 681B 685D 68C3 691A
+昞 晣 暭 朎 杫 柗 栛 桝 棃 椚
+H-93DB H-93D8 H-FB53 H-9B7E H-8CCA H-FCF6 H-FAC9 H-FCFE H-FD45 H-9AB7
+i - 19
+691B 6CCB
+
+691B 6972 69D1 6A1A 6A52 6A8F 6AC9 6B6F 6C31 6C6E
+椛 楲 槑 樚 橒 檏 櫉 歯 氱 汮
+H-8EFC H-93B4 H-92CF H-97F9 H-93EF H-9670 H-93F0 H-8BF7 H-9FD0 H-FB62
+692C 6973 69D5 6A1C 6A53 6A99 6ACA 6B74 6C32 6C75
+椬 楳 槕 樜 橓 檙 櫊 歴 氲 汵
+H-9FA1 H-FD44 H-9CF4 H-9558 H-8EEA H-8DCB H-9FB6 H-FD66 HD-6C32 H-8DD4
+6936 6980 69D6 6A29 6A57 6A9D 6AD4 6B7A 6C35 6C79
+椶 榀 槖 権 橗 檝 櫔 歺 氵 汹
+H-FD51 H-9FA7 H-8DC4 H-87B6 H-8F5B H-FD5C H-8DCF H-8BCF H-8BD0 H-FD78
+693E 6985 69E1 6A2B 6A63 6AA7 6AD8 6B81 6C37 6C7F
+椾 榅 槡 樫 橣 檧 櫘 殁 氷 汿
+H-FAAD H-8DC2 H-FD41 H-985E H-8C5E H-8F65 H-9763 H-8DD1 H-FD72 H-8EE3
+6943 698A 69E9 6A2C 6A65 6AAB 6AF6 6BC1 6C39 6C9F
+楃 榊 槩 樬 橥 檫 櫶 毁 氹 沟
+H-8DBE H-99B6 H-9B4C H-FE7B H-8DC6 H-8DCD H-8DD0 H-8DD2 H-9CAE H-9076
+6946 6998 69F9 6A2D 6A71 6AB1 6B05 6BDC 6C3A 6CA2
+楆 榘 槹 樭 橱 檱 欅 毜 氺 沢
+H-89A4 H-FD52 H-FD57 H-94CD H-8DC8 H-9DA8 H-93F1 H-FD71 H-8BD1 H-98C6
+6955 699F 69FA 6A33 6A74 6AB2 6B1D 6BE1 6C3D 6CAA
+楕 榟 槺 樳 橴 檲 欝 毡 氽 沪
+H-9AD9 H-8DC1 H-FCEF H-93EE H-8DC7 H-94F9 H-FD62 H-FD6F H-8ADB H-8DD5
+6961 69A2 6A03 6A43 6A7A 6AB5 6B35 6BEA 6C49 6CAF
+楡 榢 樃 橃 橺 檵 欵 毪 汉 沯
+H-FD4E H-8E46 H-9CDE H-8CA3 H-93F7 H-8DCE H-FD65 H-8DD3 H-FAE4 H-97D1
+6964 69B2 6A0B 6A45 6A82 6ABE 6B52 6BFA 6C58 6CB2
+楤 榲 樋 橅 檂 檾 歒 毺 汘 沲
+H-8DC0 H-A0D1 H-FD42 H-FD5A H-8DC9 H-93EA H-9FDB H-9FE7 H-95CE H-9EB6
+6967 69C0 6A0C 6A4C 6A8A 6AC8 6B57 6C1C 6C5A 6CCB
+楧 槀 樌 橌 檊 櫈 歗 氜 汚 泋
+H-97F0 H-9FCA H-986C H-93F5 H-FBF2 H-FD5F H-93F8 H-90BD H-FD76 H-FAC7
+i - 20
+6CCE 70A3
+
+6CCE 6D57 6DA5 6E29 6E9A 6EE9 6F44 6FBB 704B 7077
+泎 浗 涥 温 溚 滩 潄 澻 灋 灷
+H-A042 H-97CE H-9444 H-8DE0 H-89C1 H-8DE8 H-FDCC H-95CF H-FDE0 H-8C47
+6CDF 6D5B 6DB1 6E2A 6EB5 6EFA 6F56 6FBE 704D 7079
+泟 浛 涱 渪 溵 滺 潖 澾 灍 灹
+H-9873 H-FAF3 H-8DDD H-FEF9 H-FD68 H-FDC7 H-9DA7 H-8DEE H-8C67 H-FAF0
+6CEA 6D5C 6DB9 6E4F 6EB8 6F04 6F5C 6FD3 7050 707E
+泪 浜 涹 湏 溸 漄 潜 濓 灐 灾
+H-9FFC H-FDAE H-A0D6 H-FDC0 H-9CB7 H-FDB0 H-FDCD H-FDD4 H-8DF6 H-FDE1
+6CFF 6D71 6DFE 6E50 6EBB 6F0B 6F74 6FD9 7054 707F
+泿 浱 淾 湐 溻 漋 潴 濙 灔 灿
+H-8CA5 H-FBAF H-8C41 H-FCF9 H-8DE3 H-9445 H-FDCF H-96EC H-8DF7 H-8DF9
+6D02 6D72 6E02 6E57 6ED9 6F0C 6F79 6FDA 705C 7081
+洂 浲 渂 湗 滙 漌 潹 濚 灜 炁
+H-8DD7 H-92B7 H-97D5 H-8CDD H-FAC0 H-97D6 H-95D2 H-96EB H-8FFA H-FDE3
+6D05 6D81 6E04 6E59 6EDA 6F16 6F81 6FF6 7067 7089
+洅 涁 渄 湙 滚 漖 澁 濶 灧 炉
+H-92FB H-8DDA H-944A H-FB7E H-8DE5 H-FCC6 H-8DED H-90B6 H-97D0 H-8DFA
+6D06
+洆
+H-8DD8
+6D8F
+涏
+H-9C5A
+6E0A
+渊
+H-944D
+6E76
+湶
+H-92B3
+6EDB
+滛
+H-FA64
+6F17
+漗
+H-9844
+6F8A
+澊
+H-FCBA
+6FF8
+濸
+H-FDC3
+706C
+灬
+H-8BD2
+708B
+炋
+H-FB63
+6D24 6D96 6E0F 6E7C 6EDD 6F24 6F9D 7003 706E 708F
+洤 涖 渏 湼 滝 漤 澝 瀃 灮 炏
+H-944F H-FDAD H-97CB H-FDAF H-8947 H-8DE9 H-FDC5 H-98AB H-87DE H-90A6
+6D26 6D9A 6E15 6E86 6EE2 6F34 6F9F 701E 706F 70A0
+洦 涚 渕 溆 滢 漴 澟 瀞 灯 炠
+H-8DD9 HD-6D9A H-8DDE H-8DE1 H-8DE4 H-8DEA H-FDD2 H-96EE H-8DF8 H-9970
+6D4E 6DA4 6E18 6E8B 6EE8 6F3D 6FB5 702C 7075 70A3
+济 涤 渘 溋 滨 漽 澵 瀬 灵 炣
+H-896B H-8DDC H-8DDF H-95D3 H-8DE7 H-FE50 H-9CDC H-8DF4 H-90D9 H-91EB
+i - 21
+70A5 7371
+
+70A5 70D0 712B 714F 717A 71A3 7200 722E 7294 732A
+炥 烐 焫 煏 煺 熣 爀 爮 犔 猪
+H-9770 H-91E6 H-FDED H-FDF4 H-9FE4 H-9EAF H-8CA7 H-FE47 H-9457 H-9975
+70A6 70D5 712C 7151 717C 71AD 7209 7240 729F 732B
+炦 烕 焬 煑 煼 熭 爉 牀 犟 猫
+H-986F H-FDE5 H-FDF7 H-9BF5 H-8FDD H-9CCC H-9BCA H-FE48 H-9966 H-FE53
+70A7 70D6 7133 7157 717E 71B4 720E 7250 72AD 732C
+炧 烖 焳 煗 煾 熴 爎 牐 犭 猬
+H-FDE2 H-FDE6 H-9870 H-8CEE H-91E9 H-FDEA H-FDFE H-9455 H-8BD5 H-A065
+70B9 70DF 7134 716B 7188 71B7 720F 7255 72B2 732E
+点 烟 焴 煫 熈 熷 爏 牕 犲 献
+H-98F2 H-FDE7 H-96F6 H-977E H-98E0 H-8DF1 H-92DC H-FE4B H-A069 H-FE59
+70BB 70F1 7135 7171 718C 71BA 7215 7257 72CD 7338
+炻 烱 焵 煱 熌 熺 爕 牗 狍 猸
+H-9AFC H-9454 H-8EA9 H-9BD5 H-92CA H-FDFB H-FE41 H-FE4C H-98B4 H-98B7
+70BC 70F5 713B 7173 718E 71D1 7216 725C 72E2 7339
+炼 烵 焻 煳 熎 燑 爖 牜 狢 猹
+H-896C H-99B8 H-9451 H-9AC3 H-9857 H-8E53 H-91CC H-8DBF H-A049 H-98B8
+70BD 70FE 713E 7174 7191 71DD 7217 7266 7302 7341
+炽 烾 焾 煴 熑 燝 爗 牦 猂 獁
+H-FDFD H-97E9 H-8E43 HD-7174 H-8C51 H-FACF H-91E2 H-9E78 H-A04C H-98BA
+70C0 7105 7140 7175 7196 71EB 7224 7282 7304 7348
+烀 焅 煀 煵 熖 燫 爤 犂 猄 獈
+H-995E H-9346 H-8B5A H-97C8 H-FDEB H-96F9 H-FE44 H-FE51 H-9E65 H-98BB
+70C4 711D 7145 7176 7198 71F5 7225 7287 7310 734F
+烄 焝 煅 煶 熘 燵 爥 犇 猐 獏
+H-95BD H-9863 H-FDEE H-A0DB H-9B49 H-98BF H-875F H-9456 H-98B5 H-9FBC
+70CC 7129 714A 7177 71A2 71F6 722B 728F 7328 7371
+烌 焩 煊 煷 熢 燶 爫 犏 猨 獱
+H-FDE4 H-95BC H-FDF0 H-91D0 H-9D76 H-9E49 H-8BD3 H-9D61 H-FE58 H-A04A
+i - 22
+7374 759E
+
+7374 73C9 73F3 7419 7447 7468 749B 74E7 7535 7567
+獴 珉 珳 琙 瑇 瑨 璛 瓧 电 畧
+H-9EC7 H-FE5E H-9764 H-98C8 H-FE73 H-947A H-94B8 H-A0D9 H-896D H-FEB3
+738C 73CE 73F7 741C 7448 746B 749D 74F0 753B 756D
+玌 珎 珷 琜 瑈 瑫 璝 瓰 画 畭
+H-8CA9 H-FBD7 H-FE68 H-90EF H-976E H-95FB H-8779 H-A0BF H-9C7B H-98D3
+738F 73CF 73F9 741E 7449 746C 74A4 74F1 7542 756E
+玏 珏 珹 琞 瑉 瑬 璤 瓱 畂 畮
+H-98AE H-FE5A H-964E H-98C9 H-FE5F H-FE77 H-FC71 H-A04D H-98D2 H-FEB4
+7398 73D0 73FB 741F 744C 7474 74B4 74F2 7546 7572
+玘 珐 珻 琟 瑌 瑴 璴 瓲 畆 畲
+H-92D6 H-94C5 H-9765 H-98CA H-87B8 H-FE79 H-975E H-A0B8 H-9FA9 H-98D4
+739C 73D5 7402 7437 7453 7476 74B9 74F8 754A 757A
+玜 珕 琂 琷 瑓 瑶 璹 瓸 畊 畺
+H-FAE1 H-FACA H-8C5A H-946D H-FDBD H-FE75 H-8CAD H-A0CE H-FEB2 H-9FB9
+739E 73E1 7411 7438 7456 747A 74C6 7505 754D 7583
+玞 珡 琑 琸 瑖 瑺 瓆 甅 畍 疃
+H-91D4 H-98C1 H-89A1 H-94B7 H-92D5 H-945D H-87C1 H-A0B7 H-FEB1 H-9471
+73A7 73E2 7412 7439 745D 7482 74C8 750E 7551 758D
+玧 珢 琒 琹 瑝 璂 瓈 甎 畑 疍
+H-FADE H-975C H-95FA H-FE6C H-FEB9 H-FE7C H-FEA7 H-FEA9 H-97D9 H-98D5
+73AA 73E4 7414 743C 7460 748C 74CC 7519 7553 758E
+玪 珤 琔 琼 瑠 璌 瓌 甙 畓 疎
+H-FE5B H-FE74 H-92D4 H-946B H-FE71 H-9344 H-946A H-89C3 H-A0C4 H-FEB8
+73BA 73E6 7415 7443 7461 748D 74D0 751E 7555 7592
+玺 珦 琕 瑃 瑡 璍 瓐 甞 畕 疒
+H-8C53 H-9773 H-FE69 H-92FC H-8778 H-8EA6 H-93E3 H-FEAB H-9476 H-C6D4
+73C4 73EF 7417 7445 7465 7499 74D3 7534 7560 759E
+珄 珯 琗 瑅 瑥 璙 瓓 甴 畠 疞
+H-87BF H-FA46 H-FB45 H-95EB H-FBBB H-92D3 H-98CF H-9DF4 H-9978 H-FEBA
+i - 23
+75B1 7959
+
+75B1 764D 7676 770E 7777 77C5 7839 7866 78C7 7906
+疱 癍 癶 眎 睷 矅 砹 硦 磇 礆
+H-9E5C H-98DA H-FEC1 H-94B0 H-8FC7 H-FCE8 H-98F5 H-98F8 H-FEE2 H-A0A8
+75B4 764E 767A 770F 7778 77CB 783C 787A 78D2 792E
+疴 癎 発 眏 睸 矋 砼 硺 磒 礮
+H-FEBB H-9DDF H-98DE H-94B1 H-94AE H-98EF H-FA4F H-9EE4 H-94C4 H-FEE5
+75C3 764F 7690 771E 777A 77DD 783D 7881 78D3 7932
+痃 癏 皐 眞 睺 矝 砽 碁 磓 礲
+H-A044 H-FEBF H-FEC3 H-FED1 H-8A4F H-8C6E H-96E2 H-F9D6 H-FEE3 H-98FD
+75C8 7651 76A1 7724 777B 77E6 7842 7888 78D7 7933
+痈 癑 皡 眤 睻 矦 硂 碈 磗 礳
+H-98D7 H-FEBE H-FEC8 H-A0C1 H-94B2 H-FAD8 H-9450 H-94C3 H-FEE7 H-98FB
+75DC 7654 76A5 7726 7793 77F4 7844 788D 78D8 7934
+痜 癔 皥 眦 瞓 矴 硄 碍 磘 礴
+H-98D8 H-9EEB H-FEC9 H-FED2 H-8FD4 H-FEDC H-96A2 H-94C2 H-9FFB H-FEE8
+7602 7666 76B7 772B 7798 77FE 7847 78AF 78E4 7936
+瘂 癦 皷 眫 瞘 矾 硇 碯 磤 礶
+H-FEBC H-9E59 H-FECA H-A0CD H-98EA H-A0AE H-98F6 H-FEE1 H-8C59 H-8EBF
+7607 7667 76CC 7740 77AF 7808 784B 78B1 78EE 793B
+瘇 癧 盌 着 瞯 砈 硋 碱 磮 礻
+H-9FFE H-A05C H-FECB H-FED3 H-FED8 H-9D4C H-96E5 H-FEE9 H-93C9 H-8BD8
+762C 766F 76D6 7743 77B9 7818 7851 78B6 78F0 793C
+瘬 癯 盖 睃 瞹 砘 硑 碶 磰 礼
+H-FEBD H-FEC0 H-9FC2 H-98E5 H-9DE0 H-98F1 H-98F7 H-96E4 H-94E8 H-FEF7
+763B 7673 76D9 7758 77BE 781C 7853 78B8 78F1 7958
+瘻 癳 盙 睘 瞾 砜 硓 碸 磱 祘
+H-9DDD H-9477 H-8C6B H-FED6 H-98EE H-98F3 H-A046 H-89AC H-FB56 H-8F68
+7640 7674 770C 7772 77C3 781E 7854 78B9 78F5 7959
+癀 癴 県 睲 矃 砞 硔 碹 磵 祙
+H-9EE1 H-98DC H-98C4 H-91E4 H-95C4 H-94C1 H-96E3 H-96DB H-90C5 H-94C6
+i - 24
+7962 7C86
+
+7962 799F 79F1 7A43 7ABB 7ADC 7B14 7B6F 7BEC 7C56
+祢 禟 秱 穃 窻 竜 笔 筯 篬 籖
+H-9DEA H-91D7 H-94D5 H-91E5 H-8E4F H-91CA H-9FE5 H-8E62 H-8CB2 H-9F40
+7971 79A5 79F4 7A45 7ABC 7ADD 7B1F 7B7B 7BFA 7C5D
+祱 禥 秴 穅 窼 竝 笟 筻 篺 籝
+H-FC69 H-94CC H-94D0 H-9C6A H-9949 H-8E57 H-9F56 H-9952 H-8E6E H-94ED
+797E 79A9 7A06 7A49 7AC2 7AE2 7B27 7B92 7BFC 7C6D
+祾 禩 稆 穉 竂 竢 笧 箒 篼 籭
+H-9CDA H-FEF8 H-9944 H-8E49 H-8E51 H-94E1 H-954F H-8E68 H-9F64 H-94EE
+7980 79C4 7A0E 7A65 7AC3 7AE7 7B29 7BA2 7C12 7C70
+禀 秄 税 穥 竃 竧 笩 箢 簒 籰
+H-FEF3 H-97A8 HD-7A0E H-8E4C H-8E52 H-9047 H-8E5E H-8E61 H-9953 H-9FBD
+7983 79C6 7A2A 7A72 7AC8 7AE9 7B39 7BA3 7C15 7C74
+禃 秆 稪 穲 竈 竩 笹 箣 簕 籴
+H-9C72 H-FEFC H-8C63 H-87C9 H-9AB2 H-8FD8 H-996A H-9F59 H-FAB8 H-8E7B
+7986 79CA 7A2C 7A7D 7AC9 7AEA 7B42 7BAE 7C1B 7C7B
+禆 秊 稬 穽 竉 竪 筂 箮 簛 类
+H-FEF0 H-8CDE H-87BB H-8E4D H-89A5 H-8E58 H-9C64 H-87D0 H-9954 H-9957
+7987 79CC 7A2D 7A83 7ACF 7AFC 7B43 7BB2 7C35 7C7C
+禇 秌 稭 窃 竏 竼 筃 箲 簵 籼
+H-89C9 H-FDBF H-A0B3 H-9A73 H-994C H-87A3 H-9CD9 H-8BB3 H-8E70 H-94F7
+7991 79D0 7A32 7A91 7AD3 7AFE 7B55 7BC5 7C42 7C7E
+禑 秐 稲 窑 竓 竾 筕 篅 籂 籾
+H-9941 H-87B3 H-87B4 H-9947 H-9FF8 H-94EB H-8E5D H-87B9 H-9F61 H-9F5F
+7999 79D4 7A3A 7A93 7ADA 7B0B 7B62 7BCF 7C44 7C83
+禙 秔 稺 窓 竚 笋 筢 篏 籄 粃
+H-9942 H-FEFE H-94CF H-8CB1 H-8E56 H-8E5C H-9950 H-9F5D H-8E72 H-8E73
+799D 79E2 7A3E 7AB0 7ADB 7B0C 7B6C 7BD0 7C51 7C86
+禝 秢 稾 窰 竛 笌 筬 篐 籑 粆
+H-FEF5 H-96D1 H-9FFA H-8E50 H-994D H-9553 H-9951 H-8E66 H-A06B H-9F62
+i - 25
+7C8E 80A7
+
+7C8E 7CC9 7D25 7DAB 7DF5 7E6E 7EDF 7F71 7FFA 803C
+粎 糉 紥 綫 緵 繮 统 罱 翺 耼
+H-94F6 H-8E78 H-9ED7 H-8EA8 H-8EB0 H-8EB7 H-8973 H-A0E2 H-8ECB H-8ED5
+7C9C 7CCD 7D4D 7DB3 7DFC 7E7F 7F06 7F78 8002 8054
+粜 糍 絍 綳 緼 繿 缆 罸 耂 联
+H-9958 H-94F3 H-A0B6 H-8EAA HD-7DFC H-9DA6 H-8974 H-9FE9 H-8BDF H-996D
+7CA6 7CD3 7D5A 7DCD 7DFD 7E8E 7F37 7F8F 8008 805B
+粦 糓 絚 緍 緽 纎 缷 羏 耈 聛
+H-8E75 H-98AF H-9E42 H-89A3 H-9963 H-9EB0 H-8975 H-FDA8 H-8ECE H-A0BE
+7CA7 7CDA 7D5D 7DCF 7DFE 7E92 7F40 7F93 801D 8061
+粧 糚 絝 総 緾 纒 罀 羓 耝 聡
+H-F9DB H-A0B2 H-8EA4 H-9960 H-97AA H-8EB8 H-8EBC H-8AE7 H-8ECF H-8ED6
+7CAC 7CE6 7D89 7DD0 7E07 7E9F 7F41 7F97 8020 8062
+粬 糦 綉 緐 縇 纟 罁 羗 耠 聢
+H-9072 H-8E7A H-8EA7 H-9962 H-94FB H-9D70 H-8EBD H-8EC2 H-9968 H-A0BC
+7CAE 7CED 7D8B 7DD3 7E27 7EA4 7F47 7FA3 8025 8063
+粮 糭 綋 緓 縧 纤 罇 羣 耥 聣
+H-94F8 H-995C H-8C76 H-94FC H-8EBB H-896E H-8EBE H-8EC4 H-9969 H-A0B5
+7CB8 7CF3 7D95 7DD4 7E5B 7EAC 7F49 7FAE 802E 8066
+粸 糳 綕 緔 繛 纬 罉 羮 耮 聦
+H-995A H-8E7C H-8767 H-9961 H-8CDC H-896F H-9DD1 H-9964 H-996B H-A0B4
+7CC2 7CF5 7D97 7DDC 7E65 7EBA 7F4E 7FB4 802F 8080
+糂 糵 綗 緜 繥 纺 罎 羴 耯 肀
+H-A0B0 H-8E7D H-9542 H-94FA H-9876 H-8970 H-94FD H-9965 H-8ED1 H-8BE0
+7CC3 7CF9 7DA4 7DE4 7E67 7EC7 7F52 7FDD 8031 809F
+糃 糹 綤 緤 繧 织 罒 翝 耱 肟
+H-8CB3 H-8BD9 H-987D H-8EAE H-8EA1 H-8971 H-8BD7 H-954E H-996C H-89B5
+7CC7 7CFC 7DA8 7DE5 7E6C 7ECF 7F53 7FE7 803B 80A7
+糇 糼 綨 緥 繬 经 罓 翧 耻 肧
+H-8E79 H-89A2 H-9755 H-8EB2 H-8CB4 H-8972 H-8BDA H-98B3 H-8ED4 H-8EDD
+i - 26
+80B6 843E
+
+80B6 8109 8134 817D 81F6 8276 82CF 830B 8385 8414
+肶 脉 脴 腽 臶 艶 苏 茋 莅 萔
+H-9E5D H-9566 H-8B5F HD-817D H-98C2 H-99AF H-8977 H-9E68 H-8F53 H-9665
+80B7 810C 8137 8184 8218 8279 82D0 8318 8391 8416
+肷 脌 脷 膄 舘 艹 苐 茘 莑 萖
+H-9971 H-9974 H-9563 H-99A4 H-8EE8 H-994A H-8F41 H-8F4A H-8F6F H-FA6C
+80BC 810E 8142 8193 821A 827A 82D8 831A 839C 8418
+肼 脎 腂 膓 舚 艺 苘 茚 莜 萘
+H-89AE H-9976 H-9567 H-99A6 H-A0BA H-8976 H-99B1 H-8F42 H-8E63 H-9DE7
+80BD 8112 8148 81A5 8226 827B 82E2 831D 83AC 841C
+肽 脒 腈 膥 舦 艻 苢 茝 莬 萜
+H-9DE8 H-9977 H-9DE3 H-99A8 H-FD77 H-8F48 H-8F49 H-8F51 H-8F56 H-9E62
+80C6 8114 8156 81AA 8229 8287 82EE 833D 83B9 8420
+胆 脔 腖 膪 舩 芇 苮 茽 莹 萠
+H-9565 H-9979 H-997C H-8ABE H-8EEE H-FBEE H-FA4D H-9846 H-FE76 H-96CC
+80E9 8117 8159 81B6 822D 82A6 82F7 8357 83BE 8421
+胩 脗 腙 膶 舭 芦 苷 荗 莾 萡
+H-9972 H-9DDA H-997D H-9E61 H-9EBF H-99AE H-9DE4 H-99B4 H-9FC6 H-8E67
+80EC 811A 815A 81C1 823E 82AA 82F8 8362 83CD 8424
+胬 脚 腚 臁 舾 芪 苸 荢 菍 萤
+H-8B5C H-8EE0 H-997E H-99AA H-89C2 H-8EFB H-8CB5 H-8EF5 H-FAAC H-FC75
+80F6 812A 816C 81C8 8254 82BF 82FC 8363 83D3 8426
+胶 脪 腬 臈 艔 芿 苼 荣 菓 萦
+H-89B1 H-935C H-8CFB H-A0C8 H-99AC H-8CD0 H-FBE9 H-FD55 H-8F58 H-987E
+8103 8131 816D 81E4 8262 82C4 82FD 8366 83ED 842E
+脃 脱 腭 臤 艢 苄 苽 荦 菭 萮
+H-A0C0 HD-8131 H-8B5B H-99AB H-956B H-8B52 H-9B54 H-9CCD H-9848 H-FDB9
+8107 8132 817C 81EF 8265 82CA 82FF 836F 8405 843E
+脇 脲 腼 臯 艥 苊 苿 药 萅 萾
+H-8EDF H-9DE6 H-99A3 H-FEC4 H-956C H-99B0 H-99B2 H-8978 H-99B7 H-97FC
+i - 27
+8448 8865
+
+8448 847F 84BE 8505 855F 85F4 862F 86EF 87B1 8827
+葈 葿 蒾 蔅 蕟 藴 蘯 蛯 螱 蠧
+H-98F9 H-91C7 H-99BD H-FBA5 H-8CBD HD-85F4 H-A050 H-99CB H-8FB4 H-9CB2
+844A 8480 84DA 8510 856F 85FC 8642 8715 87C1 882D
+葊 蒀 蓚 蔐 蕯 藼 虂 蜕 蟁 蠭
+H-8F66 H-955F H-A0CF H-99C0 H-99C4 H-96C7 H-90D3 HD-8715 H-A0D7 H-957C
+8453 8484 84DE 8533 8570 8602 8645 8770 87CE 8842
+葓 蒄 蓞 蔳 蕰 蘂 虅 蝰 蟎 衂
+H-956E H-87AB H-8F6D H-FDB4 H-99C5 H-8FA5 H-9556 H-9DD5 H-A0C7 H-9FC7
+8455 8488 84E1 8534 8573 860D 866C 8771 87D6 8845
+葕 蒈 蓡 蔴 蕳 蘍 虬 蝱 蟖 衅
+H-9245 H-99BB H-99BE H-8F77 H-8F7B H-FABB H-8FB8 H-8FB0 H-A043 H-8FBB
+8458 8492 84E2 8538 8593 860F 8672 877D 87DA 8846
+葘 蒒 蓢 蔸 薓 蘏 虲 蝽 蟚 衆
+H-8F60 H-8E6D H-8EF4 H-99C1 H-8776 H-8C61 H-99C8 H-FA7A H-8FB5 H-8FBC
+845C 8493 84E4 8542 8597 8610 867E 8786 87EE 884F
+葜 蒓 蓤 蕂 薗 蘐 虾 螆 蟮 衏
+H-9ED1 H-8F71 H-8F72 H-FAB9 H-8CB6 H-9570 H-8FAF H-9E5F H-8FB2 H-8FEC
+8462 8496 84E5 854B 85C1 8613 8692 878B 87F5 885E
+葢 蒖 蓥 蕋 藁 蘓 蚒 螋 蟵 衞
+H-FECD H-94CB H-95E4 H-8F40 H-8FA3 H-87AF H-99C9 H-99CD H-A061 H-8FC0
+8464 84A3 84F8 854C 85D6 8614 86A0 878C 8804 8860
+葤 蒣 蓸 蕌 藖 蘔 蚠 螌 蠄 衠
+H-99B9 H-95B1 H-99BF H-FA44 H-8CCE H-9368 H-9579 H-A0C9 H-9E5E H-936A
+8471 84AD 8503 8552 85E0 8616 86AD 87A5 880F 8864
+葱 蒭 蔃 蕒 藠 蘖 蚭 螥 蠏 衤
+H-8F62 H-9AF2 H-9242 H-99C2 H-99C6 H-8F7E H-9F49 H-9ADB H-8FB6 H-8BE4
+8472 84BD 8504 855A 85EE 8628 86B2 87A9 8818 8865
+葲 蒽 蔄 蕚 藮 蘨 蚲 螩 蠘 补
+H-974C H-96C3 H-87D7 H-8F5C H-96CD H-8FAA H-99CA H-A0C6 H-9FE8 H-9C7C
+i - 28
+886E 8DA9
+
+886E 88B5 8943 8991 8A29 8AA9 8B2D 8B8F 8CCD 8D0C
+衮 袵 襃 覑 訩 誩 謭 讏 賍 贌
+H-95A1 H-8FC4 H-9CC2 H-99D4 H-99D6 H-8FE5 H-A04B H-87CB H-9E48 H-A048
+8884 88BF 8947 8994 8A2B 8AAC 8B3F 8B90 8CD4 8D11
+袄 袿 襇 覔 訫 説 謿 讐 賔 贑
+H-FEEC H-95A4 H-99D3 H-A0B9 H-95E5 HD-8AAC H-8FE2 H-8FE7 H-99DB H-8FFB
+8887 88C5 894D 89A5 8A38 8AAF 8B43 8B9B 8CD6 8D12
+袇 装 襍 覥 訸 誯 譃 讛 賖 贒
+H-95A3 H-8FC6 H-95A7 H-9B58 H-99D7 H-8FE9 H-A0CC H-8FE8 H-8FF3 H-8FF6
+888F 88C7 8954 89A7 8A3D 8AB4 8B4C 8BA0 8CDB 8D18
+袏 裇 襔 覧 訽 誴 譌 讠 賛 贘
+H-8C45 H-9E60 H-95A9 H-8FCD H-95B5 H-99D9 H-8FE3 H-8BE7 H-8FF9 H-9DDC
+8890 88CF 8965 89A9 8A49 8ACC 8B4D 8BBE 8CE9 8D1C
+袐 裏 襥 覩 詉 諌 譍 设 賩 贜
+H-8CB8 H-F9D8 H-95A6 H-A0D4 H-A0CA H-8CF7 H-8FE4 H-897A H-95C1 H-99DD
+889C 88E6 8977 89BC 8A67 8ADA 8B5E 8BE2 8CEB 8D1D
+袜 裦 襷 覼 詧 諚 譞 询 賫 贝
+H-8FC1 H-95A5 H-9C5D H-8FCE H-9FFD H-927C H-9BC4 H-897B H-A04E H-8BE8
+889D 88F5 8980 89C1 8A7E 8AEA 8B62 8C51 8CF2 8D7A
+袝 裵 覀 见 詾 諪 譢 豑 賲 赺
+H-87B7 H-9CB3 H-98E2 H-8BE5 H-A058 H-9C45 H-9BFC H-99DA H-99DC H-92C1
+88A0 88FF 8987 89C6 8A90 8AF9 8B69 8C9B 8CF7 8D82
+袠 裿 覇 视 誐 諹 譩 貛 賷 趂
+H-A052 H-99D1 H-8FC9 H-8979 H-8FD6 H-8CE8 H-964C H-8FED H-A064 H-9FD6
+88AE 8900 8989 89E7 8A94 8B0C 8B81 8C9F 8D03 8DA6
+袮 褀 覉 觧 誔 謌 讁 貟 贃 趦
+H-99D0 H-FEF1 H-A0C2 H-8FD0 H-99D8 H-8FDE H-9AF6 H-95C0 H-8FF7 H-A0D2
+88B4 8924 898A 8A1C 8A9C 8B1F 8B83 8CAD 8D0B 8DA9
+袴 褤 覊 訜 誜 謟 讃 貭 贋 趩
+H-8FC3 H-99D2 H-8FCA H-95B6 H-8FD3 H-8FDF H-8CAE H-A0CB H-89B0 H-9040
+i - 29
+8DC0 9218
+
+8DC0 8E4F 8EB6 8F19 8F93 8FBA 8FF9 906C 9170 91D6
+跀 蹏 躶 輙 输 辺 迹 遬 酰 釖
+H-8AC4 H-9FF1 H-9049 H-904C H-995D H-9DA1 H-905B H-98BE H-9E71 H-FC5E
+8DC3 8E68 8EB9 8F2D 8FA0 8FBB 9008 90A8 9176 91DF
+跃 蹨 躹 輭 辠 辻 逈 邨 酶 釟
+H-99E0 H-8AA7 H-8CBA H-904D H-9B5A H-9943 H-9EDB H-9068 H-9E4A H-8949
+8DD4 8E71 8EBC 8F30 8FA5 8FBC 9012 90AE 917C 91E5
+跔 蹱 躼 輰 辥 込 递 邮 酼 釥
+H-9FF0 H-99E6 H-90B1 H-95CB H-9050 H-9945 H-9D79 H-906C H-9FDC H-965B
+8E01 8E75 8EC3 8F3C 8FA7 8FBE 9033 90BB 918C 91F6
+踁 蹵 軃 輼 辧 达 逳 邻 醌 釶
+H-9FF3 H-9FF7 H-904A HD-8F3C H-8C4F H-9D7D H-99F3 H-95D8 H-89AB H-8C50
+8E0E 8E77 8ECE 8F41 8FB3 8FC1 9037 90C4 918E 91FA
+踎 蹷 軎 轁 辳 迁 逷 郄 醎 釺
+H-9DBF H-9FED H-99EA H-97E2 H-9054 H-99F0 H-9062 H-906A H-9FB8 H-94A6
+8E28 8E7E 8EDA 8F4A 8FB5 8FCA 9046 9151 9196 91FE
+踨 蹾 軚 轊 辵 迊 遆 酑 醖 釾
+H-9FF6 H-8A5C H-9BD1 H-95CC H-C6D6 H-99F1 H-87BD H-9FB2 HD-9196 H-8FD5
+8E2A 8E80 8EE2 8F5C 8FB6 8FCC 904C 9159 91A9 9208
+踪 躀 転 轜 辶 迌 遌 酙 醩 鈈
+H-95C8 H-9DAE H-99EB H-9F78 H-9AA8 H-99F2 H-9F55 H-9FAE H-9070 H-9E73
+8E2D 8EA7 8EE4 8F66 8FB7 8FCF 9056 915C 91B6 920E
+踭 躧 軤 车 辷 迏 遖 酜 醶 鈎
+H-9E5A H-95C9 H-99EC H-897C H-99EF H-8CBC H-9BF9 H-9FB0 H-8B63 H-9075
+8E3A 8EAD 8EED 8F67 8FB8 8FD0 9061 915E 91BB 9213
+踺 躭 軭 轧 辸 运 遡 酞 醻 鈓
+H-99E3 H-9048 H-99ED H-897D H-FEEB H-9D60 H-9065 H-89AD H-95DC H-99F7
+8E46 8EB0 8EF2 8F6E 8FB9 8FDA 9064 9167 91C4 9218
+蹆 躰 軲 轮 边 迚 遤 酧 釄 鈘
+H-8A4A H-99E8 H-99EE H-897E H-9DA3 H-A0A3 H-96E0 H-906E H-9071 H-87B2
+i - 30
+9221 9454
+
+9221 925D 92AE 92EB 932C 935F 937D 93B8 93F1 9425
+鈡 鉝 銮 鋫 錬 鍟 鍽 鎸 鏱 鐥
+H-8CBF H-92E3 H-99FD H-9A41 H-90A2 H-9774 H-967A H-9749 H-FE7A H-90E2
+9228 925F 92B1 92EC 9330 9362 9381 93BB 93F3 9426
+鈨 鉟 銱 鋬 錰 鍢 鎁 鎻 鏳 鐦
+H-99F9 H-97BB H-99FC H-91DD H-9CAB H-FDF5 H-91DE H-9748 H-91DB H-90B4
+922A 9262 92B9 92ED 9331 9366 9384 93BD 93F4 9427
+鈪 鉢 銹 鋭 錱 鍦 鎄 鎽 鏴 鐧
+H-9663 H-9078 H-F9D7 HD-92ED H-9776 H-92E5 H-9A46 H-934A H-8C6A H-95E1
+922B 926B 92BA 92F2 9340 9368 9385 93BF 9401 942D
+鈫 鉫 銺 鋲 鍀 鍨 鎅 鎿 鐁 鐭
+H-95B9 H-99FB H-964A H-93FC H-FC55 H-9645 H-FEB0 H-9CE2 H-97AF H-9A4E
+9235 926E 92BE 92F3 9341 9369 9386 93C6 9404 942F
+鈵 鉮 銾 鋳 鍁 鍩 鎆 鏆 鐄 鐯
+H-94D4 H-97E0 H-96D8 H-9A42 H-FE45 H-91DA H-9779 H-9264 H-95DD H-87AD
+923C 9277 92BF 92F4 9342 936B 9387 93CB 9408 943E
+鈼 鉷 銿 鋴 鍂 鍫 鎇 鏋 鐈 鐾
+H-FCFA H-96DC H-99FE H-9A43 H-94A8 H-90A3 H-946C H-91DF H-9348 H-9A4F
+9241 9281 92D4 92F6 9343 936E 9390 93D3 9417 9442
+鉁 銁 鋔 鋶 鍃 鍮 鎐 鏓 鐗 鑂
+H-9077 H-9CA8 H-904B H-9659 H-9A45 H-A05F H-9858 H-FB79 H-9A4B H-FE40
+9244 9284 92DB 92FD 9344 9373 939C 93DB 941B 9443
+鉄 銄 鋛 鋽 鍄 鍳 鎜 鏛 鐛 鑃
+H-90AB H-9772 H-FA41 H-9A44 H-FA4B H-90AF H-9266 H-96D7 H-FC45 H-FE43
+9255 9289 92E3 9303 9345 9374 93A0 93E0 941D 944D
+鉕 銉 鋣 錃 鍅 鍴 鎠 鏠 鐝 鑍
+H-9D4D H-9440 H-9A40 H-9051 H-9DE1 H-97BF H-93FB H-9343 H-9A4D H-96DD
+9258 928F 92E5 9307 9348 9378 93AD 93F0 9424 9454
+鉘 銏 鋥 錇 鍈 鍸 鎭 鏰 鐤 鑔
+H-99FA H-92F2 H-975B H-94BF H-96D9 H-914C H-9A47 H-FDCB H-91BC H-9A51
+i - 31
+9458 98C3
+
+9458 94C1 9597 961D 9696 9734 976D 97BA 97F2 984B
+鑘 铁 閗 阝 隖 霴 靭 鞺 韲 顋
+H-96A7 H-9ABC H-95E8 H-8BFB H-90BF H-876B H-9E46 H-9F7C H-91C6 H-90F8
+945B 94C3 9599 9633 96A3 9736 9771 97BD 97F5 9856
+鑛 铃 閙 阳 隣 霶 靱 鞽 韵 顖
+H-90B0 H-9AB8 H-95E6 H-9A57 H-90C1 H-90D4 H-9651 H-FC52 H-90F2 H-8CFC
+9465 94DC 95A0 9638 96A5 9740 9787 97BE 9814 9866
+鑥 铜 閠 阸 隥 靀 鞇 鞾 頔 顦
+H-9C4E H-9AAE H-90B5 H-A0AA H-FEE4 H-9A5B H-FB58 H-90E9 H-FCBC H-90F9
+9467 94F6 95A2 9641 96B6 9741 9789 97C0 9815 9868
+鑧 银 関 陁 隶 靁 鞉 韀 頕 顨
+H-9443 H-9AA7 H-9A54 H-9FA6 H-90C4 H-95FD H-90E6 H-90EA H-8A74 H-8CC9
+946C 952D 95A6 9645 96BD 974A 979B 97C2 981F 986C
+鑬 锭 閦 际 隽 靊 鞛 韂 頟 顬
+H-8EBA H-9A53 H-90B3 H-99CC H-90C7 H-87B1 H-9650 H-9A5E H-9657 H-FA6A
+9479 9547 95A7 9656 96F4 9751 979F 97C8 9823 9875
+鑹 镇 閧 陖 雴 靑 鞟 韈 頣 页
+H-9A52 H-9D74 H-95E7 H-9C59 H-92E4 H-8BC4 H-90E7 H-9F76 H-9CEF H-8BEF
+947B 9578 95AA 9669 9703 9755 97B1 97D2 982E 98B4
+鑻 镸 閪 险 霃 靕 鞱 韒 頮 颴
+H-FCC1 H-8BEA H-8B50 H-99B5 H-9F52 H-8C66 H-90E8 H-90EB H-9FDF H-9FE0
+9485 957F 95B2 967B 971B 9757 97B2 97E0 9833 98B7
+钅 长 閲 陻 霛 靗 鞲 韠 頳 颷
+H-8BE9 H-8BEB HD-95B2 H-90BE H-90DB H-90DE H-9A5D H-90EC H-90F7 H-9142
+949F 9585 95E8 9681 9721 975D 97B4 97E6 9834 98B9
+钟 閅 门 隁 霡 靝 鞴 韦 頴 颹
+H-9CAF H-90B2 H-8BEC H-9FAF H-A066 H-9CE4 H-9F7A H-8BEE H-90F6 H-9A62
+94A2 9596 95F4 968F 9731 975F 97B8 97EE 9847 98C3
+钢 閖 间 随 霱 靟 鞸 韮 顇 飃
+H-8BFD H-95E9 H-9A56 H-95F2 H-90D2 H-90E1 H-9B5C H-90EE H-9B5E H-9569
+i - 32
+98C7 9C35
+
+98C7 98F1 9942 99BC 9A1F 9A8F 9B02 9B69 9B9F 9C0A
+飇 飱 饂 馼 騟 骏 鬂 魩 鮟 鰊
+H-9144 H-9A64 H-9A6B H-9677 H-955D H-89C7 H-9F57 H-9A74 H-96B5 H-9FA3
+98C8 98F5 994A 99C4 9A21 9AB2 9B09 9B7F 9BB0 9C0C
+飈 飵 饊 駄 騡 骲 鬉 魿 鮰 鰌
+H-9143 H-8ABF H-A06C H-99F4 H-9671 H-8A6A H-9F65 H-96B2 H-A067 H-9171
+98CA 990E 994D 99C5 9A26 9AB6 9B0F 9B81 9BCF 9C10
+飊 餎 饍 駅 騦 骶 鬏 鮁 鯏 鰐
+H-9141 H-9A66 H-9667 H-9A6F H-9C6D H-8B57 H-9A72 H-9A75 H-96B3 H-96B1
+98CE 9919 995D 99DA 9A2F 9ABA 9B14 9B83 9BDD 9C15
+风 餙 饝 駚 騯 骺 鬔 鮃 鯝 鰕
+H-8BF0 H-9A67 H-9A6C H-9FAB H-9673 H-9FE1 H-9160 H-FDA5 H-9A76 H-9F63
+98DC 991C 9962 99E0 9A3B 9ABD 9B2A 9B8B 9BE9 9C1B
+飜 餜 饢 駠 騻 骽 鬪 鮋 鯩 鰛
+H-9660 H-9A69 H-9A6D H-8CBE H-9154 H-9B5F H-9F5E H-9EE9 H-95D5 H-9F67
+98DE 9937 9963 99E1 9A3C 9AD7 9B2D 9B8D 9BED 9C1F
+飞 餷 饣 駡 騼 髗 鬭 鮍 鯭 鰟
+H-8BF1 H-9A6A H-8BF2 H-8EC1 H-9A71 H-A05D H-9161 H-8BBA H-9ECA H-8BB9
+98E0 9938 999B 99E6 9A58 9AE0 9B34 9B8E 9BF1 9C20
+飠 餸 馛 駦 驘 髠 鬴 鮎 鯱 鰠
+H-99F6 H-9652 H-966A H-9555 H-9156 H-915B H-9164 H-916D H-9A77 H-9A7A
+98E1 9939 99A4 99F5 9A5C 9AE2 9B39 9B8F 9BF4 9C26
+飡 餹 馤 駵 驜 髢 鬹 鮏 鯴 鰦
+H-9149 H-914D H-FCEA H-9152 H-966D H-915C H-9F41 H-A060 H-9A78 H-8B56
+98E6 993B 99AA 9A0C 9A63 9AF4 9B40 9B97 9BFF 9C2F
+飦 餻 馪 騌 驣 髴 魀 鮗 鯿 鰯
+H-914A H-9666 H-966C H-9153 H-9557 H-915E H-9169 H-9FDE H-9170 H-9ADA
+98EC 9940 99B8 9A10 9A6C 9AFF 9B50 9B9D 9C02 9C35
+飬 饀 馸 騐 马 髿 魐 鮝 鰂 鰵
+H-914B H-9F7B H-91C4 H-9155 H-89C6 H-9F5C H-9168 H-9FC3 H-916F H-96B0
+i - 33
+9C3A 9FB2
+
+9C3A 9D0C 9D6D 9DC4 9E7B 9EA6 9EC4 9F26 9F7F 9FA9
+鰺 鴌 鵭 鷄 鹻 麦 黄 鼦 齿 龩
+H-9A7E H-96BD H-95BF H-91A1 H-9AA9 H-A0FD H-8BF6 H-A041 H-8DE6 H-8CB7
+9C45 9D16 9D6E 9DC9 9E81 9EA8 9EC6 9F27 9F8E 9FAA
+鱅 鴖 鵮 鷉 麁 麨 黆 鼧 龎 龪
+H-9DDE H-96F4 H-8A73 H-89B8 H-9F54 H-9FE2 H-9AAD H-8BB7 H-91CB H-8CB9
+9C47 9D21 9D7C 9DD4 9E84 9EAA 9EC7 9F39 9F96 9FAB
+鱇 鴡 鵼 鷔 麄 麪 黇 鼹 龖 龫
+HD-9C47 H-96B8 H-9EFE H-9173 H-9FE3 H-91AF H-89B6 H-91C0 H-87AC H-8CBB
+9C4F 9D34 9D7E 9DFC 9E85 9EAB 9EE2 9F44 9F97 9FAC
+鱏 鴴 鵾 鷼 麅 麫 黢 齄 龗 龬
+H-96AD H-FAA1 H-917A H-9AA6 H-9EED H-9E41 H-9AAF H-9AB3 H-87A4 H-8CC0
+9C53 9D39 9D83 9E0A 9E90 9EAC 9EF1 9F45 9F99 9FAD
+鱓 鴹 鶃 鸊 麐 麬 黱 齅 龙 龭
+H-96AE H-91A7 H-917B H-89BD H-91AA H-9AAA H-9AB0 H-91C3 H-89C8 H-8CD7
+9C5D 9D44 9D93 9E0C 9E95 9EAF 9EF8 9F50 9F9F 9FAE
+鱝 鵄 鶓 鸌 麕 麯 黸 齐 龟 龮
+H-9EA1 H-A05E H-9AA3 H-89B9 H-91AB H-91B0 H-9AB1 H-A0FC H-8DAA H-8CD8
+9C72 9D49 9DA5 9E0E 9E96 9EB1 9EFE 9F53 9FA5 9FAF
+鱲 鵉 鶥 鸎 麖 麱 黾 齓 龥 龯
+H-9E50 H-9A7D H-96C2 H-917D H-A070 H-9AAB H-9AA1 H-9FEE H-9FDD H-8CDA
+9C7B
+鱻
+H-96AF
+9D4E
+鵎
+H-8948
+9DAB
+鶫
+H-9F77
+9E18
+鸘
+H-96BB
+9E98
+麘
+H-9F6D
+9EBD
+麽
+H-9AAC
+9F02
+鼂
+H-91B9
+9F5A
+齚
+H-9F69
+9FA6
+龦
+H-8C43
+9FB0
+龰
+H-C8A1
+9C7C 9D50 9DBD 9E1C 9E9E 9EBF 9F08 9F62 9FA7 9FB1
+鱼 鵐 鶽 鸜 麞 麿 鼈 齢 龧 龱
+H-8BF4 H-9EB1 H-9AA4 H-9FF2 H-91AC H-9A4A H-91BA H-91C8 H-8C6D H-C8A3
+9D02 9D5E 9DC0 9E1F 9EA2 9EC1 9F17 9F69 9FA8 9FB2
+鴂 鵞 鷀 鸟 麢 黁 鼗 齩 龨 龲
+H-9FA4 H-9DDB H-9AA5 H-8BF5 H-91AD H-91B2 H-91BE H-91C9 H-8C74 H-8CED
+i - 34
+9FB3 2070E
+
+9FB3 FF3B 20086 2010C 2020C 202BF 2037F 20414 204FE 205E0
+龳 ［ 𠂆 𠄌 𠈌 𠊿 𠍿 𠐔 𠓾 𠗠
+H-8D48 H-C6E4 H-8BC5 H-8845 H-927D H-96DA H-926D H-9276 H-9775 H-92BC
+9FC7 FF3D 20087 2010E 20214 202C0 20380 2041F 20547 205EB
+鿇 ］ 𠂇 𠄎 𠈔 𠋀 𠎀 𠐟 𠕇 𠗫
+H-87C2 H-C6E5 H-8BFA H-8853 H-98A4 H-9279 H-FA62 H-FA65 H-FA40 H-945C
+9FC8
+鿈
+H-87D2
+FFE2
+￢
+H-C8CD
+2008A
+𠂊
+H-C87C
+20118
+𠄘
+H-FCAD
+20239
+𠈹
+H-8CF9
+202E5
+𠋥
+H-FA74
+203A0
+𠎠
+H-9AB6
+20465
+𠑥
+H-926C
+2058E
+𠖎
+H-FA76
+20611
+𠘑
+H-9BB5
+9FC9 FFE4 20094 201A4 2025B 2030A 203A7 20487 205A5 20615
+鿉 ￤ 𠂔 𠆤 𠉛 𠌊 𠎧 𠒇 𠖥 𠘕
+H-87D6 H-C8CE H-9AB4 H-8CF5 H-94E7 H-9275 H-976B H-FA6E H-FBD0 H-9ABF
+9FCA
+鿊
+H-87DA
+FFED
+￭
+H-F9FE
+200CA
+𠃊
+H-884E
+201A9
+𠆩
+H-8AAD
+20274
+𠉴
+H-90CB
+20325
+𠌥
+H-8DFB
+203B5
+𠎵
+H-FD6A
+2048E
+𠒎
+H-9EE0
+205B3
+𠖳
+H-FA7B
+20619
+𠘙
+H-98A7
+9FCB
+鿋
+H-87DF
+20021
+𠀡
+H-9C71
+200CB
+𠃋
+H-884B
+201AB
+𠆫
+H-9272
+20275
+𠉵
+H-927B
+20341
+𠍁
+H-8A49
+203C9
+𠏉
+H-FD54
+20491
+𠒑
+H-92C0
+205C3
+𠗃
+H-FE6D
+2061A
+𠘚
+H-97A4
+9FD0 2003E 200CC 201C1 20299 20345 203CB 20492 205CA 20630
+䲤 𠀾 𠃌 𠇁 𠊙 𠍅 𠏋 𠒒 𠗊 𠘰
+H-9D73 H-9375 H-C87A H-FC47 H-94D8 H-92DF H-9273 H-92BF H-9BB3 H-90FD
+F907
+龜
+H-8BF8
+20046
+𠁆
+H-9376
+200CD
+𠃍
+H-8848
+201D4
+𠇔
+H-94DF
+2029E
+𠊞
+H-FC5F
+20346
+𠍆
+H-9B7C
+203F5
+𠏵
+H-97D8
+204A3
+𠒣
+H-92BE
+205D0
+𠗐
+H-89CC
+20656
+𠙖
+H-FC7B
+FF02 2004E 200D1 201F2 202A0 20347 203FC 204D7 205D5 20676
+＂ 𠁎 𠃑 𠇲 𠊠 𠍇 𠏼 𠓗 𠗕 𠙶
+H-C8D0 H-9548 H-8847 H-9FD1 H-FA54 H-FA63 H-9FBB H-9ABA H-9ABE H-9AC0
+FF07 20068 200EE 20204 202B7 2037E 20413 204FC 205DF 2070E
+＇ 𠁨 𠃮 𠈄 𠊷 𠍾 𠐓 𠓼 𠗟 𠜎
+H-C8CF H-8EC6 H-A0F6 H-FBCB H-9AB5 H-FA60 H-9342 H-8AB3 H-FA42 H-92C3
+i - 35
+20731 20E96
+
+20731
+𠜱
+H-8AAA
+20A11
+𠨑
+H-9C66
+20BA8
+𠮨
+H-9262
+20C0D
+𠰍
+H-94E0
+20C77
+𠱷
+H-FAEE
+20CD4
+𠳔
+H-9FC5
+20D46
+𠵆
+H-8A64
+20D7C
+𠵼
+H-8A57
+20E0A
+𠸊
+H-9EA8
+20E73
+𠹳
+H-9AE1
+20779
+𠝹
+H-9BD0
+20A50
+𠩐
+H-9053
+20BA9
+𠮩
+H-8AF7
+20C20
+𠰠
+H-92CC
+20C78
+𠱸
+H-9BCC
+20CD5
+𠳕
+H-8A59
+20D47
+𠵇
+H-8AF2
+20D7E
+𠵾
+H-8B43
+20E0D
+𠸍
+H-9263
+20E75
+𠹵
+H-FCDE
+2082C
+𠠬
+H-9550
+20A6F
+𠩯
+H-8C62
+20BBF
+𠮿
+H-9AC6
+20C34
+𠰴
+H-8AE5
+20C7C
+𠱼
+H-9ACF
+20CD6
+𠳖
+H-8B6B
+20D48
+𠵈
+H-8AF8
+20D7F
+𠵿
+H-8B44
+20E0E
+𠸎
+H-9ADD
+20E76
+𠹶
+H-9DFD
+20873
+𠡳
+H-92C6
+20A8A
+𠪊
+H-87A8
+20BC6
+𠯆
+H-92E1
+20C3A
+𠰺
+H-FE5C
+20C8D
+𠲍
+H-9AD1
+20CDD
+𠳝
+H-9AD4
+20D49
+𠵉
+H-9DD8
+20D96
+𠶖
+H-8AB6
+20E0F
+𠸏
+H-8B65
+20E77
+𠹷
+H-8B66
+208D5
+𠣕
+H-98A6
+20AB4
+𠪴
+H-97C1
+20BCB
+𠯋
+H-9AC9
+20C3B
+𠰻
+H-9ACC
+20C96
+𠲖
+H-9DFA
+20CED
+𠳭
+H-9AD5
+20D4C
+𠵌
+H-94D6
+20D9C
+𠶜
+H-8AC0
+20E10
+𠸐
+H-8B6F
+20E78
+𠹸
+H-8B70
+20916
+𠤖
+H-9546
+20AC2
+𠫂
+H-9AC4
+20BE2
+𠯢
+H-FAC6
+20C41
+𠱁
+H-9DF9
+20C9C
+𠲜
+H-9D7C
+20CFF
+𠳿
+H-97A2
+20D4D
+𠵍
+H-FAFE
+20DA7
+𠶧
+H-9E54
+20E11
+𠸑
+H-8B7E
+20E79
+𠹹
+H-8B75
+20923
+𠤣
+H-FD63
+20ACD
+𠫍
+H-9AC5
+20BEB
+𠯫
+H-97A5
+20C42
+𠱂
+H-8A43
+20CB5
+𠲵
+H-9AD3
+20D15
+𠴕
+H-8A44
+20D4E
+𠵎
+H-FBA7
+20DB2
+𠶲
+H-9AD7
+20E16
+𠸖
+H-8F43
+20E7A
+𠹺
+H-8AE4
+20954
+𠥔
+H-FAC2
+20B0D
+𠬍
+H-8EEF
+20BFB
+𠯻
+H-9ACB
+20C43
+𠱃
+H-8AA6
+20CB8
+𠲸
+H-97A6
+20D28
+𠴨
+H-9F4A
+20D6F
+𠵯
+H-9AD6
+20DC8
+𠷈
+H-9AD8
+20E1D
+𠸝
+H-92D0
+20E7B
+𠹻
+H-8BA4
+20979
+𠥹
+H-9EC3
+20B8F
+𠮏
+H-FAE9
+20BFF
+𠯿
+H-FA72
+20C53
+𠱓
+H-9ACD
+20CCF
+𠳏
+H-995F
+20D31
+𠴱
+H-90A1
+20D71
+𠵱
+H-9F4D
+20E04
+𠸄
+H-9ADC
+20E4C
+𠹌
+H-8AF4
+20E8C
+𠺌
+H-8AED
+209E7
+𠧧
+H-89B2
+20B9F
+𠮟
+H-8D40
+20C0B
+𠰋
+H-8A5E
+20C65
+𠱥
+H-9ACE
+20CD3
+𠳓
+H-FBF6
+20D32
+𠴲
+H-FDA4
+20D74
+𠵴
+H-FAF6
+20E09
+𠸉
+H-8ACA
+20E6D
+𠹭
+H-9DBE
+20E96
+𠺖
+H-8A5D
+i - 36
+20E98 21454
+
+20E98
+𠺘
+H-8B48
+20EF8
+𠻸
+H-9CB1
+20F3B
+𠼻
+H-A0AB
+20FDF
+𠿟
+H-9261
+2106F
+𡁯
+H-8A7E
+210BF
+𡂿
+H-9AED
+210F5
+𡃵
+H-8B7B
+211D9
+𡇙
+H-9E72
+21303
+𡌃
+H-9345
+213C5
+𡏅
+H-9CCB
+20E9D
+𠺝
+H-9DED
+20EF9
+𠻹
+H-9E77
+20F4C
+𠽌
+H-8AB5
+20FEA
+𠿪
+H-9DD7
+21075
+𡁵
+H-9E44
+210C0
+𡃀
+H-8AF9
+210F6
+𡃶
+H-8B7C
+2123C
+𡈼
+H-FB73
+21304
+𡌄
+H-986E
+213C6
+𡏆
+H-9240
+20EA2
+𠺢
+H-9E40
+20EFA
+𠻺
+H-8B64
+20F64
+𠽤
+H-8A5F
+20FEB
+𠿫
+H-9E7D
+21076
+𡁶
+H-9AE7
+210C1
+𡃁
+H-9E63
+2112F
+𡄯
+H-9AEF
+2124F
+𡉏
+H-FB5F
+21305
+𡌅
+H-FA56
+213ED
+𡏭
+H-9CE8
+20EAA
+𠺪
+H-8AEF
+20EFB
+𠻻
+H-8B67
+20F8D
+𠾍
+H-8AEE
+20FEC
+𠿬
+H-9EA7
+21077
+𡁷
+H-8A7C
+210C7
+𡃇
+H-8B49
+2113B
+𡄻
+H-9AF0
+2127C
+𡉼
+H-90BA
+21336
+𡌶
+H-9AF5
+213FE
+𡏾
+H-91FD
+20EAB
+𠺫
+H-8AF6
+20F1D
+𠼝
+H-974B
+20F90
+𠾐
+H-9ADF
+20FED
+𠿭
+H-9EAB
+21078
+𡁸
+H-8B71
+210C8
+𡃈
+H-8ACE
+2113D
+𡄽
+H-8AFA
+212A8
+𡊨
+H-91FE
+2133A
+𡌺
+H-FC4B
+21413
+𡐓
+H-974E
+20EAC
+𠺬
+H-9E76
+20F26
+𠼦
+H-9653
+20FAD
+𠾭
+H-8AFE
+21014
+𡀔
+H-9042
+2107B
+𡁻
+H-9AE9
+210C9
+𡃉
+H-8B6E
+21145
+𡅅
+H-8941
+212A9
+𡊩
+H-9EF6
+21375
+𡍵
+H-9AF4
+21416
+𡐖
+H-FB68
+20EB6
+𠺶
+H-9EE3
+20F2D
+𠼭
+H-9AE0
+20FB4
+𠾴
+H-8A58
+2101D
+𡀝
+H-8B79
+21088
+𡂈
+H-9AEA
+210CF
+𡃏
+H-8AE8
+21148
+𡅈
+H-8B72
+212B0
+𡊰
+H-97ED
+21376
+𡍶
+H-FEDE
+21424
+𡐤
+H-976C
+20ED7
+𠻗
+H-9ADE
+20F2E
+𠼮
+H-8B4A
+20FB5
+𠾵
+H-8BA3
+2101E
+𡀞
+H-8B7A
+21096
+𡂖
+H-9AEB
+210D3
+𡃓
+H-9AEE
+2114F
+𡅏
+H-8AF3
+212E3
+𡋣
+H-9AF3
+2138E
+𡎎
+H-FCB7
+2143F
+𡐿
+H-8CC2
+20ED8
+𠻘
+H-8DFE
+20F30
+𠼰
+H-8AF1
+20FB6
+𠾶
+H-8BA7
+2104F
+𡁏
+H-9AE6
+2109D
+𡂝
+H-8ABD
+210E4
+𡃤
+H-92CE
+21180
+𡆀
+H-8BA8
+212FE
+𡋾
+H-A0EE
+21398
+𡎘
+H-97F1
+21452
+𡑒
+H-97E8
+20EDD
+𠻝
+H-FAFC
+20F31
+𠼱
+H-8AD7
+20FBC
+𠾼
+H-9AE3
+2105C
+𡁜
+H-9AE5
+210B4
+𡂴
+H-FB4E
+210F4
+𡃴
+H-8A5A
+21187
+𡆇
+H-9EAE
+21302
+𡌂
+H-967C
+2139C
+𡎜
+H-97C7
+21454
+𡑔
+H-FB6A
+i - 37
+21455 218D9
+
+21455
+𡑕
+H-8B74
+21613
+𡘓
+H-FAD7
+216D3
+𡛓
+H-9147
+2170D
+𡜍
+H-FAFB
+2176F
+𡝯
+H-92EE
+217B4
+𡞴
+H-8F44
+217F5
+𡟵
+H-9DAF
+2182A
+𡠪
+H-93CB
+21862
+𡡢
+H-97BE
+218A0
+𡢠
+H-9358
+2148A
+𡒊
+H-8EE7
+21619
+𡘙
+H-9AF8
+216D5
+𡛕
+H-FBB1
+21710
+𡜐
+H-92EF
+21770
+𡝰
+H-FCAF
+217B5
+𡞵
+H-96FD
+217F6
+𡟶
+H-9DC5
+2182D
+𡠭
+H-9AFD
+21863
+𡡣
+H-916C
+218A1
+𡢡
+H-9576
+21497
+𡒗
+H-FDC8
+2163E
+𡘾
+H-FBA1
+216DF
+𡛟
+H-8FEA
+21726
+𡜦
+H-FAC8
+21771
+𡝱
+H-FBFB
+217C3
+𡟃
+H-9AF9
+217F8
+𡟸
+H-91F1
+21839
+𡠹
+H-91F4
+21864
+𡡤
+H-94AA
+218A2
+𡢢
+H-8FAC
+214B6
+𡒶
+H-9241
+21661
+𡙡
+H-8EC5
+216E6
+𡛦
+H-94D2
+2173A
+𡜺
+H-9847
+21773
+𡝳
+H-8EF9
+217C7
+𡟇
+H-9AFA
+217F9
+𡟹
+H-8EB1
+2183A
+𡠺
+H-8BAC
+21877
+𡡷
+H-FC63
+218BE
+𡢾
+H-91EC
+214E8
+𡓨
+H-96A1
+21692
+𡚒
+H-FBA4
+216E7
+𡛧
+H-FE61
+2173B
+𡜻
+H-9366
+21774
+𡝴
+H-91F6
+217D9
+𡟙
+H-9769
+217FA
+𡟺
+H-97A9
+2183B
+𡠻
+H-A055
+2187B
+𡡻
+H-9DC6
+218BF
+𡢿
+H-97B4
+214FD
+𡓽
+H-8EF3
+216B8
+𡚸
+H-FBC2
+216E8
+𡛨
+H-FACE
+2173C
+𡜼
+H-9855
+217AB
+𡞫
+H-9364
+217DA
+𡟚
+H-95D4
+217FB
+𡟻
+H-FBAC
+21840
+𡡀
+H-9574
+21883
+𡢃
+H-97B5
+218D1
+𡣑
+H-91F7
+21577
+𡕷
+H-9AF7
+216BA
+𡚺
+H-9AC1
+216FA
+𡛺
+H-92ED
+21757
+𡝗
+H-96E6
+217B0
+𡞰
+H-94F5
+217DB
+𡟛
+H-984B
+217FC
+𡟼
+H-FCB8
+21845
+𡡅
+H-95BE
+21884
+𡢄
+H-92B8
+218D6
+𡣖
+H-974A
+21582
+𡖂
+H-8FA6
+216C0
+𡛀
+H-91FA
+216FB
+𡛻
+H-91F3
+2176C
+𡝬
+H-9F43
+217B1
+𡞱
+H-9CB6
+217DC
+𡟜
+H-FBAA
+21820
+𡠠
+H-9CB9
+21852
+𡡒
+H-97AD
+21885
+𡢅
+H-91EF
+218D7
+𡣗
+H-FB49
+21596
+𡖖
+H-FAD6
+216C1
+𡛁
+H-FEDB
+216FC
+𡛼
+H-93C6
+2176D
+𡝭
+H-9FAA
+217B2
+𡞲
+H-FBAD
+217DF
+𡟟
+H-987C
+21828
+𡠨
+H-FBB0
+2185E
+𡡞
+H-8EE9
+2189E
+𡢞
+H-FEA6
+218D8
+𡣘
+H-9578
+2160A
+𡘊
+H-9CC7
+216C2
+𡛂
+H-97AB
+216FE
+𡛾
+H-935A
+2176E
+𡝮
+H-94DA
+217B3
+𡞳
+H-984E
+217EF
+𡟯
+H-91EA
+21829
+𡠩
+H-FCD2
+21861
+𡡡
+H-92F8
+2189F
+𡢟
+H-9760
+218D9
+𡣙
+H-93BC
+i - 38
+218FA 2261C
+
+218FA
+𡣺
+H-91D6
+21927
+𡤧
+H-9363
+219DB
+𡧛
+H-FA4C
+21C2A
+𡰪
+H-9B42
+21DBA
+𡶺
+H-935E
+21EA4
+𡺤
+H-FBE6
+22045
+𢁅
+H-9B4B
+221A1
+𢆡
+H-8AA8
+223FA
+𢏺
+H-9B50
+224ED
+𢓭
+H-FA58
+21903
+𡤃
+H-9355
+2193B
+𡤻
+H-91A5
+219F3
+𡧳
+H-92F7
+21C70
+𡱰
+H-9B43
+21DCA
+𡷊
+H-89CB
+21EA8
+𡺨
+H-9BB7
+22049
+𢁉
+H-FBEC
+221C1
+𢇁
+H-8D42
+22465
+𢑥
+H-9EC6
+22513
+𢔓
+H-FA5E
+21904
+𡤄
+H-9356
+21944
+𡥄
+H-A0ED
+21A2D
+𡨭
+H-9B40
+21CA2
+𡲢
+H-9E79
+21DD1
+𡷑
+H-9F53
+21EC8
+𡻈
+H-9B45
+2207E
+𢁾
+H-8C69
+221C3
+𢇃
+H-9BC3
+22471
+𢑱
+H-FC50
+2251B
+𢔛
+H-A059
+21905
+𡤅
+H-9851
+21958
+𡥘
+H-FD6B
+21A34
+𡨴
+H-FBCE
+21CA5
+𡲥
+H-FBD9
+21DEB
+𡷫
+H-93D7
+21ED5
+𡻕
+H-9B47
+2209A
+𢂚
+H-9BA8
+22208
+𢈈
+H-8AE1
+2248B
+𢒋
+H-FD73
+22530
+𢔰
+H-FA75
+21910
+𡤐
+H-8FF8
+2196A
+𡥪
+H-9AFE
+21A45
+𡩅
+H-9B41
+21CAC
+𡲬
+H-9B44
+21DF9
+𡷹
+H-FBE1
+21F0F
+𡼏
+H-9F50
+220C7
+𢃇
+H-8AD5
+2227C
+𢉼
+H-9B4E
+22491
+𢒑
+H-FDA7
+22554
+𢕔
+H-FBBE
+21911
+𡤑
+H-FBC0
+2197C
+𡥼
+H-9351
+21A4B
+𡩋
+H-FEAD
+21D46
+𡵆
+H-A0A7
+21E1C
+𡸜
+H-FED0
+21F15
+𡼕
+H-9B48
+220FC
+𢃼
+H-FA73
+22321
+𢌡
+H-95D0
+224B0
+𢒰
+H-9DA2
+2258D
+𢖍
+H-9CA2
+21912
+𡤒
+H-93F2
+21980
+𡦀
+H-8C57
+21A63
+𡩣
+H-8761
+21D53
+𡵓
+H-877B
+21E23
+𡸣
+H-8CF1
+21F6A
+𡽪
+H-FC5B
+2212A
+𢄪
+H-FD59
+22325
+𢌥
+H-905F
+224BC
+𢒼
+H-87D1
+225AF
+𢖯
+H-9370
+21915
+𡤕
+H-90D0
+21983
+𡦃
+H-FA78
+21B44
+𡭄
+H-FBD5
+21D5E
+𡵞
+H-876E
+21E37
+𡸷
+H-FBE2
+21F9E
+𡾞
+H-98A9
+2215B
+𢅛
+H-91A2
+223BD
+𢎽
+H-97EE
+224C1
+𢓁
+H-87D3
+225BE
+𢖾
+H-9371
+2191C
+𡤜
+H-9C44
+21988
+𡦈
+H-FEA8
+21BC1
+𡯁
+H-8BC2
+21D90
+𡶐
+H-9BF3
+21E3D
+𡸽
+H-FCE3
+21FA1
+𡾡
+H-9CFD
+22173
+𢅳
+H-FBED
+223D0
+𢏐
+H-FC4E
+224C9
+𢓉
+H-87D4
+2261B
+𢘛
+H-9377
+21922
+𡤢
+H-9255
+21996
+𡦖
+H-9350
+21BC2
+𡯂
+H-9A7C
+21DB6
+𡶶
+H-8C79
+21E89
+𡺉
+H-9074
+21FE8
+𡿨
+H-884C
+2217A
+𢅺
+H-9CA9
+223D7
+𢏗
+H-9B4F
+224CC
+𢓌
+H-87D5
+2261C
+𢘜
+H-FEEF
+i - 39
+2262B 231A5
+
+2262B
+𢘫
+H-936D
+2271B
+𢜛
+H-9C4D
+2285F
+𢡟
+H-FCA1
+2296B
+𢥫
+H-96AB
+22B3F
+𢬿
+H-9B5D
+22C55
+𢱕
+H-8B46
+22CC9
+𢳉
+H-8ACC
+22DA3
+𢶣
+H-FAEC
+22EEF
+𢻯
+H-8F5F
+2308E
+𣂎
+H-93B6
+22668
+𢙨
+H-FC5D
+2271F
+𢜟
+H-96A3
+22860
+𢡠
+H-936C
+22980
+𢦀
+H-FCA7
+22B43
+𢭃
+H-9E4F
+22C62
+𢱢
+H-9DFE
+22D07
+𢴇
+H-937C
+22DA4
+𢶤
+H-8B77
+22F74
+𢽴
+H-9B6A
+230B7
+𣂷
+H-90E4
+2267A
+𢙺
+H-90B8
+2272A
+𢜪
+H-9B51
+22871
+𢡱
+H-9B52
+22993
+𢦓
+H-9B56
+22B6A
+𢭪
+H-93A3
+22C88
+𢲈
+H-9B62
+22D08
+𢴈
+H-9B65
+22DB7
+𢶷
+H-9B67
+22FCC
+𢿌
+H-9B6B
+230BC
+𣂼
+H-90E5
+22696
+𢚖
+H-8AFC
+22775
+𢝵
+H-8AC3
+228AD
+𢢭
+H-FE70
+22A66
+𢩦
+H-8ABC
+22BCA
+𢯊
+H-8A7B
+22C9B
+𢲛
+H-937B
+22D12
+𢴒
+H-9B66
+22DEE
+𢷮
+H-8B59
+22FE3
+𢿣
+H-97EC
+230DA
+𣃚
+H-9EF2
+22698
+𢚘
+H-FB41
+22781
+𢞁
+H-96AA
+228C1
+𢣁
+H-FCA8
+22ACF
+𢫏
+H-8ACB
+22BCE
+𢯎
+H-8B42
+22CA1
+𢲡
+H-93B1
+22D44
+𢵄
+H-8A72
+22E0D
+𢸍
+H-FCB1
+23033
+𣀳
+H-9B6C
+23103
+𣄃
+H-93CA
+226F4
+𢛴
+H-9E6B
+22796
+𢞖
+H-8CE2
+228F7
+𢣷
+H-FCE9
+22AD5
+𢫕
+H-9B57
+22C26
+𢰦
+H-9750
+22CA9
+𢲩
+H-8A60
+22D4C
+𢵌
+H-8A7A
+22E36
+𢸶
+H-FCBB
+23044
+𣁄
+H-FE4E
+2313D
+𣄽
+H-8BBC
+226F5
+𢛵
+H-94E3
+227B4
+𢞴
+H-FC68
+22926
+𢤦
+H-9CB4
+22AE6
+𢫦
+H-89CD
+22C27
+𢰧
+H-8FB3
+22CB2
+𢲲
+H-8AD8
+22D67
+𢵧
+H-93AF
+22E42
+𢹂
+H-9B69
+2304B
+𣁋
+H-FDC2
+2317D
+𣅽
+H-8F46
+226F6
+𢛶
+H-8EE2
+227B5
+𢞵
+H-8B6D
+22939
+𢤹
+H-8AEA
+22AE8
+𢫨
+H-9B59
+22C38
+𢰸
+H-8A50
+22CB7
+𢲷
+H-9B63
+22D8D
+𢶍
+H-8AB0
+22E78
+𢹸
+H-93A8
+23066
+𣁦
+H-9B6D
+23182
+𣆂
+H-93CF
+22712
+𢜒
+H-8C7D
+227CD
+𢟍
+H-FD67
+2294F
+𢥏
+H-9B53
+22B0E
+𢬎
+H-9B5B
+22C4C
+𢱌
+H-9B60
+22CC2
+𢳂
+H-8A69
+22D95
+𢶕
+H-9B68
+22E8B
+𢺋
+H-8AE0
+2307D
+𣁽
+H-9167
+231A4
+𣆤
+H-FCDB
+22714
+𢜔
+H-8ED7
+22803
+𢠃
+H-8AE9
+22967
+𢥧
+H-9B55
+22B22
+𢬢
+H-93A5
+22C51
+𢱑
+H-8B45
+22CC6
+𢳆
+H-8A47
+22DA0
+𢶠
+H-9EA3
+22EB3
+𢺳
+H-9E51
+2307E
+𣁾
+H-FCCC
+231A5
+𣆥
+H-FCDC
+i - 40
+231B3 23CB7
+
+231B3
+𣆳
+H-93C0
+23231
+𣈱
+H-FCE4
+232AB
+𣊫
+H-93B9
+233CC
+𣏌
+H-9BEB
+23450
+𣑐
+H-93A6
+23599
+𣖙
+H-91ED
+2363C
+𣘼
+H-FD4B
+236DF
+𣛟
+H-97F4
+237A2
+𣞢
+H-93E1
+23AEE
+𣫮
+H-9352
+231C8
+𣇈
+H-FCE6
+23232
+𣈲
+H-94AF
+232AC
+𣊬
+H-FED7
+233DE
+𣏞
+H-9B6F
+2346F
+𣑯
+H-FD40
+2359C
+𣖜
+H-96D2
+23640
+𣙀
+H-96D3
+236EE
+𣛮
+H-924D
+237BC
+𣞼
+H-93DF
+23AFA
+𣫺
+H-98A2
+231C9
+𣇉
+H-96E7
+23233
+𣈳
+H-FA77
+232AD
+𣊭
+H-93B7
+233E6
+𣏦
+H-FCFC
+23472
+𣑲
+H-935F
+235BB
+𣖻
+H-87D8
+23659
+𣙙
+H-FD58
+23703
+𣜃
+H-FD5B
+237C2
+𣟂
+H-FCF0
+23B1A
+𣬚
+H-8CE7
+231EA
+𣇪
+H-87A7
+23234
+𣈴
+H-93CC
+232D2
+𣋒
+H-93D9
+233F4
+𣏴
+H-8B40
+234E5
+𣓥
+H-97F2
+235CD
+𣗍
+H-FD46
+2365F
+𣙟
+H-945F
+23716
+𣜖
+H-9B7A
+237D5
+𣟕
+H-93EC
+23B5A
+𣭚
+H-FD6E
+231F7
+𣇷
+H-FCD8
+23256
+𣉖
+H-8CE1
+232E0
+𣋠
+H-93BB
+233F5
+𣏵
+H-A07B
+23519
+𣔙
+H-9C76
+235CE
+𣗎
+H-8F4F
+23677
+𣙷
+H-A0F5
+23720
+𣜠
+H-9ED5
+237D6
+𣟖
+H-97F6
+23C63
+𣱣
+H-8CA4
+231F8
+𣇸
+H-FCD9
+2325E
+𣉞
+H-87A9
+232E1
+𣋡
+H-93DA
+233F9
+𣏹
+H-8CA1
+23530
+𣔰
+H-8EF8
+235CF
+𣗏
+H-9549
+2368E
+𣚎
+H-87C7
+2372D
+𣜭
+H-FAAE
+237D7
+𣟗
+H-96CF
+23C99
+𣲙
+H-FA7C
+231F9
+𣇹
+H-FDA6
+23262
+𣉢
+H-905A
+23300
+𣌀
+H-98A3
+233FA
+𣏺
+H-97F7
+23551
+𣕑
+H-8CEB
+235F3
+𣗳
+H-9B75
+2369E
+𣚞
+H-877C
+2372F
+𣜯
+H-9CC9
+2383A
+𣠺
+H-93DE
+23C9A
+𣲚
+H-93FA
+2320F
+𣈏
+H-93CE
+23281
+𣊁
+H-8C54
+2330A
+𣌊
+H-90D1
+233FE
+𣏾
+H-93E2
+2355A
+𣕚
+H-8F47
+23600
+𣘀
+H-FA5C
+236A6
+𣚦
+H-9243
+2373F
+𣜿
+H-9258
+239C2
+𣧂
+H-8ACF
+23C9B
+𣲛
+H-907C
+23225
+𣈥
+H-95F1
+23289
+𣊉
+H-93BF
+2331F
+𣌟
+H-9B6E
+23400
+𣐀
+H-FCD6
+23567
+𣕧
+H-9B74
+23617
+𣘗
+H-8751
+236AD
+𣚭
+H-97FA
+23766
+𣝦
+H-8EC8
+23AA7
+𣪧
+H-9BA2
+23CB5
+𣲵
+H-8F67
+2322F
+𣈯
+H-9CE9
+2328A
+𣊊
+H-FB51
+233B4
+𣎴
+H-FA70
+2343F
+𣐿
+H-9559
+23595
+𣖕
+H-92B4
+2361A
+𣘚
+H-9B79
+236BA
+𣚺
+H-9DD9
+23781
+𣞁
+H-94B4
+23ADB
+𣫛
+H-FD69
+23CB7
+𣲷
+H-9DB7
+i - 41
+23CC7 241FC
+
+23CC7
+𣳇
+H-A0E9
+23D8F
+𣶏
+H-957B
+23DF8
+𣷸
+H-8EFA
+23E88
+𣺈
+H-9DC1
+23EFA
+𣻺
+H-94CE
+23F82
+𣾂
+H-FDBE
+23FEF
+𣿯
+H-9C48
+2408B
+𤂋
+H-925A
+2413F
+𤄿
+H-FDDA
+24177
+𤅷
+H-8BAD
+23CC8
+𣳈
+H-FA4E
+23DB6
+𣶶
+H-9ED2
+23E06
+𣸆
+H-8762
+23E89
+𣺉
+H-92B9
+23EFB
+𣻻
+H-924A
+23F8F
+𣾏
+H-8FDA
+23FF0
+𣿰
+H-FDD8
+2408C
+𤂌
+H-FCBD
+24140
+𤅀
+H-FDDE
+2417A
+𤅺
+H-9CD8
+23CC9
+𣳉
+H-FDA1
+23DB7
+𣶷
+H-9753
+23E11
+𣸑
+H-9BA5
+23E8A
+𣺊
+H-92A6
+23EFC
+𣻼
+H-FD70
+23FB4
+𣾴
+H-FDD9
+24011
+𤀑
+H-A0D8
+2408D
+𤂍
+H-92D9
+24144
+𤅄
+H-FDD3
+241A3
+𤆣
+H-9E6D
+23CFC
+𣳼
+H-9E74
+23DB8
+𣶸
+H-96A4
+23E2C
+𣸬
+H-9ED9
+23E8B
+𣺋
+H-8F4B
+23F35
+𣼵
+H-9467
+23FB7
+𣾷
+H-FC7E
+24039
+𤀹
+H-FDD7
+24091
+𤂑
+H-FDD5
+2414E
+𤅎
+H-8C46
+241A4
+𤆤
+H-FD7C
+23CFD
+𣳽
+H-9FBF
+23DB9
+𣶹
+H-8FBE
+23E2D
+𣸭
+H-97D4
+23EB9
+𣺹
+H-9BA6
+23F41
+𣽁
+H-8DEC
+23FC0
+𣿀
+H-93F9
+2403A
+𤀺
+H-FB4A
+240C9
+𤃉
+H-92DD
+24155
+𤅕
+H-FDD6
+241A5
+𤆥
+H-FB61
+23CFE
+𣳾
+H-9ECB
+23DBA
+𣶺
+H-94D9
+23E2E
+𣸮
+H-90BB
+23EBF
+𣺿
+H-92B6
+23F4A
+𣽊
+H-9BD8
+23FC5
+𣿅
+H-FA43
+2403B
+𤀻
+H-9BAF
+240E1
+𤃡
+H-9259
+24156
+𤅖
+H-FDDC
+241AC
+𤆬
+H-96F8
+23CFF
+𣳿
+H-9BB9
+23DBB
+𣶻
+H-9058
+23E2F
+𣸯
+H-FDBC
+23ED7
+𣻗
+H-8E40
+23F61
+𣽡
+H-8763
+23FEB
+𣿫
+H-FAEB
+2403C
+𤀼
+H-944B
+240EC
+𤃬
+H-8CF0
+24157
+𤅗
+H-FDDD
+241B5
+𤆵
+H-96F0
+23D40
+𣵀
+H-9DD4
+23DBC
+𣶼
+H-FD79
+23E30
+𣸰
+H-FDC6
+23EF7
+𣻷
+H-9ED8
+23F7F
+𣽿
+H-9448
+23FEC
+𣿬
+H-FAC3
+2403D
+𤀽
+H-FDC9
+24104
+𤄄
+H-96BA
+2415C
+𤅜
+H-90FE
+241CD
+𤇍
+H-FCF4
+23D5B
+𣵛
+H-97B9
+23DBD
+𣶽
+H-FD7B
+23E31
+𣸱
+H-9248
+23EF8
+𣻸
+H-945E
+23F80
+𣾀
+H-FAC1
+23FED
+𣿭
+H-97D3
+24057
+𤁗
+H-8EAC
+2410F
+𤄏
+H-925B
+2415F
+𤅟
+H-FEA1
+241E2
+𤇢
+H-FE60
+23D7E
+𣵾
+H-8EF1
+23DE3
+𣷣
+H-8EDA
+23E39
+𣸹
+H-92B5
+23EF9
+𣻹
+H-985F
+23F81
+𣾁
+H-9CF7
+23FEE
+𣿮
+H-95F9
+24085
+𤂅
+H-FDB2
+24119
+𤄙
+H-9BAB
+24161
+𤅡
+H-87A5
+241FC
+𤇼
+H-9852
+i - 42
+2421B 2498C
+
+2421B
+𤈛
+H-964F
+242A5
+𤊥
+H-985A
+24348
+𤍈
+H-91D2
+243E9
+𤏩
+H-9871
+24487
+𤒇
+H-93ED
+245C8
+𤗈
+H-8AB2
+2478F
+𤞏
+H-9458
+248FB
+𤣻
+H-9BC8
+24934
+𤤴
+H-9C58
+24975
+𤥵
+H-91CE
+2424B
+𤉋
+H-916E
+242BF
+𤊿
+H-8750
+24362
+𤍢
+H-97EA
+243EA
+𤏪
+H-95EF
+24488
+𤒈
+H-9744
+24618
+𤘘
+H-9EBC
+247E0
+𤟠
+H-9EA5
+248FF
+𤣿
+H-95ED
+2493E
+𤤾
+H-9F68
+24976
+𤥶
+H-9771
+24256
+𤉖
+H-986D
+242C1
+𤋁
+H-FDF6
+24363
+𤍣
+H-FB6B
+243F2
+𤏲
+H-9EF3
+244B9
+𤒹
+H-91E1
+2462A
+𤘪
+H-93E6
+24812
+𤠒
+H-9BC7
+24900
+𤤀
+H-FD7E
+2493F
+𤤿
+H-9BE7
+2497B
+𤥻
+H-8CCF
+24259
+𤉙
+H-9864
+242C9
+𤋉
+H-93D0
+24364
+𤍤
+H-91B1
+243F8
+𤏸
+H-91E8
+244BC
+𤒼
+H-FBF5
+24665
+𤙥
+H-93A2
+24823
+𤠣
+H-FE54
+24901
+𤤁
+H-FBEB
+24940
+𤥀
+H-FCCE
+2497F
+𤥿
+H-FDB1
+24276
+𤉶
+H-9453
+242CA
+𤋊
+H-9862
+24365
+𤍥
+H-FDF3
+24404
+𤐄
+H-9BBA
+244CE
+𤓎
+H-9869
+24674
+𤙴
+H-9BBD
+24882
+𤢂
+H-8E74
+2490C
+𤤌
+H-FD7D
+24941
+𤥁
+H-96E8
+24982
+𤦂
+H-FC6E
+24277
+𤉷
+H-FDEC
+242EE
+𤋮
+H-9BAD
+2438C
+𤎌
+H-92CB
+24435
+𤐵
+H-FB4C
+244D3
+𤓓
+H-8A62
+24697
+𤚗
+H-94B3
+248E9
+𤣩
+H-8BD6
+24916
+𤤖
+H-976F
+24942
+𤥂
+H-FA49
+24988
+𤦈
+H-9CF2
+24278
+𤉸
+H-FB78
+242FA
+𤋺
+H-974F
+24396
+𤎖
+H-9BB1
+24436
+𤐶
+H-926A
+244D6
+𤓖
+H-9BBB
+246D4
+𤛔
+H-937D
+248F0
+𤣰
+H-94B6
+24917
+𤤗
+H-9461
+24943
+𤥃
+H-97A1
+24989
+𤦉
+H-93B8
+24284
+𤊄
+H-95BA
+2430D
+𤌍
+H-9BAE
+2439C
+𤎜
+H-FCEC
+2445A
+𤑚
+H-FDF8
+24505
+𤔅
+H-8CA8
+24706
+𤜆
+H-9E66
+248F1
+𤣱
+H-FD74
+24919
+𤤙
+H-9FC1
+24962
+𤥢
+H-954D
+2498A
+𤦊
+H-9043
+24293
+𤊓
+H-985D
+2431A
+𤌚
+H-9452
+243BD
+𤎽
+H-986B
+2445B
+𤑛
+H-9861
+24521
+𤔡
+H-9C55
+24725
+𤜥
+H-9459
+248F2
+𤣲
+H-98C0
+2492F
+𤤯
+H-95D7
+24963
+𤥣
+H-9EF8
+2498B
+𤦋
+H-9759
+24295
+𤊕
+H-92F9
+24334
+𤌴
+H-9BB0
+243C1
+𤏁
+H-9751
+24473
+𤑳
+H-91E7
+24578
+𤕸
+H-8E77
+2472F
+𤜯
+H-9BBF
+248F3
+𤣳
+H-94A5
+24933
+𤤳
+H-FA52
+24974
+𤥴
+H-FE49
+2498C
+𤦌
+H-94D7
+i - 43
+2498D 24F0E
+
+2498D
+𤦍
+H-FE66
+249B7
+𤦷
+H-FE65
+249E3
+𤧣
+H-93AE
+24A12
+𤨒
+H-FEDF
+24A28
+𤨨
+H-FCC7
+24A51
+𤩑
+H-91D3
+24A8C
+𤪌
+H-FE7E
+24AB2
+𤪲
+H-9656
+24AE2
+𤫢
+H-9F4C
+24D06
+𤴆
+H-9474
+2498E
+𤦎
+H-947D
+249B8
+𤦸
+H-967E
+249E5
+𤧥
+H-976D
+24A13
+𤨓
+H-8CAB
+24A29
+𤨩
+H-914E
+24A5D
+𤩝
+H-987B
+24A93
+𤪓
+H-9DA4
+24AB3
+𤪳
+H-9762
+24AE9
+𤫩
+H-90D8
+24D13
+𤴓
+H-FEB7
+2498F
+𤦏
+H-FC6F
+249B9
+𤦹
+H-9758
+249EC
+𤧬
+H-9446
+24A15
+𤨕
+H-9BC9
+24A2A
+𤨪
+H-9CB8
+24A65
+𤩥
+H-8EEB
+24A94
+𤪔
+H-9768
+24ABA
+𤪺
+H-94BA
+24B0F
+𤬏
+H-8D5B
+24DB8
+𤶸
+H-8A4B
+24994
+𤦔
+H-9246
+249BA
+𤦺
+H-9B77
+249ED
+𤧭
+H-95F7
+24A21
+𤨡
+H-FCED
+24A3E
+𤨾
+H-9767
+24A66
+𤩦
+H-976A
+24A95
+𤪕
+H-8EEC
+24ABB
+𤪻
+H-A04F
+24B6E
+𤭮
+H-9EBE
+24DEA
+𤷪
+H-8A55
+249A4
+𤦤
+H-FA6D
+249BB
+𤦻
+H-91CF
+249F6
+𤧶
+H-9C46
+24A22
+𤨢
+H-FDFA
+24A42
+𤩂
+H-95EE
+24A67
+𤩧
+H-965E
+24A96
+𤪖
+H-94BD
+24ABC
+𤪼
+H-92D8
+24BF5
+𤯵
+H-FB6D
+24DEB
+𤷫
+H-8B69
+249A7
+𤦧
+H-8EF7
+249C5
+𤧅
+H-94A4
+249F7
+𤧷
+H-955B
+24A23
+𤨣
+H-FCC8
+24A45
+𤩅
+H-9BB2
+24A71
+𤩱
+H-97EB
+24AA4
+𤪤
+H-945B
+24AC0
+𤫀
+H-9BCB
+24C09
+𤰉
+H-95CA
+24E3B
+𤸻
+H-8ADC
+249A9
+𤦩
+H-FBB7
+249D0
+𤧐
+H-9CAD
+249F8
+𤧸
+H-91D1
+24A24
+𤨤
+H-FE62
+24A4A
+𤩊
+H-9460
+24A77
+𤩷
+H-9FF9
+24AA5
+𤪥
+H-9CF6
+24AC7
+𤫇
+H-94BB
+24C9E
+𤲞
+H-9DC2
+24E50
+𤹐
+H-8B76
+249AB
+𤦫
+H-947C
+249DA
+𤧚
+H-8BAB
+249F9
+𤧹
+H-94F4
+24A25
+𤨥
+H-91FC
+24A4E
+𤩎
+H-94A2
+24A78
+𤩸
+H-95F8
+24AA6
+𤪦
+H-FAA7
+24ACA
+𤫊
+H-9D5F
+24C9F
+𤲟
+H-97F8
+24EA5
+𤺥
+H-9BCE
+249AC
+𤦬
+H-92CD
+249DE
+𤧞
+H-96D5
+249FB
+𤧻
+H-FE67
+24A26
+𤨦
+H-FE6B
+24A4F
+𤩏
+H-9875
+24A79
+𤩹
+H-FEA2
+24AA7
+𤪧
+H-9BD9
+24AD1
+𤫑
+H-90CF
+24CC9
+𤳉
+H-8FFC
+24EA7
+𤺧
+H-8A68
+249AD
+𤦭
+H-97B2
+249DF
+𤧟
+H-FCB3
+24A0E
+𤨎
+H-92A5
+24A27
+𤨧
+H-FDF9
+24A50
+𤩐
+H-97AC
+24A7A
+𤩺
+H-8FE6
+24AB1
+𤪱
+H-FA5D
+24ADF
+𤫟
+H-9465
+24CD9
+𤳙
+H-9473
+24F0E
+𤼎
+H-A0F8
+i - 44
+24F5C 25CA4
+
+24F5C
+𤽜
+H-98DF
+2509D
+𥂝
+H-FECE
+25221
+𥈡
+H-94AC
+2542F
+𥐯
+H-91F0
+2555C
+𥕜
+H-9249
+255D5
+𥗕
+H-977B
+25706
+𥜆
+H-9140
+2585D
+𥡝
+H-9BE8
+25A54
+𥩔
+H-8760
+25BC6
+𥯆
+H-94EA
+24F82
+𤾂
+H-FEB5
+2512B
+𥄫
+H-8A45
+25250
+𥉐
+H-FC5A
+25430
+𥐰
+H-8FE0
+2555D
+𥕝
+H-96E1
+255DB
+𥗛
+H-907E
+2571D
+𥜝
+H-FCBE
+25872
+𥡲
+H-93DC
+25A95
+𥪕
+H-9EC2
+25BE4
+𥯤
+H-8F61
+24F86
+𤾆
+H-9BCF
+25148
+𥅈
+H-9DFC
+25299
+𥊙
+H-9BD6
+25446
+𥑆
+H-9BDB
+2555E
+𥕞
+H-9BE2
+255E0
+𥗠
+H-FEE6
+25725
+𥜥
+H-9157
+258C8
+𥣈
+H-966F
+25A9C
+𥪜
+H-94E5
+25BE8
+𥯨
+H-9B64
+24F97
+𤾗
+H-96FB
+2517D
+𥅽
+H-FECF
+252C7
+𥋇
+H-8A6F
+2546C
+𥑬
+H-90ED
+25562
+𥕢
+H-9BE4
+25605
+𥘅
+H-FE46
+2573D
+𥜽
+H-8BB2
+258DE
+𥣞
+H-87A1
+25AAE
+𥪮
+H-9BF0
+25C01
+𥰁
+H-8E5B
+24F9A
+𤾚
+H-9BFB
+2517E
+𥅾
+H-8BA5
+252D8
+𥋘
+H-8BA9
+2546E
+𥑮
+H-9BDC
+25565
+𥕥
+H-8FE1
+25635
+𥘵
+H-9DB8
+25772
+𥝲
+H-FADF
+258E1
+𥣡
+H-8E4A
+25AAF
+𥪯
+H-94E4
+25C06
+𥰆
+H-9BF2
+24FA9
+𤾩
+H-9ECE
+251CD
+𥇍
+H-8C4A
+2530E
+𥌎
+H-8E5F
+2549A
+𥒚
+H-8D53
+25566
+𥕦
+H-9BE5
+25651
+𥙑
+H-9270
+257C7
+𥟇
+H-9BE6
+25903
+𥤃
+H-9BED
+25AE9
+𥫩
+H-9551
+25C21
+𥰡
+H-9FBE
+24FB8
+𤾸
+H-8EE5
+251E3
+𥇣
+H-8AEC
+25311
+𥌑
+H-9DCB
+25531
+𥔱
+H-A0EC
+25581
+𥖁
+H-94C0
+25683
+𥚃
+H-95A8
+257DF
+𥟟
+H-9643
+25946
+𥥆
+H-92F6
+25B74
+𥭴
+H-8BBB
+25C4A
+𥱊
+H-9DC9
+24FC2
+𤿂
+H-9E7B
+251E6
+𥇦
+H-FCE0
+25313
+𥌓
+H-FCE7
+25535
+𥔵
+H-98FA
+25584
+𥖄
+H-93C3
+25695
+𥚕
+H-8CB0
+257E0
+𥟠
+H-8E44
+25956
+𥥖
+H-9DB9
+25B89
+𥮉
+H-9BF1
+25C65
+𥱥
+H-8E6C
+2502C
+𥀬
+H-9BD2
+251E7
+𥇧
+H-94AD
+25419
+𥐙
+H-9BD7
+2553F
+𥔿
+H-9BE0
+2558F
+𥖏
+H-93C5
+256E3
+𥛣
+H-94C8
+257E1
+𥟡
+H-9C4F
+259AC
+𥦬
+H-8E4E
+25BB3
+𥮳
+H-94F0
+25C91
+𥲑
+H-8F73
+25052
+𥁒
+H-8AA5
+25220
+𥈠
+H-FED5
+25425
+𥐥
+H-93C8
+2555B
+𥕛
+H-93C7
+255B9
+𥖹
+H-9079
+256F6
+𥛶
+H-98B9
+25857
+𥡗
+H-FEF4
+259CC
+𥧌
+H-FBCF
+25BB4
+𥮴
+H-8E64
+25CA4
+𥲤
+H-8CAF
+i - 45
+25CC0 26A2E
+
+25CC0
+𥳀
+H-8F75
+25E81
+𥺁
+H-9DBB
+25FE2
+𥿢
+H-9BA4
+26121
+𦄡
+H-8EB5
+26261
+𦉡
+H-94FE
+263F8
+𦏸
+H-954C
+2648D
+𦒍
+H-8E54
+266B1
+𦚱
+H-925F
+267CC
+𦟌
+H-A0C3
+26911
+𦤑
+H-FEC6
+25CC1
+𥳁
+H-8E71
+25E82
+𥺂
+H-9543
+26021
+𦀡
+H-877D
+26159
+𦅙
+H-A06D
+2626A
+𦉪
+H-8BDB
+26402
+𦐂
+H-9BFD
+26498
+𦒘
+H-8EE4
+266B5
+𦚵
+H-9C4C
+2681C
+𦠜
+H-8AE6
+26926
+𦤦
+H-9C67
+25CFE
+𥳾
+H-8E60
+25E83
+𥺃
+H-92FE
+26029
+𦀩
+H-8EAD
+2615A
+𦅚
+H-8EB6
+2626B
+𦉫
+H-A0FE
+26410
+𦐐
+H-90CC
+26512
+𦔒
+H-9C49
+266DA
+𦛚
+H-8AA1
+26846
+𦡆
+H-A0F7
+26939
+𦤹
+H-9C69
+25D20
+𥴠
+H-8E6A
+25EA6
+𥺦
+H-94F2
+26048
+𦁈
+H-9EAD
+2615B
+𦅛
+H-9756
+262D0
+𦋐
+H-8EC0
+26411
+𦐑
+H-9C60
+26572
+𦕲
+H-8B5E
+266E8
+𦛨
+H-8EDB
+2685E
+𦡞
+H-9C61
+26951
+𦥑
+H-8BE2
+25D30
+𥴰
+H-8C4C
+25EBC
+𥺼
+H-94F1
+26064
+𦁤
+H-96D0
+2615C
+𦅜
+H-9540
+26335
+𦌵
+H-9F47
+26412
+𦐒
+H-954B
+265A0
+𦖠
+H-955E
+266FC
+𦛼
+H-9C56
+2686E
+𦡮
+H-9C5F
+269A8
+𦦨
+H-9165
+25D43
+𥵃
+H-9552
+25ED7
+𥻗
+H-A0EA
+26083
+𦂃
+H-FEEE
+261AD
+𦆭
+H-A0F3
+2634B
+𦍋
+H-8BDE
+2644A
+𦑊
+H-9BFE
+265AD
+𦖭
+H-955C
+26716
+𦜖
+H-8AA2
+26888
+𦢈
+H-FC4D
+269B5
+𦦵
+H-9CE7
+25D99
+𥶙
+H-87CF
+25ED8
+𥻘
+H-9DD2
+26097
+𦂗
+H-8AB4
+261AE
+𦆮
+H-94BE
+2634C
+𦍌
+H-A0FB
+26469
+𦑩
+H-9C70
+265BF
+𦖿
+H-9C4B
+26741
+𦝁
+H-9754
+2688A
+𦢊
+H-9E5B
+269F2
+𦧲
+H-8A54
+25DB9
+𥶹
+H-87C0
+25F1A
+𥼚
+H-A0B1
+260A4
+𦂤
+H-9757
+261B2
+𦆲
+H-9BFA
+26351
+𦍑
+H-8EC3
+26484
+𦒄
+H-9C43
+26612
+𦘒
+H-8BE1
+26799
+𦞙
+H-9C5E
+26893
+𦢓
+H-9E69
+269FA
+𦧺
+H-9C6C
+25E0E
+𥸎
+H-9554
+25F4B
+𥽋
+H-91F8
+260A5
+𦂥
+H-8A77
+261DD
+𦇝
+H-FDDF
+263BE
+𦎾
+H-9649
+26488
+𦒈
+H-9C47
+26626
+𦘦
+H-8ED9
+267B3
+𦞳
+H-9ED4
+268C7
+𦣇
+H-9C63
+26A2D
+𦨭
+H-9C6E
+25E49
+𥹉
+H-8AD4
+25FE1
+𥿡
+H-9462
+26102
+𦄂
+H-9BF7
+26258
+𦉘
+H-9DBC
+263F5
+𦏵
+H-FEC2
+26489
+𦒉
+H-8ECC
+266AF
+𦚯
+H-9DB4
+267B4
+𦞴
+H-9568
+2690E
+𦤎
+H-FEC7
+26A2E
+𦨮
+H-FE5D
+i - 46
+26A34 270AD
+
+26A34
+𦨴
+H-9C73
+26B50
+𦭐
+H-8B4C
+26BB3
+𦮳
+H-FA55
+26C81
+𦲁
+H-FBA8
+26D23
+𦴣
+H-9FB5
+26DA0
+𦶠
+H-FCFD
+26DEA
+𦷪
+H-946F
+26E45
+𦹅
+H-FBB3
+26ED2
+𦻒
+H-FC78
+26FA1
+𦾡
+H-FBBD
+26A42
+𦩂
+H-956A
+26B51
+𦭑
+H-FD75
+26BC0
+𦯀
+H-97E4
+26C82
+𦲂
+H-9842
+26D24
+𦴤
+H-93D2
+26DA1
+𦶡
+H-FDAB
+26DEB
+𦷫
+H-FDAC
+26E6E
+𦹮
+H-FC53
+26ED3
+𦻓
+H-8E42
+26FBE
+𦾾
+H-8CD6
+26A51
+𦩑
+H-956D
+26B52
+𦭒
+H-9BDD
+26BF7
+𦯷
+H-9C41
+26CA4
+𦲤
+H-9C7A
+26D25
+𦴥
+H-FDAA
+26DA2
+𦶢
+H-91BD
+26DF0
+𦷰
+H-96CB
+26E72
+𦹲
+H-FDB3
+26ED4
+𦻔
+H-8F5A
+26FDE
+𦿞
+H-9843
+26A52
+𦩒
+H-8EF0
+26B53
+𦭓
+H-FAF5
+26C21
+𦰡
+H-925C
+26CB7
+𦲷
+H-97FB
+26D26
+𦴦
+H-9840
+26DA3
+𦶣
+H-8F4C
+26E00
+𦸀
+H-96CE
+26E77
+𦹷
+H-8F6B
+26ED5
+𦻕
+H-90C2
+26FDF
+𦿟
+H-96C5
+26B05
+𦬅
+H-8F4D
+26B5B
+𦭛
+H-9C74
+26C40
+𦱀
+H-96FA
+26CB8
+𦲸
+H-90CA
+26D27
+𦴧
+H-9146
+26DA4
+𦶤
+H-96C9
+26E05
+𦸅
+H-A056
+26E84
+𦺄
+H-96CA
+26ED6
+𦻖
+H-8EA5
+2700E
+𧀎
+H-89BC
+26B0A
+𦬊
+H-8EF6
+26B75
+𦭵
+H-9545
+26C41
+𦱁
+H-8CF6
+26CBD
+𦲽
+H-9C5B
+26D28
+𦴨
+H-9867
+26DA5
+𦶥
+H-8F55
+26E07
+𦸇
+H-9CE1
+26E88
+𦺈
+H-87CD
+26ED7
+𦻗
+H-9061
+2704B
+𧁋
+H-9CA3
+26B13
+𦬓
+H-FABC
+26B82
+𦮂
+H-96C6
+26C46
+𦱆
+H-8D4D
+26CC0
+𦳀
+H-974D
+26D29
+𦴩
+H-FA5A
+26DA6
+𦶦
+H-FBAE
+26E12
+𦸒
+H-96C4
+26E8B
+𦺋
+H-8753
+26F26
+𦼦
+H-924F
+27052
+𧁒
+H-924B
+26B15
+𦬕
+H-8CD5
+26B96
+𦮖
+H-8F6A
+26C7E
+𦱾
+H-FB66
+26CC3
+𦳃
+H-8ED3
+26D2A
+𦴪
+H-FBA9
+26DA7
+𦶧
+H-956F
+26E42
+𦹂
+H-8F5E
+26E99
+𦺙
+H-8F79
+26F73
+𦽳
+H-9373
+27053
+𧁓
+H-984A
+26B23
+𦬣
+H-875E
+26B97
+𦮗
+H-8F4E
+26C7F
+𦱿
+H-8E65
+26CD1
+𦳑
+H-9561
+26D51
+𦵑
+H-9841
+26DAE
+𦶮
+H-9C7D
+26E43
+𦹃
+H-8F6C
+26ED0
+𦻐
+H-9E6F
+26F74
+𦽴
+H-FDB5
+27088
+𧂈
+H-8FA4
+26B28
+𦬨
+H-FBDA
+26B9D
+𦮝
+H-9C78
+26C80
+𦲀
+H-9849
+26D22
+𦴢
+H-9F4B
+26D74
+𦵴
+H-8CD3
+26DDC
+𦷜
+H-A0F0
+26E44
+𦹄
+H-8EA3
+26ED1
+𦻑
+H-A0C5
+26F9F
+𦾟
+H-FECC
+270AD
+𧂭
+H-A0F1
+i - 47
+270AE 27FF9
+
+270AE
+𧂮
+H-9EFB
+27164
+𧅤
+H-9F48
+272B6
+𧊶
+H-9E70
+275A3
+𧖣
+H-9EAA
+27656
+𧙖
+H-A0EB
+277CC
+𧟌
+H-9CC3
+279DD
+𧧝
+H-9CCE
+27ABE
+𧪾
+H-9064
+27BEF
+𧯯
+H-876C
+27D73
+𧵳
+H-9E6E
+270AF
+𧂯
+H-9CD2
+27165
+𧅥
+H-9247
+272E6
+𧋦
+H-9CAC
+275E0
+𧗠
+H-8FBD
+27657
+𧙗
+H-9BA3
+27858
+𧡘
+H-9CC4
+279FD
+𧧽
+H-9CD4
+27AF4
+𧫴
+H-98B6
+27BF4
+𧯴
+H-97F3
+27D84
+𧶄
+H-8A40
+270CD
+𧃍
+H-8FA7
+27175
+𧅵
+H-90FB
+27352
+𧍒
+H-8752
+275E4
+𧗤
+H-8FBF
+27694
+𧚔
+H-8BA1
+27870
+𧡰
+H-93D6
+27A0A
+𧨊
+H-9CD5
+27B06
+𧬆
+H-9668
+27C12
+𧰒
+H-9BF8
+27D8F
+𧶏
+H-8FEF
+270D2
+𧃒
+H-8754
+271CD
+𧇍
+H-9CA4
+2739A
+𧎚
+H-8FAE
+275FD
+𧗽
+H-9369
+2770F
+𧜏
+H-8FC8
+2789D
+𧢝
+H-9DAC
+27A0E
+𧨎
+H-FBC8
+27B0B
+𧬋
+H-9CD6
+27C6C
+𧱬
+H-875A
+27D98
+𧶘
+H-8FF4
+270F8
+𧃸
+H-FC5C
+2721B
+𧈛
+H-9571
+273FF
+𧏿
+H-8D50
+275FE
+𧗾
+H-9BA7
+27735
+𧜵
+H-894C
+278B2
+𧢲
+H-8BE6
+27A3E
+𧨾
+H-9DB3
+27B18
+𧬘
+H-98BD
+27CB1
+𧲱
+H-8748
+27DBD
+𧶽
+H-8FF5
+27109
+𧄉
+H-9845
+27267
+𧉧
+H-8745
+27422
+𧐢
+H-957D
+27607
+𧘇
+H-C8A4
+27736
+𧜶
+H-9860
+278C8
+𧣈
+H-8A71
+27A53
+𧩓
+H-FC70
+27B38
+𧬸
+H-8FDC
+27CC5
+𧳅
+H-874A
+27DDC
+𧷜
+H-95C2
+2710C
+𧄌
+H-9046
+27280
+𧊀
+H-9CA6
+27450
+𧑐
+H-9CB0
+2760C
+𧘌
+H-FEEA
+27741
+𧝁
+H-94C7
+27924
+𧤤
+H-8FD1
+27A59
+𧩙
+H-8FD7
+27B39
+𧬹
+H-FEF6
+27D2F
+𧴯
+H-9E6C
+27E4D
+𧹍
+H-986A
+2710D
+𧄍
+H-8CD1
+27285
+𧊅
+H-9CA7
+27484
+𧒄
+H-97B6
+27632
+𧘲
+H-9BE1
+2775E
+𧝞
+H-8B58
+27967
+𧥧
+H-99D5
+27A79
+𧩹
+H-9B73
+27B3A
+𧬺
+H-8FD9
+27D53
+𧵓
+H-8FF2
+27E4F
+𧹏
+H-97CF
+27126
+𧄦
+H-FEFA
+2728B
+𧊋
+H-9CAA
+27486
+𧒆
+H-A0BD
+27639
+𧘹
+H-8B41
+27784
+𧞄
+H-95AB
+2797A
+𧥺
+H-90F4
+27A84
+𧪄
+H-FA5B
+27B48
+𧭈
+H-9541
+27D54
+𧵔
+H-8FEE
+27F2E
+𧼮
+H-9EE5
+27127
+𧄧
+H-9560
+272B2
+𧊲
+H-9ED3
+27574
+𧕴
+H-8ADF
+27655
+𧙕
+H-9DB6
+27785
+𧞅
+H-95AA
+279A0
+𧦠
+H-8AA3
+27ABD
+𧪽
+H-8FD2
+27B65
+𧭥
+H-87CA
+27D66
+𧵦
+H-9CD7
+27FF9
+𧿹
+H-9E7C
+i - 48
+28002 28A48
+
+28002
+𨀂
+H-9041
+280E8
+𨃨
+H-9CCA
+28207
+𨈇
+H-8B73
+2832F
+𨌯
+H-9D44
+28482
+𨒂
+H-FBFE
+2863B
+𨘻
+H-8FA2
+2882B
+𨠫
+H-FE55
+2897E
+𨥾
+H-91D8
+289E1
+𨧡
+H-9865
+28A16
+𨨖
+H-9778
+28009
+𨀉
+H-9CDB
+280E9
+𨃩
+H-8A66
+28218
+𨈘
+H-97CA
+2833A
+𨌺
+H-8ECA
+28501
+𨔁
+H-905E
+286AA
+𨚪
+H-9D48
+2890D
+𨤍
+H-87A6
+28989
+𨦉
+H-9646
+289E3
+𨧣
+H-8C6C
+28A25
+𨨥
+H-8FCF
+2801E
+𨀞
+H-9441
+280F4
+𨃴
+H-9CFB
+2821A
+𨈚
+H-9D42
+28365
+𨍥
+H-904E
+2853C
+𨔼
+H-9063
+286AB
+𨚫
+H-FAD3
+28933
+𨤳
+H-9073
+289A8
+𨦨
+H-9360
+289E4
+𨧤
+H-FA4A
+28A29
+𨨩
+H-FC60
+28023
+𨀣
+H-9CE6
+2812E
+𨄮
+H-9CFC
+28256
+𨉖
+H-8A61
+2836D
+𨍭
+H-8EB3
+2853D
+𨔽
+H-9057
+286B2
+𨚲
+H-8D4F
+28948
+𨥈
+H-9BEF
+289AA
+𨦪
+H-FA53
+289E7
+𨧧
+H-9D50
+28A32
+𨨲
+H-8C4E
+28024
+𨀤
+H-9DB0
+2814F
+𨅏
+H-9CFE
+2827C
+𨉼
+H-8BAE
+2837D
+𨍽
+H-9FF5
+2856C
+𨕬
+H-9066
+286BC
+𨚼
+H-905D
+28949
+𨥉
+H-9CF0
+289AB
+𨦫
+H-9CD3
+289E8
+𨧨
+H-9D52
+28A36
+𨨶
+H-FC56
+28048
+𨁈
+H-9CEA
+2815D
+𨅝
+H-8A53
+2829B
+𨊛
+H-8AD2
+2838A
+𨎊
+H-9D45
+285E8
+𨗨
+H-9BC0
+286D8
+𨛘
+H-90B9
+28956
+𨥖
+H-9D4B
+289B8
+𨦸
+H-9D4E
+289F9
+𨧹
+H-95AF
+28A44
+𨩄
+H-91DC
+28083
+𨂃
+H-9CED
+2816F
+𨅯
+H-9CE5
+282CD
+𨋍
+H-8BA2
+28412
+𨐒
+H-904F
+285F4
+𨗴
+H-FCE5
+286E6
+𨛦
+H-906B
+28964
+𨥤
+H-FED9
+289BC
+𨦼
+H-FB40
+289FA
+𨧺
+H-975A
+28A45
+𨩅
+H-9661
+28090
+𨂐
+H-9CFA
+28189
+𨆉
+H-9D40
+282E2
+𨋢
+H-9DF2
+28468
+𨑨
+H-9D47
+28600
+𨘀
+H-9162
+2870F
+𨜏
+H-8C5C
+28968
+𨥨
+H-FEDA
+289C0
+𨧀
+H-8DE2
+289FB
+𨧻
+H-9349
+28A46
+𨩆
+H-92EC
+280BD
+𨂽
+H-8B62
+281AF
+𨆯
+H-9D41
+28306
+𨌆
+H-9D43
+2846C
+𨑬
+H-89CA
+2860B
+𨘋
+H-9067
+28713
+𨜓
+H-9069
+2896C
+𨥬
+H-91E0
+289DC
+𨧜
+H-9442
+289FC
+𨧼
+H-9747
+28A47
+𨩇
+H-935D
+280BE
+𨂾
+H-8A4E
+281BC
+𨆼
+H-9045
+28318
+𨌘
+H-9CDF
+28473
+𨑳
+H-9CB5
+28625
+𨘥
+H-8FA1
+28804
+𨠄
+H-FE57
+2896D
+𨥭
+H-8D43
+289DE
+𨧞
+H-9056
+28A0F
+𨨏
+H-A0F4
+28A48
+𨩈
+H-8EDE
+i - 49
+28A49 290EC
+
+28A49
+𨩉
+H-96FE
+28A9C
+𨪜
+H-92C2
+28AE2
+𨫢
+H-90A8
+28B2C
+𨬬
+H-9DAB
+28B66
+𨭦
+H-FB5D
+28BD7
+𨯗
+H-9341
+28BFF
+𨯿
+H-90AE
+28C3B
+𨰻
+H-95E3
+28E65
+𨹥
+H-95F5
+29088
+𩂈
+H-9372
+28A4A
+𨩊
+H-FD4F
+28AC0
+𨫀
+H-97B1
+28AE3
+𨫣
+H-94A9
+28B2D
+𨬭
+H-A0E3
+28B6C
+𨭬
+H-9DB1
+28BD9
+𨯙
+H-95AD
+28C03
+𨰃
+H-FEA5
+28CCA
+𨳊
+H-8B4F
+28E66
+𨹦
+H-95F4
+2908B
+𩂋
+H-91C5
+28A4B
+𨩋
+H-95DE
+28AC6
+𨫆
+H-907B
+28AE5
+𨫥
+H-90A9
+28B2F
+𨬯
+H-9648
+28B8F
+𨮏
+H-FEA3
+28BDA
+𨯚
+H-91D5
+28C09
+𨰉
+H-9D56
+28CCD
+𨳍
+H-8AE3
+28E97
+𨺗
+H-9FB3
+29093
+𩂓
+H-9642
+28A59
+𨩙
+H-98B0
+28ACB
+𨫋
+H-93FE
+28AEA
+𨫪
+H-8C65
+28B46
+𨭆
+H-9D53
+28B99
+𨮙
+H-9DB2
+28BE7
+𨯧
+H-977A
+28C1C
+𨰜
+H-97E3
+28CD2
+𨳒
+H-8B4D
+28EAC
+𨺬
+H-FEAF
+290AF
+𩂯
+H-90CD
+28A5A
+𨩚
+H-A040
+28ACC
+𨫌
+H-947B
+28AFC
+𨫼
+H-95E0
+28B4C
+𨭌
+H-8AA9
+28B9C
+𨮜
+H-95AE
+28BE8
+𨯨
+H-FDFC
+28C1D
+𨰝
+H-95E2
+28D34
+𨴴
+H-95EA
+28EB2
+𨺲
+H-FE72
+290B0
+𩂰
+H-95FE
+28A81
+𨪁
+H-97BD
+28ACE
+𨫎
+H-9777
+28B0C
+𨬌
+H-907D
+28B4E
+𨭎
+H-9BC5
+28B9D
+𨮝
+H-FCA3
+28BE9
+𨯩
+H-8E47
+28C23
+𨰣
+H-9466
+28D99
+𨶙
+H-8B4E
+28EB3
+𨺳
+H-927A
+290B1
+𩂱
+H-9159
+28A82
+𨪂
+H-977D
+28ADE
+𨫞
+H-FABE
+28B13
+𨬓
+H-9265
+28B50
+𨭐
+H-965D
+28BB9
+𨮹
+H-8769
+28BEA
+𨯪
+H-93FD
+28C26
+𨰦
+H-9647
+28DB9
+𨶹
+H-8CC1
+28ED9
+𨻙
+H-FEAC
+290C0
+𩃀
+H-9C65
+28A83
+𨪃
+H-97F5
+28ADF
+𨫟
+H-FD43
+28B21
+𨬡
+H-FDBA
+28B63
+𨭣
+H-975F
+28BC2
+𨯂
+H-A0A2
+28BEB
+𨯫
+H-90A5
+28C2B
+𨰫
+H-91B8
+28E0F
+𨸏
+H-8BED
+28EE7
+𨻧
+H-95F3
+290E4
+𩃤
+H-97CC
+28A9A
+𨪚
+H-9BAC
+28AE0
+𨫠
+H-90C6
+28B22
+𨬢
+H-93C4
+28B64
+𨭤
+H-965F
+28BC5
+𨯅
+H-9655
+28BEC
+𨯬
+H-90AC
+28C30
+𨰰
+H-9CEC
+28E36
+𨸶
+H-91D9
+28FC5
+𨿅
+H-9D58
+290E5
+𩃥
+H-90CE
+28A9B
+𨪛
+H-FADA
+28AE1
+𨫡
+H-90A4
+28B2B
+𨬫
+H-FEED
+28B65
+𨭥
+H-966E
+28BD4
+𨯔
+H-9D54
+28BF5
+𨯵
+H-95AC
+28C39
+𨰹
+H-90AD
+28E39
+𨸹
+H-A0A4
+29079
+𩁹
+H-8D46
+290EC
+𩃬
+H-9D59
+i - 50
+290ED 2A2B4
+
+290ED
+𩃭
+H-FCF5
+291D5
+𩇕
+H-90DD
+294E5
+𩓥
+H-8A4C
+297D4
+𩟔
+H-8A70
+2992F
+𩤯
+H-96C1
+29A28
+𩨨
+H-9D6C
+29D98
+𩶘
+H-9DCD
+29F23
+𩼣
+H-9D72
+2A0F8
+𪃸
+H-8FB1
+2A1B4
+𪆴
+H-96BE
+2910D
+𩄍
+H-FEFD
+291EB
+𩇫
+H-90E0
+294E7
+𩓧
+H-9D63
+29810
+𩠐
+H-8BF3
+29945
+𩥅
+H-8777
+29A4D
+𩩍
+H-8A65
+29D9B
+𩶛
+H-9D6F
+29F30
+𩼰
+H-9ECC
+2A0FE
+𪃾
+H-96B7
+2A1B5
+𪆵
+H-8D49
+29110
+𩄐
+H-9D5B
+2941D
+𩐝
+H-90F3
+2959E
+𩖞
+H-9ECF
+29857
+𩡗
+H-9150
+29947
+𩥇
+H-8C64
+29B05
+𩬅
+H-915D
+29DF6
+𩷶
+H-89BB
+29FB7
+𩾷
+H-9174
+2A107
+𪄇
+H-8C55
+2A1DF
+𪇟
+H-9179
+2913C
+𩄼
+H-9D5C
+29420
+𩐠
+H-98B1
+295B0
+𩖰
+H-9D65
+298A4
+𩢤
+H-9CC1
+29948
+𩥈
+H-9676
+29B0E
+𩬎
+H-9D6D
+29E06
+𩸆
+H-9EF9
+29FDE
+𩿞
+H-9ED0
+2A123
+𪄣
+H-9178
+2A1F5
+𪇵
+H-96B6
+2914D
+𩅍
+H-937E
+29433
+𩐳
+H-90F0
+295B8
+𩖸
+H-9D66
+298D1
+𩣑
+H-9D68
+29949
+𩥉
+H-9D69
+29BD5
+𩯕
+H-915A
+29E2D
+𩸭
+H-96B4
+2A014
+𪀔
+H-905C
+2A133
+𪄳
+H-89BE
+2A220
+𪈠
+H-91A4
+2915B
+𩅛
+H-98AC
+2943F
+𩐿
+H-93BD
+295D7
+𩗗
+H-965A
+298EA
+𩣪
+H-93A7
+2995D
+𩥝
+H-FCA4
+29C73
+𩱳
+H-8C42
+29E68
+𩹨
+H-9172
+2A087
+𪂇
+H-8ED2
+2A134
+𪄴
+H-917C
+2A233
+𪈳
+H-91A6
+2915E
+𩅞
+H-9D5E
+29448
+𩑈
+H-95B7
+295E9
+𩗩
+H-9D64
+298F1
+𩣱
+H-9674
+2996A
+𩥪
+H-9D6A
+29CAD
+𩲭
+H-9CC0
+29EAC
+𩺬
+H-9EC8
+2A0B9
+𪂹
+H-91A8
+2A150
+𪅐
+H-FB77
+2A293
+𪊓
+H-9D75
+29170
+𩅰
+H-FDD0
+294D0
+𩓐
+H-9F46
+295F4
+𩗴
+H-8A6C
+298FA
+𩣺
+H-8CFD
+2999D
+𩦝
+H-924E
+29D3E
+𩴾
+H-916A
+29EB0
+𩺰
+H-8771
+2A0E1
+𪃡
+H-9177
+2A192
+𪆒
+H-9175
+2A29F
+𪊟
+H-9052
+2919C
+𩆜
+H-FD60
+294D9
+𩓙
+H-8E4B
+29720
+𩜠
+H-8AD9
+29903
+𩤃
+H-A0EF
+299C3
+𩧃
+H-9D6B
+29D5A
+𩵚
+H-9D6E
+29EC3
+𩻃
+H-8B55
+2A0ED
+𪃭
+H-96BF
+2A193
+𪆓
+H-91A3
+2A2B2
+𪊲
+H-A045
+291A8
+𩆨
+H-9CCF
+294DA
+𩓚
+H-9658
+29732
+𩜲
+H-9D67
+29905
+𩤅
+H-9151
+299C9
+𩧉
+H-9BC1
+29D7C
+𩵼
+H-9EA6
+29EF8
+𩻸
+H-9D71
+2A0F3
+𪃳
+H-96C0
+2A1AB
+𪆫
+H-9176
+2A2B4
+𪊴
+H-91A9
+i - 51
+2A2B6 <00EA,030C>
+
+2A2B6 2A5C6 2F840 <00CA,030C>
+𪊶 𪗆 咢 
+H-98AA H-9478 H-A047 H-8864
+2A2BA 2A5CB 2F878 <00EA,0304>
+𪊺 𪗋 屮 
+H-8C5F H-9D7A H-8BC3 H-88A3
+2A2BD 2A601 2F894 <00EA,030C>
+𪊽 𪘁 弢 
+H-8BAA H-8AC9 H-FC48 H-88A5
+2A2DF 2A632 2F8A6
+𪋟 𪘲 慈
+H-9CDD H-8B4B H-FC77
+2A2FF 2A64A 2F8CD
+𪋿 𪙊 晉
+H-9D77 H-9FEC H-9C52
+2A351 2A65B 2F994
+𪍑 𪙛 芳
+H-8756 H-8AE2 H-8EFD
+2A3A9 2A6A9 2F9B2
+𪎩 𪚩 䕫
+H-8940 H-9E75 H-8FA8
+2A3ED 2ADFF 2F9BC
+㴝 𪷿 蜨
+H-91B5 H-87DC H-957A
+2A434 2F825 2F9D4
+𪐴 勇 貫
+H-9EEC H-9874 H-8FF0
+2A45B 2F83B <00CA,0304>
+𪑛 吆 
+H-93AA H-9AC8 H-8862
+i - 52
+Table 2: Newly Included Characters in the HKSCS-2016
+Compared with the HKSCS-2008, the HKSCS-2016 includes 23 more Chinese characters
+and one more symbol. These characters are included in the ISO/IEC 10646 through
+horizontal extension, reflecting their use in Hong Kong and further fulfilling the needs of
+the local electronic communication in Chinese. These 24 characters are listed below.
+S/N Glyph commonly used in Hong Kong
+and its ISO/IEC 10646 code point
+Unifiable character
+and its ISO/IEC 10646 code point
+1
+兑
+5151
+兌
+514C
+(corresponding Big-5 code: 0xA749)
+2
+悦
+60A6
+悅
+6085
+(corresponding Big-5 code: 0xAEAE)
+3
+捝
+635D
+挩
+6329
+(corresponding Big-5 code: 0xD1BE)
+4
+敚
+655A
+敓
+6553
+(corresponding Big-5 code: 0xD5A7)
+5
+棁
+68C1
+梲
+68B2
+(corresponding Big-5 code: 0xD5BF)
+6
+涚
+6D9A
+涗
+6D97
+(corresponding Big-5 code: 0xD258)
+7
+税
+7A0E
+稅
+7A05
+(corresponding Big-5 code: 0xB57C)
+8
+脱
+8131
+脫
+812B
+(corresponding Big-5 code: 0xB2E6)
+9
+蜕
+8715
+蛻
+86FB
+(corresponding Big-5 code: 0xB8C0)
+10
+説
+8AAC
+說
+8AAA
+(corresponding Big-5 code: 0xBBA1)
+11
+鋭
+92ED
+銳
+92B3
+(corresponding Big-5 code: 0xBE55)
+ii - 1
+S/N Glyph commonly used in Hong Kong
+and its ISO/IEC 10646 code point
+Unifiable character
+and its ISO/IEC 10646 code point
+12
+閲
+95B2
+閱
+95B1
+(corresponding Big-5 code: 0xBE5C)
+13
+媪
+5AAA
+媼
+5ABC
+(corresponding Big-5 code: 0xB6FE)
+14
+愠
+6120
+慍
+614D
+(corresponding Big-5 code: 0xB759)
+15
+氲
+6C32
+氳
+6C33
+(corresponding Big-5 code: 0xBA72)
+16
+煴
+7174
+熅
+7185
+(corresponding Big-5 code: 0xE2BE)
+17
+緼
+7DFC
+縕
+7E15
+(corresponding Big-5 code: 0xEAD5)
+18
+腽
+817D
+膃
+8183
+(corresponding Big-5 code: 0xE3A6)
+19
+藴
+85F4
+蘊
+860A
+(corresponding Big-5 code: 0xC4AD)
+20
+輼
+8F3C
+轀
+8F40
+(corresponding Big-5 code: 0xEEC1)
+21
+醖
+9196
+醞
+919E
+(corresponding Big-5 code: 0xC1DF)
+22
+吿
+543F
+告
+544A
+(corresponding Big-5 code: 0xA769)
+23 鱇
+9C47 ---
+24 €
+20AC ---
+During the formulation of the Reference Glyphs for Chinese Computer Systems in Hong
+Kong, it is found that for some characters (characters S/Ns 1 to 22), there are differences
+between the glyphs commonly used in Hong Kong and those specified in the Big-5 code table.
+These glyphs used in Hong Kong are therefore included in the HKSCS-2016. As “鱇”
+(character S/N 23) is included in the International Ideographs Core and commonly used in
+ii - 2
+Hong Kong together with “鮟”, a HKSCS-1999 character, to form the name of the food fish
+“鮟鱇”, and as the euro sign “€” is a commonly used currency symbol in Hong Kong, they
+are also included in the HKSCS-2016.
+ii - 3
+Table 3: Compatibility Characters in the HKSCS-2016
+The HKSCS-2016 contains 12 characters which are in the CJK Compatibility Ideographs
+Block. Their corresponding characters are shown in the following table for reference.
+S/N Compatibility characters in the
+HKSCS-2016 Corresponding character
+1 
+F907
+龜
+9F9C
+2 
+2F825
+勇
+52C7
+3 
+2F83B
+吆
+5406
+4 
+2F840
+咢
+54A2
+5 
+2F878
+屮
+5C6E
+6 
+2F894
+弢
+5F22
+7 
+2F8A6
+慈
+6148
+8 
+2F8CD
+晉
+6649
+9 
+2F994
+芳
+82B3
+10 
+2F9B2
+䕫
+456B
+11 
+2F9BC
+蜨
+8728
+12 
+2F9D4
+貫
+8CAB
+iii - 1 

@@ -14,6 +14,7 @@ using System.IO;
 
 public class GenerateFileMaps
 {
+    
     private CodeExceptions exp = new CodeExceptions();
     private GenerateIds genIds = new GenerateIds();
     private Dictionary<string, string> priviledgedExceptions = CodeExceptions.getPriviledgedExceptionCharacters();
@@ -410,22 +411,87 @@ public class GenerateFileMaps
         return finalUnicodeMap;
     }
 */
-    public Dictionary<string, HeisigRecord> generateHeisigTradMap()
+    public Dictionary<string, AlternativeCharsetRecord> generateHeisigTradMap()
     {
         var heisigTradPath = "../../../projectFolder/StaticFiles/heisigTrad.txt";
         var heisigTrad = 
-            generateHeisigMap(WritingSystemEnum.Traditional, heisigTradPath);
+            generateHeisigMap(WritingSystemEnum.HeisigTraditional, heisigTradPath);
         return heisigTrad;
     }
     
-    public Dictionary<string, HeisigRecord> generateHeisigSimpMap()
+    public Dictionary<string, AlternativeCharsetRecord> generateHeisigSimpMap()
     {
         var heisigSimpPath = "../../../projectFolder/StaticFiles/heisigSimp.txt";
         var heisigSimp = 
-            generateHeisigMap(WritingSystemEnum.Simplified, heisigSimpPath);
+            generateHeisigMap(WritingSystemEnum.HeisigSimplified, heisigSimpPath);
+        return heisigSimp;
+    }
+    
+    public Dictionary<string, AlternativeCharsetRecord> generateHongkongCharMap()
+    {
+        var heisigSimpPath = "../../../projectFolder/StaticFiles/wikiHkscs2016.txt";
+        Dictionary<string, AlternativeCharsetRecord> heisigSimp = 
+            generateHongkongMap(WritingSystemEnum.Hongkong, heisigSimpPath);
+        return heisigSimp;
+    }
+    
+    public Dictionary<string, AlternativeCharsetRecord> generateGukjaHanjaCharMap()
+    {
+        var heisigSimpPath = "../../../projectFolder/StaticFiles/wikiHkscs2016.txt";
+        Dictionary<string, AlternativeCharsetRecord> heisigSimp = 
+            generateGukjaMap(WritingSystemEnum.Gukja, heisigSimpPath);
+        return heisigSimp;
+    }
+    
+    public Dictionary<string, AlternativeCharsetRecord> generateJISX0208CharMap()
+    {
+        var heisigSimpPath = "../../../projectFolder/StaticFiles/wikiJISX0208.txt";
+        Dictionary<string, AlternativeCharsetRecord> heisigSimp = 
+            generateJISX0208Map(WritingSystemEnum.JISX0208, heisigSimpPath);
+        return heisigSimp;
+    }
+    
+    public Dictionary<string, AlternativeCharsetRecord> generateJoyoCharMap()
+    {
+        var heisigSimpPath = "../../../projectFolder/StaticFiles/wikiJoyoKanji.txt";
+        Dictionary<string, AlternativeCharsetRecord> heisigSimp = 
+            generateJoyoMap(WritingSystemEnum.Joyo, heisigSimpPath);
         return heisigSimp;
     }
 
+    private Dictionary<string, AlternativeCharsetRecord> generateJoyoMap(WritingSystemEnum myenum, string mypath)
+    {
+        Dictionary<string, AlternativeCharsetRecord> charMapFromUnsortedData = 
+            generateCharMapFromUnsorted(myenum, mypath);
+        return charMapFromUnsortedData;
+    }
+
+    private Dictionary<string, AlternativeCharsetRecord> generateJISX0208Map(WritingSystemEnum myenum, string mypath)
+    {
+        Dictionary<string, AlternativeCharsetRecord> charMapFromUnsortedData = 
+            generateCharMapFromUnsorted(myenum, mypath);
+        return charMapFromUnsortedData;
+    }
+
+    private Dictionary<string, AlternativeCharsetRecord> generateGukjaMap(WritingSystemEnum myenum, string mypath)
+    {
+        Dictionary<string, AlternativeCharsetRecord> charMapFromUnsortedData = 
+            generateCharMapFromUnsorted(myenum, mypath);
+        return charMapFromUnsortedData;
+    }
+
+    private Dictionary<string, AlternativeCharsetRecord> generateHongkongMap(WritingSystemEnum myenum, string mypath)
+    {
+        Dictionary<string, AlternativeCharsetRecord> charMapFromUnsortedData = 
+            generateCharMapFromUnsorted(myenum, mypath);
+        return charMapFromUnsortedData;
+    }
+
+    private Dictionary<string, AlternativeCharsetRecord> generateCharMapFromUnsorted(WritingSystemEnum myenum, string mypath)
+    {
+        throw new NotImplementedException();
+    }
+    
     public Dictionary<string, FrequencyRecord> generateTzaiMap(string tzaiPath)
     {
         //var tzaiPath = "../../../projectFolder/StaticFiles/Tzai2006.txt";
@@ -440,7 +506,7 @@ public class GenerateFileMaps
                 input.Split(new char[0], StringSplitOptions.RemoveEmptyEntries);
             var character = splitstr[0];
             var freqRecord = new FrequencyRecord(
-                WritingSystemEnum.Traditional,
+                WritingSystemEnum.HeisigTraditional,
                 long.Parse(splitstr[1]),
                 allOccurrences
             );
@@ -461,7 +527,7 @@ public class GenerateFileMaps
             string[] splitstr = input.Split('\t');
             var character = new UnicodeCharacter(splitstr[1]);
             var freqRecord = new FrequencyRecord(
-                WritingSystemEnum.Simplified,
+                WritingSystemEnum.HeisigSimplified,
                 long.Parse(splitstr[2]),
                 allOccurrences
             );
@@ -499,13 +565,11 @@ public class GenerateFileMaps
         return sum;
     }
     
-    
-    
-    private Dictionary<string, HeisigRecord> generateHeisigMap(WritingSystemEnum system, string path)
+    private Dictionary<string, AlternativeCharsetRecord> generateHeisigMap(WritingSystemEnum system, string path)
     {
         var heisigSimpLines = UtilityFunctions.removeIntroductionLines(path, 3);
 
-        var dictionary = new Dictionary<string, HeisigRecord>();
+        var dictionary = new Dictionary<string, AlternativeCharsetRecord>();
         int linenumber = 0;
 
         foreach (string input in heisigSimpLines)
@@ -514,7 +578,7 @@ public class GenerateFileMaps
             string[] splitstr = 
                 input.Split(new char[0], StringSplitOptions.RemoveEmptyEntries);
             var character = new UnicodeCharacter(splitstr[1]);
-            var freqRecord = new HeisigRecord(
+            var freqRecord = new AlternativeCharsetRecord(
                 system,
                 stringToInd(splitstr[0], splitstr, linenumber)
             );

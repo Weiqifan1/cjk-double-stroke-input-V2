@@ -1,6 +1,6 @@
 ﻿namespace double_stroke.projectFolder.StaticFileMaps;
 
-public record HeisigRecord(
+public record AlternativeCharsetRecord(
     WritingSystemEnum system,
     int number
     );
