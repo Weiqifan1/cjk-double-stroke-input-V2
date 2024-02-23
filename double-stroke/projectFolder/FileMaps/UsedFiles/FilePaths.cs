@@ -5,6 +5,11 @@ public static class FilePaths
     
     public static string dotsAndSlash =  @"..\..\..\";
     
+    public static string wikigukja = "double-stroke\\projectFolder\\StaticFiles\\wikiGukjaHanja.txt";
+    public static string wikihk = "double-stroke\\projectFolder\\StaticFiles\\wikiHkscs2016.txt";
+    public static string wikijis = "double-stroke\\projectFolder\\StaticFiles\\wikiJISX0208.txt";
+    public static string wikijooyo = "double-stroke\\projectFolder\\StaticFiles\\wikiJoyoKanji.txt";
+    
     public static string idsPathStr = "double-stroke\\projectFolder\\StaticFiles\\ids.txt";
     public static string codepointPathStr = "double-stroke\\projectFolder\\StaticFiles\\codepoint-character-sequence.txt";
     public static string newPathForSaveFileStr = "double-stroke\\projectFolder\\GeneratedFiles\\idsMap.txt";    

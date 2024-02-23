@@ -2,5 +2,5 @@
 
 public record AlternativeCharsetRecord(
     WritingSystemEnum system,
-    int number
+    long unicodeOrdinal
     );

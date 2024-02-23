@@ -73,7 +73,8 @@ public class testSetup
         
         junda = gen.generateJundaMap(jundaPath);
         tzai = gen.generateTzaiMap(tzaiPath);
-        
+
+        string test = "";
     }
     
 }
