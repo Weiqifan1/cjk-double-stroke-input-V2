@@ -20,20 +20,30 @@ public static class AlternativeCharsets
         allchars.UnionWith(forth);
         return allchars;
     }
-/*
-    public void IterateString(string text)
+
+    public static HashSet<string> getGukja()
     {
-        
+        var guk = GetAllCharsFromFile(FilePaths.dotsAndSlash + FilePaths.wikigukja);
+        return guk;
+    }
 
-        while (charEnum.MoveNext())
-        {
-            
-            int index = charEnum.ElementIndex;
+    public static HashSet<string> getHongkong2016()
+    {
+        var sek = GetAllCharsFromFile(FilePaths.dotsAndSlash + FilePaths.wikihk);
+        return sek;
+    }
 
-            Console.WriteLine($"Character at index {index}: {textElement}");
-        }
-    }*/
-    
+    public static HashSet<string> getJISX0208()
+    {
+        var thi = GetAllCharsFromFile(FilePaths.dotsAndSlash + FilePaths.wikijis);
+        return thi;
+    }
+
+    public static HashSet<string> getJoyo(){
+        var forth = GetAllCharsFromFile(FilePaths.dotsAndSlash + FilePaths.wikijooyo);
+        return forth;
+    }
+
     private static HashSet<string> GetAllCharsFromFile(string filePath)
     {
         HashSet<string> unused = new HashSet<string>();
