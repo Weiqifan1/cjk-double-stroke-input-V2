@@ -12,7 +12,7 @@ public class TestSchemaBeforePrintSetup
 {
     public int jundaFreq5001 = 183;
     public int tzaiFreq5001 = 88;
-    
+   
     public static JsonSerializerOptions options = new JsonSerializerOptions();
     public static string testDirectory = TestContext.CurrentContext.TestDirectory;
     public static string charToSchemaPath = Path.Combine(testDirectory,
@@ -22,7 +22,7 @@ public class TestSchemaBeforePrintSetup
         FilePaths.dotsAndSlash + FilePaths.codeToSchemaPathStr);    
     //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\codeToSchemaMap.txt");
     public Dictionary<string, SchemeRecord> charToSchemaDict;
-    public Dictionary<string, HashSet<SchemeRecord>> codeToSchemaDich;
+    public Dictionary<string, HashSet<SchemeRecord>> codeToSchemaDict;
 
     public Dictionary<string, List<SchemeRecord>> simplifiedDictList;
     public Dictionary<string, List<SchemeRecord>> traditionalDictList;
@@ -45,13 +45,13 @@ public class TestSchemaBeforePrintSetup
         charToSchemaDict = 
             JsonSerializer.Deserialize<Dictionary<string, SchemeRecord>>(charToSchemaJson, options);
         
-        codeToSchemaDich = 
+        codeToSchemaDict = 
             JsonSerializer.Deserialize<Dictionary<string, HashSet<SchemeRecord>>>(codeToSchemaJson, options);
 
         simplifiedDictList = createListOfStringReadyForPrint
-            .replaceHashSetToList(true, codeToSchemaDich);
+            .replaceHashSetToList(true, codeToSchemaDict);
         traditionalDictList = createListOfStringReadyForPrint
-            .replaceHashSetToList(false, codeToSchemaDich);
+            .replaceHashSetToList(false, codeToSchemaDict);
         
         simplifiedListDictList = createListOfStringReadyForPrint.splicIntoCodeLengths(simplifiedDictList);
         traditionalListDictList= createListOfStringReadyForPrint.splicIntoCodeLengths(traditionalDictList);

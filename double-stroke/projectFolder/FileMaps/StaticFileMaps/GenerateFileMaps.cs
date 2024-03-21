@@ -496,7 +496,11 @@ public class GenerateFileMaps
     {
         //var tzaiPath = "../../../projectFolder/StaticFiles/Tzai2006.txt";
         var tzaiLines = UtilityFunctions.ReadLinesFromFile(tzaiPath);
+        return tzaiMapFromLines(tzaiLines);
+    }
 
+    private Dictionary<string, FrequencyRecord> tzaiMapFromLines(List<string> tzaiLines)
+    {
         var allOccurrences = CalculateSumTzai(tzaiLines);
         var dictionary = new Dictionary<string, FrequencyRecord>();
 
@@ -514,11 +518,16 @@ public class GenerateFileMaps
         }
         return dictionary;
     }
-    
+
     public Dictionary<string, FrequencyRecord> generateJundaMap(string jundaPath)
     {
         //var jundaPath = "../../../projectFolder/StaticFiles/Junda2005.txt";
         var jundaLines = UtilityFunctions.ReadLinesFromFile(jundaPath);
+        return jundaMapFromLines(jundaLines);
+    }
+
+    private Dictionary<string, FrequencyRecord> jundaMapFromLines(List<string> jundaLines)
+    {
         var allOccurrences = CalculateSumJunda(jundaLines);
         var dictionary = new Dictionary<string, FrequencyRecord>();
 
@@ -535,7 +544,7 @@ public class GenerateFileMaps
         }
         return dictionary;
     }
-    
+
     private long CalculateSumTzai(List<string> inputs)
     {
         long sum = 0;
@@ -601,6 +610,23 @@ public class GenerateFileMaps
         }
         return result;
     }
-    
 
+
+    public  Dictionary<string, FrequencyRecord> extractFirst5001Junda(string jundaPath)
+    {
+        var jundaLines = UtilityFunctions.ReadLinesFromFile(jundaPath);
+        Dictionary<string, FrequencyRecord> result = new Dictionary<string, FrequencyRecord>();
+        var junda5001Lines = jundaLines.Take(5001).ToList();
+        result = jundaMapFromLines(junda5001Lines);
+        return result;
+    }
+
+    public Dictionary<string, FrequencyRecord> extractFirst5001Tzai(string tzaiPath)
+    {
+        var tzaiLines = UtilityFunctions.ReadLinesFromFile(tzaiPath);
+        Dictionary<string, FrequencyRecord> result = new Dictionary<string, FrequencyRecord>();
+        var tzai5001Liens = tzaiLines.Take(5001).ToList();
+        result = tzaiMapFromLines(tzai5001Liens);
+        return result;
+    }
 }
