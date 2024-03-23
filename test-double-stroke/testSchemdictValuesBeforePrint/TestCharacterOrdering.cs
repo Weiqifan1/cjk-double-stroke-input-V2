@@ -35,7 +35,7 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
     {
         var checkJundaSort = simplifiedListString;
         List<List<string>> sortingInconsistencies = getSortingInconsistenciesJunda(simplifiedListString);
-        Assert.True(true);
+        Assert.True(sortingInconsistencies.Count == 0);
     }
 
     [Test]
@@ -43,176 +43,7 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
     {
         var checkTzaiSort = traditionalListString;
         List<List<string>> sortingInconsistencies = getSortingInconsistenciesTzai(checkTzaiSort);
-        Assert.True(true);
-        Assert.True(true);
-    }
-    
-    private List<List<string>> getSortingInconsistenciesJunda(List<string> jundareadytoprint)
-    {
-        List<List<string>> result = new List<List<string>>();
-        List<string> eachCompare = new List<string>();
-        string previusStr = "";
-        string currentString = "";
-        string nextString = "";
-        long currentJunda = 99999999;
-        long currentTzai = 99999999;
-        long unicode = 1;
-        List<string> currenttupple = new List<string>();
-        for (int i = 1; i < jundareadytoprint.Count; i++)
-        {
-            string prev = jundareadytoprint[i - 1];
-            string current = jundareadytoprint[i];
-            var splitStrPrev = prev.Split(' ').ToList();
-            var splitStrCurrent = current.Split(' ').ToList();
-            Assert.True(current.Length == 2);
-            var schemPrev = charToSchemaDict.GetValueOrDefault(splitStrPrev[0]);
-            var schemCurrent = charToSchemaDict.GetValueOrDefault(splitStrCurrent[0]);
-            if (splitStrPrev[1] == splitStrCurrent[1])
-            {
-                eachCompare = new List<string>();
-                if (
-                    schemPrev.jundaNumber != null 
-                    && schemCurrent.jundaNumber != null 
-                    && schemPrev.jundaNumber < schemCurrent.jundaNumber)
-                {
-                    eachCompare.Add(prev);
-                    eachCompare.Add(current);
-                } else if (schemPrev.jundaNumber == null 
-                           && schemCurrent.jundaNumber != null)
-                {
-                     eachCompare.Add(prev);
-                     eachCompare.Add(current);
-                } else if (schemPrev.jundaNumber == null 
-                           && schemCurrent.jundaNumber == null 
-                           && schemPrev.tzaiNumber != null 
-                           && schemCurrent.tzaiNumber != null 
-                           && schemPrev.tzaiNumber < schemCurrent.tzaiNumber)
-                {
-                    eachCompare.Add(prev);
-                    eachCompare.Add(current);
-                } else if (schemPrev.jundaNumber == null 
-                           && schemCurrent.jundaNumber == null
-                           && schemPrev.tzaiNumber == null
-                           && schemCurrent.tzaiNumber != null)
-                {
-                    eachCompare.Add(prev);
-                    eachCompare.Add(current);
-                } else if (schemPrev.jundaNumber == null 
-                           && schemCurrent.jundaNumber == null
-                           && schemPrev.tzaiNumber == null
-                           && schemCurrent.tzaiNumber == null 
-                           && char.ConvertToUtf32(splitStrPrev[0], 0) > 
-                           char.ConvertToUtf32(splitStrCurrent[0], 0))
-                {
-                    eachCompare.Add(prev);
-                    eachCompare.Add(current); 
-                }
-
-                if (splitStrPrev[1].Length > splitStrCurrent[1].Length)
-                {
-                    eachCompare.Add(prev);
-                    eachCompare.Add(current); 
-                } 
-                
-                if (string.Compare(splitStrPrev[1], splitStrCurrent[1], 
-                        StringComparison.OrdinalIgnoreCase) > 0)
-                {
-                    eachCompare.Add(prev);
-                    eachCompare.Add(current); 
-                }
-
-
-                if (eachCompare.Count > 0)
-                {
-                    result.Add(eachCompare);
-                }
-            }
-        }
-        return result;
-    }
-    
-    private List<List<string>> getSortingInconsistenciesTzai(List<string> jundareadytoprint)
-    {
-        List<List<string>> result = new List<List<string>>();
-        List<string> eachCompare = new List<string>();
-        string previusStr = "";
-        string currentString = "";
-        string nextString = "";
-        long currentJunda = 99999999;
-        long currentTzai = 99999999;
-        long unicode = 1;
-        List<string> currenttupple = new List<string>();
-        for (int i = 1; i < jundareadytoprint.Count; i++)
-        {
-            string prev = jundareadytoprint[i - 1];
-            string current = jundareadytoprint[i];
-            var splitStrPrev = prev.Split(' ').ToList();
-            var splitStrCurrent = current.Split(' ').ToList();
-            Assert.True(current.Length == 2);
-            var schemPrev = charToSchemaDict.GetValueOrDefault(splitStrPrev[0]);
-            var schemCurrent = charToSchemaDict.GetValueOrDefault(splitStrCurrent[0]);
-            if (splitStrPrev[1] == splitStrCurrent[1])
-            {
-                eachCompare = new List<string>();
-                if (
-                    schemPrev.tzaiNumber != null 
-                    && schemCurrent.tzaiNumber != null 
-                    && schemPrev.tzaiNumber < schemCurrent.tzaiNumber)
-                {
-                    eachCompare.Add(prev);
-                    eachCompare.Add(current);
-                } else if (schemPrev.tzaiNumber == null 
-                           && schemCurrent.tzaiNumber != null)
-                {
-                     eachCompare.Add(prev);
-                     eachCompare.Add(current);
-                } else if (schemPrev.tzaiNumber == null 
-                           && schemCurrent.tzaiNumber == null 
-                           && schemPrev.jundaNumber != null 
-                           && schemCurrent.jundaNumber != null 
-                           && schemPrev.jundaNumber < schemCurrent.jundaNumber)
-                {
-                    eachCompare.Add(prev);
-                    eachCompare.Add(current);
-                } else if (schemPrev.tzaiNumber == null 
-                           && schemCurrent.tzaiNumber == null
-                           && schemPrev.jundaNumber == null
-                           && schemCurrent.jundaNumber != null)
-                {
-                    eachCompare.Add(prev);
-                    eachCompare.Add(current);
-                } else if (schemPrev.tzaiNumber == null 
-                           && schemCurrent.tzaiNumber == null
-                           && schemPrev.jundaNumber == null
-                           && schemCurrent.jundaNumber == null 
-                           && char.ConvertToUtf32(splitStrPrev[0], 0) > 
-                           char.ConvertToUtf32(splitStrCurrent[0], 0))
-                {
-                    eachCompare.Add(prev);
-                    eachCompare.Add(current); 
-                }
-
-                if (splitStrPrev[1].Length > splitStrCurrent[1].Length)
-                {
-                    eachCompare.Add(prev);
-                    eachCompare.Add(current); 
-                } 
-                
-                if (string.Compare(splitStrPrev[1], splitStrCurrent[1], 
-                        StringComparison.OrdinalIgnoreCase) > 0)
-                {
-                    eachCompare.Add(prev);
-                    eachCompare.Add(current); 
-                }
-
-
-                if (eachCompare.Count > 0)
-                {
-                    result.Add(eachCompare);
-                }
-            }
-        }
-        return result;
+        Assert.True(sortingInconsistencies.Count == 0);
     }
     
     [Test]
@@ -435,5 +266,189 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
         return longlist;
     }
 
+    
+    private List<List<string>> getSortingInconsistenciesJunda(List<string> jundareadytoprint)
+    {
+        List<List<string>> result = new List<List<string>>();
+        List<string> eachCompare = new List<string>();
+        string previusStr = "";
+        string currentString = "";
+        string nextString = "";
+        long currentJunda = 99999999;
+        long currentTzai = 99999999;
+        long unicode = 1;
+        List<string> currenttupple = new List<string>();
+        for (int i = 1; i < jundareadytoprint.Count; i++)
+        {
+            eachCompare = new List<string>();
+            string prev = jundareadytoprint[i - 1];
+            string current = jundareadytoprint[i];
+            var splitStrPrev = prev.Split(' ').ToList();
+            var splitStrCurrent = current.Split(' ').ToList();
+            if (splitStrPrev.Count != 2 && splitStrCurrent.Count != 2)
+            {
+                List<string> temperror = new List<string>();
+                temperror.Add(prev);
+                temperror.Add(current);
+                result.Add(temperror);
+                break;
+            }
+
+            var schemPrev = charToSchemaDict.GetValueOrDefault(splitStrPrev[0]);
+            var schemCurrent = charToSchemaDict.GetValueOrDefault(splitStrCurrent[0]);
+            if (splitStrPrev[1] == splitStrCurrent[1])
+            {
+                
+                if (
+                    schemPrev.jundaNumber != null 
+                    && schemCurrent.jundaNumber != null 
+                    && schemPrev.jundaNumber < schemCurrent.jundaNumber)
+                {
+                    eachCompare.Add(prev);
+                    eachCompare.Add(current);
+                } else if (schemPrev.jundaNumber == null 
+                           && schemCurrent.jundaNumber != null)
+                {
+                     eachCompare.Add(prev);
+                     eachCompare.Add(current);
+                } else if (schemPrev.jundaNumber == null 
+                           && schemCurrent.jundaNumber == null 
+                           && schemPrev.tzaiNumber != null 
+                           && schemCurrent.tzaiNumber != null 
+                           && schemPrev.tzaiNumber < schemCurrent.tzaiNumber)
+                {
+                    eachCompare.Add(prev);
+                    eachCompare.Add(current);
+                } else if (schemPrev.jundaNumber == null 
+                           && schemCurrent.jundaNumber == null
+                           && schemPrev.tzaiNumber == null
+                           && schemCurrent.tzaiNumber != null)
+                {
+                    eachCompare.Add(prev);
+                    eachCompare.Add(current);
+                } else if (schemPrev.jundaNumber == null 
+                           && schemCurrent.jundaNumber == null
+                           && schemPrev.tzaiNumber == null
+                           && schemCurrent.tzaiNumber == null 
+                           && char.ConvertToUtf32(splitStrPrev[0], 0) > 
+                           char.ConvertToUtf32(splitStrCurrent[0], 0))
+                {
+                    eachCompare.Add(prev);
+                    eachCompare.Add(current); 
+                }
+
+                if (splitStrPrev[1].Length > splitStrCurrent[1].Length)
+                {
+                    eachCompare.Add(prev);
+                    eachCompare.Add(current); 
+                } 
+                
+                if (string.Compare(splitStrPrev[1], splitStrCurrent[1], 
+                        StringComparison.OrdinalIgnoreCase) > 0)
+                {
+                    eachCompare.Add(prev);
+                    eachCompare.Add(current); 
+                }
+            }
+            
+            if (eachCompare.Count > 0)
+            {
+                result.Add(eachCompare);
+            }
+        }
+        return result;
+    }
+    
+    private List<List<string>> getSortingInconsistenciesTzai(List<string> jundareadytoprint)
+    {
+        List<List<string>> result = new List<List<string>>();
+        List<string> eachCompare = new List<string>();
+        string previusStr = "";
+        string currentString = "";
+        string nextString = "";
+        long currentJunda = 99999999;
+        long currentTzai = 99999999;
+        long unicode = 1;
+        List<string> currenttupple = new List<string>();
+        for (int i = 1; i < jundareadytoprint.Count; i++)
+        {
+            eachCompare = new List<string>();
+            string prev = jundareadytoprint[i - 1];
+            string current = jundareadytoprint[i];
+            var splitStrPrev = prev.Split(' ').ToList();
+            var splitStrCurrent = current.Split(' ').ToList();
+            if (splitStrPrev.Count != 2 && splitStrCurrent.Count != 2)
+            {
+                List<string> temperror = new List<string>();
+                temperror.Add(prev);
+                temperror.Add(current);
+                result.Add(temperror);
+                break;
+            }
+
+            var schemPrev = charToSchemaDict.GetValueOrDefault(splitStrPrev[0]);
+            var schemCurrent = charToSchemaDict.GetValueOrDefault(splitStrCurrent[0]);
+            if (splitStrPrev[1] == splitStrCurrent[1])
+            {
+                
+                if (
+                    schemPrev.tzaiNumber != null 
+                    && schemCurrent.tzaiNumber != null 
+                    && schemPrev.tzaiNumber < schemCurrent.tzaiNumber)
+                {
+                    eachCompare.Add(prev);
+                    eachCompare.Add(current);
+                } else if (schemPrev.tzaiNumber == null 
+                           && schemCurrent.tzaiNumber != null)
+                {
+                     eachCompare.Add(prev);
+                     eachCompare.Add(current);
+                } else if (schemPrev.tzaiNumber == null 
+                           && schemCurrent.tzaiNumber == null 
+                           && schemPrev.jundaNumber != null 
+                           && schemCurrent.jundaNumber != null 
+                           && schemPrev.jundaNumber < schemCurrent.jundaNumber)
+                {
+                    eachCompare.Add(prev);
+                    eachCompare.Add(current);
+                } else if (schemPrev.tzaiNumber == null 
+                           && schemCurrent.tzaiNumber == null
+                           && schemPrev.jundaNumber == null
+                           && schemCurrent.jundaNumber != null)
+                {
+                    eachCompare.Add(prev);
+                    eachCompare.Add(current);
+                } else if (schemPrev.tzaiNumber == null 
+                           && schemCurrent.tzaiNumber == null
+                           && schemPrev.jundaNumber == null
+                           && schemCurrent.jundaNumber == null 
+                           && char.ConvertToUtf32(splitStrPrev[0], 0) > 
+                           char.ConvertToUtf32(splitStrCurrent[0], 0))
+                {
+                    eachCompare.Add(prev);
+                    eachCompare.Add(current); 
+                }
+
+                if (splitStrPrev[1].Length > splitStrCurrent[1].Length)
+                {
+                    eachCompare.Add(prev);
+                    eachCompare.Add(current); 
+                } 
+                
+                if (string.Compare(splitStrPrev[1], splitStrCurrent[1], 
+                        StringComparison.OrdinalIgnoreCase) > 0)
+                {
+                    eachCompare.Add(prev);
+                    eachCompare.Add(current); 
+                }
+            }
+            
+            if (eachCompare.Count > 0)
+            {
+                result.Add(eachCompare);
+            }
+        }
+        return result;
+    }
     
 }
