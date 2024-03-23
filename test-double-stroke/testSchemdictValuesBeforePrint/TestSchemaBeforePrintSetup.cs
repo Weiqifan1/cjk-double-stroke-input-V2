@@ -64,8 +64,8 @@ public class TestSchemaBeforePrintSetup
         simplifiedListTuples = createListOfStringReadyForPrint.getSortedListOfTuples(simplifiedListListTupples);
         traditionalListTuples = createListOfStringReadyForPrint.getSortedListOfTuples(traditionalListListTupples);
 
-        simplifiedListString = createListOfStringReadyForPrint.listOfTuplesToStrings(simplifiedListTuples);
-        traditionalListString = createListOfStringReadyForPrint.listOfTuplesToStrings(traditionalListTuples);
+        simplifiedListString = createListOfStringReadyForPrint.listOfTuplesToStringsJuda(simplifiedListTuples);
+        traditionalListString = createListOfStringReadyForPrint.listOfTuplesToStringsTzai(traditionalListTuples);
 
     }
 

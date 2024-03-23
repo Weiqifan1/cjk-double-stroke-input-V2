@@ -64,10 +64,44 @@ public static class createListOfStringReadyForPrint
     }
 
     //list of tupples to list of strings
-    public static List<string> listOfTuplesToStrings(List<Tuple<string, SchemeRecord>> tuppleList)
+    public static List<string> listOfTuplesToStringsJuda(List<Tuple<string, SchemeRecord>> tuppleList)
     {
+        var sortetTuple = 
+            tuppleList.OrderBy(tuple => tuple.Item1.Length)
+            .ThenBy(tuple => tuple.Item1)
+            .ThenByDescending(tuple => tuple.Item2.jundaNumber.HasValue)
+            .ThenByDescending(tuple => tuple.Item2.jundaNumber)
+            .ThenByDescending(tuple => tuple.Item2.tzaiNumber.HasValue)
+            .ThenByDescending(tuple => tuple.Item2.tzaiNumber)
+            .ThenBy(tuple => tuple.Item2.character, 
+                StringComparer.Ordinal);
+
         List<string> result = new List<string>();
-        foreach (var VARIABLE in tuppleList)
+        foreach (var VARIABLE in sortetTuple)
+        {
+            string eachline = VARIABLE.Item2.character + separator + VARIABLE.Item1;
+            result.Add(eachline);
+        }
+        return result;
+    }
+    
+    
+
+    //list of tupples to list of strings
+    public static List<string> listOfTuplesToStringsTzai(List<Tuple<string, SchemeRecord>> tuppleList)
+    {
+        var sortetTuple = 
+            tuppleList.OrderBy(tuple => tuple.Item1.Length)
+            .ThenBy(tuple => tuple.Item1)
+            .ThenByDescending(tuple => tuple.Item2.tzaiNumber.HasValue)
+            .ThenByDescending(tuple => tuple.Item2.tzaiNumber)
+            .ThenByDescending(tuple => tuple.Item2.jundaNumber.HasValue)
+            .ThenByDescending(tuple => tuple.Item2.jundaNumber)
+            .ThenBy(tuple => tuple.Item2.character, 
+                StringComparer.Ordinal);
+
+        List<string> result = new List<string>();
+        foreach (var VARIABLE in sortetTuple)
         {
             string eachline = VARIABLE.Item2.character + separator + VARIABLE.Item1;
             result.Add(eachline);
