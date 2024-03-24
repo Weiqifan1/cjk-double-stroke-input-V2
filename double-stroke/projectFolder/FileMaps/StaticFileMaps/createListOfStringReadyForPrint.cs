@@ -5,7 +5,7 @@ namespace double_stroke.projectFolder.StaticFileMaps;
 
 public static class createListOfStringReadyForPrint
 {
-    private static string separator = ((char)32).ToString(); //32 == space
+    private static string separator = ((char)9).ToString(); //32 == space 9 == tab
     private static int maxCodeLength = 6;
 
     //change Hashset to list

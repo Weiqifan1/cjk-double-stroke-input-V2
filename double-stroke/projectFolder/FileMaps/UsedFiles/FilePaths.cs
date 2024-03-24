@@ -17,7 +17,8 @@ public static class FilePaths
 
     public static string jundaPathStr = "double-stroke\\projectFolder\\StaticFiles\\Junda2005.txt";
     public static string tzaiPathStr = "double-stroke\\projectFolder\\StaticFiles\\Tzai2006.txt";
-
+    public static string punctuationPathStr = "double-stroke\\projectFolder\\StaticFiles\\punctuation.txt";
+    
     public static string charToSchemaPathStr = "double-stroke\\projectFolder\\GeneratedFiles\\charToSchemaMap.txt";
     public static string codeToSchemaPathStr = "double-stroke\\projectFolder\\GeneratedFiles\\codeToSchemaMap.txt";
     

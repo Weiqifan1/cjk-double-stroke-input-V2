@@ -1,0 +1,1 @@
+﻿Folder meant for files to be used for the finished input method files
