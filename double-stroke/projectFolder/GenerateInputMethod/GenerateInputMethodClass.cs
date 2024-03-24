@@ -10,41 +10,83 @@ using test_double_stroke.testSchemdictValuesBeforePrint;
 
 namespace double_stroke.GenerateInputMethodClass;
 
+[Explicit]
 public class GenerateInputMethodClass : TestSchemaBeforePrintSetup
 {
     [Test]
-    public void GenerateInput()
+    public void GenerateSimpAndTradYaml()
+    {
+       generateSimp();
+       generateTrad();
+    }
+
+    [Test]
+    public void GenerateSimpDictInput()
+    {
+        generateSimp();
+    }
+    
+    [Test]
+    public void GenerateTradDictInput()
+    {
+        generateTrad();
+    }
+    
+    private void generateSimp()
     {
         string testDirectory = TestContext.CurrentContext.TestDirectory;
+                  
+        string simpDictPath = Path.Combine(testDirectory, 
+            FilePaths.dotsAndSlash + FilePaths.simpDictSourceFile);
+        var simpDictFile = UtilityFunctions.ReadLinesFromFile(simpDictPath);
         
-        //read punctuation
         string punctuationPath = Path.Combine(testDirectory, 
-        FilePaths.dotsAndSlash + FilePaths.punctuationPathStr);
+            FilePaths.dotsAndSlash + FilePaths.punctuationPathStr);
         var punctuationLines = UtilityFunctions.ReadLinesFromFile(punctuationPath);
-        
+             
         List<string> printSimplified = simplifiedListString;
         printSimplified.InsertRange(0, punctuationLines);
+        //printSimplified.InsertRange(0, new List<string>(){""});
+        printSimplified.InsertRange(0, simpDictFile); 
+        
         string resultSimplified = printSimplified.Count > 0 ? 
             printSimplified.Aggregate((current, next) => 
                 current.Trim() + "\n" + next.Trim()) : "";
-        List<string> printTraditional = traditionalListString;
-        printTraditional.InsertRange(0, punctuationLines);
-        string resultTraditional = printTraditional.Count > 0 ? 
-                    printSimplified.Aggregate((current, next) => 
-                        current.Trim() + "\n" + next.Trim()) : "";
         
-        
-       
         string simplifiedOutput = Path.Combine(testDirectory,
-                FilePaths.dotsAndSlash + FilePaths.simplifiedOutputFile);
-                //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\charToSchemaMap.txt");
+            FilePaths.dotsAndSlash + FilePaths.simpDictOutputFile);
+        //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\charToSchemaMap.txt");
         File.WriteAllText(simplifiedOutput, resultSimplified);        
         
+        Assert.True(true);
+    }
+    
+    private void generateTrad()
+    {
+        string testDirectory = TestContext.CurrentContext.TestDirectory;
+                  
+        string tradDictPath = Path.Combine(testDirectory, 
+            FilePaths.dotsAndSlash + FilePaths.tradDictSourceFile);
+        var tradDictFile = UtilityFunctions.ReadLinesFromFile(tradDictPath);
+        
+        string punctuationPath = Path.Combine(testDirectory, 
+            FilePaths.dotsAndSlash + FilePaths.punctuationPathStr);
+        var punctuationLines = UtilityFunctions.ReadLinesFromFile(punctuationPath);
+             
+        List<string> printTraditional = traditionalListString;
+        printTraditional.InsertRange(0, punctuationLines);
+        //printTraditional.InsertRange(0, new List<string>(){""});
+        printTraditional.InsertRange(0, tradDictFile); 
+        
+        string resultTraditional = printTraditional.Count > 0 ? 
+            printTraditional.Aggregate((current, next) => 
+                current.Trim() + "\n" + next.Trim()) : "";
+        
         string traditionalOutput = Path.Combine(testDirectory,
-                        FilePaths.dotsAndSlash + FilePaths.traditionalOutputFIle);
-                        //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\charToSchemaMap.txt");        
-        File.WriteAllText(traditionalOutput, resultTraditional);
-                
+            FilePaths.dotsAndSlash + FilePaths.tradDictOutputFile);
+        //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\charToSchemaMap.txt");
+        File.WriteAllText(traditionalOutput, resultTraditional);        
+        
         Assert.True(true);
     }
 
