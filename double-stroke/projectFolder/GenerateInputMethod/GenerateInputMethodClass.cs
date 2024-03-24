@@ -7,7 +7,7 @@ using double_stroke.projectFolder.FileMaps.GenerateFilesController;
 using Microsoft.VisualStudio.TestPlatform.ObjectModel;
 using test_double_stroke.testSchemdictValuesBeforePrint;
 
-namespace test_double_stroke.GenerateInputMethodClass;
+namespace double_stroke.GenerateInputMethodClass;
 
 public class GenerateInputMethodClass : TestSchemaBeforePrintSetup
 {
