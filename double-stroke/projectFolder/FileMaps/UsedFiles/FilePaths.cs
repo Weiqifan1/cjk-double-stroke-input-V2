@@ -25,4 +25,13 @@ public static class FilePaths
     public static string simplifiedOutputFile = "double-stroke\\projectFolder\\OutputFiles\\simplifiedOutput.txt";
     public static string traditionalOutputFIle = "double-stroke\\projectFolder\\OutputFIles\\traditionalOutput.txt";
     
+    public static string simpDictSourceFile = "double-stroke\\projectFolder\\InputMethodFiles\\POFsimp.dict.yaml";
+    public static string simpSchemaSourceFile = "double-stroke\\projectFolder\\InputMethodFiles\\POFsimp.schema.yaml";
+    public static string tradDictSourceFile = "double-stroke\\projectFolder\\InputMethodFiles\\POFtrad.dict.yaml";
+    public static string tradSchemaSourceFile = "double-stroke\\projectFolder\\InputMethodFiles\\POFtrad.schema.yaml";
+        
+    public static string simpDictOutputFile = "double-stroke\\projectFolder\\OutputFiles\\POFsimp.dict.yaml";
+    public static string simpSchemaOutputFile = "double-stroke\\projectFolder\\OutputFiles\\POFsimp.schema.yaml";
+    public static string tradDictOutputFile = "double-stroke\\projectFolder\\OutputFiles\\POFtrad.dict.yaml";
+    public static string tradSchemaOutputFile = "double-stroke\\projectFolder\\OutputFiles\\POFtrad.schema.yaml";
 }

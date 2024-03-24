@@ -283,8 +283,8 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
             eachCompare = new List<string>();
             string prev = jundareadytoprint[i - 1];
             string current = jundareadytoprint[i];
-            var splitStrPrev = prev.Split(' ').ToList();
-            var splitStrCurrent = current.Split(' ').ToList();
+            var splitStrPrev = prev.Split('\t').ToList();
+            var splitStrCurrent = current.Split('\t').ToList();
             if (splitStrPrev.Count != 2 && splitStrCurrent.Count != 2)
             {
                 List<string> temperror = new List<string>();
@@ -375,8 +375,8 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
             eachCompare = new List<string>();
             string prev = jundareadytoprint[i - 1];
             string current = jundareadytoprint[i];
-            var splitStrPrev = prev.Split(' ').ToList();
-            var splitStrCurrent = current.Split(' ').ToList();
+            var splitStrPrev = prev.Split('\t').ToList();
+            var splitStrCurrent = current.Split('\t').ToList();
             if (splitStrPrev.Count != 2 && splitStrCurrent.Count != 2)
             {
                 List<string> temperror = new List<string>();
