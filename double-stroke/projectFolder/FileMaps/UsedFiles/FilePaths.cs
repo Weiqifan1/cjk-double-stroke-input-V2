@@ -20,5 +20,8 @@ public static class FilePaths
 
     public static string charToSchemaPathStr = "double-stroke\\projectFolder\\GeneratedFiles\\charToSchemaMap.txt";
     public static string codeToSchemaPathStr = "double-stroke\\projectFolder\\GeneratedFiles\\codeToSchemaMap.txt";
-
+    
+    public static string simplifiedOutputFile = "double-stroke\\projectFolder\\OutputFiles\\simplifiedOutput.txt";
+    public static string traditionalOutputFIle = "double-stroke\\projectFolder\\OutputFIles\\traditionalOutput.txt";
+    
 }
