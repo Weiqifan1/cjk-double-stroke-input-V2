@@ -1,0 +1,130 @@
+﻿[System]
+LangId = LANG_CHINESE, SUBLANG_CHINESE_TRADITIONAL
+GuidProfile={D38EFF65-AA46-4fd5-91A7-67845FB02F5B}
+Description="Chinese Traditional Array"
+Display Description="@%programFiles%\Windows NT\TableTextService\TableTextService.dll,-11"
+IconIndex=ICON_ARRAY
+
+[Configuration]
+ShowExplicitCandidateImmediately=1
+Wildcard=1
+CandidateList.Phrase.Modifier=TF_MOD_SHIFT
+CandidateList.Phrase.Title="@%programFiles%\Windows NT\TableTextService\TableTextService.dll,-80"
+CandidateList.dontShowNextKeySequence=1
+CandidateList.KeepCandidateListForInvalidKey=1
+CandidateList.CyclePage=1
+Composition.ConversionOnlyOneItem=1
+Composition.QuitAndErrorOnConversion=1
+FontFaceName=PMingLiU
+FontSize=9
+
+[PreservedKey]
+GuidImeMode={98213494-367A-4855-90A1-97D917E3EC3D}
+KeyDefineImeMode=VK_SHIFT, TF_MOD_ON_KEYUP_SHIFT_ONLY
+DescriptionImeMode="@%programFiles%\Windows NT\TableTextService\TableTextService.dll,-20"
+ImeMode=0
+
+GuidDoubleSingleByte={F1101BB8-CD65-4ceb-B5BD-8ECDD574D1D0}
+KeyDefineDoubleSingleByte=VK_SPACE, TF_MOD_SHIFT
+DescriptionDoubleSingleByte="@%programFiles%\Windows NT\TableTextService\TableTextService.dll,-23"
+DoubleSingleByte=0
+
+
+[LanguageBar]
+GuidImeMode={3f71c574-1d5f-404d-ae5a-ed68ae65b56e}
+GuidIndicatorImeMode={2C77A81E-41CC-4178-A3A7-5F8A987568E6}
+DescriptionImeMode="Conversion mode"
+TooltipImeMode="@%programFiles%\Windows NT\TableTextService\TableTextService.dll,-20"
+EnableImeMode=1
+ImeModeOnIconIndex=ICON_IME_MODE_ON
+ImeModeOffIconIndex=ICON_IME_MODE_OFF
+
+GuidDoubleSingleByte={ca67f297-1d60-4ae0-8d8e-016ec644234b}
+DescriptionDoubleSingleByte="Character width"
+TooltipDoubleSingleByte="@%programFiles%\Windows NT\TableTextService\TableTextService.dll,-23"
+EnableDoubleSingleByte=1
+DoubleSingleByteOnIconIndex=ICON_DOUBLE_SINGLE_BYTE_ON
+DoubleSingleByteOffIconIndex=ICON_DOUBLE_SINGLE_BYTE_OFF
+
+
+[Profile]
+KeystrokeFile ="%programFiles%\Windows NT\TableTextService\TableTextServiceArray.txt"
+RadicalFile   ="%programFiles%\Windows NT\TableTextService\TableTextServiceArray.txt"
+DictionaryFile="%programFiles%\Windows NT\TableTextService\TableTextServiceArray.txt"
+PhraseFile    ="%programFiles%\Windows NT\TableTextService\TableTextServiceArray.txt"
+PhraseFromKeystroke = "%programFiles%\Windows NT\TableTextService\TableTextServiceArray.txt"
+SymbolFile    ="%programFiles%\Windows NT\TableTextService\TableTextServiceArray.txt"
+
+[Keystroke.Composition]
+VK_OEM_COMMA,  0  = INPUT        // ,
+VK_OEM_PERIOD, 0  = INPUT        // .
+VK_OEM_2,      0  = INPUT        // /
+VK_OEM_1,      0  = INPUT        // ;
+VK_A,          0  = INPUT        // A
+VK_B,          0  = INPUT        // B
+VK_C,          0  = INPUT        // C
+VK_D,          0  = INPUT        // D
+VK_E,          0  = INPUT        // E
+VK_F,          0  = INPUT        // F
+VK_G,          0  = INPUT        // G
+VK_H,          0  = INPUT        // H
+VK_I,          0  = INPUT        // I
+VK_J,          0  = INPUT        // J
+VK_K,          0  = INPUT        // K
+VK_L,          0  = INPUT        // L
+VK_M,          0  = INPUT        // M
+VK_N,          0  = INPUT        // N
+VK_O,          0  = INPUT        // O
+VK_P,          0  = INPUT        // P
+VK_Q,          0  = INPUT        // Q
+VK_R,          0  = INPUT        // R
+VK_S,          0  = INPUT        // S
+VK_T,          0  = INPUT        // T
+VK_U,          0  = INPUT        // U
+VK_V,          0  = INPUT        // V
+VK_W,          0  = INPUT        // W
+VK_X,          0  = INPUT        // X
+VK_Y,          0  = INPUT        // Y
+VK_Z,          0  = INPUT        // Z
+
+[Keystroke.Candidate]
+VK_RETURN,     0  = CANCEL_TEXTSTORE_AND_INPUT
+
+[Keystroke.Candidate.Symbol]
+VK_SPACE,      0  = MOVE_PAGE_DOWN
+
+[Keystroke.Candidate.Wildcard]
+VK_SPACE,      0  = MOVE_PAGE_DOWN
+
+[Radical]
+","="，"
+"."="．"
+"/"="／"
+";"="；"
+"A"="Ａ"
+"B"="Ｂ"
+"C"="Ｃ"
+"D"="Ｄ"
+"E"="Ｅ"
+"F"="Ｆ"
+"G"="Ｇ"
+"H"="Ｈ"
+"I"="Ｉ"
+"J"="Ｊ"
+"K"="Ｋ"
+"L"="Ｌ"
+"M"="Ｍ"
+"N"="Ｎ"
+"O"="Ｏ"
+"P"="Ｐ"
+"Q"="Ｑ"
+"R"="Ｒ"
+"S"="Ｓ"
+"T"="Ｔ"
+"U"="Ｕ"
+"V"="Ｖ"
+"W"="Ｗ"
+"X"="Ｘ"
+"Y"="Ｙ"
+"Z"="Ｚ"
+[Text]

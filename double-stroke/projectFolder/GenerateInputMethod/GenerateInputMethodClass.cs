@@ -14,25 +14,133 @@ namespace double_stroke.GenerateInputMethodClass;
 public class GenerateInputMethodClass : TestSchemaBeforePrintSetup
 {
     [Test]
-    public void GenerateSimpAndTradYaml()
+    public void GenerateSimpAndTradYamlForRIME()
     {
-       generateSimp();
-       generateTrad();
+        generateSimpForRIME();
+        generateTradForRIME();
     }
 
     [Test]
-    public void GenerateSimpDictInput()
+    public void GenerateSimpDictInputYamlForRIME()
     {
-        generateSimp();
+        generateSimpForRIME();
     }
     
     [Test]
-    public void GenerateTradDictInput()
+    public void GenerateTradDictInputYamlForRIME()
     {
-        generateTrad();
+        generateTradForRIME();
     }
     
-    private void generateSimp()
+    [Test]
+    public void GenerateSimpAndTradForWindows()
+    {
+        generateSimpForWindowsArray();
+        generateTradForWindowsArray();
+    }
+    
+    [Test]
+    public void GenerateSimpDictInputForWindows()
+    {
+        generateSimpForWindowsArray();
+    }
+     
+    [Test]
+    public void GenerateTradDictInputForWindows()
+    {
+        generateTradForWindowsArray();
+    }
+    private static string generateInputDictforRimeFormat(List<string> printSimplified)
+    {
+        return printSimplified.Count > 0 ? 
+            printSimplified.Aggregate((current, next) => 
+                current + "\n" + next) : "";
+    }
+    
+    private static string generateInputDictforWindowsFormat(List<string> printSimplified)
+    {
+        List<string> modifyInput = new List<string>();
+        foreach (var each in printSimplified) 
+        {
+            modifyInput.Add(createWndowsFormat(each, "\t"));
+        }
+
+        return modifyInput.Count > 0 ? 
+            modifyInput.Aggregate((current, next) => 
+                    current + "\n" + next) : "";
+        }
+
+    private static string createWndowsFormat(string input, string splitBy)
+    {
+        var splittet = input.Split(splitBy);
+        if (splittet.Length != 2)
+        {
+            System.Console.WriteLine(input);
+        }
+
+        string res = "\"" + splittet[1].ToUpper() + "\"" + "=" + "\"" + splittet[0] + "\"";
+        return res;
+    }
+
+    private void generateSimpForWindowsArray()
+    {
+        string testDirectory = TestContext.CurrentContext.TestDirectory;
+                  
+        string windowsArrayInfoPath = Path.Combine(testDirectory, 
+            FilePaths.dotsAndSlash + FilePaths.windowsArrayInfo);
+        var windowsArrayFile = UtilityFunctions.ReadLinesFromFile(windowsArrayInfoPath);
+        
+        string punctuationPath = Path.Combine(testDirectory, 
+            FilePaths.dotsAndSlash + FilePaths.punctuationPathStr);
+        var punctuationLines = UtilityFunctions.ReadLinesFromFile(punctuationPath);
+             
+        List<string> printSimplified = simplifiedListString;
+        printSimplified.InsertRange(0, punctuationLines);
+        //printSimplified.InsertRange(0, new List<string>(){""});
+        //printSimplified.InsertRange(0, windowsArrayFile); 
+        
+        string resultSimplified = generateInputDictforWindowsFormat(printSimplified);
+        string ArrayInfo = generateInputDictforRimeFormat(windowsArrayFile);
+        string result = ArrayInfo + "\n" + resultSimplified; 
+        
+        string windowsOutput = Path.Combine(testDirectory,
+            FilePaths.dotsAndSlash + FilePaths.windowsArraySimpOutputFile);
+        //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\charToSchemaMap.txt");
+        File.WriteAllText(windowsOutput, result);        
+        
+        Assert.True(true);
+    }
+
+    private void generateTradForWindowsArray()
+    {
+        string testDirectory = TestContext.CurrentContext.TestDirectory;
+                  
+        string windowsArrayInfoPath = Path.Combine(testDirectory, 
+            FilePaths.dotsAndSlash + FilePaths.windowsArrayInfo);
+        var windowsArrayFile = UtilityFunctions.ReadLinesFromFile(windowsArrayInfoPath);
+        
+        string punctuationPath = Path.Combine(testDirectory, 
+            FilePaths.dotsAndSlash + FilePaths.punctuationPathStr);
+        var punctuationLines = UtilityFunctions.ReadLinesFromFile(punctuationPath);
+             
+        List<string> printTraditional = traditionalListString;
+        printTraditional.InsertRange(0, punctuationLines);
+        //printTraditional.InsertRange(0, new List<string>(){""});
+        //printTraditional.InsertRange(0, tradDictFile); 
+        
+        string resultTraditional = generateInputDictforWindowsFormat(printTraditional);
+        string ArrayInfo = generateInputDictforRimeFormat(windowsArrayFile);
+        string result = ArrayInfo + "\n" + resultTraditional; 
+        
+        string windowsTradArrauOutput = Path.Combine(testDirectory,
+            FilePaths.dotsAndSlash + FilePaths.windowsArrayTradOutputFile);
+        //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\charToSchemaMap.txt");
+        File.WriteAllText(windowsTradArrauOutput, result);        
+           
+        Assert.True(true);
+    }   
+    
+    private void generateSimpForRIME()
     {
         string testDirectory = TestContext.CurrentContext.TestDirectory;
                   
@@ -49,9 +157,7 @@ public class GenerateInputMethodClass : TestSchemaBeforePrintSetup
         //printSimplified.InsertRange(0, new List<string>(){""});
         printSimplified.InsertRange(0, simpDictFile); 
         
-        string resultSimplified = printSimplified.Count > 0 ? 
-            printSimplified.Aggregate((current, next) => 
-                current.Trim() + "\n" + next.Trim()) : "";
+        string resultSimplified = generateInputDictforRimeFormat(printSimplified);
         
         string simplifiedOutput = Path.Combine(testDirectory,
             FilePaths.dotsAndSlash + FilePaths.simpDictOutputFile);
@@ -60,8 +166,8 @@ public class GenerateInputMethodClass : TestSchemaBeforePrintSetup
         
         Assert.True(true);
     }
-    
-    private void generateTrad()
+
+    private void generateTradForRIME()
     {
         string testDirectory = TestContext.CurrentContext.TestDirectory;
                   
@@ -78,9 +184,7 @@ public class GenerateInputMethodClass : TestSchemaBeforePrintSetup
         //printTraditional.InsertRange(0, new List<string>(){""});
         printTraditional.InsertRange(0, tradDictFile); 
         
-        string resultTraditional = printTraditional.Count > 0 ? 
-            printTraditional.Aggregate((current, next) => 
-                current.Trim() + "\n" + next.Trim()) : "";
+        string resultTraditional =  generateInputDictforRimeFormat(printTraditional);
         
         string traditionalOutput = Path.Combine(testDirectory,
             FilePaths.dotsAndSlash + FilePaths.tradDictOutputFile);
