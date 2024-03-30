@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Security.AccessControl;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using double_stroke.projectFolder.FileMaps.GenerateFilesController;
 using Microsoft.VisualStudio.TestPlatform.ObjectModel;
 
@@ -29,7 +30,86 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
         tzai5001 = gen.extractFirst5001Tzai(tzaiPath);
         string test = "";
     }
-
+       [Test]
+    public void TestPrintOrderTVIHcharacters_JundaList()
+    {
+        var simp = simplifiedListString;
+        var index = simp.IndexOf("秀\ttvih");
+   
+        //秀	tvih Tzai 20948 Junda 24620 UNI 
+        Assert.AreEqual(simp[index], "秀\ttvih");
+        //秃	tvih Tzai 0     Junda 3640  UNI 
+        Assert.AreEqual(simp[index+1], "秃\ttvih");
+        //稠	tvih Tzai 334   Junda 1194  UNI 
+        Assert.AreEqual(simp[index+2], "稠\ttvih");  
+        //黏	tvih Tzai 2958  Junda 862   UNI  
+        Assert.AreEqual(simp[index+3], "黏\ttvih");
+        //禿	tvih Tzai 2552  Junda 10    UNI 
+        Assert.AreEqual(simp[index+4], "禿\ttvih");
+        //秳	tvih Tzai 0     Junda 1     UNI 31219 
+        Assert.AreEqual(simp[index+5], "秳\ttvih");  
+        //穚	tvih Tzai 30    Junda 0     UNI 
+        Assert.AreEqual(simp[index+6], "穚\ttvih");
+        //秪	tvih Tzai 11    Junda 0     UNI 
+        Assert.AreEqual(simp[index+7], "秪\ttvih");
+        //䄧	tvih Tzai 0     Junda 0     UNI 16679 
+        Assert.AreEqual(simp[index+8], "䄧\ttvih"); 
+        //䄪	tvih Tzai 0     Junda 0     UNI 16682 
+        Assert.AreEqual(simp[index+9], "䄪\ttvih"); 
+        //䅂	tvih Tzai 0     Junda 0     UNI 16706 
+        Assert.AreEqual(simp[index+10], "䅂\ttvih"); 
+        //䅮	tvih Tzai 0     Junda 0     UNI 16750 
+        Assert.AreEqual(simp[index+11], "䅮\ttvih"); 
+        //䆌	tvih Tzai 0     Junda 0     UNI 16780 
+        Assert.AreEqual(simp[index+12], "䆌\ttvih"); 
+        //䵕	tvih Tzai 0     Junda 0     UNI 19797 
+        Assert.AreEqual(simp[index+13], "䵕\ttvih"); 
+        //秴	tvih Tzai 0     Junda 0     UNI 31220 
+        Assert.AreEqual(simp[index+14], "秴\ttvih"); 
+        
+        Assert.True(true);
+    }
+    
+    [Test]
+    public void TestPrintOrderTVIHcharacters_TzaiList()
+    {
+        var trad = traditionalListString;
+        var index = trad.IndexOf("秀\ttvih");
+   
+        //秀	tvih Tzai 20948 Junda 24620 UNI 
+        Assert.AreEqual(trad[index], "秀\ttvih");
+        //黏	tvih Tzai 2958  Junda 862   UNI  
+        Assert.AreEqual(trad[index+1], "黏\ttvih");
+        //禿	tvih Tzai 2552  Junda 10    UNI 
+        Assert.AreEqual(trad[index+2], "禿\ttvih");
+        //稠	tvih Tzai 334   Junda 1194  UNI 
+        Assert.AreEqual(trad[index+3], "稠\ttvih");  
+        //穚	tvih Tzai 30    Junda 0     UNI 
+         Assert.AreEqual(trad[index+4], "穚\ttvih");
+        //秪	tvih Tzai 11    Junda 0     UNI 
+        Assert.AreEqual(trad[index+5], "秪\ttvih");
+        //秃	tvih Tzai 0     Junda 3640  UNI 
+         Assert.AreEqual(trad[index+6], "秃\ttvih");
+        //秳	tvih Tzai 0     Junda 1     UNI 31219 
+        Assert.AreEqual(trad[index+7], "秳\ttvih"); 
+        //䄧	tvih Tzai 0     Junda 0     UNI 16679 
+        Assert.AreEqual(trad[index+8], "䄧\ttvih"); 
+        //䄪	tvih Tzai 0     Junda 0     UNI 16682 
+        Assert.AreEqual(trad[index+9], "䄪\ttvih"); 
+        //䅂	tvih Tzai 0     Junda 0     UNI 16706 
+        Assert.AreEqual(trad[index+10], "䅂\ttvih"); 
+        //䅮	tvih Tzai 0     Junda 0     UNI 16750 
+        Assert.AreEqual(trad[index+11], "䅮\ttvih"); 
+        //䆌	tvih Tzai 0     Junda 0     UNI 16780 
+        Assert.AreEqual(trad[index+12], "䆌\ttvih"); 
+        //䵕	tvih Tzai 0     Junda 0     UNI 19797 
+        Assert.AreEqual(trad[index+13], "䵕\ttvih"); 
+        //秴	tvih Tzai 0     Junda 0     UNI 31220 
+        Assert.AreEqual(trad[index+14], "秴\ttvih"); 
+        
+        Assert.True(true);
+    }
+    
     [Test]
     public void TestPrintOrderMatchesJundaTzaiAndUnicode_jundaList()
     {
