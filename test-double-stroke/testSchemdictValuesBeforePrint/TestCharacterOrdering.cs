@@ -222,6 +222,62 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
 
 
     [Test]
+    public void testHeisigSimp_JundaCountAfterNine()
+    {
+         var codesWithManyChars = simplifiedDictList.Values.Where(listSch => longlist(listSch)).ToList();
+ 
+         List<SchemeRecord> allAboveThe9th = new List<SchemeRecord>();
+         foreach (var VARIABLE in codesWithManyChars)
+         {
+             for (int i = 0; i < VARIABLE.Count; i++)
+             {
+                 var current = VARIABLE[i];
+                 if (i > 8)
+                 {
+                     allAboveThe9th.Add(current);
+                 }
+             }
+         }
+ 
+         List<long> greatInts = allAboveThe9th.
+             Where(y => y.jundaNumber != null).
+             Select(x => x.jundaNumber.Value).ToList().
+             OrderByDescending(z => z).ToList();
+         
+         Assert.IsTrue(greatInts[0] < jundaFreq5001);
+         
+         string test = "";  test     
+    }
+
+    [Test]
+    public void testSortedJundaCountAfterNine()
+    {
+        var codesWithManyChars = simplifiedDictList.Values.Where(listSch => longlist(listSch)).ToList();
+
+        List<SchemeRecord> allAboveThe9th = new List<SchemeRecord>();
+        foreach (var VARIABLE in codesWithManyChars)
+        {
+            for (int i = 0; i < VARIABLE.Count; i++)
+            {
+                var current = VARIABLE[i];
+                if (i > 8)
+                {
+                    allAboveThe9th.Add(current);
+                }
+            }
+        }
+
+        List<long> greatInts = allAboveThe9th.
+            Where(y => y.jundaNumber != null).
+            Select(x => x.jundaNumber.Value).ToList().
+            OrderByDescending(z => z).ToList();
+        
+        Assert.IsTrue(greatInts[0] < jundaFreq5001);
+        
+        string test = "";
+    }
+    
+    [Test]
     public void testSortedJundaCountAfterNine()
     {
         var codesWithManyChars = simplifiedDictList.Values.Where(listSch => longlist(listSch)).ToList();
