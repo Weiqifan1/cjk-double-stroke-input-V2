@@ -224,18 +224,27 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
     [Test]
     public void testHeisigTrad_TzaiCountAfterNine()
     {
-         var allAboveThe9th = AllAboveThe9Th(traditionalDictList);
+         var allAboveThe9th = AllAboveThe9Th(traditionalDictList, 
+             new HashSet<int>{5,6});
 
-         List<string> greatInts = allAboveThe9th.
+         List<string> heisigAllCodesBeyond9th = allAboveThe9th.
              Where(y => heisigTrad.ContainsKey(y.character)).
              Select(x => x.character).ToList();
-            // OrderByDescending(z => z).ToList();
-         
         
-         Assert.IsTrue(greatInts.Count == 2);
-         Assert.IsTrue(greatInts[0] == "騾");
-         Assert.IsTrue(greatInts[1] == "騾"); 
+        var smallCodesAboveThe9th = AllAboveThe9Th(traditionalDictList, 
+            new HashSet<int>{1,2,3,4});
+            
+        List<string> heisigSmallBeyond9th = smallCodesAboveThe9th.
+            Where(y => heisigTrad.ContainsKey(y.character)).
+            Select(x => x.character).ToList();
+        
+         Assert.IsTrue(heisigAllCodesBeyond9th.Count == 2);
+         Assert.IsTrue(heisigAllCodesBeyond9th[0] == "騾");
+         Assert.IsTrue(heisigAllCodesBeyond9th[1] == "騾"); 
          //heisigTrad: 騾 2859 mule  Tzai: 5168 73  Junda: 7167 9
+         
+         Assert.IsTrue(heisigSmallBeyond9th.Count == 0);
+        
          
     }
 
@@ -243,25 +252,36 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
     [Test]
     public void testHeisigSimp_TzaiCountAfterNine()
     {
-        var allAboveThe9th = AllAboveThe9Th(traditionalDictList);
-
- 
-         List<string> greatInts = allAboveThe9th.
+        var largeAboveThe9th = AllAboveThe9Th(traditionalDictList,
+            new HashSet<int>{5,6});
+        
+        List<string> largeCodes = largeAboveThe9th.
              Where(y => heisigSimp.ContainsKey(y.character)).
              Select(x => x.character).ToList();
             // OrderByDescending(z => z).ToList();
-         
         
-         Assert.IsTrue(greatInts.Count == 45);
-         HashSet<string> hashedGread = greatInts.ToHashSet();
-         Assert.IsTrue(hashedGread.Count == 41);
+        var smallAboveThe9th = AllAboveThe9Th(traditionalDictList,
+            new HashSet<int>{1,2,3,4});
+        
+        List<string> smallCodes = smallAboveThe9th.
+                         Where(y => heisigSimp.ContainsKey(y.character)).
+                         Select(x => x.character).ToList();
+                        // OrderByDescending(z => z).ToList();
+        
+         Assert.IsTrue(largeCodes.Count == 0);
+         HashSet<string> hashedGread = largeCodes.ToHashSet();
+         Assert.IsTrue(hashedGread.Count == 0);
 
+         Assert.IsTrue(smallCodes.Count == 45);
+         HashSet<string> hashedSmall = smallCodes.ToHashSet();
+         Assert.IsTrue(hashedSmall.Count == 41);
     }
     
     [Test]
     public void testHeisigSimp_JundaCountAfterNine()
     {
-       var allAboveThe9th = AllAboveThe9Th(simplifiedDictList);
+       var allAboveThe9th = AllAboveThe9Th(simplifiedDictList,
+           new HashSet<int>{1,2,3,4,5,6});
  
          List<string> greatInts = allAboveThe9th.
              Where(y => heisigSimp.ContainsKey(y.character)).
@@ -278,24 +298,35 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
     [Test]
     public void testHeisigTrad_JundaCountAfterNine()
     {
-       var allAboveThe9th = AllAboveThe9Th(simplifiedDictList);
+        var largeAboveThe9th = AllAboveThe9Th(simplifiedDictList,
+           new HashSet<int>{5,6});
 
-         List<string> allCodes = allAboveThe9th
+        List<string> largeCodes = largeAboveThe9th
              .Where(y => heisigTrad.ContainsKey(y.character))
              .Select(x => x.character).ToList();
-             //OrderByDescending(z => z).ToList();
+             
+        var smallAboveThe9th = AllAboveThe9Th(simplifiedDictList,
+                     new HashSet<int>{1,2,3,4});
+        
+        List<string> smallCodes = smallAboveThe9th
+                       .Where(y => heisigTrad.ContainsKey(y.character))
+                       .Select(x => x.character).ToList();
+                          
          
-         Assert.IsTrue(allCodes.Count == 40);
-         HashSet<string> hashedGread = allCodes.ToHashSet();
-         Assert.IsTrue(hashedGread.Count == 30);
+         Assert.IsTrue(largeCodes.Count == 9);
+         HashSet<string> hashedGread = largeCodes.ToHashSet();
+         Assert.IsTrue(hashedGread.Count == 7);
          
-         
+         Assert.IsTrue(smallCodes.Count == 31);
+         HashSet<string> smallHashed = smallCodes.ToHashSet();
+         Assert.IsTrue(smallHashed.Count == 28);
     }
     
     [Test]
     public void testSortedJundaCountAfterNine()
     {
-       var allAboveThe9th = AllAboveThe9Th(simplifiedDictList);
+       var allAboveThe9th = AllAboveThe9Th(simplifiedDictList,
+           new HashSet<int>{1,2,3,4,5,6});
 
         List<long> greatInts = allAboveThe9th.
             Where(y => y.jundaNumber != null).
@@ -309,7 +340,8 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
     [Test]
     public void testSortedTzaiCountAfterNine()
     {
-        var allAboveThe9th = AllAboveThe9Th(traditionalDictList);
+        var allAboveThe9th = AllAboveThe9Th(traditionalDictList,
+            new HashSet<int>{1,2,3,4,5,6});
 
         List<long> greatInts = allAboveThe9th.
             Where(y => y.tzaiNumber != null).
@@ -572,11 +604,17 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
         return result;
     }
     
-    private List<SchemeRecord> AllAboveThe9Th(Dictionary<string, List<SchemeRecord>> dictList) 
+    private List<SchemeRecord> AllAboveThe9Th(
+        Dictionary<string, List<SchemeRecord>> dictList,
+        HashSet<int> codelengthToInclude)
     {
-        var codesWithManyChars = dictList
+        Dictionary<string, List<SchemeRecord>> tempDict =
+            dictList.Where(pair => 
+                codelengthToInclude.Contains(pair.Key.Length))
+                .ToDictionary(pair => pair.Key, pair => pair.Value);
+        var codesWithManyChars = tempDict
             .Values.Where(listSch => longlist(listSch)).ToList();
- 
+        
         List<SchemeRecord> allAboveThe9th = new List<SchemeRecord>();
         foreach (var VARIABLE in codesWithManyChars)
         {
