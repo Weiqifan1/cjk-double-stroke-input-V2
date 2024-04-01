@@ -50,7 +50,8 @@ public class GenerateIds
         //List<UnicodeCharacter> rolledOutIdsWithNoShape
         var latin = latinCharcters();
         var allUnwanted = irrelevantShapeAndLatinCharacters();
-        Dictionary<string, List<UnicodeCharacter>> genRawIds = generateRawIdsMap(idsPath, priviledgedElemn);
+        Dictionary<string, List<UnicodeCharacter>> genRawIds = 
+            generateRawIdsMap(idsPath, priviledgedElemn);
         var endResult = new Dictionary<string, IdsBasicRecord>();
         foreach (var item in genRawIds)
         {

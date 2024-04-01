@@ -30,7 +30,8 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
         tzai5001 = gen.extractFirst5001Tzai(tzaiPath);
         string test = "";
     }
-       [Test]
+    
+    [Test]
     public void TestPrintOrderTVIHcharacters_JundaList()
     {
         var simp = simplifiedListString;
@@ -220,80 +221,81 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
         return junda5001Schema;
     }
 
+    [Test]
+    public void testHeisigTrad_TzaiCountAfterNine()
+    {
+         var allAboveThe9th = AllAboveThe9Th(traditionalDictList);
 
+         List<string> greatInts = allAboveThe9th.
+             Where(y => heisigTrad.ContainsKey(y.character)).
+             Select(x => x.character).ToList();
+            // OrderByDescending(z => z).ToList();
+         
+        
+         Assert.IsTrue(greatInts.Count == 2);
+         Assert.IsTrue(greatInts[0] == "騾");
+         Assert.IsTrue(greatInts[1] == "騾"); 
+         //heisigTrad: 騾 2859 mule  Tzai: 5168 73  Junda: 7167 9
+         
+    }
+
+
+    [Test]
+    public void testHeisigSimp_TzaiCountAfterNine()
+    {
+        var allAboveThe9th = AllAboveThe9Th(traditionalDictList);
+
+ 
+         List<string> greatInts = allAboveThe9th.
+             Where(y => heisigSimp.ContainsKey(y.character)).
+             Select(x => x.character).ToList();
+            // OrderByDescending(z => z).ToList();
+         
+        
+         Assert.IsTrue(greatInts.Count == 45);
+         HashSet<string> hashedGread = greatInts.ToHashSet();
+         Assert.IsTrue(hashedGread.Count == 41);
+
+    }
+    
     [Test]
     public void testHeisigSimp_JundaCountAfterNine()
     {
-         var codesWithManyChars = simplifiedDictList.Values.Where(listSch => longlist(listSch)).ToList();
+       var allAboveThe9th = AllAboveThe9Th(simplifiedDictList);
  
-         List<SchemeRecord> allAboveThe9th = new List<SchemeRecord>();
-         foreach (var VARIABLE in codesWithManyChars)
-         {
-             for (int i = 0; i < VARIABLE.Count; i++)
-             {
-                 var current = VARIABLE[i];
-                 if (i > 8)
-                 {
-                     allAboveThe9th.Add(current);
-                 }
-             }
-         }
- 
-         List<long> greatInts = allAboveThe9th.
-             Where(y => y.jundaNumber != null).
-             Select(x => x.jundaNumber.Value).ToList().
-             OrderByDescending(z => z).ToList();
+         List<string> greatInts = allAboveThe9th.
+             Where(y => heisigSimp.ContainsKey(y.character)).
+             Select(x => 
+                 x.character + 
+                 " Junda: " + x.jundaNumber + 
+                 " Tzai: " + x.tzaiNumber).ToList();
+             //OrderByDescending(z => z).ToList();
          
-         Assert.IsTrue(greatInts[0] < jundaFreq5001);
-         
-         string test = "";  test     
+         Assert.IsTrue(greatInts.Count == 0);
     }
-
+    
+    
     [Test]
-    public void testSortedJundaCountAfterNine()
+    public void testHeisigTrad_JundaCountAfterNine()
     {
-        var codesWithManyChars = simplifiedDictList.Values.Where(listSch => longlist(listSch)).ToList();
+       var allAboveThe9th = AllAboveThe9Th(simplifiedDictList);
 
-        List<SchemeRecord> allAboveThe9th = new List<SchemeRecord>();
-        foreach (var VARIABLE in codesWithManyChars)
-        {
-            for (int i = 0; i < VARIABLE.Count; i++)
-            {
-                var current = VARIABLE[i];
-                if (i > 8)
-                {
-                    allAboveThe9th.Add(current);
-                }
-            }
-        }
-
-        List<long> greatInts = allAboveThe9th.
-            Where(y => y.jundaNumber != null).
-            Select(x => x.jundaNumber.Value).ToList().
-            OrderByDescending(z => z).ToList();
-        
-        Assert.IsTrue(greatInts[0] < jundaFreq5001);
-        
-        string test = "";
+         List<string> allCodes = allAboveThe9th
+             .Where(y => heisigTrad.ContainsKey(y.character))
+             .Select(x => x.character).ToList();
+             //OrderByDescending(z => z).ToList();
+         
+         Assert.IsTrue(allCodes.Count == 40);
+         HashSet<string> hashedGread = allCodes.ToHashSet();
+         Assert.IsTrue(hashedGread.Count == 30);
+         
+         
     }
     
     [Test]
     public void testSortedJundaCountAfterNine()
     {
-        var codesWithManyChars = simplifiedDictList.Values.Where(listSch => longlist(listSch)).ToList();
-
-        List<SchemeRecord> allAboveThe9th = new List<SchemeRecord>();
-        foreach (var VARIABLE in codesWithManyChars)
-        {
-            for (int i = 0; i < VARIABLE.Count; i++)
-            {
-                var current = VARIABLE[i];
-                if (i > 8)
-                {
-                    allAboveThe9th.Add(current);
-                }
-            }
-        }
+       var allAboveThe9th = AllAboveThe9Th(simplifiedDictList);
 
         List<long> greatInts = allAboveThe9th.
             Where(y => y.jundaNumber != null).
@@ -302,26 +304,12 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
         
         Assert.IsTrue(greatInts[0] < jundaFreq5001);
         
-        string test = "";
     }
     
     [Test]
     public void testSortedTzaiCountAfterNine()
     {
-        var codesWithManyChars = traditionalDictList.Values.Where(listSch => longlist(listSch)).ToList();
-
-        List<SchemeRecord> allAboveThe9th = new List<SchemeRecord>();
-        foreach (var VARIABLE in codesWithManyChars)
-        {
-            for (int i = 0; i < VARIABLE.Count; i++)
-            {
-                var current = VARIABLE[i];
-                if (i > 8)
-                {
-                    allAboveThe9th.Add(current);
-                }
-            }
-        }
+        var allAboveThe9th = AllAboveThe9Th(traditionalDictList);
 
         List<long> greatInts = allAboveThe9th.
             Where(y => y.tzaiNumber != null).
@@ -330,7 +318,6 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
         
         Assert.IsTrue(greatInts[0] < tzaiFreq5001);
         
-        string test = "";
     }
     
     
@@ -343,7 +330,6 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
         
         Assert.IsEmpty(number10Junda);
         
-        string test = "";
     }
 
     [Test]
@@ -355,7 +341,6 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
         
         Assert.IsEmpty(number10Tzai);
         
-        string test = "";
     }
     
     private bool jundaAt10(List<SchemeRecord> listSch)
@@ -587,4 +572,24 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
         return result;
     }
     
+    private List<SchemeRecord> AllAboveThe9Th(Dictionary<string, List<SchemeRecord>> dictList) 
+    {
+        var codesWithManyChars = dictList
+            .Values.Where(listSch => longlist(listSch)).ToList();
+ 
+        List<SchemeRecord> allAboveThe9th = new List<SchemeRecord>();
+        foreach (var VARIABLE in codesWithManyChars)
+        {
+            for (int i = 0; i < VARIABLE.Count; i++)
+            {
+                var current = VARIABLE[i];
+                if (i > 8)
+                {
+                    allAboveThe9th.Add(current);
+                }
+            }
+        }
+
+        return allAboveThe9th;
+    }
 }

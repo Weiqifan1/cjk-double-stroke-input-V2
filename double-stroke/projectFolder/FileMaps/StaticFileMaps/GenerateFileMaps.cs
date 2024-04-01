@@ -413,7 +413,7 @@ public class GenerateFileMaps
 */
     public Dictionary<string, AlternativeCharsetRecord> generateHeisigTradMap()
     {
-        var heisigTradPath = "../../../projectFolder/StaticFiles/heisigTrad.txt";
+        var heisigTradPath =  "../../../double-stroke/projectFolder/StaticFiles/heisigTrad.txt";
         var heisigTrad = 
             generateHeisigMap(WritingSystemEnum.HeisigTraditional, heisigTradPath);
         return heisigTrad;
@@ -421,7 +421,7 @@ public class GenerateFileMaps
     
     public Dictionary<string, AlternativeCharsetRecord> generateHeisigSimpMap()
     {
-        var heisigSimpPath = "../../../projectFolder/StaticFiles/heisigSimp.txt";
+        var heisigSimpPath = "../../../double-stroke/projectFolder/StaticFiles/heisigSimp.txt";
         var heisigSimp = 
             generateHeisigMap(WritingSystemEnum.HeisigSimplified, heisigSimpPath);
         return heisigSimp;
@@ -592,7 +592,11 @@ public class GenerateFileMaps
                 stringToInd(splitstr[0], splitstr, linenumber)
             );
             System.Console.WriteLine(linenumber + " " + splitstr[0]);
-            dictionary.Add(character.Value, freqRecord);
+            if (!dictionary.ContainsKey(character.Value))
+            {
+               dictionary.Add(character.Value, freqRecord);
+            }
+
         }
         return dictionary;
     }

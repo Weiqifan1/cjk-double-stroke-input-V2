@@ -34,20 +34,24 @@ public class TestSchemaBeforePrintSetup
     public List<Tuple<string, SchemeRecord>> traditionalListTuples;
     public List<string> simplifiedListString;
     public List<string> traditionalListString;
-
+    public Dictionary<string, AlternativeCharsetRecord> heisigSimp;
+    public Dictionary<string, AlternativeCharsetRecord> heisigTrad;
     
     [OneTimeSetUp]
     public void Setup()
     {
         string charToSchemaJson = File.ReadAllText(charToSchemaPath);
         string codeToSchemaJson = File.ReadAllText(codeToSchemaPath);
-        
+        GenerateFileMaps generateFileMaps = new GenerateFileMaps();
         charToSchemaDict = 
             JsonSerializer.Deserialize<Dictionary<string, SchemeRecord>>(charToSchemaJson, options);
         
         codeToSchemaDict = 
             JsonSerializer.Deserialize<Dictionary<string, HashSet<SchemeRecord>>>(codeToSchemaJson, options);
 
+        heisigSimp = generateFileMaps.generateHeisigSimpMap();
+        heisigTrad = generateFileMaps.generateHeisigTradMap();
+        
         simplifiedDictList = createListOfStringReadyForPrint
             .replaceHashSetToList(true, codeToSchemaDict);
         traditionalDictList = createListOfStringReadyForPrint
@@ -66,7 +70,7 @@ public class TestSchemaBeforePrintSetup
 
         simplifiedListString = createListOfStringReadyForPrint.listOfTuplesToStringsJuda(simplifiedListTuples);
         traditionalListString = createListOfStringReadyForPrint.listOfTuplesToStringsTzai(traditionalListTuples);
-
+        
     }
 
     /*
