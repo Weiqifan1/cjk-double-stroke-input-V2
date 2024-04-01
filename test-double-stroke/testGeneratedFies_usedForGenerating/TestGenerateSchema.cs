@@ -23,14 +23,17 @@ public class TestGenerateSchema : testSetup
     {
         var isCharFoundExcep = foundExceptions.GetValueOrDefault("是");
         
-        List<SchemeRecord> schemeRecList = generateTestSchemeDict.schemeFromDictionary(foundExceptions, junda, tzai);
+        List<SchemeRecord> schemeRecList = 
+            generateTestSchemeDict.schemeFromDictionary(foundExceptions, junda, tzai);
 
-        Dictionary<string, SchemeRecord> charToSchema = GenerateSchema.generateCharToSchema(schemeRecList);
+        Dictionary<string, SchemeRecord> charToSchema = 
+            GenerateSchema.generateCharToSchema(schemeRecList);
         string charToSchemaJson = JsonSerializer.Serialize(charToSchema);
 
         var ischar = charToSchema.GetValueOrDefault("是");
 
-        Dictionary<string,HashSet<SchemeRecord>> codeToSchemas = GenerateSchema.generateCodeToSchema(schemeRecList);
+        Dictionary<string,HashSet<SchemeRecord>> codeToSchemas = 
+            GenerateSchema.generateCodeToSchema(schemeRecList);
         string codeToSchemaJson = JsonSerializer.Serialize(codeToSchemas);
         
         //File.WriteAllText(charToSchemaPath, charToSchemaJson);
