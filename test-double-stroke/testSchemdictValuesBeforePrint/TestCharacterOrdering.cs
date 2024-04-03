@@ -32,9 +32,91 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
     }
     
     [Test]
+    public void testJundaAfterNine_heisig()
+    { 
+        List<Tuple<string, HashSet<string>>> above9th = AllAbove9thMODIFIED(simplifiedOutputList);
+
+        HashSet<string> above9thFiltered_1to4 = 
+            AllAboveThe9ThFilter(above9th, new HashSet<int> { 1, 2, 3, 4});
+        
+        HashSet<string> above9thFiltered_5to6 = 
+            AllAboveThe9ThFilter(above9th, new HashSet<int> {5, 6});
+
+
+        HashSet<string> heisigTradAbove9th_1to4 = getHeisig(above9thFiltered_1to4, heisigSimp);
+        HashSet<string> heisigTradAbove9th_5to6 = getHeisig(above9thFiltered_5to6, heisigSimp);
+        
+        Assert.IsTrue(heisigTradAbove9th_1to4.Count == 0);
+        Assert.IsTrue(heisigTradAbove9th_5to6.Count == 0);
+    }
+    
+    [Test]
+    public void testJundaAfterNine_Junda5001()
+    { 
+        List<Tuple<string, HashSet<string>>> above9th = AllAbove9thMODIFIED(simplifiedOutputList);
+
+        HashSet<string> above9thFiltered = 
+            AllAboveThe9ThFilter(above9th, new HashSet<int> { 1, 2, 3, 4, 5, 6});
+
+        HashSet<string> heisigTradAbove9th = getWithinFreq(above9thFiltered, junda5001);
+        
+        Assert.IsTrue(heisigTradAbove9th.Count == 0);
+    }
+    
+    [Test]
+    public void testTzaiAfterNine_heisig()
+    { 
+        List<Tuple<string, HashSet<string>>> above9th = AllAbove9thMODIFIED(traditionalOutputList);
+/*
+        HashSet<string> above9thFiltered = 
+            AllAboveThe9ThFilter(above9th, new HashSet<int> { 1, 2, 3, 4, 5, 6 });
+
+        HashSet<string> heisigSimpOver9 = getHeisig(above9thFiltered, heisigTrad);
+        //HashSet<string> heisigTradOver9 = getHeisigTrad(above9thFiltered, heisigTrad);
+        
+        Assert.IsTrue(heisigSimpOver9.Count == 0);
+        //Assert.IsTrue(heisigTradOver9.Count == 0);
+        */
+        HashSet<string> above9thFiltered_1to4 = 
+            AllAboveThe9ThFilter(above9th, new HashSet<int> { 1, 2, 3, 4});
+        
+        HashSet<string> above9thFiltered_5to6 = 
+            AllAboveThe9ThFilter(above9th, new HashSet<int> {5, 6});
+
+
+        HashSet<string> heisigTradAbove9th_1to4 = getHeisig(above9thFiltered_1to4, heisigTrad);
+        HashSet<string> heisigTradAbove9th_5to6 = getHeisig(above9thFiltered_5to6, heisigTrad);
+        
+        Assert.IsTrue(heisigTradAbove9th_1to4.Count == 0);
+        Assert.IsTrue(heisigTradAbove9th_5to6.Count == 1);
+        Assert.IsTrue(heisigTradAbove9th_5to6.Single() == "騾");
+    }
+    
+    [Test]
+    public void testTzaiAfterNine_Tzai5001()
+    { 
+        List<Tuple<string, HashSet<string>>> above9th = AllAbove9thMODIFIED(traditionalOutputList);
+
+        HashSet<string> above9thFiltered_1to4 = 
+            AllAboveThe9ThFilter(above9th, new HashSet<int> { 1, 2, 3, 4});
+        
+        HashSet<string> above9thFiltered_5to6 = 
+            AllAboveThe9ThFilter(above9th, new HashSet<int> {5, 6});
+
+
+        HashSet<string> heisigTradAbove9th_1to4 = getWithinFreq(above9thFiltered_1to4, tzai5001);
+        HashSet<string> heisigTradAbove9th_5to6 = getWithinFreq(above9thFiltered_5to6, tzai5001);
+        Assert.IsTrue(heisigTradAbove9th_1to4.Count == 0);
+        Assert.IsTrue(heisigTradAbove9th_5to6.Count == 0);
+        //Assert.IsTrue(heisigTradAbove9th_5to6.Single() == "馱");
+        // "馱" Tzai 4555, to carry on ones back
+    }
+    
+    
+    [Test]
     public void TestPrintOrderTVIHcharacters_JundaList()
     {
-        var simp = simplifiedListString;
+        var simp = simplifiedOutputList;
         var index = simp.IndexOf("秀\ttvih");
    
         //秀	tvih Tzai 20948 Junda 24620 UNI 
@@ -74,7 +156,7 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
     [Test]
     public void TestPrintOrderTVIHcharacters_TzaiList()
     {
-        var trad = traditionalListString;
+        var trad = traditionalOutputList;
         var index = trad.IndexOf("秀\ttvih");
    
         //秀	tvih Tzai 20948 Junda 24620 UNI 
@@ -114,15 +196,15 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
     [Test]
     public void TestPrintOrderMatchesJundaTzaiAndUnicode_jundaList()
     {
-        var checkJundaSort = simplifiedListString;
-        List<List<string>> sortingInconsistencies = getSortingInconsistenciesJunda(simplifiedListString);
+        var checkJundaSort = simplifiedOutputList;
+        List<List<string>> sortingInconsistencies = getSortingInconsistenciesJunda(simplifiedOutputList);
         Assert.True(sortingInconsistencies.Count == 0);
     }
 
     [Test]
     public void TestPrintOrderMatchesJundaTzaiAndUnicode_tzaiList()
     {
-        var checkTzaiSort = traditionalListString;
+        var checkTzaiSort = traditionalOutputList;
         List<List<string>> sortingInconsistencies = getSortingInconsistenciesTzai(checkTzaiSort);
         Assert.True(sortingInconsistencies.Count == 0);
     }
@@ -220,10 +302,14 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
 
         return junda5001Schema;
     }
-
+/*
     [Test]
     public void testHeisigTrad_TzaiCountAfterNine()
     {
+         List<Tuple<string, HashSet<string>>> above9th = AllAbove9thMODIFIED(traditionalOutputList);
+
+         
+        
          var allAboveThe9th = AllAboveThe9Th(traditionalDictList, 
              new HashSet<int>{5,6});
 
@@ -247,117 +333,15 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
         
          
     }
-
-
-    [Test]
-    public void testHeisigSimp_TzaiCountAfterNine()
-    {
-        var largeAboveThe9th = AllAboveThe9Th(traditionalDictList,
-            new HashSet<int>{5,6});
-        
-        List<string> largeCodes = largeAboveThe9th.
-             Where(y => heisigSimp.ContainsKey(y.character)).
-             Select(x => x.character).ToList();
-            // OrderByDescending(z => z).ToList();
-        
-        var smallAboveThe9th = AllAboveThe9Th(traditionalDictList,
-            new HashSet<int>{1,2,3,4});
-        
-        List<string> smallCodes = smallAboveThe9th.
-                         Where(y => heisigSimp.ContainsKey(y.character)).
-                         Select(x => x.character).ToList();
-                        // OrderByDescending(z => z).ToList();
-        
-         Assert.IsTrue(largeCodes.Count == 0);
-         HashSet<string> hashedGread = largeCodes.ToHashSet();
-         Assert.IsTrue(hashedGread.Count == 0);
-
-         Assert.IsTrue(smallCodes.Count == 45);
-         HashSet<string> hashedSmall = smallCodes.ToHashSet();
-         Assert.IsTrue(hashedSmall.Count == 41);
-    }
-    
-    [Test]
-    public void testHeisigSimp_JundaCountAfterNine()
-    {
-       var allAboveThe9th = AllAboveThe9Th(simplifiedDictList,
-           new HashSet<int>{1,2,3,4,5,6});
- 
-         List<string> greatInts = allAboveThe9th.
-             Where(y => heisigSimp.ContainsKey(y.character)).
-             Select(x => 
-                 x.character + 
-                 " Junda: " + x.jundaNumber + 
-                 " Tzai: " + x.tzaiNumber).ToList();
-             //OrderByDescending(z => z).ToList();
-         
-         Assert.IsTrue(greatInts.Count == 0);
-    }
-    
-    
-    [Test]
-    public void testHeisigTrad_JundaCountAfterNine()
-    {
-        var largeAboveThe9th = AllAboveThe9Th(simplifiedDictList,
-           new HashSet<int>{5,6});
-
-        List<string> largeCodes = largeAboveThe9th
-             .Where(y => heisigTrad.ContainsKey(y.character))
-             .Select(x => x.character).ToList();
-             
-        var smallAboveThe9th = AllAboveThe9Th(simplifiedDictList,
-                     new HashSet<int>{1,2,3,4});
-        
-        List<string> smallCodes = smallAboveThe9th
-                       .Where(y => heisigTrad.ContainsKey(y.character))
-                       .Select(x => x.character).ToList();
-                          
-         
-         Assert.IsTrue(largeCodes.Count == 9);
-         HashSet<string> hashedGread = largeCodes.ToHashSet();
-         Assert.IsTrue(hashedGread.Count == 7);
-         
-         Assert.IsTrue(smallCodes.Count == 31);
-         HashSet<string> smallHashed = smallCodes.ToHashSet();
-         Assert.IsTrue(smallHashed.Count == 28);
-    }
-    
-    [Test]
-    public void testSortedJundaCountAfterNine()
-    {
-       var allAboveThe9th = AllAboveThe9Th(simplifiedDictList,
-           new HashSet<int>{1,2,3,4,5,6});
-
-        List<long> greatInts = allAboveThe9th.
-            Where(y => y.jundaNumber != null).
-            Select(x => x.jundaNumber.Value).ToList().
-            OrderByDescending(z => z).ToList();
-        
-        Assert.IsTrue(greatInts[0] < jundaFreq5001);
-        
-    }
-    
-    [Test]
-    public void testSortedTzaiCountAfterNine()
-    {
-        var allAboveThe9th = AllAboveThe9Th(traditionalDictList,
-            new HashSet<int>{1,2,3,4,5,6});
-
-        List<long> greatInts = allAboveThe9th.
-            Where(y => y.tzaiNumber != null).
-            Select(x => x.tzaiNumber.Value).ToList().
-            OrderByDescending(z => z).ToList();
-        
-        Assert.IsTrue(greatInts[0] < tzaiFreq5001);
-        
-    }
-    
+*/
     
     [Test]
     public void testLengthsSimplified()
     {
-        var codesWithManyChars = simplifiedDictList.Values.Where(listSch => longlist(listSch)).ToList();
-        var number10Junda = codesWithManyChars.Where(listSch => jundaAt10(listSch));//.
+        var codesWithManyChars = simplifiedDictList.Values
+            .Where(listSch => longlist(listSch)).ToList();
+        var number10Junda = codesWithManyChars
+            .Where(listSch => jundaAt10(listSch));//.
             //Select(listTooHigh => listTooHigh[9]).ToList();
         
         Assert.IsEmpty(number10Junda);
@@ -367,8 +351,10 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
     [Test]
     public void testLengthsTraditional()
     {
-        var codesWithManyChars = traditionalDictList.Values.Where(listSch => longlist(listSch)).ToList();
-        var number10Tzai = codesWithManyChars.Where(listSch => tzaiAt10(listSch));//.
+        var codesWithManyChars = traditionalDictList.Values
+            .Where(listSch => longlist(listSch)).ToList();
+        var number10Tzai = codesWithManyChars
+            .Where(listSch => tzaiAt10(listSch));//.
         //Select(listTooHigh => listTooHigh[9]).ToList();
         
         Assert.IsEmpty(number10Tzai);
@@ -603,6 +589,105 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
         }
         return result;
     }
+
+    private List<Tuple<string, HashSet<string>>> AllAbove9thMODIFIED(
+        List<string> outputList)
+    {
+       List<Tuple<string, HashSet<string>>> result = new List<Tuple<string, HashSet<string>>>();
+       HashSet<string> over9thCharsByCode = new HashSet<string>();
+       
+       //-- skriv bedre code her
+       string previousCode = "test2";
+       string currentCode = "test";
+       int numberOfChars = 0;
+       long indexcount = -1;
+       foreach (var VARIABLE in outputList)
+       {
+           indexcount += 1;
+           string[] splitInput = Regex.Split(VARIABLE, @"\s+");
+           previousCode = currentCode;
+           currentCode = splitInput[1];
+           if (previousCode == currentCode)
+           {
+               if (currentCode == "dngw")
+               {
+                   string res = "";
+               }
+
+               if (splitInput[0] == "碩")
+               {
+                   string tes = "";
+               }
+
+               numberOfChars += 1;
+               if (numberOfChars > 9)
+               {
+                    over9thCharsByCode.Add(splitInput[0]);
+               }
+           }
+           else
+           {
+               numberOfChars = 1;
+               if (over9thCharsByCode.Count > 0)
+               {
+                   result.Add(
+                       new Tuple<string, HashSet<string>>(previousCode, over9thCharsByCode)
+                       );
+               }
+               over9thCharsByCode = new HashSet<string>();
+           }
+       }
+
+/*
+       HashSet<string> codes = new HashSet<string>();
+        foreach (var VARIABLE in outputList)
+        {
+            string[] splitInput = Regex.Split(VARIABLE, @"\s+");
+            codes.Add(splitInput[1]);
+        }
+
+        foreach (var eachCode in codes)
+        {
+            HashSet<string> over9thCharsByCode = new HashSet<string>();
+            int numberOfChars = 0;
+            foreach (var eachChar in outputList)
+            {
+                string[] splitInput = Regex.Split(eachChar, @"\s+"); 
+                if (splitInput[1] == eachCode)
+                {
+                    numberOfChars += 1;
+                    if (numberOfChars > 9)
+                    {
+                        over9thCharsByCode.Add(splitInput[0]);
+                    }
+                }
+            }
+
+            if (over9thCharsByCode.Count > 0)
+            {
+                Tuple<string, HashSet<string>> myTuple =
+                    new Tuple<string, HashSet<string>>(eachCode, over9thCharsByCode);
+                result.Add(myTuple);
+            }
+        }*/
+        return result;
+    }
+
+
+    private HashSet<string> AllAboveThe9ThFilter(
+        List<Tuple<string, HashSet<string>>> dictList,
+        HashSet<int> codelengthToInclude)
+    {
+        HashSet<string> tempDict = new HashSet<string>();
+        foreach (var VARIABLE in dictList)
+        {
+            if (codelengthToInclude.Contains(VARIABLE.Item1.Length))
+            {
+                tempDict.UnionWith(VARIABLE.Item2);
+            }
+        }
+        return tempDict;
+    }
     
     private List<SchemeRecord> AllAboveThe9Th(
         Dictionary<string, List<SchemeRecord>> dictList,
@@ -630,4 +715,48 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
 
         return allAboveThe9th;
     }
+    private HashSet<string> getWithinFreq(
+         HashSet<string> above9ThFiltered, 
+         Dictionary<string, FrequencyRecord> charToFreqDict)
+    {
+        HashSet<string> result = new HashSet<string>();
+        foreach (var VARIABLE in above9ThFiltered)
+        {
+            if (charToFreqDict.ContainsKey(VARIABLE))
+            {
+                result.Add(VARIABLE);
+            }
+        }
+        return result;
+    }   
+
+    private HashSet<string> getHeisig(
+        HashSet<string> above9ThFiltered, 
+        Dictionary<string, AlternativeCharsetRecord> heisig)
+    {
+        HashSet<string> result = new HashSet<string>();
+        foreach (var VARIABLE in above9ThFiltered)
+        {
+            if (heisig.ContainsKey(VARIABLE))
+            {
+                result.Add(VARIABLE);
+            }
+        }
+        return result;
+    }
+
+    /*
+     
+     var allAboveThe9th = AllAboveThe9Th(simplifiedDictList,
+                new HashSet<int>{1,2,3,4,5,6});
+     
+             List<long> greatInts = allAboveThe9th.
+                 Where(y => y.jundaNumber != null).
+                 Select(x => x.jundaNumber.Value).ToList().
+                 OrderByDescending(z => z).ToList();
+             
+             Assert.IsTrue(greatInts[0] < jundaFreq5001);
+     
+     */
+    
 }

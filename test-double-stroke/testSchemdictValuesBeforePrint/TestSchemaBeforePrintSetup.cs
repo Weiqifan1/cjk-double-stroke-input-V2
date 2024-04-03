@@ -32,8 +32,8 @@ public class TestSchemaBeforePrintSetup
     public List<List<Tuple<string, List<SchemeRecord>>>> traditionalListListTupples;
     public List<Tuple<string, SchemeRecord>> simplifiedListTuples;
     public List<Tuple<string, SchemeRecord>> traditionalListTuples;
-    public List<string> simplifiedListString;
-    public List<string> traditionalListString;
+    public List<string> simplifiedOutputList;
+    public List<string> traditionalOutputList;
     public Dictionary<string, AlternativeCharsetRecord> heisigSimp;
     public Dictionary<string, AlternativeCharsetRecord> heisigTrad;
     
@@ -68,8 +68,8 @@ public class TestSchemaBeforePrintSetup
         simplifiedListTuples = createListOfStringReadyForPrint.getSortedListOfTuples(simplifiedListListTupples);
         traditionalListTuples = createListOfStringReadyForPrint.getSortedListOfTuples(traditionalListListTupples);
 
-        simplifiedListString = createListOfStringReadyForPrint.listOfTuplesToStringsJuda(simplifiedListTuples);
-        traditionalListString = createListOfStringReadyForPrint.listOfTuplesToStringsTzai(traditionalListTuples);
+        simplifiedOutputList = createListOfStringReadyForPrint.listOfTuplesToStringsJuda(simplifiedListTuples);
+        traditionalOutputList = createListOfStringReadyForPrint.listOfTuplesToStringsTzai(traditionalListTuples);
         
     }
 

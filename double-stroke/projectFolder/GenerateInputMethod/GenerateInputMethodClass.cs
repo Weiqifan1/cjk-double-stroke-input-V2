@@ -94,7 +94,7 @@ public class GenerateInputMethodClass : TestSchemaBeforePrintSetup
             FilePaths.dotsAndSlash + FilePaths.punctuationPathStr);
         var punctuationLines = UtilityFunctions.ReadLinesFromFile(punctuationPath);
              
-        List<string> printSimplified = simplifiedListString;
+        List<string> printSimplified = simplifiedOutputList;
         printSimplified.InsertRange(0, punctuationLines);
         //printSimplified.InsertRange(0, new List<string>(){""});
         //printSimplified.InsertRange(0, windowsArrayFile); 
@@ -123,7 +123,7 @@ public class GenerateInputMethodClass : TestSchemaBeforePrintSetup
             FilePaths.dotsAndSlash + FilePaths.punctuationPathStr);
         var punctuationLines = UtilityFunctions.ReadLinesFromFile(punctuationPath);
              
-        List<string> printTraditional = traditionalListString;
+        List<string> printTraditional = traditionalOutputList;
         printTraditional.InsertRange(0, punctuationLines);
         //printTraditional.InsertRange(0, new List<string>(){""});
         //printTraditional.InsertRange(0, tradDictFile); 
@@ -152,7 +152,7 @@ public class GenerateInputMethodClass : TestSchemaBeforePrintSetup
             FilePaths.dotsAndSlash + FilePaths.punctuationPathStr);
         var punctuationLines = UtilityFunctions.ReadLinesFromFile(punctuationPath);
              
-        List<string> printSimplified = simplifiedListString;
+        List<string> printSimplified = simplifiedOutputList;
         printSimplified.InsertRange(0, punctuationLines);
         //printSimplified.InsertRange(0, new List<string>(){""});
         printSimplified.InsertRange(0, simpDictFile); 
@@ -179,7 +179,7 @@ public class GenerateInputMethodClass : TestSchemaBeforePrintSetup
             FilePaths.dotsAndSlash + FilePaths.punctuationPathStr);
         var punctuationLines = UtilityFunctions.ReadLinesFromFile(punctuationPath);
              
-        List<string> printTraditional = traditionalListString;
+        List<string> printTraditional = traditionalOutputList;
         printTraditional.InsertRange(0, punctuationLines);
         //printTraditional.InsertRange(0, new List<string>(){""});
         printTraditional.InsertRange(0, tradDictFile); 

@@ -63,12 +63,19 @@ public static class createListOfStringReadyForPrint
         return result;
     }
 
+    
     //list of tupples to list of strings
     public static List<string> listOfTuplesToStringsJuda(List<Tuple<string, SchemeRecord>> tuppleList)
     {
+        GenerateFileMaps fileMaps = new GenerateFileMaps();
+        var simpHeisig = fileMaps.generateHeisigSimpMap();
+        var tradHeisig = fileMaps.generateHeisigTradMap();
+        
         var sortetTuple = 
             tuppleList.OrderBy(tuple => tuple.Item1.Length)
             .ThenBy(tuple => tuple.Item1)
+            //.ThenByDescending(tuple => simpHeisig.ContainsKey(tuple.Item2.character))
+            //.ThenByDescending(tuple => tradHeisig.ContainsKey(tuple.Item2.character))
             .ThenByDescending(tuple => tuple.Item2.jundaNumber.HasValue)
             .ThenByDescending(tuple => tuple.Item2.jundaNumber)
             .ThenByDescending(tuple => tuple.Item2.tzaiNumber.HasValue)
@@ -90,9 +97,15 @@ public static class createListOfStringReadyForPrint
     //list of tupples to list of strings
     public static List<string> listOfTuplesToStringsTzai(List<Tuple<string, SchemeRecord>> tuppleList)
     {
+        GenerateFileMaps fileMaps = new GenerateFileMaps();
+        var simpHeisig = fileMaps.generateHeisigSimpMap();
+        var tradHeisig = fileMaps.generateHeisigTradMap();
+        
         var sortetTuple = 
             tuppleList.OrderBy(tuple => tuple.Item1.Length)
             .ThenBy(tuple => tuple.Item1)
+            //.ThenByDescending(tuple => tradHeisig.ContainsKey(tuple.Item2.character))
+            //.ThenByDescending(tuple => simpHeisig.ContainsKey(tuple.Item2.character))
             .ThenByDescending(tuple => tuple.Item2.tzaiNumber.HasValue)
             .ThenByDescending(tuple => tuple.Item2.tzaiNumber)
             .ThenByDescending(tuple => tuple.Item2.jundaNumber.HasValue)

@@ -17,7 +17,6 @@ public class TestGenerateSchema : testSetup
         //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\codeToSchemaMap.txt");
     
     
-    
     [Test]
     public void generateAndSaveSchemaMaps()
     {
