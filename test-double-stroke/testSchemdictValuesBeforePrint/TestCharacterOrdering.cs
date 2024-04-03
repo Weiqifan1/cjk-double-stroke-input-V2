@@ -42,7 +42,6 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
         HashSet<string> above9thFiltered_5to6 = 
             AllAboveThe9ThFilter(above9th, new HashSet<int> {5, 6});
 
-
         HashSet<string> heisigTradAbove9th_1to4 = getHeisig(above9thFiltered_1to4, heisigSimp);
         HashSet<string> heisigTradAbove9th_5to6 = getHeisig(above9thFiltered_5to6, heisigSimp);
         
@@ -55,34 +54,29 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
     { 
         List<Tuple<string, HashSet<string>>> above9th = AllAbove9thMODIFIED(simplifiedOutputList);
 
-        HashSet<string> above9thFiltered = 
-            AllAboveThe9ThFilter(above9th, new HashSet<int> { 1, 2, 3, 4, 5, 6});
-
-        HashSet<string> heisigTradAbove9th = getWithinFreq(above9thFiltered, junda5001);
-        
-        Assert.IsTrue(heisigTradAbove9th.Count == 0);
-    }
-    
-    [Test]
-    public void testTzaiAfterNine_heisig()
-    { 
-        List<Tuple<string, HashSet<string>>> above9th = AllAbove9thMODIFIED(traditionalOutputList);
-/*
-        HashSet<string> above9thFiltered = 
-            AllAboveThe9ThFilter(above9th, new HashSet<int> { 1, 2, 3, 4, 5, 6 });
-
-        HashSet<string> heisigSimpOver9 = getHeisig(above9thFiltered, heisigTrad);
-        //HashSet<string> heisigTradOver9 = getHeisigTrad(above9thFiltered, heisigTrad);
-        
-        Assert.IsTrue(heisigSimpOver9.Count == 0);
-        //Assert.IsTrue(heisigTradOver9.Count == 0);
-        */
         HashSet<string> above9thFiltered_1to4 = 
             AllAboveThe9ThFilter(above9th, new HashSet<int> { 1, 2, 3, 4});
         
         HashSet<string> above9thFiltered_5to6 = 
             AllAboveThe9ThFilter(above9th, new HashSet<int> {5, 6});
 
+        HashSet<string> heisigTradAbove9th_1to4 = getWithinFreq(above9thFiltered_1to4, junda5001);
+        HashSet<string> heisigTradAbove9th_5to6 = getWithinFreq(above9thFiltered_5to6, junda5001);
+        Assert.IsTrue(heisigTradAbove9th_1to4.Count == 0);
+        Assert.IsTrue(heisigTradAbove9th_5to6.Count == 0);
+
+    }
+    
+    [Test]
+    public void testTzaiAfterNine_heisig()
+    { 
+        List<Tuple<string, HashSet<string>>> above9th = AllAbove9thMODIFIED(traditionalOutputList);
+
+        HashSet<string> above9thFiltered_1to4 = 
+            AllAboveThe9ThFilter(above9th, new HashSet<int> { 1, 2, 3, 4});
+        
+        HashSet<string> above9thFiltered_5to6 = 
+            AllAboveThe9ThFilter(above9th, new HashSet<int> {5, 6});
 
         HashSet<string> heisigTradAbove9th_1to4 = getHeisig(above9thFiltered_1to4, heisigTrad);
         HashSet<string> heisigTradAbove9th_5to6 = getHeisig(above9thFiltered_5to6, heisigTrad);
@@ -102,7 +96,6 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
         
         HashSet<string> above9thFiltered_5to6 = 
             AllAboveThe9ThFilter(above9th, new HashSet<int> {5, 6});
-
 
         HashSet<string> heisigTradAbove9th_1to4 = getWithinFreq(above9thFiltered_1to4, tzai5001);
         HashSet<string> heisigTradAbove9th_5to6 = getWithinFreq(above9thFiltered_5to6, tzai5001);
