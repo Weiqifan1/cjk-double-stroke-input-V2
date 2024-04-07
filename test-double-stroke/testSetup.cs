@@ -16,6 +16,9 @@ public class testSetup
     protected static  Dictionary<string, FrequencyRecord> tzai;
     protected static  ExceptionHelper exceptionHelper = new ExceptionHelper();
     protected static GenerateIds genIds = new GenerateIds();
+    protected static Dictionary<string, SchemeRecord> charToSchema;
+    protected static Dictionary<string, HashSet<SchemeRecord>> codeToSchema;
+    
     
     [OneTimeSetUp]
     public void Setup()
@@ -73,8 +76,28 @@ public class testSetup
         
         junda = gen.generateJundaMap(jundaPath);
         tzai = gen.generateTzaiMap(tzaiPath);
-
+        codeToSchema = getCodeToSchema();
+        charToSchema = getCharToSchema();
         string test = "";
+    }
+    
+    private static Dictionary<string, HashSet<SchemeRecord>> getCodeToSchema()
+    {
+        List<SchemeRecord> schemeRecList = 
+                            generateTestSchemeDict.schemeFromDictionary(foundExceptions, junda, tzai);
+        Dictionary<string,HashSet<SchemeRecord>> codeToSchemas = 
+                    GenerateSchema.generateCodeToSchema(schemeRecList);
+        return codeToSchemas;
+    }
+
+    private static Dictionary<string, SchemeRecord> getCharToSchema()
+    {
+        List<SchemeRecord> schemeRecList = 
+                    generateTestSchemeDict.schemeFromDictionary(foundExceptions, junda, tzai);
+        
+        Dictionary<string, SchemeRecord> charToSchema = 
+                    GenerateSchema.generateCharToSchema(schemeRecList);
+        return charToSchema;
     }
     
 }

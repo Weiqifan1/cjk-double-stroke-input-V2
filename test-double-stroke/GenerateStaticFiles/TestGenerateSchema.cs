@@ -25,24 +25,23 @@ public class TestGenerateSchema : testSetup
         List<SchemeRecord> schemeRecList = 
             generateTestSchemeDict.schemeFromDictionary(foundExceptions, junda, tzai);
 
-        Dictionary<string, SchemeRecord> charToSchema = 
-            GenerateSchema.generateCharToSchema(schemeRecList);
+        //Dictionary<string, SchemeRecord> charToSchema = getCharToSchema();
         string charToSchemaJson = JsonSerializer.Serialize(charToSchema);
 
         var ischar = charToSchema.GetValueOrDefault("是");
 
-        Dictionary<string,HashSet<SchemeRecord>> codeToSchemas = 
-            GenerateSchema.generateCodeToSchema(schemeRecList);
-        string codeToSchemaJson = JsonSerializer.Serialize(codeToSchemas);
+        //Dictionary<string, HashSet<SchemeRecord>> codeToSchemas = getCodeToSchema();
+        string codeToSchemaJson = JsonSerializer.Serialize(codeToSchema);
         
         File.WriteAllText(charToSchemaPath, charToSchemaJson);
         File.WriteAllText(codeToSchemaPath, codeToSchemaJson);
         
         Assert.IsTrue(schemeRecList.Count == charToSchema.Count);
         Assert.IsTrue(schemeRecList.Count == 28098);
-        Assert.IsTrue(codeToSchemas.Count == 62878);
+        Assert.IsTrue(codeToSchema.Count == 62878);
     }
-    
+
+
     [Test]
     public void testReadSchemaMaps()
     {

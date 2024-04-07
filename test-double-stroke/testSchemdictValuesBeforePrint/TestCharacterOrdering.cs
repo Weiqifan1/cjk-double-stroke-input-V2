@@ -37,10 +37,10 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
         List<Tuple<string, HashSet<string>>> above9th = AllAbove9thMODIFIED(simplifiedOutputList);
 
         HashSet<string> above9thFiltered_1to4 = 
-            AllAboveThe9ThFilter(above9th, new HashSet<int> { 1, 2, 3, 4});
+            OrderingHelper.AllAboveThe9ThFilter(above9th, new HashSet<int> { 1, 2, 3, 4});
         
         HashSet<string> above9thFiltered_5to6 = 
-            AllAboveThe9ThFilter(above9th, new HashSet<int> {5, 6});
+            OrderingHelper.AllAboveThe9ThFilter(above9th, new HashSet<int> {5, 6});
 
         HashSet<string> heisigTradAbove9th_1to4 = getHeisig(above9thFiltered_1to4, heisigSimp);
         HashSet<string> heisigTradAbove9th_5to6 = getHeisig(above9thFiltered_5to6, heisigSimp);
@@ -55,10 +55,10 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
         List<Tuple<string, HashSet<string>>> above9th = AllAbove9thMODIFIED(simplifiedOutputList);
 
         HashSet<string> above9thFiltered_1to4 = 
-            AllAboveThe9ThFilter(above9th, new HashSet<int> { 1, 2, 3, 4});
+            OrderingHelper.AllAboveThe9ThFilter(above9th, new HashSet<int> { 1, 2, 3, 4});
         
         HashSet<string> above9thFiltered_5to6 = 
-            AllAboveThe9ThFilter(above9th, new HashSet<int> {5, 6});
+            OrderingHelper.AllAboveThe9ThFilter(above9th, new HashSet<int> {5, 6});
 
         HashSet<string> heisigTradAbove9th_1to4 = getWithinFreq(above9thFiltered_1to4, junda5001);
         HashSet<string> heisigTradAbove9th_5to6 = getWithinFreq(above9thFiltered_5to6, junda5001);
@@ -73,10 +73,10 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
         List<Tuple<string, HashSet<string>>> above9th = AllAbove9thMODIFIED(traditionalOutputList);
 
         HashSet<string> above9thFiltered_1to4 = 
-            AllAboveThe9ThFilter(above9th, new HashSet<int> { 1, 2, 3, 4});
+            OrderingHelper.AllAboveThe9ThFilter(above9th, new HashSet<int> { 1, 2, 3, 4});
         
         HashSet<string> above9thFiltered_5to6 = 
-            AllAboveThe9ThFilter(above9th, new HashSet<int> {5, 6});
+            OrderingHelper.AllAboveThe9ThFilter(above9th, new HashSet<int> {5, 6});
 
         HashSet<string> heisigTradAbove9th_1to4 = getHeisig(above9thFiltered_1to4, heisigTrad);
         HashSet<string> heisigTradAbove9th_5to6 = getHeisig(above9thFiltered_5to6, heisigTrad);
@@ -92,10 +92,10 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
         List<Tuple<string, HashSet<string>>> above9th = AllAbove9thMODIFIED(traditionalOutputList);
 
         HashSet<string> above9thFiltered_1to4 = 
-            AllAboveThe9ThFilter(above9th, new HashSet<int> { 1, 2, 3, 4});
+            OrderingHelper.AllAboveThe9ThFilter(above9th, new HashSet<int> { 1, 2, 3, 4});
         
         HashSet<string> above9thFiltered_5to6 = 
-            AllAboveThe9ThFilter(above9th, new HashSet<int> {5, 6});
+            OrderingHelper.AllAboveThe9ThFilter(above9th, new HashSet<int> {5, 6});
 
         HashSet<string> heisigTradAbove9th_1to4 = getWithinFreq(above9thFiltered_1to4, tzai5001);
         HashSet<string> heisigTradAbove9th_5to6 = getWithinFreq(above9thFiltered_5to6, tzai5001);
@@ -666,21 +666,6 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
         return result;
     }
 
-
-    private HashSet<string> AllAboveThe9ThFilter(
-        List<Tuple<string, HashSet<string>>> dictList,
-        HashSet<int> codelengthToInclude)
-    {
-        HashSet<string> tempDict = new HashSet<string>();
-        foreach (var VARIABLE in dictList)
-        {
-            if (codelengthToInclude.Contains(VARIABLE.Item1.Length))
-            {
-                tempDict.UnionWith(VARIABLE.Item2);
-            }
-        }
-        return tempDict;
-    }
     
     private List<SchemeRecord> AllAboveThe9Th(
         Dictionary<string, List<SchemeRecord>> dictList,
