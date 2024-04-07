@@ -34,7 +34,6 @@ public class TestExceptionSpread : testSetup
 
         Dictionary<char, long> fingers = CombineDictionaries(keys, characterMapping());
         
-        
         Dictionary<char, long> rawKeyResult = keys
             .ToDictionary(
                 x => x.Key, 
@@ -45,13 +44,54 @@ public class TestExceptionSpread : testSetup
                         x => x.Key, 
                         x => x.Value / 1000000);
         
-
-        
+        //calculate the distribution of shortcut elements
+        Dictionary<char, long> shortcurRawCounterJunda = shortcutKeyCounterJunda(charToSchemaDict);
+        Dictionary<char, long> shortcurRawCounterTzai = shortcutKeyCounterTzai(charToSchemaDict);
         string keyres = "";
     }
 
+    private Dictionary<char, long> shortcutKeyCounterJunda(Dictionary<string, SchemeRecord> charToSchemaDict)
+    {
+        Dictionary<char, long> result = new Dictionary<char, long>(); 
+        foreach (var eachCharPair in charToSchemaDict)
+        {
+            //get only pairs with shortcurKeys
+            char excLet = eachCharPair.Value.exceptionLetter == null ? (char)1  : eachCharPair.Value.exceptionLetter.ToCharArray()[0];
+            if (excLet != (char)1)
+            {
+                long oldNumber = result.ContainsKey(excLet) ? result[excLet] : 0;
+                long jundaNumsFixed = eachCharPair.Value.jundaNumber ?? 0;
+                if (excLet == 't' && jundaNumsFixed != 0)
+                {
+                    string test = "";
+                }
+
+                long newNumber = oldNumber + jundaNumsFixed;
+                result[excLet] = newNumber; // using the indexer to add or update key-value pairs
+            }
+        }
+        return result;
+    }
     
-    public Dictionary<char, long> CombineDictionaries(
+    private Dictionary<char, long> shortcutKeyCounterTzai(Dictionary<string, SchemeRecord> charToSchemaDict)
+    {
+        Dictionary<char, long> result = new Dictionary<char, long>(); 
+        foreach (var eachCharPair in charToSchemaDict)
+        {
+            //get only pairs with shortcurKeys
+            char excLet = eachCharPair.Value.exceptionLetter == null ? (char)1  : eachCharPair.Value.exceptionLetter.ToCharArray()[0];
+            if (excLet != (char)1)
+            {
+                long oldNumber = result.ContainsKey(excLet) ? result[excLet] : 0;
+                long jundaNumsFixed = eachCharPair.Value.tzaiNumber ?? 0;
+                long newNumber = oldNumber + jundaNumsFixed;
+                result[excLet] = newNumber; // using the indexer to add or update key-value pairs
+            }
+        }
+        return result;
+    }
+    
+    private Dictionary<char, long> CombineDictionaries(
         Dictionary<char, long> dictA, 
         Dictionary<char, HashSet<char>> dictB)
     {
