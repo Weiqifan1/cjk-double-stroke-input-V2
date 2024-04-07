@@ -22,26 +22,26 @@ public static class CodeAlphabet
         result.Add("44", "o");
         result.Add("45", "p");
         
-        result.Add("1", "g");
-        result.Add("11", "g");
-        result.Add("12", "f");
-        result.Add("13", "d");
-        result.Add("14", "s");
-        result.Add("15", "a");
+        result.Add("1", "h");
+        result.Add("11", "h");
+        result.Add("12", "j");
+        result.Add("13", "k");
+        result.Add("14", "l");
+        result.Add("15", "m");
         
-        result.Add("5", "h");
-        result.Add("51", "h");
-        result.Add("52", "j");
-        result.Add("53", "k");
-        result.Add("54", "l");
-        result.Add("55", "m");
+        result.Add("5", "g");
+        result.Add("51", "g");
+        result.Add("52", "f");
+        result.Add("53", "d");
+        result.Add("54", "s");
+        result.Add("55", "a");
         
-        result.Add("2", "x");
-        result.Add("21", "x");
-        result.Add("22", "c");
+        result.Add("2", "n");
+        result.Add("21", "n");
+        result.Add("22", "b");
         result.Add("23", "v");
-        result.Add("24", "b");
-        result.Add("25", "n");
+        result.Add("24", "c");
+        result.Add("25", "x");
         
         //z should not be included
         return result;

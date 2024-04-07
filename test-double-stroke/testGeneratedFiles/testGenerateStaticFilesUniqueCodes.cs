@@ -16,7 +16,15 @@ public class testGenerateStaticFilesUniqueCodes : testSetup
         string testDirectory = TestContext.CurrentContext.TestDirectory;
         string jundaPath = Path.Combine(testDirectory, 
                              FilePaths.dotsAndSlash + FilePaths.jundaPathStr);
-        
+       
+        //碛
+        SchemeRecord over5001 = charToSchema.GetValueOrDefault("碛");
+        foreach (var eachCode in over5001.code4)
+        {
+            var charsWithCode = codeToSchema.GetValueOrDefault(eachCode);
+            string test = "";
+        } 
+
         List<string> simplifiedOutputList = 
             OrderingHelper.generatedTupleJundaAboveNine(charToSchema, codeToSchema);
 

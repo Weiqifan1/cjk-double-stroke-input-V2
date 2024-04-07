@@ -7,23 +7,24 @@ public class CodeExceptions
     {
 
         var result = new Dictionary<string, string>();
-        result.Add("手", "s");
-        result.Add("扌", "s");
-        result.Add("目", "d");
-        result.Add("虫", "j");
-        result.Add("金", "t");
-        result.Add("𧾷", "f");
-        result.Add("足", "f");
-        result.Add("車", "g");
-        result.Add("竹", "l");
-        result.Add("木", "k");
-        result.Add("食", "y");
-        result.Add("飠", "y");
-        result.Add("馬", "b");
-        result.Add("言", "v");
-        result.Add("門", "n");
-        result.Add("糸", "h");
-        result.Add("糹", "h");
+        result.Add("手", "l");//s  tobe f
+        result.Add("扌", "l");//s  tobe f
+        result.Add("目", "k");//d  tobe jj
+        result.Add("虫", "f");//j  tobe l
+        result.Add("𧾷", "j");//f  tobe k
+        result.Add("足", "j");//f  tobe k
+        result.Add("竹", "s");//l  tobe s
+        result.Add("木", "d");//k  tobe d
+        
+        result.Add("金", "t");//t
+        result.Add("車", "h");//g
+        result.Add("食", "y");//y
+        result.Add("飠", "y");//y
+        result.Add("馬", "c");//b
+        result.Add("言", "v");//v
+        result.Add("門", "x");//n
+        result.Add("糸", "g");//h
+        result.Add("糹", "g");//h
         return result;
     }
     public static Dictionary<string, string> getPriviledgedExceptionCharacters()
