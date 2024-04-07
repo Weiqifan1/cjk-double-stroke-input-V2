@@ -2,7 +2,31 @@
 
 public class CodeExceptions
 {
+    private static Dictionary<string, string> charToLetter = generateStandardOneAlphabet(); 
+    static Dictionary<string, string> generateStandardOneAlphabet()
+    {
 
+        var result = new Dictionary<string, string>();
+        result.Add("手", "s");
+        result.Add("扌", "s");
+        result.Add("目", "d");
+        result.Add("虫", "j");
+        result.Add("金", "t");
+        result.Add("𧾷", "f");
+        result.Add("足", "f");
+        result.Add("車", "g");
+        result.Add("竹", "l");
+        result.Add("木", "k");
+        result.Add("食", "y");
+        result.Add("飠", "y");
+        result.Add("馬", "b");
+        result.Add("言", "v");
+        result.Add("門", "n");
+        result.Add("馬", "b");
+        result.Add("糸", "h");
+        result.Add("糹", "h");
+        return result;
+    }
     public static Dictionary<string, string> getPriviledgedExceptionCharacters()
     {
         var result = new Dictionary<string, string>();
