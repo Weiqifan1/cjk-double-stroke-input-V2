@@ -71,6 +71,14 @@ public class TestSchemaBeforePrintSetup
         simplifiedOutputList = createListOfStringReadyForPrint.listOfTuplesToStringsJuda(simplifiedListTuples);
         traditionalOutputList = createListOfStringReadyForPrint.listOfTuplesToStringsTzai(traditionalListTuples);
         
+        GenerateFileMaps gen = new GenerateFileMaps();
+        string jundaPath = Path.Combine(testDirectory, 
+                             FilePaths.dotsAndSlash + FilePaths.jundaPathStr);
+                             //@"..\..\..\..\double-stroke\projectFolder\StaticFiles\Junda2005.txt");
+        string tzaiPath = Path.Combine(testDirectory, 
+                             FilePaths.dotsAndSlash + FilePaths.tzaiPathStr);
+        
+        string test = "";
     }
 
     /*

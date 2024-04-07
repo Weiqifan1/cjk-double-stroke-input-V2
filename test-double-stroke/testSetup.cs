@@ -1,5 +1,6 @@
 ﻿using double_stroke.projectFolder.FileMaps.GenerateFilesController;
 using test_double_stroke.testExceptions;
+using test_double_stroke.testSchemdictValuesBeforePrint;
 
 namespace test_double_stroke;
 
@@ -10,19 +11,21 @@ public class testSetup
     
     protected static Dictionary<string, IdsBasicRecord> idsMap;
     protected static Dictionary<string, CodepointWithExceptionRecord> foundExceptions;
-    protected static  Dictionary<string, CodepointExceptionRecord> codeExceptionsFromIds;
-    protected static  Dictionary<string, CodepointExceptionRecord> codeExceptionsFromCodepoint;
-    protected static  Dictionary<string, FrequencyRecord> junda;
-    protected static  Dictionary<string, FrequencyRecord> tzai;
-    protected static  ExceptionHelper exceptionHelper = new ExceptionHelper();
+    protected static Dictionary<string, CodepointExceptionRecord> codeExceptionsFromIds;
+    protected static Dictionary<string, CodepointExceptionRecord> codeExceptionsFromCodepoint;
+    protected static Dictionary<string, FrequencyRecord> junda;
+    protected static Dictionary<string, FrequencyRecord> tzai;
+    protected static ExceptionHelper exceptionHelper = new ExceptionHelper();
     protected static GenerateIds genIds = new GenerateIds();
     protected static Dictionary<string, SchemeRecord> charToSchema;
     protected static Dictionary<string, HashSet<SchemeRecord>> codeToSchema;
-    
+    protected static Dictionary<string, FrequencyRecord> junda5001;
+    protected static Dictionary<string, FrequencyRecord> tzai5001;
     
     [OneTimeSetUp]
     public void Setup()
     {
+        
         //find exceptions in the CodeException file new UnicodeCharacter("手")
         string testDirectory = TestContext.CurrentContext.TestDirectory;
 
@@ -35,6 +38,7 @@ public class testSetup
             //@"..\..\..\..\double-stroke\projectFolder\StaticFiles\codepoint-character-sequence.txt");
         string newPathForSaveFile = Path.Combine(testDirectory, 
             FilePaths.dotsAndSlash + FilePaths.newPathForSaveFileStr);
+        
             //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\idsMap.txt");
         
             //C:\Users\CMLyk\RiderProjects\cjk-double-stroke-input-V2\
@@ -78,6 +82,8 @@ public class testSetup
         tzai = gen.generateTzaiMap(tzaiPath);
         codeToSchema = getCodeToSchema();
         charToSchema = getCharToSchema();
+        junda5001 = gen.extractFirst5001Junda(jundaPath);
+        tzai5001 = gen.extractFirst5001Tzai(tzaiPath);
         string test = "";
     }
     

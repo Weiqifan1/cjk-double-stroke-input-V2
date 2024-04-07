@@ -11,14 +11,16 @@ namespace test_double_stroke.testSchemdictValuesBeforePrint;
 
 public class TestCharacterOrdering : TestSchemaBeforePrintSetup
 {
-    private Dictionary<string, FrequencyRecord> junda;
-    private Dictionary<string, FrequencyRecord> junda5001;
-    private Dictionary<string, FrequencyRecord> tzai;
-    private Dictionary<string, FrequencyRecord> tzai5001;
-        
+
+     public Dictionary<string, FrequencyRecord> junda;
+     public Dictionary<string, FrequencyRecord> tzai;
+     public Dictionary<string, FrequencyRecord> junda5001;
+     public Dictionary<string, FrequencyRecord> tzai5001;
+    
     [SetUp]
     public void Initialize()
-    {GenerateFileMaps gen = new GenerateFileMaps();
+    {
+        GenerateFileMaps gen = new GenerateFileMaps();
         string jundaPath = Path.Combine(testDirectory, 
                              FilePaths.dotsAndSlash + FilePaths.jundaPathStr);
                              //@"..\..\..\..\double-stroke\projectFolder\StaticFiles\Junda2005.txt");
@@ -34,7 +36,7 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
     [Test]
     public void testJundaAfterNine_heisig()
     { 
-        List<Tuple<string, HashSet<string>>> above9th = AllAbove9thMODIFIED(simplifiedOutputList);
+        List<Tuple<string, HashSet<string>>> above9th = OrderingHelper.AllAbove9thMODIFIED(simplifiedOutputList);
 
         HashSet<string> above9thFiltered_1to4 = 
             OrderingHelper.AllAboveThe9ThFilter(above9th, new HashSet<int> { 1, 2, 3, 4});
@@ -42,8 +44,10 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
         HashSet<string> above9thFiltered_5to6 = 
             OrderingHelper.AllAboveThe9ThFilter(above9th, new HashSet<int> {5, 6});
 
-        HashSet<string> heisigTradAbove9th_1to4 = getHeisig(above9thFiltered_1to4, heisigSimp);
-        HashSet<string> heisigTradAbove9th_5to6 = getHeisig(above9thFiltered_5to6, heisigSimp);
+        HashSet<string> heisigTradAbove9th_1to4 = 
+            OrderingHelper.getHeisig(above9thFiltered_1to4, heisigSimp);
+        HashSet<string> heisigTradAbove9th_5to6 = 
+            OrderingHelper.getHeisig(above9thFiltered_5to6, heisigSimp);
         
         Assert.IsTrue(heisigTradAbove9th_1to4.Count == 0);
         Assert.IsTrue(heisigTradAbove9th_5to6.Count == 0);
@@ -52,7 +56,8 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
     [Test]
     public void testJundaAfterNine_Junda5001()
     { 
-        List<Tuple<string, HashSet<string>>> above9th = AllAbove9thMODIFIED(simplifiedOutputList);
+        List<Tuple<string, HashSet<string>>> above9th = 
+            OrderingHelper.AllAbove9thMODIFIED(simplifiedOutputList);
 
         HashSet<string> above9thFiltered_1to4 = 
             OrderingHelper.AllAboveThe9ThFilter(above9th, new HashSet<int> { 1, 2, 3, 4});
@@ -60,8 +65,10 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
         HashSet<string> above9thFiltered_5to6 = 
             OrderingHelper.AllAboveThe9ThFilter(above9th, new HashSet<int> {5, 6});
 
-        HashSet<string> heisigTradAbove9th_1to4 = getWithinFreq(above9thFiltered_1to4, junda5001);
-        HashSet<string> heisigTradAbove9th_5to6 = getWithinFreq(above9thFiltered_5to6, junda5001);
+        HashSet<string> heisigTradAbove9th_1to4 = 
+            OrderingHelper.getWithinFreq(above9thFiltered_1to4, junda5001);
+        HashSet<string> heisigTradAbove9th_5to6 = 
+            OrderingHelper.getWithinFreq(above9thFiltered_5to6, junda5001);
         Assert.IsTrue(heisigTradAbove9th_1to4.Count == 0);
         Assert.IsTrue(heisigTradAbove9th_5to6.Count == 0);
 
@@ -70,7 +77,8 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
     [Test]
     public void testTzaiAfterNine_heisig()
     { 
-        List<Tuple<string, HashSet<string>>> above9th = AllAbove9thMODIFIED(traditionalOutputList);
+        List<Tuple<string, HashSet<string>>> above9th = 
+            OrderingHelper.AllAbove9thMODIFIED(traditionalOutputList);
 
         HashSet<string> above9thFiltered_1to4 = 
             OrderingHelper.AllAboveThe9ThFilter(above9th, new HashSet<int> { 1, 2, 3, 4});
@@ -78,8 +86,10 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
         HashSet<string> above9thFiltered_5to6 = 
             OrderingHelper.AllAboveThe9ThFilter(above9th, new HashSet<int> {5, 6});
 
-        HashSet<string> heisigTradAbove9th_1to4 = getHeisig(above9thFiltered_1to4, heisigTrad);
-        HashSet<string> heisigTradAbove9th_5to6 = getHeisig(above9thFiltered_5to6, heisigTrad);
+        HashSet<string> heisigTradAbove9th_1to4 = 
+            OrderingHelper.getHeisig(above9thFiltered_1to4, heisigTrad);
+        HashSet<string> heisigTradAbove9th_5to6 = 
+            OrderingHelper.getHeisig(above9thFiltered_5to6, heisigTrad);
         
         Assert.IsTrue(heisigTradAbove9th_1to4.Count == 0);
         Assert.IsTrue(heisigTradAbove9th_5to6.Count == 1);
@@ -89,7 +99,8 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
     [Test]
     public void testTzaiAfterNine_Tzai5001()
     { 
-        List<Tuple<string, HashSet<string>>> above9th = AllAbove9thMODIFIED(traditionalOutputList);
+        List<Tuple<string, HashSet<string>>> above9th = 
+            OrderingHelper.AllAbove9thMODIFIED(traditionalOutputList);
 
         HashSet<string> above9thFiltered_1to4 = 
             OrderingHelper.AllAboveThe9ThFilter(above9th, new HashSet<int> { 1, 2, 3, 4});
@@ -97,8 +108,10 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
         HashSet<string> above9thFiltered_5to6 = 
             OrderingHelper.AllAboveThe9ThFilter(above9th, new HashSet<int> {5, 6});
 
-        HashSet<string> heisigTradAbove9th_1to4 = getWithinFreq(above9thFiltered_1to4, tzai5001);
-        HashSet<string> heisigTradAbove9th_5to6 = getWithinFreq(above9thFiltered_5to6, tzai5001);
+        HashSet<string> heisigTradAbove9th_1to4 = 
+            OrderingHelper.getWithinFreq(above9thFiltered_1to4, tzai5001);
+        HashSet<string> heisigTradAbove9th_5to6 = 
+            OrderingHelper.getWithinFreq(above9thFiltered_5to6, tzai5001);
         Assert.IsTrue(heisigTradAbove9th_1to4.Count == 0);
         Assert.IsTrue(heisigTradAbove9th_5to6.Count == 0);
         //Assert.IsTrue(heisigTradAbove9th_5to6.Single() == "馱");
@@ -190,7 +203,8 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
     public void TestPrintOrderMatchesJundaTzaiAndUnicode_jundaList()
     {
         var checkJundaSort = simplifiedOutputList;
-        List<List<string>> sortingInconsistencies = getSortingInconsistenciesJunda(simplifiedOutputList);
+        List<List<string>> sortingInconsistencies = 
+            OrderingHelper.getSortingInconsistenciesJunda(simplifiedOutputList, charToSchemaDict);
         Assert.True(sortingInconsistencies.Count == 0);
     }
 
@@ -198,7 +212,8 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
     public void TestPrintOrderMatchesJundaTzaiAndUnicode_tzaiList()
     {
         var checkTzaiSort = traditionalOutputList;
-        List<List<string>> sortingInconsistencies = getSortingInconsistenciesTzai(checkTzaiSort);
+        List<List<string>> sortingInconsistencies = 
+            OrderingHelper.getSortingInconsistenciesTzai(checkTzaiSort, charToSchemaDict);
         Assert.True(sortingInconsistencies.Count == 0);
     }
     
@@ -295,46 +310,14 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
 
         return junda5001Schema;
     }
-/*
-    [Test]
-    public void testHeisigTrad_TzaiCountAfterNine()
-    {
-         List<Tuple<string, HashSet<string>>> above9th = AllAbove9thMODIFIED(traditionalOutputList);
-
-         
-        
-         var allAboveThe9th = AllAboveThe9Th(traditionalDictList, 
-             new HashSet<int>{5,6});
-
-         List<string> heisigAllCodesBeyond9th = allAboveThe9th.
-             Where(y => heisigTrad.ContainsKey(y.character)).
-             Select(x => x.character).ToList();
-        
-        var smallCodesAboveThe9th = AllAboveThe9Th(traditionalDictList, 
-            new HashSet<int>{1,2,3,4});
-            
-        List<string> heisigSmallBeyond9th = smallCodesAboveThe9th.
-            Where(y => heisigTrad.ContainsKey(y.character)).
-            Select(x => x.character).ToList();
-        
-         Assert.IsTrue(heisigAllCodesBeyond9th.Count == 2);
-         Assert.IsTrue(heisigAllCodesBeyond9th[0] == "騾");
-         Assert.IsTrue(heisigAllCodesBeyond9th[1] == "騾"); 
-         //heisigTrad: 騾 2859 mule  Tzai: 5168 73  Junda: 7167 9
-         
-         Assert.IsTrue(heisigSmallBeyond9th.Count == 0);
-        
-         
-    }
-*/
     
     [Test]
     public void testLengthsSimplified()
     {
         var codesWithManyChars = simplifiedDictList.Values
-            .Where(listSch => longlist(listSch)).ToList();
+            .Where(listSch => OrderingHelper.longlist(listSch)).ToList();
         var number10Junda = codesWithManyChars
-            .Where(listSch => jundaAt10(listSch));//.
+            .Where(listSch => OrderingHelper.jundaAt10(listSch, jundaFreq5001));//.
             //Select(listTooHigh => listTooHigh[9]).ToList();
         
         Assert.IsEmpty(number10Junda);
@@ -345,383 +328,15 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
     public void testLengthsTraditional()
     {
         var codesWithManyChars = traditionalDictList.Values
-            .Where(listSch => longlist(listSch)).ToList();
+            .Where(listSch => OrderingHelper.longlist(listSch)).ToList();
         var number10Tzai = codesWithManyChars
-            .Where(listSch => tzaiAt10(listSch));//.
+            .Where(listSch => OrderingHelper.tzaiAt10(listSch, tzaiFreq5001));//.
         //Select(listTooHigh => listTooHigh[9]).ToList();
         
         Assert.IsEmpty(number10Tzai);
         
     }
     
-    private bool jundaAt10(List<SchemeRecord> listSch)
-    {
-        if (listSch.Count < 10)
-        {
-            return false;
-        }
-        var nr10 = listSch[9];
-        var junda = nr10.jundaNumber;
-        if (junda.HasValue && junda.Value >= jundaFreq5001)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-    
-    
-    private bool tzaiAt10(List<SchemeRecord> listSch)
-    {
-        if (listSch.Count < 10)
-        {
-            return false;
-        }
-        var nr10 = listSch[9];
-        var tzai = nr10.tzaiNumber;
-        if (tzai.HasValue && tzai.Value >= tzaiFreq5001)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-    private bool longlist(List<SchemeRecord> listSch)
-    {
-        bool longlist = listSch.Count > 9;
-
-        return longlist;
-    }
-
-    
-    private List<List<string>> getSortingInconsistenciesJunda(List<string> jundareadytoprint)
-    {
-        List<List<string>> result = new List<List<string>>();
-        List<string> eachCompare = new List<string>();
-        string previusStr = "";
-        string currentString = "";
-        string nextString = "";
-        long currentJunda = 99999999;
-        long currentTzai = 99999999;
-        long unicode = 1;
-        List<string> currenttupple = new List<string>();
-        for (int i = 1; i < jundareadytoprint.Count; i++)
-        {
-            eachCompare = new List<string>();
-            string prev = jundareadytoprint[i - 1];
-            string current = jundareadytoprint[i];
-            var splitStrPrev = prev.Split('\t').ToList();
-            var splitStrCurrent = current.Split('\t').ToList();
-            if (splitStrPrev.Count != 2 && splitStrCurrent.Count != 2)
-            {
-                List<string> temperror = new List<string>();
-                temperror.Add(prev);
-                temperror.Add(current);
-                result.Add(temperror);
-                break;
-            }
-
-            var schemPrev = charToSchemaDict.GetValueOrDefault(splitStrPrev[0]);
-            var schemCurrent = charToSchemaDict.GetValueOrDefault(splitStrCurrent[0]);
-            if (splitStrPrev[1] == splitStrCurrent[1])
-            {
-                
-                if (
-                    schemPrev.jundaNumber != null 
-                    && schemCurrent.jundaNumber != null 
-                    && schemPrev.jundaNumber < schemCurrent.jundaNumber)
-                {
-                    eachCompare.Add(prev);
-                    eachCompare.Add(current);
-                } else if (schemPrev.jundaNumber == null 
-                           && schemCurrent.jundaNumber != null)
-                {
-                     eachCompare.Add(prev);
-                     eachCompare.Add(current);
-                } else if (schemPrev.jundaNumber == null 
-                           && schemCurrent.jundaNumber == null 
-                           && schemPrev.tzaiNumber != null 
-                           && schemCurrent.tzaiNumber != null 
-                           && schemPrev.tzaiNumber < schemCurrent.tzaiNumber)
-                {
-                    eachCompare.Add(prev);
-                    eachCompare.Add(current);
-                } else if (schemPrev.jundaNumber == null 
-                           && schemCurrent.jundaNumber == null
-                           && schemPrev.tzaiNumber == null
-                           && schemCurrent.tzaiNumber != null)
-                {
-                    eachCompare.Add(prev);
-                    eachCompare.Add(current);
-                } else if (schemPrev.jundaNumber == null 
-                           && schemCurrent.jundaNumber == null
-                           && schemPrev.tzaiNumber == null
-                           && schemCurrent.tzaiNumber == null 
-                           && char.ConvertToUtf32(splitStrPrev[0], 0) > 
-                           char.ConvertToUtf32(splitStrCurrent[0], 0))
-                {
-                    eachCompare.Add(prev);
-                    eachCompare.Add(current); 
-                }
-
-                if (splitStrPrev[1].Length > splitStrCurrent[1].Length)
-                {
-                    eachCompare.Add(prev);
-                    eachCompare.Add(current); 
-                } 
-                
-                if (string.Compare(splitStrPrev[1], splitStrCurrent[1], 
-                        StringComparison.OrdinalIgnoreCase) > 0)
-                {
-                    eachCompare.Add(prev);
-                    eachCompare.Add(current); 
-                }
-            }
-            
-            if (eachCompare.Count > 0)
-            {
-                result.Add(eachCompare);
-            }
-        }
-        return result;
-    }
-    
-    private List<List<string>> getSortingInconsistenciesTzai(List<string> jundareadytoprint)
-    {
-        List<List<string>> result = new List<List<string>>();
-        List<string> eachCompare = new List<string>();
-        string previusStr = "";
-        string currentString = "";
-        string nextString = "";
-        long currentJunda = 99999999;
-        long currentTzai = 99999999;
-        long unicode = 1;
-        List<string> currenttupple = new List<string>();
-        for (int i = 1; i < jundareadytoprint.Count; i++)
-        {
-            eachCompare = new List<string>();
-            string prev = jundareadytoprint[i - 1];
-            string current = jundareadytoprint[i];
-            var splitStrPrev = prev.Split('\t').ToList();
-            var splitStrCurrent = current.Split('\t').ToList();
-            if (splitStrPrev.Count != 2 && splitStrCurrent.Count != 2)
-            {
-                List<string> temperror = new List<string>();
-                temperror.Add(prev);
-                temperror.Add(current);
-                result.Add(temperror);
-                break;
-            }
-
-            var schemPrev = charToSchemaDict.GetValueOrDefault(splitStrPrev[0]);
-            var schemCurrent = charToSchemaDict.GetValueOrDefault(splitStrCurrent[0]);
-            if (splitStrPrev[1] == splitStrCurrent[1])
-            {
-                
-                if (
-                    schemPrev.tzaiNumber != null 
-                    && schemCurrent.tzaiNumber != null 
-                    && schemPrev.tzaiNumber < schemCurrent.tzaiNumber)
-                {
-                    eachCompare.Add(prev);
-                    eachCompare.Add(current);
-                } else if (schemPrev.tzaiNumber == null 
-                           && schemCurrent.tzaiNumber != null)
-                {
-                     eachCompare.Add(prev);
-                     eachCompare.Add(current);
-                } else if (schemPrev.tzaiNumber == null 
-                           && schemCurrent.tzaiNumber == null 
-                           && schemPrev.jundaNumber != null 
-                           && schemCurrent.jundaNumber != null 
-                           && schemPrev.jundaNumber < schemCurrent.jundaNumber)
-                {
-                    eachCompare.Add(prev);
-                    eachCompare.Add(current);
-                } else if (schemPrev.tzaiNumber == null 
-                           && schemCurrent.tzaiNumber == null
-                           && schemPrev.jundaNumber == null
-                           && schemCurrent.jundaNumber != null)
-                {
-                    eachCompare.Add(prev);
-                    eachCompare.Add(current);
-                } else if (schemPrev.tzaiNumber == null 
-                           && schemCurrent.tzaiNumber == null
-                           && schemPrev.jundaNumber == null
-                           && schemCurrent.jundaNumber == null 
-                           && char.ConvertToUtf32(splitStrPrev[0], 0) > 
-                           char.ConvertToUtf32(splitStrCurrent[0], 0))
-                {
-                    eachCompare.Add(prev);
-                    eachCompare.Add(current); 
-                }
-
-                if (splitStrPrev[1].Length > splitStrCurrent[1].Length)
-                {
-                    eachCompare.Add(prev);
-                    eachCompare.Add(current); 
-                } 
-                
-                if (string.Compare(splitStrPrev[1], splitStrCurrent[1], 
-                        StringComparison.OrdinalIgnoreCase) > 0)
-                {
-                    eachCompare.Add(prev);
-                    eachCompare.Add(current); 
-                }
-            }
-            
-            if (eachCompare.Count > 0)
-            {
-                result.Add(eachCompare);
-            }
-        }
-        return result;
-    }
-
-    private List<Tuple<string, HashSet<string>>> AllAbove9thMODIFIED(
-        List<string> outputList)
-    {
-       List<Tuple<string, HashSet<string>>> result = new List<Tuple<string, HashSet<string>>>();
-       HashSet<string> over9thCharsByCode = new HashSet<string>();
-       
-       //-- skriv bedre code her
-       string previousCode = "test2";
-       string currentCode = "test";
-       int numberOfChars = 0;
-       long indexcount = -1;
-       foreach (var VARIABLE in outputList)
-       {
-           indexcount += 1;
-           string[] splitInput = Regex.Split(VARIABLE, @"\s+");
-           previousCode = currentCode;
-           currentCode = splitInput[1];
-           if (previousCode == currentCode)
-           {
-               if (currentCode == "dngw")
-               {
-                   string res = "";
-               }
-
-               if (splitInput[0] == "碩")
-               {
-                   string tes = "";
-               }
-
-               numberOfChars += 1;
-               if (numberOfChars > 9)
-               {
-                    over9thCharsByCode.Add(splitInput[0]);
-               }
-           }
-           else
-           {
-               numberOfChars = 1;
-               if (over9thCharsByCode.Count > 0)
-               {
-                   result.Add(
-                       new Tuple<string, HashSet<string>>(previousCode, over9thCharsByCode)
-                       );
-               }
-               over9thCharsByCode = new HashSet<string>();
-           }
-       }
-
-/*
-       HashSet<string> codes = new HashSet<string>();
-        foreach (var VARIABLE in outputList)
-        {
-            string[] splitInput = Regex.Split(VARIABLE, @"\s+");
-            codes.Add(splitInput[1]);
-        }
-
-        foreach (var eachCode in codes)
-        {
-            HashSet<string> over9thCharsByCode = new HashSet<string>();
-            int numberOfChars = 0;
-            foreach (var eachChar in outputList)
-            {
-                string[] splitInput = Regex.Split(eachChar, @"\s+"); 
-                if (splitInput[1] == eachCode)
-                {
-                    numberOfChars += 1;
-                    if (numberOfChars > 9)
-                    {
-                        over9thCharsByCode.Add(splitInput[0]);
-                    }
-                }
-            }
-
-            if (over9thCharsByCode.Count > 0)
-            {
-                Tuple<string, HashSet<string>> myTuple =
-                    new Tuple<string, HashSet<string>>(eachCode, over9thCharsByCode);
-                result.Add(myTuple);
-            }
-        }*/
-        return result;
-    }
-
-    
-    private List<SchemeRecord> AllAboveThe9Th(
-        Dictionary<string, List<SchemeRecord>> dictList,
-        HashSet<int> codelengthToInclude)
-    {
-        Dictionary<string, List<SchemeRecord>> tempDict =
-            dictList.Where(pair => 
-                codelengthToInclude.Contains(pair.Key.Length))
-                .ToDictionary(pair => pair.Key, pair => pair.Value);
-        var codesWithManyChars = tempDict
-            .Values.Where(listSch => longlist(listSch)).ToList();
-        
-        List<SchemeRecord> allAboveThe9th = new List<SchemeRecord>();
-        foreach (var VARIABLE in codesWithManyChars)
-        {
-            for (int i = 0; i < VARIABLE.Count; i++)
-            {
-                var current = VARIABLE[i];
-                if (i > 8)
-                {
-                    allAboveThe9th.Add(current);
-                }
-            }
-        }
-
-        return allAboveThe9th;
-    }
-    private HashSet<string> getWithinFreq(
-         HashSet<string> above9ThFiltered, 
-         Dictionary<string, FrequencyRecord> charToFreqDict)
-    {
-        HashSet<string> result = new HashSet<string>();
-        foreach (var VARIABLE in above9ThFiltered)
-        {
-            if (charToFreqDict.ContainsKey(VARIABLE))
-            {
-                result.Add(VARIABLE);
-            }
-        }
-        return result;
-    }   
-
-    private HashSet<string> getHeisig(
-        HashSet<string> above9ThFiltered, 
-        Dictionary<string, AlternativeCharsetRecord> heisig)
-    {
-        HashSet<string> result = new HashSet<string>();
-        foreach (var VARIABLE in above9ThFiltered)
-        {
-            if (heisig.ContainsKey(VARIABLE))
-            {
-                result.Add(VARIABLE);
-            }
-        }
-        return result;
-    }
 
     /*
      

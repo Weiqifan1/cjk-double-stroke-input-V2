@@ -71,28 +71,23 @@ public static class createListOfStringReadyForPrint
         var simpHeisig = fileMaps.generateHeisigSimpMap();
         var tradHeisig = fileMaps.generateHeisigTradMap();
         
-        var sortetTuple = 
-            tuppleList.OrderBy(tuple => tuple.Item1.Length)
-            .ThenBy(tuple => tuple.Item1)
-            //.ThenByDescending(tuple => simpHeisig.ContainsKey(tuple.Item2.character))
-            //.ThenByDescending(tuple => tradHeisig.ContainsKey(tuple.Item2.character))
-            .ThenByDescending(tuple => tuple.Item2.jundaNumber.HasValue)
-            .ThenByDescending(tuple => tuple.Item2.jundaNumber)
-            .ThenByDescending(tuple => tuple.Item2.tzaiNumber.HasValue)
-            .ThenByDescending(tuple => tuple.Item2.tzaiNumber)
-            .ThenBy(tuple => tuple.Item2.character, 
-                StringComparer.Ordinal);
+        var sortetTuple = sortListOfTuplesJunda(tuppleList);
 
+        var result = generatePrintLineFromTuple(sortetTuple);
+        return result;
+    }
+
+    public static List<string> generatePrintLineFromTuple(List<Tuple<string, SchemeRecord>> sortetTuple)
+    {
         List<string> result = new List<string>();
         foreach (var VARIABLE in sortetTuple)
         {
             string eachline = VARIABLE.Item2.character + separator + VARIABLE.Item1;
             result.Add(eachline);
         }
+
         return result;
     }
-    
-    
 
     //list of tupples to list of strings
     public static List<string> listOfTuplesToStringsTzai(List<Tuple<string, SchemeRecord>> tuppleList)
@@ -101,31 +96,48 @@ public static class createListOfStringReadyForPrint
         var simpHeisig = fileMaps.generateHeisigSimpMap();
         var tradHeisig = fileMaps.generateHeisigTradMap();
         
+        var sortetTuple = sortListOfTuplesTzai(tuppleList);
+
+        var result = generatePrintLineFromTuple(sortetTuple);
+        return result;
+    }
+    
+    public static List<Tuple<string, SchemeRecord>> sortListOfTuplesJunda(
+        List<Tuple<string, SchemeRecord>> tuppleList)
+    {
         var sortetTuple = 
             tuppleList.OrderBy(tuple => tuple.Item1.Length)
-            .ThenBy(tuple => tuple.Item1)
-            //.ThenByDescending(tuple => tradHeisig.ContainsKey(tuple.Item2.character))
-            //.ThenByDescending(tuple => simpHeisig.ContainsKey(tuple.Item2.character))
-            .ThenByDescending(tuple => tuple.Item2.tzaiNumber.HasValue)
-            .ThenByDescending(tuple => tuple.Item2.tzaiNumber)
-            .ThenByDescending(tuple => tuple.Item2.jundaNumber.HasValue)
-            .ThenByDescending(tuple => tuple.Item2.jundaNumber)
-            .ThenBy(tuple => tuple.Item2.character, 
-                StringComparer.Ordinal);
+                .ThenBy(tuple => tuple.Item1)
+                //.ThenByDescending(tuple => simpHeisig.ContainsKey(tuple.Item2.character))
+                //.ThenByDescending(tuple => tradHeisig.ContainsKey(tuple.Item2.character))
+                .ThenByDescending(tuple => tuple.Item2.jundaNumber.HasValue)
+                .ThenByDescending(tuple => tuple.Item2.jundaNumber)
+                .ThenByDescending(tuple => tuple.Item2.tzaiNumber.HasValue)
+                .ThenByDescending(tuple => tuple.Item2.tzaiNumber)
+                .ThenBy(tuple => tuple.Item2.character, 
+                    StringComparer.Ordinal).ToList();
+        return sortetTuple;
+    }
 
-        List<string> result = new List<string>();
-        foreach (var VARIABLE in sortetTuple)
-        {
-            string eachline = VARIABLE.Item2.character + separator + VARIABLE.Item1;
-            result.Add(eachline);
-        }
-        return result;
+    public static List<Tuple<string, SchemeRecord>> sortListOfTuplesTzai(
+        List<Tuple<string, SchemeRecord>> tuppleList)
+    {
+        var sortetTuple = 
+            tuppleList.OrderBy(tuple => tuple.Item1.Length)
+                .ThenBy(tuple => tuple.Item1)
+                //.ThenByDescending(tuple => tradHeisig.ContainsKey(tuple.Item2.character))
+                //.ThenByDescending(tuple => simpHeisig.ContainsKey(tuple.Item2.character))
+                .ThenByDescending(tuple => tuple.Item2.tzaiNumber.HasValue)
+                .ThenByDescending(tuple => tuple.Item2.tzaiNumber)
+                .ThenByDescending(tuple => tuple.Item2.jundaNumber.HasValue)
+                .ThenByDescending(tuple => tuple.Item2.jundaNumber)
+                .ThenBy(tuple => tuple.Item2.character, 
+                    StringComparer.Ordinal).ToList();
+        return sortetTuple;
     }
 
 
-
-
-/*
+    /*
 public static List<Tuple<string, SchemeRecord>>
     generateTuppleListFromDictionary(List<Tuple<string, List<SchemeRecord>>> rollOutEachSchemeList)
 {
