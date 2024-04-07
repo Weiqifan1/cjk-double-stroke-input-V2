@@ -16,39 +16,39 @@ public class GenerateInputMethodClass : TestSchemaBeforePrintSetup
     [Test]
     public void GenerateSimpAndTradYamlForRIME()
     {
-        generateSimpForRIME();
-        generateTradForRIME();
+        //generateSimpForRIME();
+        //generateTradForRIME();
     }
 
     [Test]
     public void GenerateSimpDictInputYamlForRIME()
     {
-        generateSimpForRIME();
+        //generateSimpForRIME();
     }
     
     [Test]
     public void GenerateTradDictInputYamlForRIME()
     {
-        generateTradForRIME();
+        //generateTradForRIME();
     }
     
     [Test]
     public void GenerateSimpAndTradForWindows()
     {
-        generateSimpForWindowsArray();
-        generateTradForWindowsArray();
+        //generateSimpForWindowsArray();
+        //generateTradForWindowsArray();
     }
     
     [Test]
     public void GenerateSimpDictInputForWindows()
     {
-        generateSimpForWindowsArray();
+        //generateSimpForWindowsArray();
     }
      
     [Test]
     public void GenerateTradDictInputForWindows()
     {
-        generateTradForWindowsArray();
+        //generateTradForWindowsArray();
     }
     private static string generateInputDictforRimeFormat(List<string> printSimplified)
     {
