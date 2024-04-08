@@ -6,25 +6,26 @@ public class CodeExceptions
     static Dictionary<string, string> generateStandardOneAlphabet()
     {
 
+    
         var result = new Dictionary<string, string>();
-        result.Add("手", "l");//s  tobe f
-        result.Add("扌", "l");//s  tobe f
-        result.Add("目", "k");//d  tobe jj
-        result.Add("虫", "f");//j  tobe l
-        result.Add("𧾷", "j");//f  tobe k
-        result.Add("足", "j");//f  tobe k
-        result.Add("竹", "s");//l  tobe s
-        result.Add("木", "d");//k  tobe d
+        result.Add("手", "l");//l  tobe f
+        result.Add("扌", "l");//l  tobe f
+        result.Add("目", "k");//k  tobe jj
+        result.Add("虫", "j");//f  tobe l
+        result.Add("𧾷", "s");//j  tobe k
+        result.Add("足", "s");//j  tobe k
+        result.Add("竹", "f");//s  tobe s
+        result.Add("木", "d");//d  tobe d
         
-        result.Add("金", "t");//t
-        result.Add("車", "h");//g
-        result.Add("食", "y");//y
-        result.Add("飠", "y");//y
-        result.Add("馬", "c");//b
-        result.Add("言", "v");//v
-        result.Add("門", "x");//n
-        result.Add("糸", "g");//h
-        result.Add("糹", "g");//h
+        result.Add("金", "o");//t
+        result.Add("車", "i");//h
+        result.Add("食", "w");//y
+        result.Add("飠", "w");//y
+        result.Add("馬", "r");//c
+        result.Add("言", "e");//v
+        result.Add("門", "p");//x
+        result.Add("糸", "u");//g
+        result.Add("糹", "u");//g
         return result;
     }
     public static Dictionary<string, string> getPriviledgedExceptionCharacters()

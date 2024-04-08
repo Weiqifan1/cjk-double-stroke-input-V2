@@ -7,7 +7,8 @@ namespace test_double_stroke.testIds;
 
 public class testGenerateStaticFilesUniqueCodes : testSetup
 {
-    
+
+
     [Test]
     public void generateStaticFileJundaUnique()
     {

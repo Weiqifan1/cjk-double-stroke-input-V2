@@ -251,32 +251,39 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
         var dLet = jundaRecord.GetValueOrDefault("k");
          Assert.True(dLet.Count == 42);
         var fLet = jundaRecord.GetValueOrDefault("j");
-         Assert.True(fLet.Count == 54);
+         Assert.True(fLet.Count == 78);
         var jLet = jundaRecord.GetValueOrDefault("f");
-         Assert.True(jLet.Count == 78);
+         Assert.True(jLet.Count == 72);
         var kLet = jundaRecord.GetValueOrDefault("d");
          Assert.True(kLet.Count == 180);
         var lLet = jundaRecord.GetValueOrDefault("s");
-        Assert.True(lLet.Count == 72);
-        var hLet = jundaRecord.GetValueOrDefault("g");
-         Assert.True(hLet.Count == 2);
+        Assert.True(lLet.Count == 54);
+        var hLet = jundaRecord.GetValueOrDefault("p");
+         Assert.True(hLet.Count == 1);
          // 結 187 hffh
          // 經 469 hamx
-        var vLet = jundaRecord.GetValueOrDefault("v");
-         Assert.True(vLet.Count == 3);
+        var vLet = jundaRecord.GetValueOrDefault("o");
+         Assert.True(vLet.Count == 4);
          // 言 120308 v ggng ygng
          // 變 202 vmuw vmow
          // 這 483 vpy vol vpl
-        var tLet = jundaRecord.GetValueOrDefault("t");
-          Assert.True(tLet.Count == 4); 
+        var tLet = jundaRecord.GetValueOrDefault("i");
+          Assert.True(tLet == null); 
           // 金 167912 t wgbt
           // 鎗 216 twah twph
           // 鏡 184 tyiq 
           // 鑫 670 twgt
-        var nLet = jundaRecord.GetValueOrDefault("x");
-          Assert.True(nLet.Count == 1); //間 207 nng
-        var yLet = jundaRecord.GetValueOrDefault("y");
-        Assert.True(yLet.Count == 1); //食 58110 y wagw wpgw
+        var nLet = jundaRecord.GetValueOrDefault("u");
+        Assert.True(nLet.Count == 2); //間 207 nng
+        
+        var rLet = jundaRecord.GetValueOrDefault("r");
+        Assert.True(rLet == null); //食 58110 y wagw wpgw
+       
+        var eLet = jundaRecord.GetValueOrDefault("e");
+        Assert.True(eLet.Count == 3); //食 58110 y wagw wpgw       
+        
+        var wLet = jundaRecord.GetValueOrDefault("w");
+        Assert.True(wLet.Count == 1); //食 58110 y wagw wpgw        
        //  結經 變這  鎗鏡鑫 //
     }
 
