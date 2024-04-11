@@ -39,7 +39,11 @@ public static class FilePaths
     public static string windowsArrayTradOutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputArrayTrad\\TableTextServiceArray.txt";
     public static string windowsArraySimpOutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputArraySimp\\TableTextServiceArray.txt";
     public static string windowsArrayInfo = "double-stroke\\projectFolder\\InputMethodFiles\\POFWindowsArrayIntro.txt";
-            
+    
+    //other shape based input systems
+    public static string simpDictOutputFile_cangjie5 = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeCangjie5fromSimp\\POFsimpCJ5.dict.yaml";
+    public static string simpSchemaOutputFile_cangjie5 = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeCangjie5fromSimp\\POFsimpCJ5.schema.yaml";
+                   
         
     
     
