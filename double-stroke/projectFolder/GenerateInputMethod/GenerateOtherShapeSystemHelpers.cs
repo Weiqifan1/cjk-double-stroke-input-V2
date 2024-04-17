@@ -15,11 +15,70 @@ using test_double_stroke.testSchemdictValuesBeforePrint;
 [Explicit]
 public class GenerateOtherShapeSystemHelpers
 {
+    //FilePaths.dotsAndSlash + FilePaths.windowsArraySimpOutputFile
+    
+     
+    [Test]
+    public void GenerateSimpFiles()
+    {
+        //generateSimpDict();
+        //generateSimpSchema();
+    }    
+         
     [Test]
     public void GenerateCangjie5HelperFiles()
     {
         //generateCangjie5Dict();
-        generateCangjie5Schema();
+        //generateCangjie5Schema();
+    }
+    
+
+    private void generateSimpSchema()
+    {
+        string comment = "POFsimp";
+        string schemaId = "POFsimp";
+        string name = "POFsimp";
+        string dictionary = "POFsimp";
+        string reverseLookup = "`[a-z,.]*$";
+        string outputPath = 
+            FilePaths.dotsAndSlash + 
+            FilePaths.simpSchemaOutputFile;
+        
+        string testDirectory = TestContext.CurrentContext.TestDirectory;
+        string text = generatePOFSimpSchema.generate(
+            comment,
+            schemaId,
+            name,
+            dictionary,
+            reverseLookup);
+        
+        string windowsTradArrauOutput = Path.Combine(testDirectory,
+            outputPath);
+        //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\charToSchemaMap.txt");
+        File.WriteAllText(windowsTradArrauOutput, text);
+        
+        string test = "";
+    }
+
+
+    private void generateSimpDict()
+    {
+        string comment = "POFsimp";
+        string name = "POFsimp";
+        string outputPath =
+            FilePaths.dotsAndSlash +
+            FilePaths.simpDictOutputFile;
+        
+        string testDirectory = TestContext.CurrentContext.TestDirectory;
+        string text = generatePOFSimpDict.generate(
+            comment,
+            name);
+        
+        string windowsTradArrauOutput = Path.Combine(testDirectory, outputPath);
+        //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\charToSchemaMap.txt");
+        File.WriteAllText(windowsTradArrauOutput, text);
+        
+        string test = "";
     }
     
     private void generateCangjie5Schema()
@@ -54,14 +113,16 @@ public class GenerateOtherShapeSystemHelpers
     {
         string comment = "A POF system that also shows the cangjie 5 codes for each character";
         string name = "POFsimpCJ5";
+        string outputPath =
+            FilePaths.dotsAndSlash +
+            FilePaths.simpDictOutputFile_cangjie5;
         
         string testDirectory = TestContext.CurrentContext.TestDirectory;
         string text = generatePOFSimpDict.generate(
             comment,
             name);
         
-        string windowsTradArrauOutput = Path.Combine(testDirectory,
-            FilePaths.dotsAndSlash + FilePaths.simpDictOutputFile_cangjie5);
+        string windowsTradArrauOutput = Path.Combine(testDirectory, outputPath);
         //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\charToSchemaMap.txt");
         File.WriteAllText(windowsTradArrauOutput, text);
         
