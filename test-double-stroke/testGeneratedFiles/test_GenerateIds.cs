@@ -38,8 +38,8 @@ public class test_ids
         //𢺓
         var basic = idsMap.GetValueOrDefault("竹");//签
         var basic2 = idsMap.GetValueOrDefault("签");//签
-        Assert.AreEqual(1, basic.rolledOutIdsWithNoShape.Count);
-        Assert.AreEqual("竹", basic2.rolledOutIdsWithNoShape[0]);
+        Assert.That(basic.rolledOutIdsWithNoShape.Count.Equals(1));
+        Assert.That(basic2.rolledOutIdsWithNoShape[0].Equals("竹"));
     }
     
     [Test]
@@ -58,7 +58,7 @@ public class test_ids
         foreach (var VARIABLE in priviledge.Values)
         {
             var eachPriviledge = idsMap.GetValueOrDefault(VARIABLE);
-            Assert.AreEqual(eachPriviledge.rolledOutIdsWithNoShape.Count, 1);
+            Assert.That(eachPriviledge.rolledOutIdsWithNoShape.Count.Equals(1));
         }
 
         string test = "";
@@ -82,9 +82,9 @@ public class test_ids
         
         //𢺓
         var basic = idsMap.GetValueOrDefault("𢺓");
-        Assert.AreEqual(12, basic.rolledOutIdsWithNoShape.Count);
-        Assert.AreEqual(new UnicodeCharacter("八").Value, basic.rolledOutIdsWithNoShape[5]);
-        Assert.AreEqual(new UnicodeCharacter("一").Value, basic.rolledOutIdsWithNoShape[11]);
+        Assert.That(basic.rolledOutIdsWithNoShape.Count.Equals(12));
+        Assert.That(new UnicodeCharacter("八").Value.Equals(basic.rolledOutIdsWithNoShape[5]));
+        Assert.That(new UnicodeCharacter("一").Value.Equals( basic.rolledOutIdsWithNoShape[11]));
         
     }
     

@@ -19,63 +19,63 @@ public class AlphabetgeneratorTest
     [Test]
     public void FirstAlphabetGeneratorTest_21()
     {
-        Assert.AreEqual( "", primaryGen.gen21(""));
-        Assert.AreEqual( "h", primaryGen.gen21("1"));
-        Assert.AreEqual( "j", primaryGen.gen21("12"));
-        Assert.AreEqual( "jt", primaryGen.gen21("123"));
-        Assert.AreEqual( "jw", primaryGen.gen21("1234"));
-        Assert.AreEqual( "jwg", primaryGen.gen21("12345"));
-        Assert.AreEqual( "jwg", primaryGen.gen21("123451"));
-        Assert.AreEqual( "jwj", primaryGen.gen21("1234512"));
-        Assert.AreEqual( "jwv", primaryGen.gen21("12345123"));
-        Assert.AreEqual( "jww", primaryGen.gen21("123451234"));
-        Assert.AreEqual( "jwp", primaryGen.gen21("1234512345"));
-        Assert.AreEqual( "jws", primaryGen.gen21("12345123454"));
-        Assert.AreEqual( "jwi", primaryGen.gen21("123451234543"));
-        Assert.AreEqual( "jwr", primaryGen.gen21("1234512345432"));
-        Assert.AreEqual( "jwn", primaryGen.gen21("12345123454321"));
+        Assert.That( "".Equals(primaryGen.gen21("")));
+        Assert.That( "h".Equals(primaryGen.gen21("1")));
+        Assert.That( "j".Equals(primaryGen.gen21("12")));
+        Assert.That( "jt".Equals(primaryGen.gen21("123")));
+        Assert.That( "jw".Equals(primaryGen.gen21("1234")));
+        Assert.That( "jwg".Equals(primaryGen.gen21("12345")));
+        Assert.That( "jwg".Equals(primaryGen.gen21("123451")));
+        Assert.That( "jwj".Equals(primaryGen.gen21("1234512")));
+        Assert.That( "jwv".Equals(primaryGen.gen21("12345123")));
+        Assert.That( "jww".Equals(primaryGen.gen21("123451234")));
+        Assert.That( "jwp".Equals(primaryGen.gen21("1234512345")));
+        Assert.That( "jws".Equals(primaryGen.gen21("12345123454")));
+        Assert.That( "jwi".Equals(primaryGen.gen21("123451234543")));
+        Assert.That( "jwr".Equals(primaryGen.gen21("1234512345432")));
+        Assert.That( "jwn".Equals(primaryGen.gen21("12345123454321")));
         
     }
     
     [Test]
     public void FirstAlphabetGeneratorTest_31()
     {
-        Assert.AreEqual( "", primaryGen.gen31(""));
-        Assert.AreEqual( "h", primaryGen.gen31("1"));
-        Assert.AreEqual( "j", primaryGen.gen31("12"));
-        Assert.AreEqual( "jt", primaryGen.gen31("123"));
-        Assert.AreEqual( "jw", primaryGen.gen31("1234"));
-        Assert.AreEqual( "jwg", primaryGen.gen31("12345"));
-        Assert.AreEqual( "jwg", primaryGen.gen31("123451"));
-        Assert.AreEqual( "jwgn", primaryGen.gen31("1234512"));
-        Assert.AreEqual( "jwgv", primaryGen.gen31("12345123"));
-        Assert.AreEqual( "jwgw", primaryGen.gen31("123451234"));
-        Assert.AreEqual( "jwgp", primaryGen.gen31("1234512345"));
-        Assert.AreEqual( "jwgs", primaryGen.gen31("12345123454"));
-        Assert.AreEqual( "jwgi", primaryGen.gen31("123451234543"));
-        Assert.AreEqual( "jwgr", primaryGen.gen31("1234512345432"));
-        Assert.AreEqual( "jwgn", primaryGen.gen31("12345123454321"));
+        Assert.That( "".Equals(primaryGen.gen31("")));
+        Assert.That( "h".Equals(primaryGen.gen31("1")));
+        Assert.That( "j".Equals(primaryGen.gen31("12")));
+        Assert.That( "jt".Equals(primaryGen.gen31("123")));
+        Assert.That( "jw".Equals(primaryGen.gen31("1234")));
+        Assert.That( "jwg".Equals(primaryGen.gen31("12345")));
+        Assert.That( "jwg".Equals(primaryGen.gen31("123451")));
+        Assert.That( "jwgn".Equals(primaryGen.gen31("1234512")));
+        Assert.That( "jwgv".Equals(primaryGen.gen31("12345123")));
+        Assert.That( "jwgw".Equals(primaryGen.gen31("123451234")));
+        Assert.That( "jwgp".Equals(primaryGen.gen31("1234512345")));
+        Assert.That( "jwgs".Equals(primaryGen.gen31("12345123454")));
+        Assert.That( "jwgi".Equals(primaryGen.gen31("123451234543")));
+        Assert.That( "jwgr".Equals(primaryGen.gen31("1234512345432")));
+        Assert.That( "jwgn".Equals(primaryGen.gen31("12345123454321")));
         
     }
     
     [Test]
     public void FirstAlphabetGeneratorTest_51()
     {
-        Assert.AreEqual( "", primaryGen.gen31(""));
-        Assert.AreEqual( "h", primaryGen.gen31("1"));
-        Assert.AreEqual( "j", primaryGen.gen31("12"));
-        Assert.AreEqual( "jt", primaryGen.gen31("123"));
-        Assert.AreEqual( "jw", primaryGen.gen51("1234"));
-        Assert.AreEqual( "jwg", primaryGen.gen51("12345"));
-        Assert.AreEqual( "jwg", primaryGen.gen51("123451"));
-        Assert.AreEqual( "jwgn", primaryGen.gen51("1234512"));
-        Assert.AreEqual( "jwgv", primaryGen.gen51("12345123"));
-        Assert.AreEqual( "jwgvy", primaryGen.gen51("123451234"));
-        Assert.AreEqual( "jwgvp", primaryGen.gen51("1234512345"));
-        Assert.AreEqual( "jwgvpy", primaryGen.gen51("12345123454"));
-        Assert.AreEqual( "jwgvpi", primaryGen.gen51("123451234543"));
-        Assert.AreEqual( "jwgvpr", primaryGen.gen51("1234512345432"));
-        Assert.AreEqual( "jwgvpn", primaryGen.gen51("12345123454321"));
+        Assert.That( "".Equals(primaryGen.gen31("")));
+        Assert.That( "h".Equals(primaryGen.gen31("1")));
+        Assert.That( "j".Equals(primaryGen.gen31("12")));
+        Assert.That( "jt".Equals(primaryGen.gen31("123")));
+        Assert.That( "jw".Equals(primaryGen.gen51("1234")));
+        Assert.That( "jwg".Equals(primaryGen.gen51("12345")));
+        Assert.That( "jwg".Equals(primaryGen.gen51("123451")));
+        Assert.That( "jwgn".Equals(primaryGen.gen51("1234512")));
+        Assert.That( "jwgv".Equals(primaryGen.gen51("12345123")));
+        Assert.That( "jwgvy".Equals(primaryGen.gen51("123451234")));
+        Assert.That( "jwgvp".Equals(primaryGen.gen51("1234512345")));
+        Assert.That( "jwgvpy".Equals(primaryGen.gen51("12345123454")));
+        Assert.That( "jwgvpi".Equals(primaryGen.gen51("123451234543")));
+        Assert.That( "jwgvpr".Equals(primaryGen.gen51("1234512345432")));
+        Assert.That( "jwgvpn".Equals(primaryGen.gen51("12345123454321")));
         
     }
     

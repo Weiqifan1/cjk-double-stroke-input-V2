@@ -43,8 +43,8 @@ public class Tests : testSetup
         var result3 = foundExceptions.GetValueOrDefault("兀");
         var result4 = foundExceptions.GetValueOrDefault("嗀");
         
-        Assert.AreEqual(missingJunda.Count, 0);
-        Assert.AreEqual(missingTzai.Count, 0);
+        Assert.That(missingJunda.Count.Equals(0));
+        Assert.That(missingTzai.Count.Equals(0));
 
         Console.WriteLine("test end");
     }

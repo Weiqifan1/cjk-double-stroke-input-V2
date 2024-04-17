@@ -27,7 +27,7 @@ public class testMissingCorrectExceptions : testSetup
         //private Dictionary<string, CodepointWithExceptionRecord> foundExceptions;
         //private Dictionary<string, CodepointExceptionRecord> codeExceptionsFromIds;
         //private Dictionary<string, List<CodepointExceptionRecord>> codeExceptionsFromCodepoint;
-        Assert.IsTrue(new HashSet<string>{"掣", "罉"}.SetEquals(hashandButNoExcept.Keys.ToHashSet()));
+        Assert.That(new HashSet<string>{"掣", "罉"}.SetEquals(hashandButNoExcept.Keys.ToHashSet()));
     }
     
     [Test]
@@ -43,7 +43,7 @@ public class testMissingCorrectExceptions : testSetup
         //private Dictionary<string, CodepointWithExceptionRecord> foundExceptions;
         //private Dictionary<string, CodepointExceptionRecord> codeExceptionsFromIds;
         //private Dictionary<string, List<CodepointExceptionRecord>> codeExceptionsFromCodepoint;
-        Assert.IsTrue(new HashSet<string>{"掣", "罉", "劧", "手", "掱"}.SetEquals(hashandButNoExcept.Keys.ToHashSet()));
+        Assert.That(new HashSet<string>{"掣", "罉", "劧", "手", "掱"}.SetEquals(hashandButNoExcept.Keys.ToHashSet()));
     }
 
     [Test]
@@ -59,7 +59,7 @@ public class testMissingCorrectExceptions : testSetup
         //private Dictionary<string, CodepointWithExceptionRecord> foundExceptions;
         //private Dictionary<string, CodepointExceptionRecord> codeExceptionsFromIds;
         //private Dictionary<string, List<CodepointExceptionRecord>> codeExceptionsFromCodepoint;
-        Assert.IsTrue(new HashSet<string>{"逝", "逰"}.SetEquals(hashandButNoExcept.Keys.ToHashSet()));
+        Assert.That(new HashSet<string>{"逝", "逰"}.SetEquals(hashandButNoExcept.Keys.ToHashSet()));
     }
     
     [Test]
@@ -75,7 +75,7 @@ public class testMissingCorrectExceptions : testSetup
         //private Dictionary<string, CodepointWithExceptionRecord> foundExceptions;
         //private Dictionary<string, CodepointExceptionRecord> codeExceptionsFromIds;
         //private Dictionary<string, List<CodepointExceptionRecord>> codeExceptionsFromCodepoint;
-        Assert.IsTrue(new HashSet<string>{"嘖", "県" ,"郻", "鼎", "䢙", "䢲", "䵻", "𡃁"}.SetEquals(result.Keys.ToHashSet()));
+        Assert.That(new HashSet<string>{"嘖", "県" ,"郻", "鼎", "䢙", "䢲", "䵻", "𡃁"}.SetEquals(result.Keys.ToHashSet()));
     }
     
     [Test]
@@ -90,7 +90,7 @@ public class testMissingCorrectExceptions : testSetup
         //private Dictionary<string, CodepointWithExceptionRecord> foundExceptions;
         //private Dictionary<string, CodepointExceptionRecord> codeExceptionsFromIds;
         //private Dictionary<string, List<CodepointExceptionRecord>> codeExceptionsFromCodepoint;
-        Assert.IsTrue(new HashSet<string>{}.SetEquals(result.Keys.ToHashSet()));
+        Assert.That(new HashSet<string>{}.SetEquals(result.Keys.ToHashSet()));
     }
     
     [Test] 
@@ -105,7 +105,7 @@ public class testMissingCorrectExceptions : testSetup
         //private Dictionary<string, CodepointWithExceptionRecord> foundExceptions;
         //private Dictionary<string, CodepointExceptionRecord> codeExceptionsFromIds;
         //private Dictionary<string, List<CodepointExceptionRecord>> codeExceptionsFromCodepoint;
-        Assert.IsTrue(new HashSet<string>{"𡀔"}.SetEquals(result.Keys.ToHashSet()));
+        Assert.That(new HashSet<string>{"𡀔"}.SetEquals(result.Keys.ToHashSet()));
     }
     
     [Test] 
@@ -120,7 +120,7 @@ public class testMissingCorrectExceptions : testSetup
         //private Dictionary<string, CodepointWithExceptionRecord> foundExceptions;
         //private Dictionary<string, CodepointExceptionRecord> codeExceptionsFromIds;
         //private Dictionary<string, List<CodepointExceptionRecord>> codeExceptionsFromCodepoint;
-        Assert.IsTrue(new HashSet<string>{"噣", "虽", "雖"}.SetEquals(result.Keys.ToHashSet()));
+        Assert.That(new HashSet<string>{"噣", "虽", "雖"}.SetEquals(result.Keys.ToHashSet()));
     }
     
     [Test] 
@@ -135,7 +135,7 @@ public class testMissingCorrectExceptions : testSetup
         //private Dictionary<string, CodepointWithExceptionRecord> foundExceptions;
         //private Dictionary<string, CodepointExceptionRecord> codeExceptionsFromIds;
         //private Dictionary<string, List<CodepointExceptionRecord>> codeExceptionsFromCodepoint;
-        Assert.IsTrue(new HashSet<string>{"逨", "䢞", "嗇", "賫", "赍", "㱇", "䘮"}.SetEquals(result.Keys.ToHashSet()));
+        Assert.That(new HashSet<string>{"逨", "䢞", "嗇", "賫", "赍", "㱇", "䘮"}.SetEquals(result.Keys.ToHashSet()));
     }
     
     //"竹","⺮","ケ" 
@@ -151,7 +151,7 @@ public class testMissingCorrectExceptions : testSetup
         //private Dictionary<string, CodepointWithExceptionRecord> foundExceptions;
         //private Dictionary<string, CodepointExceptionRecord> codeExceptionsFromIds;
         //private Dictionary<string, List<CodepointExceptionRecord>> codeExceptionsFromCodepoint;
-        Assert.IsTrue(new HashSet<string>{"遾"}.SetEquals(result.Keys.ToHashSet()));
+        Assert.That(new HashSet<string>{"遾"}.SetEquals(result.Keys.ToHashSet()));
     }
     
     [Test] 
@@ -166,7 +166,7 @@ public class testMissingCorrectExceptions : testSetup
         //private Dictionary<string, CodepointWithExceptionRecord> foundExceptions;
         //private Dictionary<string, CodepointExceptionRecord> codeExceptionsFromIds;
         //private Dictionary<string, List<CodepointExceptionRecord>> codeExceptionsFromCodepoint;
-        Assert.IsTrue(new HashSet<string>{}.SetEquals(result.Keys.ToHashSet()));
+        Assert.That(new HashSet<string>{}.SetEquals(result.Keys.ToHashSet()));
     }
     
     [Test] 
@@ -181,7 +181,7 @@ public class testMissingCorrectExceptions : testSetup
         //private Dictionary<string, CodepointWithExceptionRecord> foundExceptions;
         //private Dictionary<string, CodepointExceptionRecord> codeExceptionsFromIds;
         //private Dictionary<string, List<CodepointExceptionRecord>> codeExceptionsFromCodepoint;
-        Assert.IsTrue(new HashSet<string>{}.SetEquals(result.Keys.ToHashSet()));
+        Assert.That(new HashSet<string>{}.SetEquals(result.Keys.ToHashSet()));
     }
     
     [Test] 
@@ -196,7 +196,7 @@ public class testMissingCorrectExceptions : testSetup
         //private Dictionary<string, CodepointWithExceptionRecord> foundExceptions;
         //private Dictionary<string, CodepointExceptionRecord> codeExceptionsFromIds;
         //private Dictionary<string, List<CodepointExceptionRecord>> codeExceptionsFromCodepoint;
-        Assert.IsTrue(new HashSet<string>{"輿", "轡", "連", "㦁"}.SetEquals(result.Keys.ToHashSet()));
+        Assert.That(new HashSet<string>{"輿", "轡", "連", "㦁"}.SetEquals(result.Keys.ToHashSet()));
     }
 
     [Test] 
@@ -211,7 +211,7 @@ public class testMissingCorrectExceptions : testSetup
         //private Dictionary<string, CodepointWithExceptionRecord> foundExceptions;
         //private Dictionary<string, CodepointExceptionRecord> codeExceptionsFromIds;
         //private Dictionary<string, List<CodepointExceptionRecord>> codeExceptionsFromCodepoint;
-        Assert.IsTrue(new HashSet<string>{}.SetEquals(result.Keys.ToHashSet()));
+        Assert.That(new HashSet<string>{}.SetEquals(result.Keys.ToHashSet()));
     }
     
     [Test] 
@@ -227,7 +227,7 @@ public class testMissingCorrectExceptions : testSetup
         //private Dictionary<string, CodepointExceptionRecord> codeExceptionsFromIds;
         //private Dictionary<string, List<CodepointExceptionRecord>> codeExceptionsFromCodepoint;
         
-        Assert.IsTrue(result.Keys.ToHashSet().Count == 30);
+        Assert.That(result.Keys.ToHashSet().Count == 30);
     }
     
     
@@ -292,7 +292,7 @@ public class testMissingCorrectExceptions : testSetup
 
         var finalres = exceptionHelper.displayDict(handFull);
 
-        Assert.AreEqual(2+2, 4);
+        Assert.That(2+2 == 4);
 
         Console.WriteLine("test end IdentifyLackOfExceptionsThatShouldHaveBeenThere");
     }

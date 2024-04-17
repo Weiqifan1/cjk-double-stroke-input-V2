@@ -15,7 +15,7 @@ public class TestRollout: testSetup
         HashSet<string> compare = new HashSet<string>();
         compare.Add("3535225121");
         compare.Add("3545325121");
-        Assert.IsTrue(result.SetEquals(compare));
+        Assert.That(result.SetEquals(compare));
     }
     
     
@@ -31,7 +31,7 @@ public class TestRollout: testSetup
         compare.Add("34252431251112154");
         compare.Add("4325243125111554");
         compare.Add("43252431251112154");
-        Assert.IsTrue(result.SetEquals(compare));
+        Assert.That(result.SetEquals(compare));
     }
     
     [Test]
@@ -44,7 +44,7 @@ public class TestRollout: testSetup
         HashSet<string> compare = new HashSet<string>();
         compare.Add("352512144445444251214");
         compare.Add("35251214444544251214");
-        Assert.IsTrue(result.SetEquals(compare));
+        Assert.That(result.SetEquals(compare));
     }
     
     [Test]
@@ -58,7 +58,7 @@ public class TestRollout: testSetup
         compare.Add("251251132511154444");
         compare.Add("251351132511154444");
         compare.Add("251354132511154444");
-        Assert.IsTrue(result.SetEquals(compare));
+        Assert.That(result.SetEquals(compare));
     }
     
     [Test]
@@ -91,7 +91,7 @@ public class TestRollout: testSetup
         compare.Add(System.Text.RegularExpressions.Regex.Replace(
             "34112431  2112  1  2112   112", @"\s", ""));
         
-        Assert.IsTrue(result.SetEquals(compare));
+        Assert.That(result.SetEquals(compare));
     }
     
     [Test]
@@ -116,10 +116,10 @@ public class TestRollout: testSetup
 
         foreach (var VARIABLE in compare)
         {
-            Assert.IsTrue(result.Contains(VARIABLE));
+            Assert.That(result.Contains(VARIABLE));
         }
         
-        Assert.IsTrue(result.Count.Equals(32));
+        Assert.That(result.Count.Equals(32));
     }
 
 
@@ -146,10 +146,10 @@ public class TestRollout: testSetup
 
         foreach (var VARIABLE in compare)
         {
-            Assert.IsTrue(result.Contains(VARIABLE));
+            Assert.That(result.Contains(VARIABLE));
         }
         
-        Assert.IsTrue(result.Count.Equals(81));
+        Assert.That(result.Count.Equals(81));
     }
 
     
@@ -182,10 +182,10 @@ public class TestRollout: testSetup
 
         foreach (var VARIABLE in compare)
         {
-            Assert.IsTrue(result.Contains(VARIABLE));
+            Assert.That(result.Contains(VARIABLE));
         }
         
-        Assert.IsTrue(result.Count.Equals(8));
+        Assert.That(result.Count.Equals(8));
     }
     
 }

@@ -33,12 +33,12 @@ public class TestGenerateSchema : testSetup
         //Dictionary<string, HashSet<SchemeRecord>> codeToSchemas = getCodeToSchema();
         string codeToSchemaJson = JsonSerializer.Serialize(codeToSchema);
         
-        //File.WriteAllText(charToSchemaPath, charToSchemaJson);
-        //File.WriteAllText(codeToSchemaPath, codeToSchemaJson);
+        File.WriteAllText(charToSchemaPath, charToSchemaJson);
+        File.WriteAllText(codeToSchemaPath, codeToSchemaJson);
         
-        Assert.IsTrue(schemeRecList.Count == charToSchema.Count);
-        Assert.IsTrue(schemeRecList.Count == 28098);
-        Assert.IsTrue(codeToSchema.Count == 62645);
+        Assert.That(schemeRecList.Count == charToSchema.Count);
+        Assert.That(schemeRecList.Count == 28098);
+        Assert.That(codeToSchema.Count == 62645);
     }
 
 
@@ -55,7 +55,7 @@ public class TestGenerateSchema : testSetup
         Dictionary<string, HashSet<SchemeRecord>> codeToSchemaDich = 
             JsonSerializer.Deserialize<Dictionary<string, HashSet<SchemeRecord>>>(codeToSchemaJson, options);
 
-        Assert.IsTrue(charToSchemaDict.Count == 28098);
-        Assert.IsTrue(codeToSchemaDich.Count == 62645);
+        Assert.That(charToSchemaDict.Count == 28098);
+        Assert.That(codeToSchemaDich.Count == 62645);
     }
 }

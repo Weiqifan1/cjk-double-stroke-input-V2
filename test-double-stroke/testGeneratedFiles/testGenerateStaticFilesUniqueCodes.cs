@@ -41,8 +41,8 @@ public class testGenerateStaticFilesUniqueCodes : testSetup
              OrderingHelper.getWithinFreq(above9thFiltered_1to4, junda5001);
          HashSet<string> heisigTradAbove9th_5to6 = 
              OrderingHelper.getWithinFreq(above9thFiltered_5to6, junda5001);
-         Assert.IsTrue(heisigTradAbove9th_1to4.Count == 0);
-         Assert.IsTrue(heisigTradAbove9th_5to6.Count == 0);
+         Assert.That(heisigTradAbove9th_1to4.Count == 0);
+         Assert.That(heisigTradAbove9th_5to6.Count == 0);
         
     }
     
@@ -65,8 +65,8 @@ public class testGenerateStaticFilesUniqueCodes : testSetup
                   OrderingHelper.getWithinFreq(above9thFiltered_1to4, tzai5001);
         HashSet<string> heisigTradAbove9th_5to6 = 
                   OrderingHelper.getWithinFreq(above9thFiltered_5to6, tzai5001);
-        Assert.IsTrue(heisigTradAbove9th_1to4.Count == 0);
-        Assert.IsTrue(heisigTradAbove9th_5to6.Count == 0);
+        Assert.That(heisigTradAbove9th_1to4.Count == 0);
+        Assert.That(heisigTradAbove9th_5to6.Count == 0);
              
     }
     

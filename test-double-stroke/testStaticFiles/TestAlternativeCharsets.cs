@@ -17,9 +17,9 @@ public class TestAlternativeCharsets: testSetup
         HashSet<string> allChars = AlternativeCharsets.getGukja();
         HashSet<string> miss = getMissing(allChars);
         Dictionary<string, List<string>> sorted = GroupByUnicodeBlock(miss);//new Dictionary<string, List<string>>()
-        Assert.IsTrue(sorted.Count == 1);
+       Assert.That(sorted.Count == 1);
         var otherLet = sorted.GetValueOrDefault("OtherLetter");
-        Assert.IsTrue(otherLet.Count == 2);
+       Assert.That(otherLet.Count == 2);
     }
 
      
@@ -29,7 +29,7 @@ public class TestAlternativeCharsets: testSetup
         HashSet<string> allChars = AlternativeCharsets.getHongkong2016();
         HashSet<string> miss = getMissing(allChars);
         Dictionary<string, List<string>> sorted = GroupByUnicodeBlock(miss);//new Dictionary<string, List<string>>();
-        Assert.IsTrue(sorted.Count == 9);
+       Assert.That(sorted.Count == 9);
         var OtherSymbol = sorted.GetValueOrDefault("OtherSymbol");
         var ModifierLetter = sorted.GetValueOrDefault("ModifierLetter");
         var OtherLetter = sorted.GetValueOrDefault("OtherLetter");
@@ -40,15 +40,15 @@ public class TestAlternativeCharsets: testSetup
         var OtherPunctuation = sorted.GetValueOrDefault("OtherPunctuation");
         var PrivateUse = sorted.GetValueOrDefault("PrivateUse");
         
-        Assert.IsTrue(OtherSymbol.Count == 48);
-        Assert.IsTrue(ModifierLetter.Count == 1);
-        Assert.IsTrue(OtherLetter.Count == 1370);
-        Assert.IsTrue(LetterNumber.Count == 1);
-        Assert.IsTrue(OpenPunctuation.Count == 1);
-        Assert.IsTrue(ClosePunctuation.Count == 1);
-        Assert.IsTrue(MathSymbol.Count == 1);
-        Assert.IsTrue(OtherPunctuation.Count == 2);
-        Assert.IsTrue(PrivateUse.Count == 16);
+       Assert.That(OtherSymbol.Count == 48);
+       Assert.That(ModifierLetter.Count == 1);
+       Assert.That(OtherLetter.Count == 1370);
+       Assert.That(LetterNumber.Count == 1);
+       Assert.That(OpenPunctuation.Count == 1);
+       Assert.That(ClosePunctuation.Count == 1);
+       Assert.That(MathSymbol.Count == 1);
+       Assert.That(OtherPunctuation.Count == 2);
+       Assert.That(PrivateUse.Count == 16);
         
     }
 
@@ -59,14 +59,14 @@ public class TestAlternativeCharsets: testSetup
         HashSet<string> allChars = AlternativeCharsets.getJISX0208();
         HashSet<string> miss = getMissing(allChars);
         Dictionary<string, List<string>> sorted = GroupByUnicodeBlock(miss);//new Dictionary<string, List<string>>();
-        Assert.IsTrue(sorted.Count == 3);
+       Assert.That(sorted.Count == 3);
         var ModifierLetter = sorted.GetValueOrDefault("ModifierLetter");
         var OtherLetter = sorted.GetValueOrDefault("OtherLetter");
         var LetterNumber = sorted.GetValueOrDefault("LetterNumber");
         
-        Assert.IsTrue(ModifierLetter.Count == 1);
-        Assert.IsTrue(OtherLetter.Count == 1);
-        Assert.IsTrue(LetterNumber.Count == 1);
+       Assert.That(ModifierLetter.Count == 1);
+       Assert.That(OtherLetter.Count == 1);
+       Assert.That(LetterNumber.Count == 1);
     }
  
     [Test]
@@ -75,7 +75,7 @@ public class TestAlternativeCharsets: testSetup
         HashSet<string> allChars = AlternativeCharsets.getJoyo();
         HashSet<string> miss = getMissing(allChars);
         Dictionary<string, List<string>> sorted = GroupByUnicodeBlock(miss);//new Dictionary<string, List<string>>();
-        Assert.IsTrue(sorted.Count == 6);
+       Assert.That(sorted.Count == 6);
         var ModifierLetter = sorted.GetValueOrDefault("ModifierLetter");
         var OtherLetter = sorted.GetValueOrDefault("OtherLetter");
         var UppercaseLetter = sorted.GetValueOrDefault("UppercaseLetter");
@@ -83,12 +83,12 @@ public class TestAlternativeCharsets: testSetup
         var OpenPunctuation = sorted.GetValueOrDefault("OpenPunctuation");
         var ClosePunctuation = sorted.GetValueOrDefault("ClosePunctuation");
         
-        Assert.IsTrue(ModifierLetter.Count == 1);
-        Assert.IsTrue(OtherLetter.Count == 1);
-        Assert.IsTrue(UppercaseLetter.Count == 3);
-        Assert.IsTrue(OtherPunctuation.Count == 1);
-        Assert.IsTrue(OpenPunctuation.Count == 1);
-        Assert.IsTrue(ClosePunctuation.Count == 1);
+       Assert.That(ModifierLetter.Count == 1);
+       Assert.That(OtherLetter.Count == 1);
+       Assert.That(UppercaseLetter.Count == 3);
+       Assert.That(OtherPunctuation.Count == 1);
+       Assert.That(OpenPunctuation.Count == 1);
+       Assert.That(ClosePunctuation.Count == 1);
     }
 
     private static HashSet<string> getMissing(HashSet<string> allChars)

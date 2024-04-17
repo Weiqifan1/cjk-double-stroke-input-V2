@@ -49,8 +49,8 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
         HashSet<string> heisigTradAbove9th_5to6 = 
             OrderingHelper.getHeisig(above9thFiltered_5to6, heisigSimp);
         
-        Assert.IsTrue(heisigTradAbove9th_1to4.Count == 0);
-        Assert.IsTrue(heisigTradAbove9th_5to6.Count == 0);
+       Assert.That(heisigTradAbove9th_1to4.Count == 0);
+       Assert.That(heisigTradAbove9th_5to6.Count == 0);
     }
     
     [Test]
@@ -69,8 +69,8 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
             OrderingHelper.getWithinFreq(above9thFiltered_1to4, junda5001);
         HashSet<string> heisigTradAbove9th_5to6 = 
             OrderingHelper.getWithinFreq(above9thFiltered_5to6, junda5001);
-        Assert.IsTrue(heisigTradAbove9th_1to4.Count == 0);
-        Assert.IsTrue(heisigTradAbove9th_5to6.Count == 0);
+       Assert.That(heisigTradAbove9th_1to4.Count == 0);
+       Assert.That(heisigTradAbove9th_5to6.Count == 0);
 
     }
     
@@ -91,9 +91,9 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
         HashSet<string> heisigTradAbove9th_5to6 = 
             OrderingHelper.getHeisig(above9thFiltered_5to6, heisigTrad);
         
-        Assert.IsTrue(heisigTradAbove9th_1to4.Count == 0);
-        Assert.IsTrue(heisigTradAbove9th_5to6.Count == 1);
-        Assert.IsTrue(heisigTradAbove9th_5to6.Single() == "騾");
+       Assert.That(heisigTradAbove9th_1to4.Count == 0);
+       Assert.That(heisigTradAbove9th_5to6.Count == 1);
+       Assert.That(heisigTradAbove9th_5to6.Single() == "騾");
     }
     
     [Test]
@@ -112,8 +112,8 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
             OrderingHelper.getWithinFreq(above9thFiltered_1to4, tzai5001);
         HashSet<string> heisigTradAbove9th_5to6 = 
             OrderingHelper.getWithinFreq(above9thFiltered_5to6, tzai5001);
-        Assert.IsTrue(heisigTradAbove9th_1to4.Count == 0);
-        Assert.IsTrue(heisigTradAbove9th_5to6.Count == 0);
+       Assert.That(heisigTradAbove9th_1to4.Count == 0);
+       Assert.That(heisigTradAbove9th_5to6.Count == 0);
         //Assert.IsTrue(heisigTradAbove9th_5to6.Single() == "馱");
         // "馱" Tzai 4555, to carry on ones back
     }
@@ -127,37 +127,37 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
         var index = simp.IndexOf("秀\t"+code);
    
         //秀	tvih Tzai 20948 Junda 24620 UNI 
-        Assert.AreEqual(simp[index], "秀\t" + code);
+        Assert.That(simp[index].Equals("秀\t" + code));
         //秃	tvih Tzai 0     Junda 3640  UNI 
-        Assert.AreEqual(simp[index+1], "秃\t"+ code);
+        Assert.That(simp[index+1].Equals("秃\t"+ code));
         //稠	tvih Tzai 334   Junda 1194  UNI 
-        Assert.AreEqual(simp[index+2], "稠\t"+code);  
+        Assert.That(simp[index+2].Equals("稠\t"+code));  
         //黏	tvih Tzai 2958  Junda 862   UNI  
-        Assert.AreEqual(simp[index+3], "黏\t"+code);
+        Assert.That(simp[index+3].Equals("黏\t"+code));
         //禿	tvih Tzai 2552  Junda 10    UNI 
-        Assert.AreEqual(simp[index+4], "禿\t"+code);
+        Assert.That(simp[index+4].Equals("禿\t"+code));
         //秳	tvih Tzai 0     Junda 1     UNI 31219 
-        Assert.AreEqual(simp[index+5], "秳\t"+code);  
+        Assert.That(simp[index+5].Equals("秳\t"+code));  
         //穚	tvih Tzai 30    Junda 0     UNI 
-        Assert.AreEqual(simp[index+6], "穚\t"+code);
+        Assert.That(simp[index+6].Equals("穚\t"+code));
         //秪	tvih Tzai 11    Junda 0     UNI 
-        Assert.AreEqual(simp[index+7], "秪\t"+code);
+        Assert.That(simp[index+7].Equals("秪\t"+code));
         //䄧	tvih Tzai 0     Junda 0     UNI 16679 
-        Assert.AreEqual(simp[index+8], "䄧\t"+code); 
+        Assert.That(simp[index+8].Equals("䄧\t"+code)); 
         //䄪	tvih Tzai 0     Junda 0     UNI 16682 
-        Assert.AreEqual(simp[index+9], "䄪\t"+code); 
+        Assert.That(simp[index+9].Equals("䄪\t"+code)); 
         //䅂	tvih Tzai 0     Junda 0     UNI 16706 
-        Assert.AreEqual(simp[index+10], "䅂\t"+code); 
+        Assert.That(simp[index+10].Equals("䅂\t"+code)); 
         //䅮	tvih Tzai 0     Junda 0     UNI 16750 
-        Assert.AreEqual(simp[index+11], "䅮\t"+code); 
+        Assert.That(simp[index+11].Equals("䅮\t"+code)); 
         //䆌	tvih Tzai 0     Junda 0     UNI 16780 
-        Assert.AreEqual(simp[index+12], "䆌\t"+code); 
+        Assert.That(simp[index+12].Equals("䆌\t"+code)); 
         //䵕	tvih Tzai 0     Junda 0     UNI 19797 
-        Assert.AreEqual(simp[index+13], "䵕\t"+code); 
+        Assert.That(simp[index+13].Equals("䵕\t"+code)); 
         //秴	tvih Tzai 0     Junda 0     UNI 31220 
-        Assert.AreEqual(simp[index+14], "秴\t"+code); 
+        Assert.That(simp[index+14].Equals("秴\t"+code)); 
         
-        Assert.True(true);
+        Assert.That(true);
     }
     
     [Test]
@@ -168,37 +168,37 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
         var index = trad.IndexOf("秀\t"+code);
    
         //秀	tvih Tzai 20948 Junda 24620 UNI 
-        Assert.AreEqual(trad[index], "秀\t"+code);
+        Assert.That(trad[index].Equals("秀\t"+code));
         //黏	tvih Tzai 2958  Junda 862   UNI  
-        Assert.AreEqual(trad[index+1], "黏\t"+code);
+        Assert.That(trad[index+1].Equals("黏\t"+code));
         //禿	tvih Tzai 2552  Junda 10    UNI 
-        Assert.AreEqual(trad[index+2], "禿\t"+code);
+        Assert.That(trad[index+2].Equals("禿\t"+code));
         //稠	tvih Tzai 334   Junda 1194  UNI 
-        Assert.AreEqual(trad[index+3], "稠\t"+code);  
+        Assert.That(trad[index+3].Equals("稠\t"+code));  
         //穚	tvih Tzai 30    Junda 0     UNI 
-         Assert.AreEqual(trad[index+4], "穚\t"+code);
+         Assert.That(trad[index+4].Equals("穚\t"+code));
         //秪	tvih Tzai 11    Junda 0     UNI 
-        Assert.AreEqual(trad[index+5], "秪\t"+code);
+        Assert.That(trad[index+5].Equals("秪\t"+code));
         //秃	tvih Tzai 0     Junda 3640  UNI 
-         Assert.AreEqual(trad[index+6], "秃\t"+code);
+         Assert.That(trad[index+6].Equals("秃\t"+code));
         //秳	tvih Tzai 0     Junda 1     UNI 31219 
-        Assert.AreEqual(trad[index+7], "秳\t"+code); 
+        Assert.That(trad[index+7].Equals("秳\t"+code)); 
         //䄧	tvih Tzai 0     Junda 0     UNI 16679 
-        Assert.AreEqual(trad[index+8], "䄧\t"+code); 
+        Assert.That(trad[index+8].Equals("䄧\t"+code)); 
         //䄪	tvih Tzai 0     Junda 0     UNI 16682 
-        Assert.AreEqual(trad[index+9], "䄪\t"+code); 
+        Assert.That(trad[index+9].Equals("䄪\t"+code)); 
         //䅂	tvih Tzai 0     Junda 0     UNI 16706 
-        Assert.AreEqual(trad[index+10], "䅂\t"+code); 
+        Assert.That(trad[index+10].Equals("䅂\t"+code)); 
         //䅮	tvih Tzai 0     Junda 0     UNI 16750 
-        Assert.AreEqual(trad[index+11], "䅮\t"+code); 
+        Assert.That(trad[index+11].Equals("䅮\t"+code)); 
         //䆌	tvih Tzai 0     Junda 0     UNI 16780 
-        Assert.AreEqual(trad[index+12], "䆌\t"+code); 
+        Assert.That(trad[index+12].Equals("䆌\t"+code)); 
         //䵕	tvih Tzai 0     Junda 0     UNI 19797 
-        Assert.AreEqual(trad[index+13], "䵕\t"+code); 
+        Assert.That(trad[index+13].Equals("䵕\t"+code)); 
         //秴	tvih Tzai 0     Junda 0     UNI 31220 
-        Assert.AreEqual(trad[index+14], "秴\t"+code); 
+        Assert.That(trad[index+14].Equals("秴\t"+code)); 
         
-        Assert.True(true);
+        Assert.That(true);
     }
     
     [Test]
@@ -207,7 +207,7 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
         var checkJundaSort = simplifiedOutputList;
         List<List<string>> sortingInconsistencies = 
             OrderingHelper.getSortingInconsistenciesJunda(simplifiedOutputList, charToSchemaDict);
-        Assert.True(sortingInconsistencies.Count == 0);
+        Assert.That(sortingInconsistencies.Count == 0);
     }
 
     [Test]
@@ -216,7 +216,7 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
         var checkTzaiSort = traditionalOutputList;
         List<List<string>> sortingInconsistencies = 
             OrderingHelper.getSortingInconsistenciesTzai(checkTzaiSort, charToSchemaDict);
-        Assert.True(sortingInconsistencies.Count == 0);
+        Assert.That(sortingInconsistencies.Count == 0);
     }
     
     [Test]
@@ -234,7 +234,7 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
                 freqCharsNotFound.Add(freqChar);
             }
         }
-        Assert.True(freqCharsNotFound.Count == 0);
+        Assert.That(freqCharsNotFound.Count == 0);
     }
 
     [Test]
@@ -244,46 +244,46 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
         var junda5001Keys = junda5001.Keys.ToHashSet();
         var jundaRecord = SchemeRecordsBySchemeLetter(junda5001Keys);
 
-        Assert.True(jundaRecord.Count == 11);
+        Assert.That(jundaRecord.Count == 11);
         
         var sLet = jundaRecord.GetValueOrDefault("l");
-        Assert.True(sLet.Count == 238);
+        Assert.That(sLet.Count == 238);
         var dLet = jundaRecord.GetValueOrDefault("k");
-         Assert.True(dLet.Count == 42);
+         Assert.That(dLet.Count == 42);
         var fLet = jundaRecord.GetValueOrDefault("j");
-         Assert.True(fLet.Count == 78);
+         Assert.That(fLet.Count == 78);
         var jLet = jundaRecord.GetValueOrDefault("f");
-         Assert.True(jLet.Count == 72);
+         Assert.That(jLet.Count == 72);
         var kLet = jundaRecord.GetValueOrDefault("d");
-         Assert.True(kLet.Count == 180);
+         Assert.That(kLet.Count == 180);
         var lLet = jundaRecord.GetValueOrDefault("s");
-        Assert.True(lLet.Count == 54);
+        Assert.That(lLet.Count == 54);
         var hLet = jundaRecord.GetValueOrDefault("p");
-         Assert.True(hLet.Count == 1);
+         Assert.That(hLet.Count == 1);
          // 結 187 hffh
          // 經 469 hamx
         var vLet = jundaRecord.GetValueOrDefault("o");
-         Assert.True(vLet.Count == 4);
+         Assert.That(vLet.Count == 4);
          // 言 120308 v ggng ygng
          // 變 202 vmuw vmow
          // 這 483 vpy vol vpl
         var tLet = jundaRecord.GetValueOrDefault("i");
-          Assert.True(tLet == null); 
+          Assert.That(tLet == null); 
           // 金 167912 t wgbt
           // 鎗 216 twah twph
           // 鏡 184 tyiq 
           // 鑫 670 twgt
         var nLet = jundaRecord.GetValueOrDefault("u");
-        Assert.True(nLet.Count == 2); //間 207 nng
+        Assert.That(nLet.Count == 2); //間 207 nng
         
         var rLet = jundaRecord.GetValueOrDefault("r");
-        Assert.True(rLet == null); //食 58110 y wagw wpgw
+        Assert.That(rLet == null); //食 58110 y wagw wpgw
        
         var eLet = jundaRecord.GetValueOrDefault("e");
-        Assert.True(eLet.Count == 3); //食 58110 y wagw wpgw       
+        Assert.That(eLet.Count == 3); //食 58110 y wagw wpgw       
         
         var wLet = jundaRecord.GetValueOrDefault("w");
-        Assert.True(wLet.Count == 1); //食 58110 y wagw wpgw        
+        Assert.That(wLet.Count == 1); //食 58110 y wagw wpgw        
        //  結經 變這  鎗鏡鑫 //
     }
 
@@ -329,7 +329,7 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
             .Where(listSch => OrderingHelper.jundaAt10(listSch, jundaFreq5001));//.
             //Select(listTooHigh => listTooHigh[9]).ToList();
         
-        Assert.IsEmpty(number10Junda);
+        Assert.That(number10Junda.ToList().Count == 0);
         
     }
 
@@ -342,7 +342,7 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
             .Where(listSch => OrderingHelper.tzaiAt10(listSch, tzaiFreq5001));//.
         //Select(listTooHigh => listTooHigh[9]).ToList();
         
-        Assert.IsEmpty(number10Tzai);
+        Assert.That(number10Tzai.ToList().Count == 0);
         
     }
     
@@ -357,7 +357,7 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
                  Select(x => x.jundaNumber.Value).ToList().
                  OrderByDescending(z => z).ToList();
              
-             Assert.IsTrue(greatInts[0] < jundaFreq5001);
+            Assert.That(greatInts[0] < jundaFreq5001);
      
      */
     

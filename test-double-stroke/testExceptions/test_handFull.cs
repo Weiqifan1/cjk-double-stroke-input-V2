@@ -19,7 +19,7 @@ public class test_handFull : testSetup
         var handfullClean = exceptionHelper.displayDict(handFull);
 
         //handfullClean have been looked through and no characters seem missing
-        Assert.AreEqual(69, handfullClean.Count, "Result should be 4");
+        Assert.That(handfullClean.Count.Equals(69));
     }
     
 }

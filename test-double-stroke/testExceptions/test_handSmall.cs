@@ -25,7 +25,7 @@ public class test_handSmall : testSetup
         var smallhandEdge = mydict["执"];
         
         //handfullClean have been looked through and no characters seem missing
-        Assert.AreEqual(129, handfullClean.Count, "Result should be 4");
+        Assert.That(129.Equals(handfullClean.Count), "Result should be 4");
     }
     
     

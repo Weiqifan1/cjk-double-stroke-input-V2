@@ -27,7 +27,7 @@ public class TestExceptionSpread : testSetup
         //Dictionary<string, HashSet<SchemeRecord>> codeToSchemaDich = 
         //    JsonSerializer.Deserialize<Dictionary<string, HashSet<SchemeRecord>>>(codeToSchemaJson, options);
 
-        Assert.IsTrue(charToSchemaDict.Count == 28098);
+        Assert.That(charToSchemaDict.Count == 28098);
         //Assert.IsTrue(codeToSchemaDich.Count == 62878);
 
         var keys = jundaShortCodeKeyCounter(charToSchemaDict);

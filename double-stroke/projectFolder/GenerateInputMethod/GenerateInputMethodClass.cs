@@ -108,7 +108,7 @@ public class GenerateInputMethodClass : TestSchemaBeforePrintSetup
         //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\charToSchemaMap.txt");
         File.WriteAllText(windowsOutput, result);        
         
-        Assert.True(true);
+        Assert.That(true);
     }
 
     private void generateTradForWindowsArray()
@@ -137,7 +137,7 @@ public class GenerateInputMethodClass : TestSchemaBeforePrintSetup
         //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\charToSchemaMap.txt");
         File.WriteAllText(windowsTradArrauOutput, result);        
            
-        Assert.True(true);
+        Assert.That(true);
     }   
     
     private void generateSimpForRIME()
@@ -164,7 +164,7 @@ public class GenerateInputMethodClass : TestSchemaBeforePrintSetup
         //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\charToSchemaMap.txt");
         File.WriteAllText(simplifiedOutput, resultSimplified);        
         
-        Assert.True(true);
+        Assert.That(true);
     }
 
     private void generateTradForRIME()
@@ -191,7 +191,7 @@ public class GenerateInputMethodClass : TestSchemaBeforePrintSetup
         //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\charToSchemaMap.txt");
         File.WriteAllText(traditionalOutput, resultTraditional);        
         
-        Assert.True(true);
+        Assert.That(true);
     }
 
 }
