@@ -43,7 +43,9 @@ public static class FilePaths
     //other shape based input systems
     public static string simpDictOutputFile_cangjie5 = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeCangjie5fromSimp\\POFsimpCJ5.dict.yaml";
     public static string simpSchemaOutputFile_cangjie5 = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeCangjie5fromSimp\\POFsimpCJ5.schema.yaml";
-                   
+                  
+    public static string cangjie5DictStaticFile = "double-stroke\\projectFolder\\StaticFiles\\cangjie5.dict.yaml";
+    public static string cangjie5DictOutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeCangjie5fromSimp\\POFcangjie5.dict.yaml";
         
     
     

@@ -519,6 +519,17 @@ public class GenerateFileMaps
         return dictionary;
     }
 
+    public List<List<string>> generateForeignInputSystemDict(string foreignPath)
+    {
+        var foreignList = UtilityFunctions.ReadLinesFromFile(foreignPath);
+        return foreignNestedList(foreignList);
+    }
+
+    private List<List<string>> foreignNestedList(List<string> foreignList)
+    {
+        return new List<List<string>>();
+    }
+
     public Dictionary<string, FrequencyRecord> generateJundaMap(string jundaPath)
     {
         //var jundaPath = "../../../projectFolder/StaticFiles/Junda2005.txt";
