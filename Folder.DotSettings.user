@@ -1,82 +1,17 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=033f23a1_002D4263_002D4d93_002Dbf29_002D620151809198/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TestPrintOrderTVIHcharacters_JundaList" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::C5D5AADC-B004-7E64-C72B-A390E7158B7F::net8.0::test_double_stroke.testSchemdictValuesBeforePrint.TestCharacterOrdering.TestPrintOrderTVIHcharacters_JundaList&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=090d7fef_002D06b0_002D47b5_002Da36b_002Da4d7b822cfeb/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="generateStaticFileJundaUnique #4" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;ProjectFolder&gt;C5D5AADC-B004-7E64-C72B-A390E7158B7F/d:test-double-stroke&lt;/ProjectFolder&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=130b4f05_002Da0ef_002D4612_002Db300_002D117824969109/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="testTop5001SimplifiedCharacterExeptions" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::C5D5AADC-B004-7E64-C72B-A390E7158B7F::net8.0::test_double_stroke.testSchemdictValuesBeforePrint.TestCharacterOrdering.testTop5001SimplifiedCharacterExeptions&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=18c5967b_002Df01d_002D4437_002D96a2_002D785f410edab0/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from test-double-stroke" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;ProjectFolder&gt;C5D5AADC-B004-7E64-C72B-A390E7158B7F/d:test-double-stroke&lt;/ProjectFolder&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=21b81433_002D6eee_002D4137_002Da67b_002D1562a8576d48/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="testTop5001SimplifiedCharacterExeptions #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;ProjectFolder&gt;C5D5AADC-B004-7E64-C72B-A390E7158B7F/d:test-double-stroke&lt;/ProjectFolder&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=225e7ac6_002Df9ea_002D4866_002Dacc9_002D7bbf3ae0c434/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="testJundaAfterNine_heisig" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;ProjectFolder&gt;C5D5AADC-B004-7E64-C72B-A390E7158B7F/d:test-double-stroke&lt;/ProjectFolder&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4194f782_002D06ec_002D414d_002D9b7a_002D6353f0f8c89f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="testTop5001SimplifiedCharacterExeptions #4" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=69ad6f49_002D4f77_002D4ed2_002Daa6c_002D0d0cfc6f453c/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GenerateSimpAndTradForWindows" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Or&gt;&#xD;
-    &lt;ProjectFolder&gt;C5D5AADC-B004-7E64-C72B-A390E7158B7F/d:test-double-stroke&lt;/ProjectFolder&gt;&#xD;
     &lt;TestAncestor&gt;&#xD;
-      &lt;TestId&gt;NUnit3x::C5D5AADC-B004-7E64-C72B-A390E7158B7F::net8.0::double_stroke.GenerateInputMethodClass.GenerateInputMethodClass.GenerateSimpAndTradYamlForRIME&lt;/TestId&gt;&#xD;
-      &lt;TestId&gt;NUnit3x::C5D5AADC-B004-7E64-C72B-A390E7158B7F::net8.0::double_stroke.GenerateInputMethodClass.GenerateOtherShapeSystemHelpers.GenerateCangjie5HelperFiles&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::C5D5AADC-B004-7E64-C72B-A390E7158B7F::net8.0::double_stroke.GenerateInputMethodClass.GenerateInputMethodClass.GenerateSimpAndTradForWindows&lt;/TestId&gt;&#xD;
     &lt;/TestAncestor&gt;&#xD;
+    &lt;ProjectFolder&gt;C5D5AADC-B004-7E64-C72B-A390E7158B7F/d:test-double-stroke&lt;/ProjectFolder&gt;&#xD;
   &lt;/Or&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6221e12a_002Dd5d7_002D4836_002Db64e_002D1a5bd773851c/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="generateStaticFileJundaUnique #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;ProjectFolder&gt;C5D5AADC-B004-7E64-C72B-A390E7158B7F/d:test-double-stroke&lt;/ProjectFolder&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7646f125_002D26eb_002D43e8_002Da1cd_002D09545c62979e/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="testTop5001SimplifiedCharacterExeptions #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b6c3ad30_002D7407_002D4042_002Dbb84_002D395901aaa608/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="generateAndSaveSchemaMaps" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::C5D5AADC-B004-7E64-C72B-A390E7158B7F::net8.0::test_double_stroke.testSchemdictValuesBeforePrint.TestCharacterOrdering.testTop5001SimplifiedCharacterExeptions&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::C5D5AADC-B004-7E64-C72B-A390E7158B7F::net8.0::test_double_stroke.testSchemeDict.TestGenerateSchema.generateAndSaveSchemaMaps&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::C5D5AADC-B004-7E64-C72B-A390E7158B7F::net8.0::test_double_stroke.testIds.test_ids.generateAndSaveIdsMap&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::C5D5AADC-B004-7E64-C72B-A390E7158B7F::net8.0::double_stroke.GenerateInputMethodClass.GenerateInputMethodClass.GenerateSimpAndTradYamlForRIME&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::C5D5AADC-B004-7E64-C72B-A390E7158B7F::net8.0::double_stroke.GenerateInputMethodClass.GenerateInputMethodClass.GenerateSimpAndTradForWindows&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=86acb8df_002D2abc_002D425e_002D9090_002D2896da5fc8c1/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="generateStaticFileJundaUnique" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::C5D5AADC-B004-7E64-C72B-A390E7158B7F::net8.0::test_double_stroke.testIds.testGenerateStaticFilesUniqueCodes.generateStaticFileJundaUnique&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c6af51cc_002D2fc9_002D48b8_002Dad04_002D9e8dad8a3bcb/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from test-double-stroke #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;ProjectFolder&gt;C5D5AADC-B004-7E64-C72B-A390E7158B7F/d:test-double-stroke&lt;/ProjectFolder&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c81a0d56_002Ddb53_002D4ec7_002Da2dd_002D509403d12a57/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="generateStaticFileTzaiUnique" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;ProjectFolder&gt;C5D5AADC-B004-7E64-C72B-A390E7158B7F/d:test-double-stroke&lt;/ProjectFolder&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ef5cc27a_002D0aed_002D49e9_002D9cf7_002Df49022997534/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="generateStaticFileJundaUnique #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::C5D5AADC-B004-7E64-C72B-A390E7158B7F::net8.0::test_double_stroke.testIds.testGenerateStaticFilesUniqueCodes.generateStaticFileJundaUnique&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f42f4bce_002D2791_002D4e3a_002Dbe2b_002D81dd6c225e4a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="testReadSchemaMaps" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;ProjectFolder&gt;C5D5AADC-B004-7E64-C72B-A390E7158B7F/d:test-double-stroke&lt;/ProjectFolder&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	</wpf:ResourceDictionary>
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

@@ -16,7 +16,7 @@ public class GenerateInputMethodClass : TestSchemaBeforePrintSetup
     [Test]
     public void GenerateSimpAndTradYamlForRIME()
     {
-        generateSimpForRIME();
+        //generateSimpForRIME();
         //generateTradForRIME();
     }
 
