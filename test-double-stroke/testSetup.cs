@@ -89,7 +89,7 @@ public class testSetup
 
         string cangjie5Path = Path.Combine(testDirectory, 
                                           FilePaths.dotsAndSlash + FilePaths.cangjie5DictStaticFile);
-        cangjie5 = gen.generateForeignInputSystemDict(cangjie5Path);
+        //cangjie5 = gen.generateForeignInputSystemDict(cangjie5Path);
         
         string test = "";
     }

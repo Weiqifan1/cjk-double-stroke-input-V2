@@ -16,8 +16,8 @@ public class GenerateInputMethodClass : TestSchemaBeforePrintSetup
     [Test]
     public void GenerateSimpAndTradYamlForRIME()
     {
-        //generateSimpForRIME();
-        //generateTradForRIME();
+        generateSimpForRIME();
+        generateTradForRIME();
     }
 
     [Test]
@@ -50,12 +50,7 @@ public class GenerateInputMethodClass : TestSchemaBeforePrintSetup
     {
         //generateTradForWindowsArray();
     }
-    private static string generateInputDictforRimeFormat(List<string> printSimplified)
-    {
-        return printSimplified.Count > 0 ? 
-            printSimplified.Aggregate((current, next) => 
-                current + "\n" + next) : "";
-    }
+    
     
     private static string generateInputDictforWindowsFormat(List<string> printSimplified)
     {

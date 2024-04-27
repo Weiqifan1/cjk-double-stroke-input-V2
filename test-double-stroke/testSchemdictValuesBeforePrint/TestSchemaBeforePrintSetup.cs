@@ -81,6 +81,13 @@ public class TestSchemaBeforePrintSetup
         string test = "";
     }
 
+    public static string generateInputDictforRimeFormat(List<string> printSimplified)
+    {
+        return printSimplified.Count > 0 ? 
+            printSimplified.Aggregate((current, next) => 
+                current + "\n" + next) : "";
+    }
+    
     /*
     private Dictionary<string, List<SchemeRecord>> simplifiedDictList;
     private Dictionary<string, List<SchemeRecord>> traditionalDictList;
