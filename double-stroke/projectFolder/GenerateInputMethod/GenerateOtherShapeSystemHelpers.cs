@@ -40,7 +40,7 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
         string cangjiePath = FilePaths.dotsAndSlash + FilePaths.cangjie5DictStaticFile;
         string linepattern = @"^\p{L}\t[a-z]+";
         string charpattern = @"^\p{L}";
-        string codepattern = @"[a-z]+$";
+        string codepattern = @"\t[a-z]+";
         List<Tuple<string, string>> foreign = gen.generateForeignInputSystemDict(
             cangjiePath, linepattern, charpattern, codepattern);
 
@@ -60,7 +60,7 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
         //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\charToSchemaMap.txt");
         
         
-        //File.WriteAllText(simplifiedOutput, resultSimplified);        
+        File.WriteAllText(simplifiedOutput, resultSimplified);        
         
         Assert.True(true);
         

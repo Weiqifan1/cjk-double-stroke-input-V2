@@ -546,17 +546,27 @@ public class GenerateFileMaps
         List<string> readyToPrint, 
         Dictionary<string, string> newCodes)
     {
+        List<string> extra = new List<string>();
         char delimiter = readyToPrint[0].FirstOrDefault(char.IsWhiteSpace);
         List<string> res = new List<string>();
         foreach (var VARIABLE in readyToPrint)
         {
             List<string> splittet = VARIABLE.Split(delimiter)
                 .Select(item => item.Trim()).ToList();
+            if (splittet[0] == "囜")
+            {
+                string test = "";
+            }
             if (newCodes.ContainsKey(splittet[0]))
             {
                 string newcodeval = newCodes.GetValueOrDefault(splittet[0]).ToString();
                 string newstr = splittet[0] + "_" + newcodeval + delimiter + splittet[1];
                 res.Add(newstr);
+            }
+            else
+            {
+                extra.Add(VARIABLE);
+                res.Add(VARIABLE);
             }
         }
         return res;
@@ -570,14 +580,25 @@ public class GenerateFileMaps
         {
             if (res.ContainsKey(VARIABLE.Item1))
             {
+                if (VARIABLE.Item1 == "囜")
+                {
+                    string test = "";
+                }
+                
                 string currentval = res.GetValueOrDefault(VARIABLE.Item1).ToString();
                 List<string> newlist = currentval.Split('_').ToList();
                 newlist.Add(VARIABLE.Item2);
                 newlist.Sort();
                 string newstr = string.Join("_", newlist);
-                res.Add(VARIABLE.Item1, newstr);
+                //res.Add(VARIABLE.Item1, newstr);
+                res[VARIABLE.Item1] = newstr;
+
             } else
             {
+                if (VARIABLE.Item1 == "囜")
+                {
+                    string test = "";
+                }
                 res.Add(VARIABLE.Item1, VARIABLE.Item2);
             }
         }
@@ -604,9 +625,13 @@ public class GenerateFileMaps
                 Match charmatch = charreg.Match(item);
                 Regex codereg = new Regex(codepattern);
                 Match codematch = codereg.Match(item);
+                if (charmatch.Value == "囜")
+                {
+                    string test = "";
+                }
                 if (charmatch.Success && codematch.Success)
                 {
-                    res.Add(new Tuple<string, string>(charmatch.Value, codematch.Value));
+                    res.Add(new Tuple<string, string>(charmatch.Value.Trim(), codematch.Value.Trim()));
                 } else if (charmatch.Success)
                 {
                     failedres.Add(new Tuple<string, string>(item, charmatch.Value));
