@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using System.Text.RegularExpressions;
 using double_stroke.projectFolder.FileMaps;
+using double_stroke.projectFolder.FileMaps.GenerateFilesController;
 using double_stroke.projectFolder.StaticFileMaps;
 using Microsoft.VisualBasic;
 
@@ -604,7 +605,19 @@ public class GenerateFileMaps
         }
         return res;
     }
-    
+
+    public List<Tuple<string, string>> generateForeignCangjie(string cangjiePath)
+    {
+        var gen = new GenerateFileMaps();
+        //string cangjiePath = FilePaths.dotsAndSlash + FilePaths.cangjie5DictStaticFile;
+        string linepattern = @"^\p{L}\t[a-z]+";
+        string charpattern = @"^\p{L}";
+        string codepattern = @"\t[a-z]+";
+        List<Tuple<string, string>> foreign = gen.generateForeignInputSystemDict(
+            cangjiePath, linepattern, charpattern, codepattern);
+        return foreign;
+    }
+
     public List<Tuple<string, string>> generateForeignInputSystemDict(
         string foreignPath, 
         string linepattern,

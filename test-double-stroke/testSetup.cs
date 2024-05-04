@@ -22,7 +22,6 @@ public class testSetup
     protected static Dictionary<string, FrequencyRecord> junda5001;
     protected static Dictionary<string, FrequencyRecord> tzai5001;
 
-    protected static List<List<string>> cangjie5;
     
     [OneTimeSetUp]
     public void Setup()
@@ -86,10 +85,6 @@ public class testSetup
         charToSchema = getCharToSchema();
         junda5001 = gen.extractFirst5001Junda(jundaPath);
         tzai5001 = gen.extractFirst5001Tzai(tzaiPath);
-
-        string cangjie5Path = Path.Combine(testDirectory, 
-                                          FilePaths.dotsAndSlash + FilePaths.cangjie5DictStaticFile);
-        //cangjie5 = gen.generateForeignInputSystemDict(cangjie5Path);
         
         string test = "";
     }

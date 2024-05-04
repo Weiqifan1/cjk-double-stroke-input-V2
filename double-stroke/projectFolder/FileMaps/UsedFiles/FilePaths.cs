@@ -45,9 +45,9 @@ public static class FilePaths
     public static string simpSchemaOutputFile_cangjie5 = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeCangjie5fromSimp\\POFsimpCJ5.schema.yaml";
                   
     public static string cangjie5DictStaticFile = "double-stroke\\projectFolder\\StaticFiles\\cangjie5.dict.yaml";
-    public static string cangjie5DictOutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeCangjie5fromSimp\\POFcangjie5.dict.yaml";
-        
-    
-    
-    
+    public static string cangjie5simpDictOutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeCangjie5fromSimp\\POFsimpCJ5.dict.yaml";
+    public static string cangjie5tradDictOutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeCangjie5fromSimp\\POFtradCJ5.dict.yaml";
+    public static string simpSchemaCangjie5OutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeCangjie5fromSimp\\POFsimpCJ5.schema.yaml";
+    public static string tradSchemaCangjie5OutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeCangjie5fromSimp\\POFtradCJ5.schema.yaml";
+
 }

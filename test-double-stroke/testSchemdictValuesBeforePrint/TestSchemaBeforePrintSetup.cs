@@ -37,6 +37,9 @@ public class TestSchemaBeforePrintSetup
     public Dictionary<string, AlternativeCharsetRecord> heisigSimp;
     public Dictionary<string, AlternativeCharsetRecord> heisigTrad;
     
+    
+    public List<Tuple<string, string>> cangjie5;
+    
     [OneTimeSetUp]
     public void Setup()
     {
@@ -77,6 +80,10 @@ public class TestSchemaBeforePrintSetup
                              //@"..\..\..\..\double-stroke\projectFolder\StaticFiles\Junda2005.txt");
         string tzaiPath = Path.Combine(testDirectory, 
                              FilePaths.dotsAndSlash + FilePaths.tzaiPathStr);
+        
+        string cangjie5Path = Path.Combine(testDirectory, 
+            FilePaths.dotsAndSlash + FilePaths.cangjie5DictStaticFile);
+        cangjie5 = gen.generateForeignCangjie(cangjie5Path);
         
         string test = "";
     }

@@ -8,7 +8,7 @@ public static class generatePOFSimpSchema
 
     private static string part2 = @"
     # encoding: utf-8
-    
+
 schema:
   schema_id: 
     ";
@@ -19,23 +19,27 @@ schema:
 
     private static string part4 = @"
      ""
-  version: ""1.0""
+  version: """;
+    private static string part4_3 = @"  
   author:
-    - 發明人 郑易里教授
-  description: |
-    郑码
-    碼表源自 极点超集郑码20151108
-    敲 ` 鍵進入拼音反查
+    -";
+    private static string part4_5 = @"   
+  description: |";
+    
+    // 郑码
+    // 碼表源自 极点超集郑码20151108
+    // 敲 ` 鍵進入拼音反查
+    private static string part4_7 = @"
   dependencies:
     - pinyin123
-    
+
 switches:
   - name: ascii_mode
     reset: 0
     states: [ 中文, 西文 ]
   - name: full_shape
     states: [ 半角, 全角 ]
-    
+
 engine:
   processors:
     - ascii_composer
@@ -56,17 +60,16 @@ engine:
     - punct_translator
     - table_translator
     - reverse_lookup_translator
-     
+
 speller:
   delimiter: "" '""
   max_code_length: 6
-     
+
 translator:
   dictionary:    
 ";
 
     private static string part5 = @"
-     
   enable_charset_filter: true
   enable_completion: true
   enable_sentence: false
@@ -98,18 +101,19 @@ recognizer:
 
     private static string part6 = @"
      ""
-     
+
 menu:
   page_size: 9
-     
+
 style:
-  horizontal: true   
-    ";
+  horizontal: true
+";
     
     public static string generate(
-      string comment,
       string schemaId,
-      string name,
+      string author,
+      string version,
+      string extradescription,
       string dictionary,
       string reverseLookup
       )
@@ -117,20 +121,33 @@ style:
       string result = 
         part1.Trim() +
         " " +
-        comment +
-        "\n" +
+        schemaId +
+        "\r\n" +
         part2.Trim() +
         " " +
         schemaId + 
-        "\n  " +
+        "\r\n  " +
         part3.Trim() +
         "" +
-        name + 
+        schemaId + 
         "" +
         part4.Trim() +
+        version + "\"" +
+        "\r\n" + "  " +
+        part4_3.Trim() +
         " " +
-        dictionary + 
-        "\n  " +
+        author +
+        "\r\n" +
+        "  " +
+        part4_5.Trim() +
+        extradescription +
+        "\r\n    " +
+        basicDescription +
+        "\r\n\r\n  " +
+        part4_7.Trim() +
+        " " + 
+        dictionary +
+        "\r\n  " +
         part5.Trim() +
         reverseLookup +
         "" +
@@ -138,6 +155,27 @@ style:
           ;
       return result;
     }
+
+    private static string basicDescription = 
+      @"First published 2024-04-21
+    Repository: 
+    https://github.com/Weiqifan1/rime-pof-input-method 
     
+    stoke data source:
+    Compiled manually by Conway (@yawnoc).
+    Part of 'Conway Stroke Data',
+    see <https://github.com/stroke-input/stroke-input-data>.
+    Licensed under Creative Commons Attribution 4.0 International (CC-BY-4.0)
+    
+    IDS data source:
+    # Copyright (c) 2014-2017 CJKVI Database
+    # Based on CHISE IDS Database
+    https://github.com/cjkvi/cjkvi-ids/blob/master/ids.txt
+
+    frequency data source:
+    simplified:
+    https://lingua.mtsu.edu/chinese-computing/statistics/char/list.php?Which=MO
+    traditional:
+    http://technology.chtsai.org/charfreq/sorted.html";
 
 }

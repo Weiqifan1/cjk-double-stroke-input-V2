@@ -14,22 +14,17 @@ namespace double_stroke.GenerateInputMethodClass;
 public class GenerateInputMethodClass : TestSchemaBeforePrintSetup
 {
     [Test]
-    public void GenerateSimpAndTradYamlForRIME()
+    public void GenerateSimpAndTradDictYamlForRIME()
     {
-        generateSimpForRIME();
-        generateTradForRIME();
+        //generateSimpDictForRIME();
+        //generateTradDictForRIME();
     }
 
     [Test]
-    public void GenerateSimpDictInputYamlForRIME()
+    public void GenerateSimpAndTradSchemaYamlForRime()
     {
-        //generateSimpForRIME();
-    }
-    
-    [Test]
-    public void GenerateTradDictInputYamlForRIME()
-    {
-        //generateTradForRIME();
+        //generateSimpSchemaForRIME();
+        //generateTradSchemaForRIME();
     }
     
     [Test]
@@ -38,19 +33,6 @@ public class GenerateInputMethodClass : TestSchemaBeforePrintSetup
         //generateSimpForWindowsArray();
         //generateTradForWindowsArray();
     }
-    
-    [Test]
-    public void GenerateSimpDictInputForWindows()
-    {
-        //generateSimpForWindowsArray();
-    }
-     
-    [Test]
-    public void GenerateTradDictInputForWindows()
-    {
-        //generateTradForWindowsArray();
-    }
-    
     
     private static string generateInputDictforWindowsFormat(List<string> printSimplified)
     {
@@ -133,9 +115,47 @@ public class GenerateInputMethodClass : TestSchemaBeforePrintSetup
         File.WriteAllText(windowsTradArrauOutput, result);        
            
         Assert.True(true);
-    }   
+    }
+
+    private void generateSimpSchemaForRIME()
+    {
+        List<string> testIntro = UtilityFunctions.introTextForSchema(
+            "POFsimp", // SCHEMAID
+            "cmlykke", // AUTHOR
+            "1.0", //VERSION
+            "", // \r\n    EXTRA\r\n    DESCRIPTION
+            "POFsimp", //DICTIONARY
+            "`[a-z,.]*$" //REVERSELOOKUP
+        ); 
+        
+        string simplifiedOutput = Path.Combine(testDirectory,
+            FilePaths.dotsAndSlash + FilePaths.simpSchemaOutputFile);
+        
+        string resultSimplified = generateInputDictforRimeFormat(testIntro);
+        //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\charToSchemaMap.txt");
+        File.WriteAllText(simplifiedOutput, resultSimplified);     
+    }
     
-    private void generateSimpForRIME()
+    private void generateTradSchemaForRIME()
+    {
+        List<string> testIntro = UtilityFunctions.introTextForSchema(
+            "POFtrad", // SCHEMAID
+            "cmlykke", // AUTHOR
+            "1.0", //VERSION
+            "", // \r\n    EXTRA\r\n    DESCRIPTION
+            "POFtrad", //DICTIONARY
+            "`[a-z,.]*$" //REVERSELOOKUP
+        ); 
+        
+        string simplifiedOutput = Path.Combine(testDirectory,
+            FilePaths.dotsAndSlash + FilePaths.tradSchemaOutputFile);
+        
+        string resultSimplified = generateInputDictforRimeFormat(testIntro);
+        //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\charToSchemaMap.txt");
+        File.WriteAllText(simplifiedOutput, resultSimplified);     
+    }
+
+    private void generateSimpDictForRIME()
     {
         string testDirectory = TestContext.CurrentContext.TestDirectory;
                   
@@ -162,7 +182,7 @@ public class GenerateInputMethodClass : TestSchemaBeforePrintSetup
         Assert.True(true);
     }
 
-    private void generateTradForRIME()
+    private void generateTradDictForRIME()
     {
         string testDirectory = TestContext.CurrentContext.TestDirectory;
                   

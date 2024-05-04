@@ -8,13 +8,15 @@ public static class generatePOFSimpDict
 
     private static string part2 = @"
     # encoding: utf-8
-    
+
 ---
 name: 
     ";
+
+    private static string part2_5 = 
+      "version:";
     
     private static string part3 = @"
-version: ""1.0""
 sort: original
 columns:
   - text
@@ -34,20 +36,27 @@ encoder:
 
     public static string generate(
       string comment,
-      string name
+      string name,
+      string version
       )
     {
       string result = 
         part1.Trim() +
         " " +
         comment +
-        "\n" +
+        "\r\n" +
         part2.Trim() +
         " " +
         name + 
-        "\n" +
+        "\r\n" +
+        part2_5 + 
+        " \"" +
+        version +
+        "\"" + 
+        
+        "\r\n" +
         part3.Trim() +
-        "\n";
+        "\r\n";
       return result;
     }
     
