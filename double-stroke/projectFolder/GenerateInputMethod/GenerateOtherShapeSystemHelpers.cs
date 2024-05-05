@@ -17,42 +17,28 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
 {
     //FilePaths.dotsAndSlash + FilePaths.windowsArraySimpOutputFile
 
-/*
+    [Test]
+    public void generateArray30Final()
+    {
+        generateTradArray30SchemaForRIME();
+        generateSimpArray30SchemaForRIME();
+        generateSimpArray30DictForRime();
+        generateTradArray30DictForRime();
+        // array30_main.dict
+        string test = "";
+    }
+
     [Test]
     public void generateCangjie5Final()
     {
-        
         generateTradCangjieSchemaForRIME();
         generateSimpCangjieSchemaForRIME();
-        
-        GenerateCangjie(
-            FilePaths.cangjie5DictStaticFile,
-             FilePaths.simpDictSourceFile,
-            FilePaths.cangjie5simpDictOutputFile,
-             @"^\p{L}\t[a-z]+",
-             @"^\p{L}",
-            @"\t[a-z]+",
-            "POFsimpCJ5",
-            "1.0"
-            );
-        GenerateCangjie(
-            FilePaths.cangjie5DictStaticFile,
-            FilePaths.tradDictSourceFile,
-            FilePaths.cangjie5tradDictOutputFile,
-            @"^\p{L}\t[a-z]+",
-            @"^\p{L}",
-            @"\t[a-z]+",
-            "POFtradCJ5",
-            "1.0"
-        );
-        
-        string test = "";
-
-
+        generateSimpCangjieDictForRime();
+        generateTradCangjieDictForRime();
     }
-*/
+
     
-    private void GenerateCangjie(
+    private void GenerateAnyForeignInputMethod(
         string cangjieSource, // FilePaths.cangjie5DictStaticFile
         string dictSource, // FilePaths.simpDictSourceFile
         string dictOutput, // FilePaths.cangjie5DictOutputFile
@@ -107,33 +93,106 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
         
         File.WriteAllText(simplifiedOutput, resultSimplified);        
         
-        Assert.True(true);
-        
-        
-        //generateCangjie5Dict(foreign);
-
         string test = "";
     }
     
-    private void generateForeignSchemaForRIME()
+    private void generateTradArray30DictForRime()
+    {
+        GenerateAnyForeignInputMethod(
+            FilePaths.Array30DictStaticFile,
+            FilePaths.tradDictSourceFile,
+            FilePaths.Array30tradDictOutputFile,
+            @"^\p{L}\t[a-z,./;]+", // @"^\p{L}\t[a-z]+",
+            @"^\p{L}",
+            @"\t[a-z,./;]+",
+            "POFtradAr30",
+            "1.0"
+        );
+    }
+
+    private void generateSimpArray30DictForRime()
+    {
+        GenerateAnyForeignInputMethod(
+            FilePaths.Array30DictStaticFile,
+            FilePaths.simpDictSourceFile,
+            FilePaths.Array30simpDictOutputFile,
+            @"^\p{L}\t[a-z]+",
+            @"^\p{L}",
+            @"\t[a-z]+",
+            "POFsimpAr30",
+            "1.0"
+        );
+    }
+    
+
+    private void generateTradArray30SchemaForRIME()
     {
         List<string> testIntro = UtilityFunctions.introTextForSchema(
-            "POFtradCJ5", // SCHEMAID
+            "POFtradAr30", // SCHEMAID
             "cmlykke", // AUTHOR
             "1.0", //VERSION
-            "\r\n    A translator of POF codes to Cangjie5 codes\r\n    based on ", // \r\n    EXTRA\r\n    DESCRIPTION
-            "POFtradCJ5", //DICTIONARY
+            "\r\n    A translator of POF codes to Array 30 codes\r\n    based on ", // \r\n    EXTRA\r\n    DESCRIPTION
+            "POFtradAr30", //DICTIONARY
             "`[a-z,.]*$" //REVERSELOOKUP
         ); 
         
         string simplifiedOutput = Path.Combine(testDirectory,
-            FilePaths.dotsAndSlash + FilePaths.tradSchemaCangjie5OutputFile);
+            FilePaths.dotsAndSlash + FilePaths.tradSchemaArray30OutputFile);
         
         string resultSimplified = generateInputDictforRimeFormat(testIntro);
         //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\charToSchemaMap.txt");
         File.WriteAllText(simplifiedOutput, resultSimplified);     
     }
     
+    private void generateSimpArray30SchemaForRIME()
+    {
+        List<string> testIntro = UtilityFunctions.introTextForSchema(
+            "POFsimpAr30", // SCHEMAID
+            "cmlykke", // AUTHOR
+            "1.0", //VERSION
+            "\r\n    A translator of POF codes to Array 30 codes\r\n    based on ", // \r\n    EXTRA\r\n    DESCRIPTION
+            "POFsimpAr30", //DICTIONARY
+            "`[a-z,.]*$" //REVERSELOOKUP
+        ); 
+        
+        string simplifiedOutput = Path.Combine(testDirectory,
+            FilePaths.dotsAndSlash + FilePaths.simpSchemaArray30OutputFile);
+        
+        string resultSimplified = generateInputDictforRimeFormat(testIntro);
+        //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\charToSchemaMap.txt");
+        File.WriteAllText(simplifiedOutput, resultSimplified);     
+    }
+    
+    
+    private void generateTradCangjieDictForRime()
+    {
+        GenerateAnyForeignInputMethod(
+            FilePaths.cangjie5DictStaticFile,
+            FilePaths.tradDictSourceFile,
+            FilePaths.cangjie5tradDictOutputFile,
+            @"^\p{L}\t[a-z]+",
+            @"^\p{L}",
+            @"\t[a-z]+",
+            "POFtradCJ5",
+            "1.0"
+        );
+    }
+
+    private void generateSimpCangjieDictForRime()
+    {
+        GenerateAnyForeignInputMethod(
+            FilePaths.cangjie5DictStaticFile,
+            FilePaths.simpDictSourceFile,
+            FilePaths.cangjie5simpDictOutputFile,
+            @"^\p{L}\t[a-z]+",
+            @"^\p{L}",
+            @"\t[a-z]+",
+            "POFsimpCJ5",
+            "1.0"
+        );
+    }
+    
+
     private void generateTradCangjieSchemaForRIME()
     {
         List<string> testIntro = UtilityFunctions.introTextForSchema(
@@ -171,11 +230,5 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
         //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\charToSchemaMap.txt");
         File.WriteAllText(simplifiedOutput, resultSimplified);     
     }
-    
-    /*
-    public string createForeignIntro()
-    public string generateForeignFileStringFromTuplesAndInto(List<Tuple<string, string>> tupples, string into)
-    public List<Tuple<string, string>> generateForeignInputSystemDict(string foreignPath)
-    */
     
 }

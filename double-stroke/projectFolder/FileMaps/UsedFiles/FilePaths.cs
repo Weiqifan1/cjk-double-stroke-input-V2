@@ -45,9 +45,15 @@ public static class FilePaths
     public static string simpSchemaOutputFile_cangjie5 = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeCangjie5fromSimp\\POFsimpCJ5.schema.yaml";
                   
     public static string cangjie5DictStaticFile = "double-stroke\\projectFolder\\StaticFiles\\cangjie5.dict.yaml";
-    public static string cangjie5simpDictOutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeCangjie5fromSimp\\POFsimpCJ5.dict.yaml";
-    public static string cangjie5tradDictOutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeCangjie5fromSimp\\POFtradCJ5.dict.yaml";
-    public static string simpSchemaCangjie5OutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeCangjie5fromSimp\\POFsimpCJ5.schema.yaml";
-    public static string tradSchemaCangjie5OutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeCangjie5fromSimp\\POFtradCJ5.schema.yaml";
+    public static string cangjie5simpDictOutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeCangjie5\\POFsimpCJ5.dict.yaml";
+    public static string cangjie5tradDictOutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeCangjie5\\POFtradCJ5.dict.yaml";
+    public static string simpSchemaCangjie5OutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeCangjie5\\POFsimpCJ5.schema.yaml";
+    public static string tradSchemaCangjie5OutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeCangjie5\\POFtradCJ5.schema.yaml";
+    
+    public static string Array30DictStaticFile = "double-stroke\\projectFolder\\StaticFiles\\array30_main.dict.yaml";
+    public static string Array30simpDictOutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeArray30\\POFsimpAr30.dict.yaml";
+    public static string Array30tradDictOutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeArray30\\POFtradAr30.dict.yaml";
+    public static string simpSchemaArray30OutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeArray30\\POFsimpAr30.schema.yaml";
+    public static string tradSchemaArray30OutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeArray30\\POFtradAr30.schema.yaml";
 
 }
