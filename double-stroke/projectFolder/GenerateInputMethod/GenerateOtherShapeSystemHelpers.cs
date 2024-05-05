@@ -20,10 +20,10 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
     [Test]
     public void generateArray30Final()
     {
-        generateTradArray30SchemaForRIME();
-        generateSimpArray30SchemaForRIME();
-        generateSimpArray30DictForRime();
-        generateTradArray30DictForRime();
+        // generateTradArray30SchemaForRIME();
+        // generateSimpArray30SchemaForRIME();
+        // generateSimpArray30DictForRime();
+        // generateTradArray30DictForRime();
         // array30_main.dict
         string test = "";
     }
@@ -31,10 +31,10 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
     [Test]
     public void generateCangjie5Final()
     {
-        generateTradCangjieSchemaForRIME();
-        generateSimpCangjieSchemaForRIME();
-        generateSimpCangjieDictForRime();
-        generateTradCangjieDictForRime();
+        // generateTradCangjieSchemaForRIME();
+        // generateSimpCangjieSchemaForRIME();
+        // generateSimpCangjieDictForRime();
+        // generateTradCangjieDictForRime();
     }
 
     
@@ -131,7 +131,7 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
             "POFtradAr30", // SCHEMAID
             "cmlykke", // AUTHOR
             "1.0", //VERSION
-            "\r\n    A translator of POF codes to Array 30 codes\r\n    based on ", // \r\n    EXTRA\r\n    DESCRIPTION
+            "\r\n    A translator of POF codes to Array 30 codes\r\n    based on: https://github.com/rime/rime-array", // \r\n    EXTRA\r\n    DESCRIPTION
             "POFtradAr30", //DICTIONARY
             "`[a-z,.]*$" //REVERSELOOKUP
         ); 
@@ -150,7 +150,7 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
             "POFsimpAr30", // SCHEMAID
             "cmlykke", // AUTHOR
             "1.0", //VERSION
-            "\r\n    A translator of POF codes to Array 30 codes\r\n    based on ", // \r\n    EXTRA\r\n    DESCRIPTION
+            "\r\n    A translator of POF codes to Array 30 codes\r\n    based on: https://github.com/rime/rime-array", // \r\n    EXTRA\r\n    DESCRIPTION
             "POFsimpAr30", //DICTIONARY
             "`[a-z,.]*$" //REVERSELOOKUP
         ); 
@@ -199,7 +199,7 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
             "POFtradCJ5", // SCHEMAID
             "cmlykke", // AUTHOR
             "1.0", //VERSION
-            "\r\n    A translator of POF codes to Cangjie5 codes\r\n    based on ", // \r\n    EXTRA\r\n    DESCRIPTION
+            "\r\n    A translator of POF codes to Cangjie5 codes\r\n    based on: https://github.com/rime/rime-cangjie", // \r\n    EXTRA\r\n    DESCRIPTION
             "POFtradCJ5", //DICTIONARY
             "`[a-z,.]*$" //REVERSELOOKUP
         ); 
@@ -218,7 +218,7 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
             "POFsimpCJ5", // SCHEMAID
             "cmlykke", // AUTHOR
             "1.0", //VERSION
-            "\r\n    A translator of POF codes to Cangjie5 codes\r\n    based on ", // \r\n    EXTRA\r\n    DESCRIPTION
+            "\r\n    A translator of POF codes to Cangjie5 codes\r\n    based on: https://github.com/rime/rime-cangjie", // \r\n    EXTRA\r\n    DESCRIPTION
             "POFsimpCJ5", //DICTIONARY
             "`[a-z,.]*$" //REVERSELOOKUP
         ); 
