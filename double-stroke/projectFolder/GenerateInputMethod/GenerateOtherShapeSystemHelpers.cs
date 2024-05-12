@@ -30,6 +30,16 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
     }
     
     [Test]
+    public void generateZhengmaFinal()
+    {
+        generateTradZhengmaSchemaForRIME();
+        generateSimpZhengmaSchemaForRIME();
+        generateSimpZhengmaDictForRime();
+        generateTradZhengmaDictForRime();
+        string test = "";
+    }
+    
+    [Test]
     public void generateWubi86Final()
     {
         generateTradWubi86SchemaForRIME();
@@ -182,6 +192,72 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
         File.WriteAllText(simplifiedOutput, resultSimplified);     
     }    
     
+    private void generateTradZhengmaDictForRime()
+    {
+        GenerateAnyForeignInputMethod(
+            FilePaths.ZhengmaDictStaticFile ,//.Array30DictStaticFile,
+            FilePaths.tradDictSourceFile ,//.tradDictSourceFile,
+            FilePaths.ZhengmatradDictOutputFile, //.Array30tradDictOutputFile,
+            @"^\p{L}\t[a-z]+", // @"^\p{L}\t[a-z]+",
+            @"^\p{L}",
+            @"\t[a-z]+",
+            "POFtradZhengma",
+            "1.0"
+        );
+    }
+    
+    private void generateSimpZhengmaDictForRime()
+    {
+        GenerateAnyForeignInputMethod(
+            FilePaths.ZhengmaDictStaticFile ,//.Array30DictStaticFile,
+            FilePaths.simpDictSourceFile,
+            FilePaths.ZhengmasimpDictOutputFile ,//.Array30simpDictOutputFile,
+            @"^\p{L}\t[a-z]+",
+            @"^\p{L}",
+            @"\t[a-z]+",
+            "POFsimpZhengma",
+            "1.0"
+        );
+    }
+
+    private void generateTradZhengmaSchemaForRIME()
+    {
+        List<string> testIntro = UtilityFunctions.introTextForSchema(
+            "POFtradZhengma", // SCHEMAID
+            "cmlykke", // AUTHOR
+            "1.0", //VERSION
+            "\r\n    A translator of POF codes to Zhengma codes\r\n    based on: https://github.com/Openvingen/rime-zhengma/blob/master/zmbig.dict.yaml", // \r\n    EXTRA\r\n    DESCRIPTION
+            "POFtradZhengma", //DICTIONARY
+            "`[a-z]*$" //REVERSELOOKUP
+        );
+
+        string simplifiedOutput = Path.Combine(testDirectory,
+            FilePaths.dotsAndSlash + FilePaths.tradSchemaZhengmaOutputFile);//.tradSchemaArray30OutputFile);
+        
+        string resultSimplified = generateInputDictforRimeFormat(testIntro);
+        //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\charToSchemaMap.txt");
+        File.WriteAllText(simplifiedOutput, resultSimplified);     
+    }
+    
+    private void generateSimpZhengmaSchemaForRIME()
+    {
+        List<string> testIntro = UtilityFunctions.introTextForSchema(
+            "POFsimpZhengma", // SCHEMAID
+            "cmlykke", // AUTHOR
+            "1.0", //VERSION
+            "\r\n    A translator of POF codes to Zhengma codes\r\n    based on: https://github.com/Openvingen/rime-zhengma/blob/master/zmbig.dict.yaml", // \r\n    EXTRA\r\n    DESCRIPTION
+            "POFsimpZhengma", //DICTIONARY
+            "`[a-z]*$" //REVERSELOOKUP
+        );
+
+        string simplifiedOutput = Path.Combine(testDirectory,
+            FilePaths.dotsAndSlash + FilePaths.simpSchemaZhengmaOutputFile); //.simpSchemaArray30OutputFile);
+        
+        string resultSimplified = generateInputDictforRimeFormat(testIntro);
+        //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\charToSchemaMap.txt");
+        File.WriteAllText(simplifiedOutput, resultSimplified);     
+    }
+   
     private void generateTradWubi86DictForRime()
     {
         GenerateAnyForeignInputMethod(

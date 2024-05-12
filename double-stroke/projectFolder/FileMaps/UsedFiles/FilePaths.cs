@@ -68,5 +68,11 @@ public static class FilePaths
     public static string simpSchemaWubi86OutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeWubi86\\POFsimpWubi86.schema.yaml";
     public static string tradSchemaWubi86OutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeWubi86\\POFtradWubi86.schema.yaml";
 
+    public static string ZhengmaDictStaticFile = "double-stroke\\projectFolder\\StaticFiles\\zmbig.dict.yaml";
+    public static string ZhengmasimpDictOutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeZhengma\\POFsimpZhengma.dict.yaml";
+    public static string ZhengmatradDictOutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeZhengma\\POFtradZhengma.dict.yaml";
+    public static string simpSchemaZhengmaOutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeZhengma\\POFsimpZhengma.schema.yaml";
+    public static string tradSchemaZhengmaOutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeZhengma\\POFtradZhengma.schema.yaml";
+
     
 }
