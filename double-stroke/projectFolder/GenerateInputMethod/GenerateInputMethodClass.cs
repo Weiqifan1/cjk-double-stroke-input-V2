@@ -16,15 +16,15 @@ public class GenerateInputMethodClass : TestSchemaBeforePrintSetup
     [Test]
     public void GenerateSimpAndTradDictYamlForRIME()
     {
-        //generateSimpDictForRIME();
-        //generateTradDictForRIME();
+        generateSimpDictForRIME();
+        generateTradDictForRIME();
     }
 
     [Test]
     public void GenerateSimpAndTradSchemaYamlForRime()
     {
-        //generateSimpSchemaForRIME();
-        //generateTradSchemaForRIME();
+        generateSimpSchemaForRIME();
+        generateTradSchemaForRIME();
     }
     
     [Test]

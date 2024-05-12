@@ -55,5 +55,11 @@ public static class FilePaths
     public static string Array30tradDictOutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeArray30\\POFtradAr30.dict.yaml";
     public static string simpSchemaArray30OutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeArray30\\POFsimpAr30.schema.yaml";
     public static string tradSchemaArray30OutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeArray30\\POFtradAr30.schema.yaml";
-
+    
+    public static string TerraPinyinDictStaticFile = "double-stroke\\projectFolder\\StaticFiles\\terra_pinyin.dict.yaml";
+    public static string TerraPinyinsimpDictOutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeTerraPinyin\\POFsimpPinyin.dict.yaml";
+    public static string TerraPiyintradDictOutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeTerraPinyin\\POFtradPinyin.dict.yaml";
+    public static string simpSchemaTerraPinyinOutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeTerraPinyin\\POFsimpPinyin.schema.yaml";
+    public static string tradSchemaTerraPinyinOutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeTerraPinyin\\POFtradPinyin.schema.yaml";
+    
 }

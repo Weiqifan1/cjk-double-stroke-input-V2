@@ -17,13 +17,25 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
 {
     //FilePaths.dotsAndSlash + FilePaths.windowsArraySimpOutputFile
 
+    
+    [Test]
+    public void generateTerraPinyinFinal()
+    {
+        generateTradPinyinSchemaForRIME();//generateTradTerraPinyinSchemaForRIME();
+        generateSimpPinyinSchemaForRIME();
+        generateSimpPinyinDictForRime();
+        generateTradPinyinDictForRime();
+        // array30_main.dict
+        string test = "";
+    }
+    
     [Test]
     public void generateArray30Final()
     {
-        // generateTradArray30SchemaForRIME();
-        // generateSimpArray30SchemaForRIME();
-        // generateSimpArray30DictForRime();
-        // generateTradArray30DictForRime();
+        generateTradArray30SchemaForRIME();
+        generateSimpArray30SchemaForRIME();
+        generateSimpArray30DictForRime();
+        generateTradArray30DictForRime();
         // array30_main.dict
         string test = "";
     }
@@ -31,12 +43,11 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
     [Test]
     public void generateCangjie5Final()
     {
-        // generateTradCangjieSchemaForRIME();
-        // generateSimpCangjieSchemaForRIME();
-        // generateSimpCangjieDictForRime();
-        // generateTradCangjieDictForRime();
+        generateTradCangjieSchemaForRIME();
+        generateSimpCangjieSchemaForRIME();
+        generateSimpCangjieDictForRime();
+        generateTradCangjieDictForRime();
     }
-
     
     private void GenerateAnyForeignInputMethod(
         string cangjieSource, // FilePaths.cangjie5DictStaticFile
@@ -96,15 +107,80 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
         string test = "";
     }
     
-    private void generateTradArray30DictForRime()
+    private void generateTradPinyinDictForRime()
+    {
+        GenerateAnyForeignInputMethod(
+            FilePaths.TerraPinyinDictStaticFile, //Array30DictStaticFile,
+            FilePaths.tradDictSourceFile,
+            FilePaths.TerraPiyintradDictOutputFile,  //TerraPinyinsimpDictOutputFile ,//.Array30tradDictOutputFile,
+            @"^\p{L}\t[a-z0-9]+", // @"^\p{L}\t[a-z]+",
+            @"^\p{L}",
+            @"\t[a-z0-9]+",
+            "POFtradPinyin",
+            "1.0"
+        );
+    }
+
+    private void generateSimpPinyinDictForRime()
+    {
+        GenerateAnyForeignInputMethod(
+            FilePaths.TerraPinyinDictStaticFile,
+            FilePaths.simpDictSourceFile,
+            FilePaths.TerraPinyinsimpDictOutputFile, //Array30simpDictOutputFile,
+            @"^\p{L}\t[a-z0-9]+",
+            @"^\p{L}",
+            @"\t[a-z0-9]+",
+            "POFsimpPinyin",
+            "1.0"
+        );
+    }
+
+    private void generateTradPinyinSchemaForRIME()
+    {
+        List<string> testIntro = UtilityFunctions.introTextForSchema(
+            "POFtradPinyin", // SCHEMAID
+            "cmlykke", // AUTHOR
+            "1.0", //VERSION
+            "\r\n    A translator of POF codes to Terra Pinyin codes\r\n    based on: https://github.com/rime/rime-terra-pinyin", // \r\n    EXTRA\r\n    DESCRIPTION
+            "POFtradPinyin", //DICTIONARY
+            "`[a-z0-9]*$" //REVERSELOOKUP
+        );
+
+        string simplifiedOutput = Path.Combine(testDirectory,
+            FilePaths.dotsAndSlash + FilePaths.tradSchemaTerraPinyinOutputFile);//FilePaths.tradSchemaArray30OutputFile);
+        
+        string resultSimplified = generateInputDictforRimeFormat(testIntro);
+        //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\charToSchemaMap.txt");
+        File.WriteAllText(simplifiedOutput, resultSimplified);     
+    }
+    
+    private void generateSimpPinyinSchemaForRIME()
+    {
+        List<string> testIntro = UtilityFunctions.introTextForSchema(
+            "POFsimpPinyin", // SCHEMAID
+            "cmlykke", // AUTHOR
+            "1.0", //VERSION
+            "\r\n    A translator of POF codes to Terra Pinyin codes\r\n    based on: https://github.com/rime/rime-terra-pinyin", // \r\n    EXTRA\r\n    DESCRIPTION
+            "POFsimpPinyin", //DICTIONARY
+            "`[a-z0-9]*$" //REVERSELOOKUP
+        );
+
+        string simplifiedOutput = Path.Combine(testDirectory,
+            FilePaths.dotsAndSlash + FilePaths.simpSchemaTerraPinyinOutputFile);//FilePaths.simpSchemaArray30OutputFile);
+        
+        string resultSimplified = generateInputDictforRimeFormat(testIntro);
+        //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\charToSchemaMap.txt");
+        File.WriteAllText(simplifiedOutput, resultSimplified);     
+    }    private void generateTradArray30DictForRime()
+    
     {
         GenerateAnyForeignInputMethod(
             FilePaths.Array30DictStaticFile,
             FilePaths.tradDictSourceFile,
             FilePaths.Array30tradDictOutputFile,
-            @"^\p{L}\t[a-z,./;]+", // @"^\p{L}\t[a-z]+",
+            @"^\p{L}\t[a-z,./;!@]+", // @"^\p{L}\t[a-z]+",
             @"^\p{L}",
-            @"\t[a-z,./;]+",
+            @"\t[a-z,./;!@]+",
             "POFtradAr30",
             "1.0"
         );
@@ -116,9 +192,9 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
             FilePaths.Array30DictStaticFile,
             FilePaths.simpDictSourceFile,
             FilePaths.Array30simpDictOutputFile,
-            @"^\p{L}\t[a-z]+",
+            @"^\p{L}\t[a-z,./;!@]+",
             @"^\p{L}",
-            @"\t[a-z]+",
+            @"\t[a-z,./;!@]+",
             "POFsimpAr30",
             "1.0"
         );
@@ -133,7 +209,7 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
             "1.0", //VERSION
             "\r\n    A translator of POF codes to Array 30 codes\r\n    based on: https://github.com/rime/rime-array", // \r\n    EXTRA\r\n    DESCRIPTION
             "POFtradAr30", //DICTIONARY
-            "`[a-z,.]*$" //REVERSELOOKUP
+            "`[a-z,./;!@]*$" //REVERSELOOKUP
         ); 
         
         string simplifiedOutput = Path.Combine(testDirectory,
@@ -152,7 +228,7 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
             "1.0", //VERSION
             "\r\n    A translator of POF codes to Array 30 codes\r\n    based on: https://github.com/rime/rime-array", // \r\n    EXTRA\r\n    DESCRIPTION
             "POFsimpAr30", //DICTIONARY
-            "`[a-z,.]*$" //REVERSELOOKUP
+            "`[a-z,./;!@]*$" //REVERSELOOKUP
         ); 
         
         string simplifiedOutput = Path.Combine(testDirectory,
