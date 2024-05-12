@@ -30,6 +30,24 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
     }
     
     [Test]
+    public void generateBoshiamyFinal()
+    {
+        generateTradBoshiamySchemaForRIME();
+        generateSimpBoshiamySchemaForRIME();
+        generateSimpBoshiamyDictForRime();
+        generateTradBoshiamyDictForRime();
+        string test = "";
+    }
+    
+    [Test]
+    public void generateDayi4Final()
+    {
+        generateTradDayi4SchemaForRIME();
+        generateTradDayi4DictForRime();
+        string test = "";
+    }
+    
+    [Test]
     public void generateZhengmaFinal()
     {
         generateTradZhengmaSchemaForRIME();
@@ -191,6 +209,106 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
         //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\charToSchemaMap.txt");
         File.WriteAllText(simplifiedOutput, resultSimplified);     
     }    
+    
+    private void generateTradBoshiamyDictForRime()
+    {
+        GenerateAnyForeignInputMethod(
+            FilePaths.BoshiamyDictStaticFile ,//.Array30DictStaticFile,
+            FilePaths.tradDictSourceFile ,//.tradDictSourceFile,
+            FilePaths.BoshiamytradDictOutputFile, //.Array30tradDictOutputFile,
+            @"[a-z]+\t\p{L}", // @"^\p{L}\t[a-z]+",
+            @"\t\p{L}\t",
+            @"[a-z]+",
+            "POFtradBoshiamy",
+            "1.0"
+        );
+    }
+    
+    private void generateSimpBoshiamyDictForRime()
+    {
+        GenerateAnyForeignInputMethod(
+            FilePaths.BoshiamyDictStaticFile ,//.Array30DictStaticFile,
+            FilePaths.simpDictSourceFile,
+            FilePaths.BoshiamysimpDictOutputFile ,//.Array30simpDictOutputFile,
+            @"[a-z]+\t\p{L}",
+            @"\t\p{L}\t",
+            @"[a-z]+",
+            "POFsimpBoshiamy",
+            "1.0"
+        );
+    }
+
+    private void generateTradBoshiamySchemaForRIME()
+    {
+        List<string> testIntro = UtilityFunctions.introTextForSchema(
+            "POFtradBoshiamy", // SCHEMAID
+            "cmlykke", // AUTHOR
+            "1.0", //VERSION
+            "\r\n    A translator of POF codes to Boshiamy codes\r\n    based on: https://github.com/vicamo/ibus-table-boshiamy/blob/master/tables/boshiamy.txt", // \r\n    EXTRA\r\n    DESCRIPTION
+            "POFtradBoshiamy", //DICTIONARY
+            "`[a-z]*$" //REVERSELOOKUP
+        );
+
+        string simplifiedOutput = Path.Combine(testDirectory,
+            FilePaths.dotsAndSlash + FilePaths.tradSchemaBoshiamyOutputFile);//.tradSchemaArray30OutputFile);
+        
+        string resultSimplified = generateInputDictforRimeFormat(testIntro);
+        //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\charToSchemaMap.txt");
+        File.WriteAllText(simplifiedOutput, resultSimplified);     
+    }
+    
+    private void generateSimpBoshiamySchemaForRIME()
+    {
+        List<string> testIntro = UtilityFunctions.introTextForSchema(
+            "POFsimpBoshiamy", // SCHEMAID
+            "cmlykke", // AUTHOR
+            "1.0", //VERSION
+            "\r\n    A translator of POF codes to Boshiamy codes\r\n    based on: https://github.com/vicamo/ibus-table-boshiamy/blob/master/tables/boshiamy.txt", // \r\n    EXTRA\r\n    DESCRIPTION
+            "POFsimpBoshiamy", //DICTIONARY
+            "`[a-z]*$" //REVERSELOOKUP
+        );
+
+        string simplifiedOutput = Path.Combine(testDirectory,
+            FilePaths.dotsAndSlash + FilePaths.simpSchemaBoshiamyOutputFile); //.simpSchemaArray30OutputFile);
+        
+        string resultSimplified = generateInputDictforRimeFormat(testIntro);
+        //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\charToSchemaMap.txt");
+        File.WriteAllText(simplifiedOutput, resultSimplified);     
+    }
+    
+    
+    private void generateTradDayi4DictForRime()
+    {
+        GenerateAnyForeignInputMethod(
+            FilePaths.Dayi4DictStaticFile ,//.Array30DictStaticFile,
+            FilePaths.tradDictSourceFile ,//.tradDictSourceFile,
+            FilePaths.Dayi4tradDictOutputFile, //.Array30tradDictOutputFile,
+            @"^\p{L}\t[a-z,./;0-9]+", // @"^\p{L}\t[a-z]+",
+            @"^\p{L}",
+            @"\t[a-z,./;0-9]+",
+            "POFtradDayi4",
+            "1.0"
+        );
+    }    
+    
+    private void generateTradDayi4SchemaForRIME()
+    {
+        List<string> testIntro = UtilityFunctions.introTextForSchema(
+            "POFtradDayi4", // SCHEMAID
+            "cmlykke", // AUTHOR
+            "1.0", //VERSION
+            "\r\n    A translator of POF codes to Dayi4 codes\r\n    based on: https://github.com/chiahsien/RimeDayi", // \r\n    EXTRA\r\n    DESCRIPTION
+            "POFtradDayi4", //DICTIONARY
+            "`[a-z,./;0-9]*$" //REVERSELOOKUP
+        );
+
+        string simplifiedOutput = Path.Combine(testDirectory,
+            FilePaths.dotsAndSlash + FilePaths.tradSchemaDayi4OutputFile);//.tradSchemaArray30OutputFile);
+        
+        string resultSimplified = generateInputDictforRimeFormat(testIntro);
+        //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\charToSchemaMap.txt");
+        File.WriteAllText(simplifiedOutput, resultSimplified);     
+    }
     
     private void generateTradZhengmaDictForRime()
     {

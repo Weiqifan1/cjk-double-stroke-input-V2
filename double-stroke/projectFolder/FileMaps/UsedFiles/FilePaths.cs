@@ -73,6 +73,17 @@ public static class FilePaths
     public static string ZhengmatradDictOutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeZhengma\\POFtradZhengma.dict.yaml";
     public static string simpSchemaZhengmaOutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeZhengma\\POFsimpZhengma.schema.yaml";
     public static string tradSchemaZhengmaOutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeZhengma\\POFtradZhengma.schema.yaml";
+    
+    public static string Dayi4DictStaticFile = "double-stroke\\projectFolder\\StaticFiles\\dayi4.dict.yaml";
+    public static string Dayi4tradDictOutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeDayi\\POFtradDayi4.dict.yaml";
+    public static string tradSchemaDayi4OutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeDayi\\POFtradDayi4.schema.yaml";
+    
+    public static string BoshiamyDictStaticFile = "double-stroke\\projectFolder\\StaticFiles\\boshiamy.txt";
+    public static string BoshiamysimpDictOutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeBoshiamy\\POFsimpBoshiamy.dict.yaml";
+    public static string BoshiamytradDictOutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeBoshiamy\\POFtradBoshiamy.dict.yaml";
+    public static string simpSchemaBoshiamyOutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeBoshiamy\\POFsimpBoshiamy.schema.yaml";
+    public static string tradSchemaBoshiamyOutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeBoshiamy\\POFtradBoshiamy.schema.yaml";
+
 
     
 }
