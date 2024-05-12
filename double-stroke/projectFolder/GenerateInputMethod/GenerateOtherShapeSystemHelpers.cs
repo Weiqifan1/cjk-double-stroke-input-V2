@@ -30,13 +30,22 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
     }
     
     [Test]
+    public void generateWubi86Final()
+    {
+        generateTradWubi86SchemaForRIME();
+        generateSimpWubi86SchemaForRIME();
+        generateSimpWubi86DictForRime();
+        generateTradWubi86DictForRime();
+        string test = "";
+    }
+    
+    [Test]
     public void generateArray30Final()
     {
         generateTradArray30SchemaForRIME();
         generateSimpArray30SchemaForRIME();
         generateSimpArray30DictForRime();
         generateTradArray30DictForRime();
-        // array30_main.dict
         string test = "";
     }
 
@@ -171,30 +180,97 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
         string resultSimplified = generateInputDictforRimeFormat(testIntro);
         //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\charToSchemaMap.txt");
         File.WriteAllText(simplifiedOutput, resultSimplified);     
-    }    private void generateTradArray30DictForRime()
+    }    
     
+    private void generateTradWubi86DictForRime()
+    {
+        GenerateAnyForeignInputMethod(
+            FilePaths.Wubi86DictStaticFile ,//.Array30DictStaticFile,
+            FilePaths.tradDictSourceFile ,//.tradDictSourceFile,
+            FilePaths.Wubi86tradDictOutputFile, //.Array30tradDictOutputFile,
+            @"^\p{L}\t[a-z]+", // @"^\p{L}\t[a-z]+",
+            @"^\p{L}",
+            @"\t[a-z]+",
+            "POFtradWubi86",
+            "1.0"
+        );
+    }
+    
+    private void generateSimpWubi86DictForRime()
+    {
+        GenerateAnyForeignInputMethod(
+            FilePaths.Wubi86DictStaticFile ,//.Array30DictStaticFile,
+            FilePaths.simpDictSourceFile,
+            FilePaths.Wubi86simpDictOutputFile ,//.Array30simpDictOutputFile,
+            @"^\p{L}\t[a-z]+",
+            @"^\p{L}",
+            @"\t[a-z]+",
+            "POFsimpWubi86",
+            "1.0"
+        );
+    }
+
+    private void generateTradWubi86SchemaForRIME()
+    {
+        List<string> testIntro = UtilityFunctions.introTextForSchema(
+            "POFtradWubi86", // SCHEMAID
+            "cmlykke", // AUTHOR
+            "1.0", //VERSION
+            "\r\n    A translator of POF codes to Wubi 86 codes\r\n    based on: https://github.com/rime/rime-wubi", // \r\n    EXTRA\r\n    DESCRIPTION
+            "POFtradWubi86", //DICTIONARY
+            "`[a-z]*$" //REVERSELOOKUP
+        );
+
+        string simplifiedOutput = Path.Combine(testDirectory,
+            FilePaths.dotsAndSlash + FilePaths.tradSchemaWubi86OutputFile);//.tradSchemaArray30OutputFile);
+        
+        string resultSimplified = generateInputDictforRimeFormat(testIntro);
+        //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\charToSchemaMap.txt");
+        File.WriteAllText(simplifiedOutput, resultSimplified);     
+    }
+    
+    private void generateSimpWubi86SchemaForRIME()
+    {
+        List<string> testIntro = UtilityFunctions.introTextForSchema(
+            "POFsimpWubi86", // SCHEMAID
+            "cmlykke", // AUTHOR
+            "1.0", //VERSION
+            "\r\n    A translator of POF codes to Wubi 86 codes\r\n    based on: https://github.com/rime/rime-wubi", // \r\n    EXTRA\r\n    DESCRIPTION
+            "POFsimpWubi86", //DICTIONARY
+            "`[a-z]*$" //REVERSELOOKUP
+        );
+
+        string simplifiedOutput = Path.Combine(testDirectory,
+            FilePaths.dotsAndSlash + FilePaths.simpSchemaWubi86OutputFile); //.simpSchemaArray30OutputFile);
+        
+        string resultSimplified = generateInputDictforRimeFormat(testIntro);
+        //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\charToSchemaMap.txt");
+        File.WriteAllText(simplifiedOutput, resultSimplified);     
+    }
+    
+    private void generateTradArray30DictForRime()
     {
         GenerateAnyForeignInputMethod(
             FilePaths.Array30DictStaticFile,
             FilePaths.tradDictSourceFile,
             FilePaths.Array30tradDictOutputFile,
-            @"^\p{L}\t[a-z,./;!@]+", // @"^\p{L}\t[a-z]+",
+            @"^\p{L}\t[a-z,./;]+", // @"^\p{L}\t[a-z]+",
             @"^\p{L}",
-            @"\t[a-z,./;!@]+",
+            @"\t[a-z,./;]+",
             "POFtradAr30",
             "1.0"
         );
     }
-
+    
     private void generateSimpArray30DictForRime()
     {
         GenerateAnyForeignInputMethod(
             FilePaths.Array30DictStaticFile,
             FilePaths.simpDictSourceFile,
             FilePaths.Array30simpDictOutputFile,
-            @"^\p{L}\t[a-z,./;!@]+",
+            @"^\p{L}\t[a-z,./;]+",
             @"^\p{L}",
-            @"\t[a-z,./;!@]+",
+            @"\t[a-z,./;]+",
             "POFsimpAr30",
             "1.0"
         );
@@ -209,7 +285,7 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
             "1.0", //VERSION
             "\r\n    A translator of POF codes to Array 30 codes\r\n    based on: https://github.com/rime/rime-array", // \r\n    EXTRA\r\n    DESCRIPTION
             "POFtradAr30", //DICTIONARY
-            "`[a-z,./;!@]*$" //REVERSELOOKUP
+            "`[a-z,./;]*$" //REVERSELOOKUP
         ); 
         
         string simplifiedOutput = Path.Combine(testDirectory,
@@ -228,7 +304,7 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
             "1.0", //VERSION
             "\r\n    A translator of POF codes to Array 30 codes\r\n    based on: https://github.com/rime/rime-array", // \r\n    EXTRA\r\n    DESCRIPTION
             "POFsimpAr30", //DICTIONARY
-            "`[a-z,./;!@]*$" //REVERSELOOKUP
+            "`[a-z,./;]*$" //REVERSELOOKUP
         ); 
         
         string simplifiedOutput = Path.Combine(testDirectory,

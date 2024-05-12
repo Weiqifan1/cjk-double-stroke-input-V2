@@ -62,4 +62,11 @@ public static class FilePaths
     public static string simpSchemaTerraPinyinOutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeTerraPinyin\\POFsimpPinyin.schema.yaml";
     public static string tradSchemaTerraPinyinOutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeTerraPinyin\\POFtradPinyin.schema.yaml";
     
+    public static string Wubi86DictStaticFile = "double-stroke\\projectFolder\\StaticFiles\\wubi86.dict.yaml";
+    public static string Wubi86simpDictOutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeWubi86\\POFsimpWubi86.dict.yaml";
+    public static string Wubi86tradDictOutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeWubi86\\POFtradWubi86.dict.yaml";
+    public static string simpSchemaWubi86OutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeWubi86\\POFsimpWubi86.schema.yaml";
+    public static string tradSchemaWubi86OutputFile = "double-stroke\\projectFolder\\OutputFiles\\OutputRimeWubi86\\POFtradWubi86.schema.yaml";
+
+    
 }
