@@ -21,10 +21,15 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
     [Test]
     public void generateTerraPinyinFinal()
     {
-        generateTradPinyinSchemaForRIME();//generateTradTerraPinyinSchemaForRIME();
-        generateSimpPinyinSchemaForRIME();
-        generateSimpPinyinDictForRime();
-        generateTradPinyinDictForRime();
+        string trad = "POFtradPinyin";
+        string simp = "POFsimpPinyin";
+        string version = "1.0";
+        string date = "2024-05-15";
+        
+        generateTradPinyinSchemaForRIME(trad, version, date);//generateTradTerraPinyinSchemaForRIME();
+        generateSimpPinyinSchemaForRIME(simp, version, date);
+        generateSimpPinyinDictForRime(simp, version);
+        generateTradPinyinDictForRime(trad, version);
         // array30_main.dict
         string test = "";
     }
@@ -32,58 +37,87 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
     [Test]
     public void generateBoshiamyFinal()
     {
-        generateTradBoshiamySchemaForRIME();
-        generateSimpBoshiamySchemaForRIME();
-        generateSimpBoshiamyDictForRime();
-        generateTradBoshiamyDictForRime();
+        string trad = "POFtradBoshiamy";
+        string simp = "POFsimpBoshiamy";
+        string version = "1.0";
+        string date = "2024-05-15";
+        
+        generateTradBoshiamySchemaForRIME(trad, version, date);
+        generateSimpBoshiamySchemaForRIME(trad, version, date);
+        generateSimpBoshiamyDictForRime(simp, version);
+        generateTradBoshiamyDictForRime(trad, version);
         string test = "";
     }
     
     [Test]
     public void generateDayi4Final()
     {
-        generateTradDayi4SchemaForRIME();
-        generateTradDayi4DictForRime();
+        string trad = "POFtradDayi4";
+        string version = "1.0";
+        string date = "2024-05-15";
+        
+        generateTradDayi4SchemaForRIME(trad, version, date);
+        generateTradDayi4DictForRime(trad, version);
         string test = "";
     }
     
     [Test]
     public void generateZhengmaFinal()
     {
-        generateTradZhengmaSchemaForRIME();
-        generateSimpZhengmaSchemaForRIME();
-        generateSimpZhengmaDictForRime();
-        generateTradZhengmaDictForRime();
+        string trad = "POFtradZhengma";
+        string simp = "POFsimpZhengma";
+        string version = "1.0";
+        string date = "2024-05-15";
+        
+        generateTradZhengmaSchemaForRIME(trad, version, date);
+        generateSimpZhengmaSchemaForRIME(simp, version, date);
+        generateSimpZhengmaDictForRime(simp, version);
+        generateTradZhengmaDictForRime(trad, version);
         string test = "";
     }
     
     [Test]
     public void generateWubi86Final()
     {
-        generateTradWubi86SchemaForRIME();
-        generateSimpWubi86SchemaForRIME();
-        generateSimpWubi86DictForRime();
-        generateTradWubi86DictForRime();
+        string trad = "POFtradPinyin";
+        string simp = "POFsimpPinyin";
+        string version = "1.0";
+        string date = "2024-05-15";
+        
+        generateTradWubi86SchemaForRIME(trad, version, date);
+        generateSimpWubi86SchemaForRIME(simp, version, date);
+        generateSimpWubi86DictForRime(simp, version);
+        generateTradWubi86DictForRime(trad, version);
         string test = "";
     }
     
     [Test]
     public void generateArray30Final()
     {
-        generateTradArray30SchemaForRIME();
-        generateSimpArray30SchemaForRIME();
-        generateSimpArray30DictForRime();
-        generateTradArray30DictForRime();
+        string trad = "POFtradWubi86";
+        string simp = "POFsimpWubi86";
+        string version = "1.0";
+        string date = "2024-05-15";
+        
+        generateTradArray30SchemaForRIME(trad, version, date);
+        generateSimpArray30SchemaForRIME(simp, version, date);
+        generateSimpArray30DictForRime(simp, version);
+        generateTradArray30DictForRime(trad, version);
         string test = "";
     }
 
     [Test]
     public void generateCangjie5Final()
     {
-        generateTradCangjieSchemaForRIME();
-        generateSimpCangjieSchemaForRIME();
-        generateSimpCangjieDictForRime();
-        generateTradCangjieDictForRime();
+        string trad = "POFtradCJ5";
+        string simp = "POFsimpCJ5";
+        string version = "1.0";
+        string date = "2024-05-15";
+        
+        generateTradCangjieSchemaForRIME(trad, version, date);
+        generateSimpCangjieSchemaForRIME(simp, version, date);
+        generateSimpCangjieDictForRime(simp, version);
+        generateTradCangjieDictForRime(trad, version);
     }
     
     private void GenerateAnyForeignInputMethod(
@@ -144,7 +178,9 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
         string test = "";
     }
     
-    private void generateTradPinyinDictForRime()
+    private void generateTradPinyinDictForRime(
+        string systemName, 
+        string version)
     {
         GenerateAnyForeignInputMethod(
             FilePaths.TerraPinyinDictStaticFile, //Array30DictStaticFile,
@@ -153,12 +189,14 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
             @"^\p{L}\t[a-z0-9]+", // @"^\p{L}\t[a-z]+",
             @"^\p{L}",
             @"\t[a-z0-9]+",
-            "POFtradPinyin",
-            "1.0"
+            systemName,
+            version
         );
     }
 
-    private void generateSimpPinyinDictForRime()
+    private void generateSimpPinyinDictForRime(
+        string systemName, 
+        string version)
     {
         GenerateAnyForeignInputMethod(
             FilePaths.TerraPinyinDictStaticFile,
@@ -167,19 +205,25 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
             @"^\p{L}\t[a-z0-9]+",
             @"^\p{L}",
             @"\t[a-z0-9]+",
-            "POFsimpPinyin",
-            "1.0"
+            systemName,
+            version
         );
     }
 
-    private void generateTradPinyinSchemaForRIME()
+    private void generateTradPinyinSchemaForRIME(
+        string systemName, 
+        string version, 
+        string versionDate)
     {
         List<string> testIntro = UtilityFunctions.introTextForSchema(
-            "POFtradPinyin", // SCHEMAID
+            systemName, // SCHEMAID
             "cmlykke", // AUTHOR
-            "1.0", //VERSION
-            "\r\n    A translator of POF codes to Terra Pinyin codes\r\n    based on: https://github.com/rime/rime-terra-pinyin", // \r\n    EXTRA\r\n    DESCRIPTION
-            "POFtradPinyin", //DICTIONARY
+            version, //VERSION
+            "\r\n    Version date: " + 
+            versionDate + 
+            "\r\n    A translator of POF codes to Terra Pinyin codes"+
+            "\r\n    based on: https://github.com/rime/rime-terra-pinyin", // \r\n    EXTRA\r\n    DESCRIPTION
+            systemName, //DICTIONARY
             "`[a-z0-9]*$" //REVERSELOOKUP
         );
 
@@ -191,14 +235,20 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
         File.WriteAllText(simplifiedOutput, resultSimplified);     
     }
     
-    private void generateSimpPinyinSchemaForRIME()
+    private void generateSimpPinyinSchemaForRIME(
+        string systemName, 
+        string version, 
+        string versionDate)
     {
         List<string> testIntro = UtilityFunctions.introTextForSchema(
-            "POFsimpPinyin", // SCHEMAID
+            systemName, // SCHEMAID
             "cmlykke", // AUTHOR
-            "1.0", //VERSION
-            "\r\n    A translator of POF codes to Terra Pinyin codes\r\n    based on: https://github.com/rime/rime-terra-pinyin", // \r\n    EXTRA\r\n    DESCRIPTION
-            "POFsimpPinyin", //DICTIONARY
+            version, //VERSION
+            "\r\n    Version date: " + 
+            versionDate + 
+            "\r\n    A translator of POF codes to Terra Pinyin codes"+
+            "\r\n    based on: https://github.com/rime/rime-terra-pinyin", // \r\n    EXTRA\r\n    DESCRIPTION
+            systemName, //DICTIONARY
             "`[a-z0-9]*$" //REVERSELOOKUP
         );
 
@@ -210,7 +260,9 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
         File.WriteAllText(simplifiedOutput, resultSimplified);     
     }    
     
-    private void generateTradBoshiamyDictForRime()
+    private void generateTradBoshiamyDictForRime(
+        string systemName, 
+        string version)
     {
         GenerateAnyForeignInputMethod(
             FilePaths.BoshiamyDictStaticFile ,//.Array30DictStaticFile,
@@ -219,12 +271,14 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
             @"[a-z]+\t\p{L}", // @"^\p{L}\t[a-z]+",
             @"\t\p{L}\t",
             @"[a-z]+",
-            "POFtradBoshiamy",
-            "1.0"
+            systemName,
+            version
         );
     }
     
-    private void generateSimpBoshiamyDictForRime()
+    private void generateSimpBoshiamyDictForRime(
+        string systemName, 
+        string version)
     {
         GenerateAnyForeignInputMethod(
             FilePaths.BoshiamyDictStaticFile ,//.Array30DictStaticFile,
@@ -233,19 +287,25 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
             @"[a-z]+\t\p{L}",
             @"\t\p{L}\t",
             @"[a-z]+",
-            "POFsimpBoshiamy",
-            "1.0"
+            systemName,
+            version
         );
     }
 
-    private void generateTradBoshiamySchemaForRIME()
+    private void generateTradBoshiamySchemaForRIME(
+        string systemName, 
+        string version, 
+        string versionDate)
     {
         List<string> testIntro = UtilityFunctions.introTextForSchema(
-            "POFtradBoshiamy", // SCHEMAID
+            systemName, // SCHEMAID
             "cmlykke", // AUTHOR
-            "1.0", //VERSION
-            "\r\n    A translator of POF codes to Boshiamy codes\r\n    based on: https://github.com/vicamo/ibus-table-boshiamy/blob/master/tables/boshiamy.txt", // \r\n    EXTRA\r\n    DESCRIPTION
-            "POFtradBoshiamy", //DICTIONARY
+            version, //VERSION
+            "\r\n    Version date: " + 
+            versionDate + 
+            "\r\n    A translator of POF codes to Boshiamy codes"+
+            "\r\n    based on: https://github.com/vicamo/ibus-table-boshiamy/blob/master/tables/boshiamy.txt", // \r\n    EXTRA\r\n    DESCRIPTION
+            systemName, //DICTIONARY
             "`[a-z]*$" //REVERSELOOKUP
         );
 
@@ -257,14 +317,21 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
         File.WriteAllText(simplifiedOutput, resultSimplified);     
     }
     
-    private void generateSimpBoshiamySchemaForRIME()
+    private void generateSimpBoshiamySchemaForRIME(
+        string systemName, 
+        string version,
+        string versionDate)
     {
+        
         List<string> testIntro = UtilityFunctions.introTextForSchema(
-            "POFsimpBoshiamy", // SCHEMAID
+            systemName, // SCHEMAID
             "cmlykke", // AUTHOR
-            "1.0", //VERSION
-            "\r\n    A translator of POF codes to Boshiamy codes\r\n    based on: https://github.com/vicamo/ibus-table-boshiamy/blob/master/tables/boshiamy.txt", // \r\n    EXTRA\r\n    DESCRIPTION
-            "POFsimpBoshiamy", //DICTIONARY
+            version, //VERSION
+            "\r\n    Version date: " + 
+            versionDate + 
+            "\r\n    A translator of POF codes to Boshiamy codes" +
+            "\r\n    based on: https://github.com/vicamo/ibus-table-boshiamy/blob/master/tables/boshiamy.txt", // \r\n    EXTRA\r\n    DESCRIPTION
+            systemName, //DICTIONARY
             "`[a-z]*$" //REVERSELOOKUP
         );
 
@@ -277,7 +344,9 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
     }
     
     
-    private void generateTradDayi4DictForRime()
+    private void generateTradDayi4DictForRime(
+        string systemName, 
+        string version)
     {
         GenerateAnyForeignInputMethod(
             FilePaths.Dayi4DictStaticFile ,//.Array30DictStaticFile,
@@ -286,19 +355,25 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
             @"^\p{L}\t[a-z,./;0-9]+", // @"^\p{L}\t[a-z]+",
             @"^\p{L}",
             @"\t[a-z,./;0-9]+",
-            "POFtradDayi4",
-            "1.0"
+            systemName,
+            version
         );
     }    
     
-    private void generateTradDayi4SchemaForRIME()
+    private void generateTradDayi4SchemaForRIME(
+        string systemName, 
+        string version, 
+        string versionDate)
     {
         List<string> testIntro = UtilityFunctions.introTextForSchema(
-            "POFtradDayi4", // SCHEMAID
+            systemName, // SCHEMAID
             "cmlykke", // AUTHOR
-            "1.0", //VERSION
-            "\r\n    A translator of POF codes to Dayi4 codes\r\n    based on: https://github.com/chiahsien/RimeDayi", // \r\n    EXTRA\r\n    DESCRIPTION
-            "POFtradDayi4", //DICTIONARY
+            version, //VERSION
+            "\r\n    Version date: " + 
+            versionDate + 
+            "\r\n    A translator of POF codes to Dayi4 codes"+
+            "\r\n    based on: https://github.com/chiahsien/RimeDayi", // \r\n    EXTRA\r\n    DESCRIPTION
+            systemName, //DICTIONARY
             "`[a-z,./;0-9]*$" //REVERSELOOKUP
         );
 
@@ -310,7 +385,9 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
         File.WriteAllText(simplifiedOutput, resultSimplified);     
     }
     
-    private void generateTradZhengmaDictForRime()
+    private void generateTradZhengmaDictForRime(
+        string systemName, 
+        string version)
     {
         GenerateAnyForeignInputMethod(
             FilePaths.ZhengmaDictStaticFile ,//.Array30DictStaticFile,
@@ -319,12 +396,14 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
             @"^\p{L}\t[a-z]+", // @"^\p{L}\t[a-z]+",
             @"^\p{L}",
             @"\t[a-z]+",
-            "POFtradZhengma",
-            "1.0"
+            systemName,
+            version
         );
     }
     
-    private void generateSimpZhengmaDictForRime()
+    private void generateSimpZhengmaDictForRime(
+        string systemName, 
+        string version)
     {
         GenerateAnyForeignInputMethod(
             FilePaths.ZhengmaDictStaticFile ,//.Array30DictStaticFile,
@@ -333,19 +412,25 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
             @"^\p{L}\t[a-z]+",
             @"^\p{L}",
             @"\t[a-z]+",
-            "POFsimpZhengma",
-            "1.0"
+            systemName,
+            version
         );
     }
 
-    private void generateTradZhengmaSchemaForRIME()
+    private void generateTradZhengmaSchemaForRIME(
+        string systemName, 
+        string version, 
+        string versionDate)
     {
         List<string> testIntro = UtilityFunctions.introTextForSchema(
-            "POFtradZhengma", // SCHEMAID
+            systemName, // SCHEMAID
             "cmlykke", // AUTHOR
-            "1.0", //VERSION
-            "\r\n    A translator of POF codes to Zhengma codes\r\n    based on: https://github.com/Openvingen/rime-zhengma/blob/master/zmbig.dict.yaml", // \r\n    EXTRA\r\n    DESCRIPTION
-            "POFtradZhengma", //DICTIONARY
+            version, //VERSION
+            "\r\n    Version date: " + 
+            versionDate + 
+            "\r\n    A translator of POF codes to Zhengma codes"+
+            "\r\n    based on: https://github.com/Openvingen/rime-zhengma/blob/master/zmbig.dict.yaml", // \r\n    EXTRA\r\n    DESCRIPTION
+            systemName, //DICTIONARY
             "`[a-z]*$" //REVERSELOOKUP
         );
 
@@ -357,14 +442,20 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
         File.WriteAllText(simplifiedOutput, resultSimplified);     
     }
     
-    private void generateSimpZhengmaSchemaForRIME()
+    private void generateSimpZhengmaSchemaForRIME(
+        string systemName, 
+        string version, 
+        string versionDate)
     {
         List<string> testIntro = UtilityFunctions.introTextForSchema(
-            "POFsimpZhengma", // SCHEMAID
+            systemName, // SCHEMAID
             "cmlykke", // AUTHOR
-            "1.0", //VERSION
-            "\r\n    A translator of POF codes to Zhengma codes\r\n    based on: https://github.com/Openvingen/rime-zhengma/blob/master/zmbig.dict.yaml", // \r\n    EXTRA\r\n    DESCRIPTION
-            "POFsimpZhengma", //DICTIONARY
+            version, //VERSION
+            "\r\n    Version date: " + 
+            versionDate + 
+            "\r\n    A translator of POF codes to Zhengma codes"+
+            "\r\n    based on: https://github.com/Openvingen/rime-zhengma/blob/master/zmbig.dict.yaml", // \r\n    EXTRA\r\n    DESCRIPTION
+            systemName, //DICTIONARY
             "`[a-z]*$" //REVERSELOOKUP
         );
 
@@ -376,7 +467,9 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
         File.WriteAllText(simplifiedOutput, resultSimplified);     
     }
    
-    private void generateTradWubi86DictForRime()
+    private void generateTradWubi86DictForRime(
+        string systemName, 
+        string version)
     {
         GenerateAnyForeignInputMethod(
             FilePaths.Wubi86DictStaticFile ,//.Array30DictStaticFile,
@@ -385,12 +478,14 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
             @"^\p{L}\t[a-z]+", // @"^\p{L}\t[a-z]+",
             @"^\p{L}",
             @"\t[a-z]+",
-            "POFtradWubi86",
-            "1.0"
+            systemName,
+            version
         );
     }
     
-    private void generateSimpWubi86DictForRime()
+    private void generateSimpWubi86DictForRime(
+        string systemName, 
+        string version)
     {
         GenerateAnyForeignInputMethod(
             FilePaths.Wubi86DictStaticFile ,//.Array30DictStaticFile,
@@ -399,19 +494,25 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
             @"^\p{L}\t[a-z]+",
             @"^\p{L}",
             @"\t[a-z]+",
-            "POFsimpWubi86",
-            "1.0"
+            systemName,
+            version
         );
     }
 
-    private void generateTradWubi86SchemaForRIME()
+    private void generateTradWubi86SchemaForRIME(
+        string systemName, 
+        string version, 
+        string versionDate)
     {
         List<string> testIntro = UtilityFunctions.introTextForSchema(
-            "POFtradWubi86", // SCHEMAID
+            systemName, // SCHEMAID
             "cmlykke", // AUTHOR
-            "1.0", //VERSION
-            "\r\n    A translator of POF codes to Wubi 86 codes\r\n    based on: https://github.com/rime/rime-wubi", // \r\n    EXTRA\r\n    DESCRIPTION
-            "POFtradWubi86", //DICTIONARY
+            version, //VERSION
+            "\r\n    Version date: " + 
+            versionDate + 
+            "\r\n    A translator of POF codes to Wubi 86 codes"+
+            "\r\n    based on: https://github.com/rime/rime-wubi", // \r\n    EXTRA\r\n    DESCRIPTION
+            systemName, //DICTIONARY
             "`[a-z]*$" //REVERSELOOKUP
         );
 
@@ -423,14 +524,20 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
         File.WriteAllText(simplifiedOutput, resultSimplified);     
     }
     
-    private void generateSimpWubi86SchemaForRIME()
+    private void generateSimpWubi86SchemaForRIME(
+        string systemName, 
+        string version, 
+        string versionDate)
     {
         List<string> testIntro = UtilityFunctions.introTextForSchema(
-            "POFsimpWubi86", // SCHEMAID
+            systemName, // SCHEMAID
             "cmlykke", // AUTHOR
-            "1.0", //VERSION
-            "\r\n    A translator of POF codes to Wubi 86 codes\r\n    based on: https://github.com/rime/rime-wubi", // \r\n    EXTRA\r\n    DESCRIPTION
-            "POFsimpWubi86", //DICTIONARY
+            version, //VERSION
+            "\r\n    Version date: " + 
+            versionDate + 
+            "\r\n    A translator of POF codes to Wubi 86 codes"+
+            "\r\n    based on: https://github.com/rime/rime-wubi", // \r\n    EXTRA\r\n    DESCRIPTION
+            systemName, //DICTIONARY
             "`[a-z]*$" //REVERSELOOKUP
         );
 
@@ -442,7 +549,9 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
         File.WriteAllText(simplifiedOutput, resultSimplified);     
     }
     
-    private void generateTradArray30DictForRime()
+    private void generateTradArray30DictForRime(
+        string systemName, 
+        string version)
     {
         GenerateAnyForeignInputMethod(
             FilePaths.Array30DictStaticFile,
@@ -451,12 +560,14 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
             @"^\p{L}\t[a-z,./;]+", // @"^\p{L}\t[a-z]+",
             @"^\p{L}",
             @"\t[a-z,./;]+",
-            "POFtradAr30",
-            "1.0"
+            systemName,
+            version
         );
     }
     
-    private void generateSimpArray30DictForRime()
+    private void generateSimpArray30DictForRime(
+        string systemName, 
+        string version)
     {
         GenerateAnyForeignInputMethod(
             FilePaths.Array30DictStaticFile,
@@ -465,20 +576,26 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
             @"^\p{L}\t[a-z,./;]+",
             @"^\p{L}",
             @"\t[a-z,./;]+",
-            "POFsimpAr30",
-            "1.0"
+            systemName,
+            version
         );
     }
     
 
-    private void generateTradArray30SchemaForRIME()
+    private void generateTradArray30SchemaForRIME(
+        string systemName, 
+        string version, 
+        string versionDate)
     {
         List<string> testIntro = UtilityFunctions.introTextForSchema(
-            "POFtradAr30", // SCHEMAID
+            systemName, // SCHEMAID
             "cmlykke", // AUTHOR
-            "1.0", //VERSION
-            "\r\n    A translator of POF codes to Array 30 codes\r\n    based on: https://github.com/rime/rime-array", // \r\n    EXTRA\r\n    DESCRIPTION
-            "POFtradAr30", //DICTIONARY
+            version, //VERSION
+            "\r\n    Version date: " + 
+            versionDate + 
+            "\r\n    A translator of POF codes to Array 30 codes"+
+            "\r\n    based on: https://github.com/rime/rime-array", // \r\n    EXTRA\r\n    DESCRIPTION
+            systemName, //DICTIONARY
             "`[a-z,./;]*$" //REVERSELOOKUP
         ); 
         
@@ -490,14 +607,20 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
         File.WriteAllText(simplifiedOutput, resultSimplified);     
     }
     
-    private void generateSimpArray30SchemaForRIME()
+    private void generateSimpArray30SchemaForRIME(
+        string systemName, 
+        string version, 
+        string versionDate)
     {
         List<string> testIntro = UtilityFunctions.introTextForSchema(
-            "POFsimpAr30", // SCHEMAID
+            systemName, // SCHEMAID
             "cmlykke", // AUTHOR
-            "1.0", //VERSION
-            "\r\n    A translator of POF codes to Array 30 codes\r\n    based on: https://github.com/rime/rime-array", // \r\n    EXTRA\r\n    DESCRIPTION
-            "POFsimpAr30", //DICTIONARY
+            version, //VERSION
+            "\r\n    Version date: " + 
+            versionDate + 
+            "\r\n    A translator of POF codes to Array 30 codes"+
+            "\r\n    based on: https://github.com/rime/rime-array", // \r\n    EXTRA\r\n    DESCRIPTION
+            systemName, //DICTIONARY
             "`[a-z,./;]*$" //REVERSELOOKUP
         ); 
         
@@ -510,7 +633,9 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
     }
     
     
-    private void generateTradCangjieDictForRime()
+    private void generateTradCangjieDictForRime(
+        string systemName, 
+        string version)
     {
         GenerateAnyForeignInputMethod(
             FilePaths.cangjie5DictStaticFile,
@@ -519,12 +644,14 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
             @"^\p{L}\t[a-z]+",
             @"^\p{L}",
             @"\t[a-z]+",
-            "POFtradCJ5",
-            "1.0"
+            systemName,
+            version
         );
     }
 
-    private void generateSimpCangjieDictForRime()
+    private void generateSimpCangjieDictForRime(
+        string systemName, 
+        string version)
     {
         GenerateAnyForeignInputMethod(
             FilePaths.cangjie5DictStaticFile,
@@ -533,20 +660,26 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
             @"^\p{L}\t[a-z]+",
             @"^\p{L}",
             @"\t[a-z]+",
-            "POFsimpCJ5",
-            "1.0"
+            systemName,
+            version
         );
     }
     
 
-    private void generateTradCangjieSchemaForRIME()
+    private void generateTradCangjieSchemaForRIME(
+        string systemName, 
+        string version, 
+        string versionDate)
     {
         List<string> testIntro = UtilityFunctions.introTextForSchema(
-            "POFtradCJ5", // SCHEMAID
+            systemName, // SCHEMAID
             "cmlykke", // AUTHOR
-            "1.0", //VERSION
-            "\r\n    A translator of POF codes to Cangjie5 codes\r\n    based on: https://github.com/rime/rime-cangjie", // \r\n    EXTRA\r\n    DESCRIPTION
-            "POFtradCJ5", //DICTIONARY
+            version, //VERSION
+            "\r\n    Version date: " + 
+            versionDate + 
+            "\r\n    A translator of POF codes to Cangjie5 codes"+
+            "\r\n    based on: https://github.com/rime/rime-cangjie", // \r\n    EXTRA\r\n    DESCRIPTION
+            systemName, //DICTIONARY
             "`[a-z,.]*$" //REVERSELOOKUP
         ); 
         
@@ -558,14 +691,20 @@ public class GenerateOtherShapeSystemHelpers : TestSchemaBeforePrintSetup
         File.WriteAllText(simplifiedOutput, resultSimplified);     
     }
     
-    private void generateSimpCangjieSchemaForRIME()
+    private void generateSimpCangjieSchemaForRIME(
+        string systemName, 
+        string version, 
+        string versionDate)
     {
         List<string> testIntro = UtilityFunctions.introTextForSchema(
-            "POFsimpCJ5", // SCHEMAID
+            systemName, // SCHEMAID
             "cmlykke", // AUTHOR
-            "1.0", //VERSION
-            "\r\n    A translator of POF codes to Cangjie5 codes\r\n    based on: https://github.com/rime/rime-cangjie", // \r\n    EXTRA\r\n    DESCRIPTION
-            "POFsimpCJ5", //DICTIONARY
+            version, //VERSION
+            "\r\n    Version date: " + 
+            versionDate + 
+            "\r\n    A translator of POF codes to Cangjie5 codes"+
+            "\r\n    based on: https://github.com/rime/rime-cangjie", // \r\n    EXTRA\r\n    DESCRIPTION
+            systemName, //DICTIONARY
             "`[a-z,.]*$" //REVERSELOOKUP
         ); 
         
