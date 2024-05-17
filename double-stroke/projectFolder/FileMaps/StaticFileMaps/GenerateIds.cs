@@ -16,7 +16,7 @@ public class GenerateIds
     {
         Dictionary<string, IdsBasicRecord> idsMap = generateIdsMap(idsPath, priviledgedExceptions);
         string json = JsonSerializer.Serialize(idsMap);
-        File.WriteAllText(newPathForSaveFile, json);
+        //File.WriteAllText(newPathForSaveFile, json);
 
         var bamboo = idsMap.GetValueOrDefault("竹");
 
@@ -48,10 +48,9 @@ public class GenerateIds
         //string rawIds,
         //    List<UnicodeCharacter> rolledOutIds,
         //List<UnicodeCharacter> rolledOutIdsWithNoShape
-        var latin = latinCharcters();
-        var allUnwanted = irrelevantShapeAndLatinCharacters();
-        Dictionary<string, List<UnicodeCharacter>> genRawIds = 
-            generateRawIdsMap(idsPath, priviledgedElemn);
+        var latin = UtilityFunctions.latinCharcters();
+        var allUnwanted = UtilityFunctions.irrelevantShapeAndLatinCharacters();
+        Dictionary<string, List<UnicodeCharacter>> genRawIds = UtilityFunctions.generateRawIdsMap(idsPath, priviledgedElemn);
         var endResult = new Dictionary<string, IdsBasicRecord>();
         foreach (var item in genRawIds)
         {
@@ -77,7 +76,8 @@ public class GenerateIds
                 IdsBasicRecord basicRec = new IdsBasicRecord(
                     rawitems,
                     rollOut.Select(uc => uc.Value).ToList(), 
-                    rollOutNoUnwanted.Select(uc => uc.Value).ToList());
+                    rollOutNoUnwanted.Select(uc => uc.Value).ToList(),
+                    null);
                 endResult.Add(item.Key, basicRec);
             }
             //var rolledOutIds = generateRolledOutids(item.Key, tempDictionary);
@@ -129,7 +129,7 @@ public class GenerateIds
             var test = "";
         }
      */
-
+/*
     private Dictionary<string, List<UnicodeCharacter>> generateRawIdsMap(
         string idsPath, Dictionary<string, string> priviledgedElemn)
     {
@@ -163,7 +163,8 @@ public class GenerateIds
         }
         return tempDictionary;
     }
-    
+    */
+    /*
     private List<UnicodeCharacter> irrelevantShapeAndLatinCharacters()
     {
         List<UnicodeCharacter> result = new List<UnicodeCharacter>();
@@ -171,13 +172,13 @@ public class GenerateIds
         var ideographics = UtilityFunctions.CreateUnicodeCharacters(ideographicDiscription);
         var final = ideographics.Concat(latinCharcters()).ToList();
         return final;
-    }
-
+    }*/
+/*
     private List<UnicodeCharacter> latinCharcters()
     {
         string asciiStr = UtilityFunctions.GetAllAsciiCharacters();
         var ascii = UtilityFunctions.CreateUnicodeCharacters(asciiStr);
         return ascii;
-    }
+    }*/
 
 }

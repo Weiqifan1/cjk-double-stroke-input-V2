@@ -3,5 +3,6 @@
 public record IdsBasicRecord(
     List<string> rawIds,
     List<string> rolledOutIds,
-    List<string> rolledOutIdsWithNoShape
+    List<string> rolledOutIdsWithNoShape,
+    IdsRecur recursiveIds
     );

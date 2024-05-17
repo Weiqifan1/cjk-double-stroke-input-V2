@@ -1,4 +1,5 @@
-﻿using double_stroke.projectFolder.FileMaps.GenerateFilesController;
+﻿using double_stroke.projectFolder.FileMaps;
+using double_stroke.projectFolder.FileMaps.GenerateFilesController;
 using test_double_stroke.testExceptions;
 using test_double_stroke.testSchemdictValuesBeforePrint;
 
@@ -21,6 +22,8 @@ public class testSetup
     protected static Dictionary<string, HashSet<SchemeRecord>> codeToSchema;
     protected static Dictionary<string, FrequencyRecord> junda5001;
     protected static Dictionary<string, FrequencyRecord> tzai5001;
+    protected static Dictionary<string, IdsRecur> idsrecur;
+
     
     [OneTimeSetUp]
     public void Setup()
@@ -62,7 +65,7 @@ public class testSetup
         codeExceptionsFromIds = exp.generateCodeExceptionsFromCharacter();
         codeExceptionsFromCodepoint = exp.generateCodeExceptionsFromCodepoint();
         idsMap = genIds.readIdsMap(newPathForSaveFile);
-        var codepointMap = gen.generateCodepointMap(
+        var codepointMap = UtilityFunctions.generateCodepointMap(
             codeExceptionsFromIds, idsMap, codepointPath);
         foundExceptions = gen.generateFoundEsceptionsMap(codepointMap, codeExceptionsFromIds, codeExceptionsFromCodepoint, idsMap);
 
@@ -84,6 +87,7 @@ public class testSetup
         charToSchema = getCharToSchema();
         junda5001 = gen.extractFirst5001Junda(jundaPath);
         tzai5001 = gen.extractFirst5001Tzai(tzaiPath);
+        //idsrecur = GenerateIdsRecursionMap.readZhengmaWords();
         string test = "";
     }
     

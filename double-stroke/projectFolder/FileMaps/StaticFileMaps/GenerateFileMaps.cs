@@ -5,12 +5,10 @@ using Microsoft.VisualBasic;
 
 namespace double_stroke.projectFolder.StaticFileMaps;
 
-
 using System.Data;
 using System;
 using System.Collections.Generic;
 using System.IO;
-
 
 public class GenerateFileMaps
 {
@@ -32,7 +30,7 @@ public class GenerateFileMaps
 
         var codeExceptionsFromCharacter = exp.generateCodeExceptionsFromCharacter();
         Dictionary<string, IdsBasicRecord> idsMap = genIds.generateIdsMap(idsPath, priviledgedExceptions);
-        var codepointMap = generateCodepointMap(
+        var codepointMap = UtilityFunctions.generateCodepointMap(
             codeExceptionsFromCharacter, idsMap, codepointPath);
         var codeExceptionsFromCodepoint = exp.generateCodeExceptionsFromCodepoint();
         Dictionary<string, CodepointWithExceptionRecord> foundExceptions = 
@@ -45,7 +43,7 @@ public class GenerateFileMaps
     }
     
     
-    
+    /*
     public Dictionary<string, List<string>> GenerateUniDictionary(IEnumerable<string> codepointLines)
     {
         //add the missing codepointLines
@@ -77,8 +75,8 @@ public class GenerateFileMaps
         
         return uniDict;
     }
-
-    
+*/
+    /*
     private void addToUniDict(string input, Dictionary<string, List<string>> uniDict)
     {
         if (!input.StartsWith("U+")) return;
@@ -96,7 +94,7 @@ public class GenerateFileMaps
         }
         uniDict[character.Value].Add(splitstr[2]);
     }
-
+*/
     
     public Dictionary<string, CodepointWithExceptionRecord> generateFoundEsceptionsMap(
         Dictionary<string, CodepointBasicRecord> codepointMap, 
@@ -308,7 +306,7 @@ public class GenerateFileMaps
     }
 */
     
-    
+    /*
     public Dictionary<string, CodepointBasicRecord> generateCodepointMap(
         Dictionary<string, CodepointExceptionRecord> codeExceptions,
         Dictionary<string, IdsBasicRecord> idsMap,
@@ -320,8 +318,8 @@ public class GenerateFileMaps
         //var test = uniDict.GetValueOrDefault("鰠");
         var result = GenerateFinalUnicodeMap(uniDict, codeExceptions, idsMap);
         return result;
-    }
-
+    }*/
+/*
     private Dictionary<string, CodepointBasicRecord> GenerateFinalUnicodeMap(
         Dictionary<string, List<string>> uniDict, 
         Dictionary<string, CodepointExceptionRecord> codeExceptions, 
@@ -341,7 +339,8 @@ public class GenerateFileMaps
         }
         return finalUnicodeMap;
     }
-
+*/
+/*
     private CodepointBasicRecord generateCodepointRecord(
         KeyValuePair<string, List<string>> entry, 
         Dictionary<string, CodepointExceptionRecord> codeExceptions, 
@@ -358,7 +357,7 @@ public class GenerateFileMaps
         string test = "";
         return result;
     }
-
+*/
     /*
     public Dictionary<string, CodepointBasicRecord> generateCodepointMap()
     {
@@ -632,5 +631,25 @@ public class GenerateFileMaps
         var tzai5001Liens = tzaiLines.Take(5001).ToList();
         result = tzaiMapFromLines(tzai5001Liens);
         return result;
+    }
+
+    public Dictionary<string, string> manualIdsConway(string manualConwayPath)
+    {
+        var manualIdsLinesRaw = UtilityFunctions.ReadLinesFromFile(manualConwayPath);
+        var manualIdsLines = manualIdsLinesRaw
+            .Where(str => !str.StartsWith("#")).ToList();
+        return manualIdsConwayFromLines(manualIdsLines);
+    }
+
+    private Dictionary<string, string> manualIdsConwayFromLines(List<string> manualIdsLines)
+    {
+        var dictionary = new Dictionary<string, string>();
+
+        foreach (string input in manualIdsLines)
+        {
+            string[] splitstr = input.Split(' ');
+            dictionary.Add(splitstr[0].Trim(), splitstr[1].Trim());
+        }
+        return dictionary;
     }
 }

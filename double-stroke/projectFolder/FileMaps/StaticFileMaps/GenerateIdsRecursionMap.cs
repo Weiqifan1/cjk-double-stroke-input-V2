@@ -1,0 +1,216 @@
+namespace double_stroke.projectFolder.StaticFileMaps;
+
+//the purpose of the class is to create a map of characters 
+//to recursive map of its elements with associated codes
+//form here, near redundance-free multi-character word codes 
+//can be created
+
+//first step: find out how much redundancy would be caused
+public static class GenerateIdsRecursionMap
+{
+    //TODO: write code and tests
+    public static Dictionary<string, IdsRecur> readZhengmaWords()
+    {
+        Dictionary<string, IdsRecur> result = new Dictionary<string, IdsRecur>();
+        return result;
+    }
+    
+    public static IdsRecur createSingleRecur(
+        long eachChar,
+        Dictionary<string, List<UnicodeCharacter>> genRawIds,
+        //Dictionary<string, CodepointBasicRecord> codepointMap,
+        Dictionary<string, string> manualIdsConway,
+        Dictionary<string, CodepointBasicRecord> codepointConway,
+        string hanzi)
+    {
+        List<UnicodeCharacter> basicIds = genRawIds.GetValueOrDefault(hanzi);
+        CodepointBasicRecord basicConway = codepointConway.GetValueOrDefault(hanzi); 
+        if (basicIds == null || basicConway == null) { return null; }
+        string rawCodes = basicConway.rawCodepoint;
+        IdsRecur testres = initiateRecur(
+            hanzi,
+            hanzi,
+            hanzi,  
+            genRawIds, 
+            manualIdsConway, codepointConway);
+        return testres;
+    }
+
+    private static IdsRecur initiateRecur(
+        string originalCharacter,
+        string previousCharacter,
+        string character,
+        Dictionary<string, List<UnicodeCharacter>> genRawIds,
+        Dictionary<string, string> manualIdsConway,
+        Dictionary<string, CodepointBasicRecord> codepointConway)
+    {
+        List<UnicodeCharacter> idsFromMapRaw = getIdsFromMap(character, genRawIds);
+        List<UnicodeCharacter> idsFromMap = idsFromMapRaw
+            .Where(unicodeCharacter => unicodeCharacter != null 
+                   && !IsAscii(unicodeCharacter.Value))
+            .ToList();
+        List<IdsRecur> recurList = new List<IdsRecur>();
+        
+        if (manualIdsConway.ContainsKey(character) || 
+            idsFromMap.Count == 1 && idsFromMap[0].Value == character)
+        {
+            string rawConway;
+            string unambigousConway;
+            if (!manualIdsConway.ContainsKey(character) && 
+                !codepointConway.ContainsKey(character))
+            {
+                string conwayOrNullStr = getRawConwayOrNullStr(previousCharacter, codepointConway);
+                string conwayOriginal = getRawConwayOrNullStr(originalCharacter, codepointConway);
+                throw new Exception("original: " + originalCharacter +
+                                    " originalConway: " + conwayOriginal + " " +
+                    "previous: " + previousCharacter + 
+                    " rawConwayOfPrevious: " + 
+                    conwayOrNullStr +
+                    " " + character + " doesnt have any conway codes");
+            } 
+            else if (!manualIdsConway.ContainsKey(character) &&
+                       conwayCodeIsAmbigous(character, codepointConway))
+            {
+                var originalTestChar = originalCharacter;
+                var originalConwayCode = codepointConway.GetValueOrDefault(originalCharacter);
+                throw new Exception(character + " is ambigous: " + 
+                                    codepointConway.GetValueOrDefault(character));
+            }
+            else
+            {
+                try {
+                    rawConway = getRawConway(manualIdsConway, codepointConway, character);
+                    unambigousConway = getUnambigousCnway(manualIdsConway, codepointConway, character);
+                }
+                catch (Exception x)
+                {
+                    throw x;
+                }
+
+            }
+            return new IdsRecur(character, rawConway, unambigousConway, new List<IdsRecur>());
+        }
+        var nonNull = idsFromMap.Where(item => item != null).ToList();
+
+        foreach (var VARIABLE in nonNull)
+        {
+            //var previousCharConway = codepointConway.GetValueOrDefault(previousCharacter);
+            
+            if (VARIABLE.Value == "③")
+            {
+                var previousCharConway = codepointConway.GetValueOrDefault(previousCharacter);
+                string test = "";
+            }
+
+            recurList.Add(
+                initiateRecur(originalCharacter,
+                    character,
+                    VARIABLE.Value, 
+                    genRawIds, 
+                    manualIdsConway, codepointConway));
+        }
+        return new IdsRecur(character, "", "", recurList);
+    }
+
+    private static string getRawConwayOrNullStr(string character, Dictionary<string, CodepointBasicRecord> codepointConway)
+    {
+        if (!codepointConway.ContainsKey(character) 
+            || codepointConway.GetValueOrDefault(character).rawCodepoint == null)
+        {
+            return "null";
+        }
+        else
+        {
+            return codepointConway.GetValueOrDefault(character).rawCodepoint;
+        }
+    }
+
+    private static string getUnambigousCnway(
+        Dictionary<string, string> manualIdsConway, 
+        Dictionary<string, CodepointBasicRecord> codepointConway, 
+        string character)
+    {
+        string? manual = manualIdsConway.GetValueOrDefault(character);
+        if (manual != null)
+        {
+            return manual;
+        }
+        CodepointBasicRecord? rawConwayObj = codepointConway.GetValueOrDefault(character);
+        if (rawConwayObj != null && 
+            rawConwayObj.rawCodepoint != null && 
+            !conwayCodeIsAmbigous(character, codepointConway))
+        {
+            return rawConwayObj.rawCodepoint;
+        } 
+        else
+        {
+            throw new Exception(character + ": No Unambigous conway code");
+        }
+    }
+
+    private static string getRawConway(
+        Dictionary<string, string> manualIdsConway, 
+        Dictionary<string, CodepointBasicRecord> codepointConway, 
+        string character)
+    {
+        CodepointBasicRecord? rawConwayObj = codepointConway.GetValueOrDefault(character);
+        if (rawConwayObj != null && rawConwayObj.rawCodepoint != null)
+        {
+            return rawConwayObj.rawCodepoint;
+        }
+        if (!manualIdsConway.ContainsKey(character))
+        {
+            throw new Exception(character + ": No Raw conway code");
+        }
+        return manualIdsConway.GetValueOrDefault(character);
+    }
+
+    private static bool conwayCodeIsAmbigous(
+        string character, 
+        Dictionary<string, CodepointBasicRecord> codepointConway)
+    {
+        if (character == "一")
+        {
+            string test = "";
+        }
+
+        if (!codepointConway.ContainsKey(character))
+        {
+            return true;
+        }
+        var conwayresult = codepointConway.GetValueOrDefault(character);
+        char[] characters = new[] { '(', ')', '|' };
+        bool result = conwayresult.rawCodepoint.IndexOfAny(characters) >= 0;
+        return result;
+    }
+
+    public static bool IsAscii(string value)
+    {
+        return value.All(c => c <= 127);
+    }
+    
+    private static List<UnicodeCharacter> getIdsFromMap(
+        string character,
+        Dictionary<string, List<UnicodeCharacter>> genRawIds)
+    {
+        if (genRawIds.ContainsKey(character))
+        {
+            return genRawIds.GetValueOrDefault(character).Select(uc => uc).ToList();    
+        }
+
+        return new List<UnicodeCharacter>();
+    }
+
+
+    private static Dictionary<string, string> elemToRawConway()
+    {
+        Dictionary<string, string> res = new Dictionary<string, string>();
+
+        res["key1"] = "value1"; 
+        res["key1"] = "value1"; 
+        res["key1"] = "value1"; 
+        
+        return res;
+    }
+
+}
