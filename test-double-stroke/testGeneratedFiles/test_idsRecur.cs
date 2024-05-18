@@ -78,7 +78,13 @@ public class test_idsRecur
             listTuples.Add(testRegenerated);
             try
             {
-                Assert.AreEqual(testRegenerated.Item2, testRegenerated.Item3);
+                if (item == "那")
+                {
+                    string test2 = "";
+                }
+                HashSet<string> rolledOut = RolloutStrokes.rolloutString(testRegenerated.Item2);
+                bool unambiguasContainedInRollout = rolledOut.Contains(testRegenerated.Item4);
+                Assert.AreEqual(true,unambiguasContainedInRollout);
             }
             catch (Exception e)
             {

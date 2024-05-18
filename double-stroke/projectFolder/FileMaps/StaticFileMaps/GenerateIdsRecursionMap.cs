@@ -55,7 +55,7 @@ public static class GenerateIdsRecursionMap
             .Where(unicodeCharacter => unicodeCharacter != null 
                    && !IsAscii(unicodeCharacter.Value))
             .ToList();
-        List<IdsRecur> recurList = new List<IdsRecur>();
+        List<IdsRecur> recurListRaw = new List<IdsRecur>();
         
         if (manualIdsConway.ContainsKey(character) || 
             (idsFromMap.Count == 1 && idsFromMap[0].Value == character))
@@ -94,11 +94,11 @@ public static class GenerateIdsRecursionMap
 
             }
 
-            if (new List<string>{"勺","白","的" }.Contains(character))
+            if (new List<string>{"道","那" }.Contains(character))
             {
                 string test = "";
             }
-            string regeneratedRawConwayV2 = createRegeneratedRawConway(character, recurList, rawConway, unambigousConway);
+            string regeneratedRawConwayV2 = createRegeneratedRawConway(character, recurListRaw, rawConway, unambigousConway);
             return new IdsRecur(character, rawConway, unambigousConway, regeneratedRawConwayV2, new List<IdsRecur>());
         }
         var nonNull = idsFromMap.Where(item => item != null).ToList();
@@ -113,13 +113,15 @@ public static class GenerateIdsRecursionMap
                 string test = "";
             }
 
-            recurList.Add(
+            recurListRaw.Add(
                 initiateRecur(originalCharacter,
                     character,
                     VARIABLE.Value, 
                     genRawIds, 
                     manualIdsConway, codepointConway));
         }
+
+        List<IdsRecur> recurList = rearrageRecurList(recurListRaw);
         
         try {
             rawConway = getRawConway(manualIdsConway, codepointConway, character);
@@ -131,7 +133,7 @@ public static class GenerateIdsRecursionMap
         }
 
         //"勺","白","的", 
-        if (new List<string>{"是" }.Contains(character))
+        if (new List<string>{"道" }.Contains(character))
         {
             string test = "";
         }
@@ -146,10 +148,7 @@ public static class GenerateIdsRecursionMap
         if (IsWithinUnicodeRangeOrEmpty(character))
         {
             return "";
-        } else if (rawConway != null && rawConway.Length > 0)
-        {
-            return rawConway;
-        }
+        } 
 
         string result = "";
         foreach (var VARIABLE in recurList)
@@ -166,7 +165,6 @@ public static class GenerateIdsRecursionMap
         {
             result = unambigousConway;
         }
-
         return result;
     }
 
@@ -319,4 +317,22 @@ public static class GenerateIdsRecursionMap
         return res;
     }
 
+    
+    private static List<IdsRecur> rearrageRecurList(List<IdsRecur> recurListRaw)
+    {
+        if (recurListRaw == null || recurListRaw.Count == 0)
+        {
+            return new List<IdsRecur>();
+        }
+        if (recurListRaw[0].elem == "⿺" && recurListRaw[1].elem == "辶")
+        {
+            var first = recurListRaw[0];
+            var second = recurListRaw[1];
+            var updatedList = recurListRaw.Skip(2).ToList();
+            updatedList.Insert(0, first);
+            updatedList.Add(second);
+            return updatedList;
+        }
+        return recurListRaw;
+    }
 }
