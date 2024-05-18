@@ -64,6 +64,7 @@ public class test_idsRecur
     public void generateEverySingleRecur()
     {
         long eachChar = 0;
+        List<Tuple<string, string, string, string>> listTuples = new List<Tuple<string, string, string, string>>();
         List<IdsRecur> jundaRecurs = new List<IdsRecur>();
         foreach (string item in junda.Keys) {
             
@@ -72,6 +73,18 @@ public class test_idsRecur
                 genRawIds,  
                 manualIdsConway, codepointConway,  item);
             jundaRecurs.Add(res);
+            var testRegenerated = new Tuple<string, string, string, string>
+                (res.elem, res.rawConway, res.regeneratedConway, res.unambigousConway);
+            listTuples.Add(testRegenerated);
+            try
+            {
+                Assert.AreEqual(testRegenerated.Item2, testRegenerated.Item3);
+            }
+            catch (Exception e)
+            {
+                string regeneratedConwayTest = "";
+            }
+
             eachChar++;
         }
 

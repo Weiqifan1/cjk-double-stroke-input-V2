@@ -1,3 +1,6 @@
+# list of strokeorder difference between chinese and japanese
+#https://japanese.stackexchange.com/questions/47838/japanese-kanjis-and-chinese-characters-a-request-for-comparative-stroke-order
+#
 不 1324 1324
 在 132121 132121
 𠂇 13 13 有 13(2|3)511
@@ -67,3 +70,8 @@
 𠄎 5 5 仍 32(35|53)
 属 513325125214 513325125(5|21)4
 舟 335414 335(414|441) 船 335(414|441)(34|35)251
+威 131531543 131531(534|543)
+幺 554 554 率 41554413412
+甚 122111345 122111(34|35)5
+犭 353 (353|533) 独 (353|533)251214
+叚 512115154 (251|512)115154 假 32(251|512)115154

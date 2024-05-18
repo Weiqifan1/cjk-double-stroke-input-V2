@@ -4,5 +4,6 @@ public record IdsRecur(
         string elem,
         string rawConway,
         string unambigousConway,
+        string regeneratedConway,
         List<IdsRecur> body);
     

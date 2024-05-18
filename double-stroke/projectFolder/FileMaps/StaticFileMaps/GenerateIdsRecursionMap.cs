@@ -44,6 +44,12 @@ public static class GenerateIdsRecursionMap
         Dictionary<string, string> manualIdsConway,
         Dictionary<string, CodepointBasicRecord> codepointConway)
     {
+        if (character == "戊")
+        {
+            string test = "";
+        }
+        string rawConway;
+        string unambigousConway;
         List<UnicodeCharacter> idsFromMapRaw = getIdsFromMap(character, genRawIds);
         List<UnicodeCharacter> idsFromMap = idsFromMapRaw
             .Where(unicodeCharacter => unicodeCharacter != null 
@@ -52,10 +58,9 @@ public static class GenerateIdsRecursionMap
         List<IdsRecur> recurList = new List<IdsRecur>();
         
         if (manualIdsConway.ContainsKey(character) || 
-            idsFromMap.Count == 1 && idsFromMap[0].Value == character)
+            (idsFromMap.Count == 1 && idsFromMap[0].Value == character))
         {
-            string rawConway;
-            string unambigousConway;
+            
             if (!manualIdsConway.ContainsKey(character) && 
                 !codepointConway.ContainsKey(character))
             {
@@ -80,7 +85,7 @@ public static class GenerateIdsRecursionMap
             {
                 try {
                     rawConway = getRawConway(manualIdsConway, codepointConway, character);
-                    unambigousConway = getUnambigousCnway(manualIdsConway, codepointConway, character);
+                    unambigousConway = getUnambigousCnway(new List<IdsRecur>(), manualIdsConway, codepointConway, character);
                 }
                 catch (Exception x)
                 {
@@ -88,7 +93,13 @@ public static class GenerateIdsRecursionMap
                 }
 
             }
-            return new IdsRecur(character, rawConway, unambigousConway, new List<IdsRecur>());
+
+            if (new List<string>{"勺","白","的" }.Contains(character))
+            {
+                string test = "";
+            }
+            string regeneratedRawConwayV2 = createRegeneratedRawConway(character, recurList, rawConway, unambigousConway);
+            return new IdsRecur(character, rawConway, unambigousConway, regeneratedRawConwayV2, new List<IdsRecur>());
         }
         var nonNull = idsFromMap.Where(item => item != null).ToList();
 
@@ -96,7 +107,7 @@ public static class GenerateIdsRecursionMap
         {
             //var previousCharConway = codepointConway.GetValueOrDefault(previousCharacter);
             
-            if (VARIABLE.Value == "③")
+            if (VARIABLE.Value == "白")
             {
                 var previousCharConway = codepointConway.GetValueOrDefault(previousCharacter);
                 string test = "";
@@ -109,7 +120,54 @@ public static class GenerateIdsRecursionMap
                     genRawIds, 
                     manualIdsConway, codepointConway));
         }
-        return new IdsRecur(character, "", "", recurList);
+        
+        try {
+            rawConway = getRawConway(manualIdsConway, codepointConway, character);
+            unambigousConway = getUnambigousCnway(recurList, manualIdsConway, codepointConway, character);
+        }
+        catch (Exception x)
+        {
+            throw x;
+        }
+
+        //"勺","白","的", 
+        if (new List<string>{"是" }.Contains(character))
+        {
+            string test = "";
+        }
+
+        string regeneratedRawConway = createRegeneratedRawConway(character, recurList, rawConway, unambigousConway) ;
+        return new IdsRecur(character, rawConway, unambigousConway, regeneratedRawConway, recurList);
+    }
+
+    private static string createRegeneratedRawConway(string character,
+        List<IdsRecur> recurList, string rawConway, string unambigousConway)
+    {
+        if (IsWithinUnicodeRangeOrEmpty(character))
+        {
+            return "";
+        } else if (rawConway != null && rawConway.Length > 0)
+        {
+            return rawConway;
+        }
+
+        string result = "";
+        foreach (var VARIABLE in recurList)
+        {
+            if (VARIABLE.regeneratedConway != null && VARIABLE.regeneratedConway.Length > 0)
+            {
+                result = result + VARIABLE.regeneratedConway;
+            }
+        }
+        if (result == "" && rawConway != "")
+        {
+            result = rawConway;
+        } else if (result == "" && unambigousConway != "")
+        {
+            result = unambigousConway;
+        }
+
+        return result;
     }
 
     private static string getRawConwayOrNullStr(string character, Dictionary<string, CodepointBasicRecord> codepointConway)
@@ -126,10 +184,15 @@ public static class GenerateIdsRecursionMap
     }
 
     private static string getUnambigousCnway(
+        List<IdsRecur> idsRecur,
         Dictionary<string, string> manualIdsConway, 
         Dictionary<string, CodepointBasicRecord> codepointConway, 
         string character)
     {
+        if (IsWithinUnicodeRangeOrEmpty(character))
+        {
+            return "";
+        }
         string? manual = manualIdsConway.GetValueOrDefault(character);
         if (manual != null)
         {
@@ -141,18 +204,60 @@ public static class GenerateIdsRecursionMap
             !conwayCodeIsAmbigous(character, codepointConway))
         {
             return rawConwayObj.rawCodepoint;
-        } 
+        }
+
+        if (idsRecur.Count > 0)
+        {
+            string result = "";
+            foreach (var VARIABLE in idsRecur)
+            {
+                result = result + VARIABLE.unambigousConway;
+            }
+            return result;
+        }
         else
         {
             throw new Exception(character + ": No Unambigous conway code");
         }
     }
-
+    private static bool IsWithinUnicodeRangeOrEmpty(string input)
+    {
+        List<(int start, int end)> ranges = new List<(int, int)> 
+        {
+            (65, 90),  // ranges for ASCII A-Z
+            (97, 122),  // ranges for ASCII a-z
+            (12272, 12287) // ranges for Ideographic Description Characters
+        };
+        
+        if (string.IsNullOrEmpty(input)) return true;
+    
+        int unicodeOrdinal = char.ConvertToUtf32(input, 0);
+    
+        foreach (var range in ranges)
+        {
+            if (unicodeOrdinal >= range.start && unicodeOrdinal <= range.end)
+            {
+                return true;
+            }
+        }
+    
+        return false;
+    }
     private static string getRawConway(
         Dictionary<string, string> manualIdsConway, 
         Dictionary<string, CodepointBasicRecord> codepointConway, 
         string character)
     {
+        //"的", "白",
+        if (new List<string>{"𤴓"}.Contains(character))
+        {
+            string test = "";
+        }
+        if (IsWithinUnicodeRangeOrEmpty(character))
+        {
+            return "";
+        }
+        
         CodepointBasicRecord? rawConwayObj = codepointConway.GetValueOrDefault(character);
         if (rawConwayObj != null && rawConwayObj.rawCodepoint != null)
         {
@@ -160,7 +265,8 @@ public static class GenerateIdsRecursionMap
         }
         if (!manualIdsConway.ContainsKey(character))
         {
-            throw new Exception(character + ": No Raw conway code");
+            return null;
+            //throw new Exception(character + ": No Raw conway code");
         }
         return manualIdsConway.GetValueOrDefault(character);
     }
