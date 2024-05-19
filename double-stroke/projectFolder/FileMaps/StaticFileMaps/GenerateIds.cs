@@ -16,7 +16,7 @@ public class GenerateIds
     {
         Dictionary<string, IdsBasicRecord> idsMap = generateIdsMap(idsPath, priviledgedExceptions);
         string json = JsonSerializer.Serialize(idsMap);
-        //File.WriteAllText(newPathForSaveFile, json);
+        File.WriteAllText(newPathForSaveFile, json);
 
         var bamboo = idsMap.GetValueOrDefault("竹");
 

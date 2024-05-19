@@ -21,7 +21,7 @@ public class test_ids
             //@"..\..\..\..\double-stroke\projectFolder\GeneratedFiles\idsMap.txt");
         GenerateIds genIds = new GenerateIds();
         //cjk-double-stroke-input\double-stroke\projectFolder\GeneratedFiles\idsMap.txt
-        genIds.generateAndSaveIdsMap(idsPath, newPathForSaveFile);
+        //genIds.generateAndSaveIdsMap(idsPath, newPathForSaveFile);
     }
     
     [Test]

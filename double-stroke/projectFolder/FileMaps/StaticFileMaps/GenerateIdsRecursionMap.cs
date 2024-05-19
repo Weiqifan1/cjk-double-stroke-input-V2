@@ -51,11 +51,13 @@ public static class GenerateIdsRecursionMap
         string rawConway;
         string unambigousConway;
         List<UnicodeCharacter> idsFromMapRaw = getIdsFromMap(character, genRawIds);
-        List<UnicodeCharacter> idsFromMap = idsFromMapRaw
+        var idsFromMapSorted = rearrageRecurList(idsFromMapRaw);
+        
+        List<UnicodeCharacter> idsFromMap = idsFromMapSorted
             .Where(unicodeCharacter => unicodeCharacter != null 
                    && !IsAscii(unicodeCharacter.Value))
             .ToList();
-        List<IdsRecur> recurListRaw = new List<IdsRecur>();
+        List<IdsRecur> recurList = new List<IdsRecur>();
         
         if (manualIdsConway.ContainsKey(character) || 
             (idsFromMap.Count == 1 && idsFromMap[0].Value == character))
@@ -98,7 +100,7 @@ public static class GenerateIdsRecursionMap
             {
                 string test = "";
             }
-            string regeneratedRawConwayV2 = createRegeneratedRawConway(character, recurListRaw, rawConway, unambigousConway);
+            string regeneratedRawConwayV2 = createRegeneratedRawConway(character, recurList, rawConway, unambigousConway);
             return new IdsRecur(character, rawConway, unambigousConway, regeneratedRawConwayV2, new List<IdsRecur>());
         }
         var nonNull = idsFromMap.Where(item => item != null).ToList();
@@ -113,15 +115,13 @@ public static class GenerateIdsRecursionMap
                 string test = "";
             }
 
-            recurListRaw.Add(
+            recurList.Add(
                 initiateRecur(originalCharacter,
                     character,
                     VARIABLE.Value, 
                     genRawIds, 
                     manualIdsConway, codepointConway));
         }
-
-        List<IdsRecur> recurList = rearrageRecurList(recurListRaw);
         
         try {
             rawConway = getRawConway(manualIdsConway, codepointConway, character);
@@ -318,13 +318,16 @@ public static class GenerateIdsRecursionMap
     }
 
     
-    private static List<IdsRecur> rearrageRecurList(List<IdsRecur> recurListRaw)
+    private static List<UnicodeCharacter> rearrageRecurList(List<UnicodeCharacter> recurListRaw)
     {
         if (recurListRaw == null || recurListRaw.Count == 0)
         {
-            return new List<IdsRecur>();
+            return new List<UnicodeCharacter>();
         }
-        if (recurListRaw[0].elem == "⿺" && recurListRaw[1].elem == "辶")
+        if (
+            (recurListRaw[0].Value == "⿺" && recurListRaw[1].Value == "辶") ||
+            (recurListRaw[0].Value == "⿺" && recurListRaw[1].Value == "廴")
+            )
         {
             var first = recurListRaw[0];
             var second = recurListRaw[1];
@@ -333,6 +336,20 @@ public static class GenerateIdsRecursionMap
             updatedList.Add(second);
             return updatedList;
         }
+
+        if ((recurListRaw[0].Value == "⿱" && recurListRaw[1].Value == "竹")) //⺮
+        {
+            var first = recurListRaw[0];
+            //var second = recurListRaw[1];
+            var second = new UnicodeCharacter("⺮");
+            var updatedList = recurListRaw.Skip(2).ToList();
+            List<UnicodeCharacter> resultList = new List<UnicodeCharacter>();
+            resultList.Add(first);
+            resultList.Add(second);
+            resultList.AddRange(updatedList);
+            return resultList;
+        }
+
         return recurListRaw;
     }
 }
