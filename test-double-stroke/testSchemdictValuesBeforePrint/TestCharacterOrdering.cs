@@ -122,39 +122,40 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
     [Test]
     public void TestPrintOrderTVIHcharacters_JundaList()
     {
+        string code = "tvig"; 
         var simp = simplifiedOutputList;
-        var index = simp.IndexOf("秀\ttvih");
+        var index = simp.IndexOf("秀\t"+code);
    
         //秀	tvih Tzai 20948 Junda 24620 UNI 
-        Assert.AreEqual(simp[index], "秀\ttvih");
+        Assert.AreEqual(simp[index], "秀\t" + code);
         //秃	tvih Tzai 0     Junda 3640  UNI 
-        Assert.AreEqual(simp[index+1], "秃\ttvih");
+        Assert.AreEqual(simp[index+1], "秃\t"+ code);
         //稠	tvih Tzai 334   Junda 1194  UNI 
-        Assert.AreEqual(simp[index+2], "稠\ttvih");  
+        Assert.AreEqual(simp[index+2], "稠\t"+code);  
         //黏	tvih Tzai 2958  Junda 862   UNI  
-        Assert.AreEqual(simp[index+3], "黏\ttvih");
+        Assert.AreEqual(simp[index+3], "黏\t"+code);
         //禿	tvih Tzai 2552  Junda 10    UNI 
-        Assert.AreEqual(simp[index+4], "禿\ttvih");
+        Assert.AreEqual(simp[index+4], "禿\t"+code);
         //秳	tvih Tzai 0     Junda 1     UNI 31219 
-        Assert.AreEqual(simp[index+5], "秳\ttvih");  
+        Assert.AreEqual(simp[index+5], "秳\t"+code);  
         //穚	tvih Tzai 30    Junda 0     UNI 
-        Assert.AreEqual(simp[index+6], "穚\ttvih");
+        Assert.AreEqual(simp[index+6], "穚\t"+code);
         //秪	tvih Tzai 11    Junda 0     UNI 
-        Assert.AreEqual(simp[index+7], "秪\ttvih");
+        Assert.AreEqual(simp[index+7], "秪\t"+code);
         //䄧	tvih Tzai 0     Junda 0     UNI 16679 
-        Assert.AreEqual(simp[index+8], "䄧\ttvih"); 
+        Assert.AreEqual(simp[index+8], "䄧\t"+code); 
         //䄪	tvih Tzai 0     Junda 0     UNI 16682 
-        Assert.AreEqual(simp[index+9], "䄪\ttvih"); 
+        Assert.AreEqual(simp[index+9], "䄪\t"+code); 
         //䅂	tvih Tzai 0     Junda 0     UNI 16706 
-        Assert.AreEqual(simp[index+10], "䅂\ttvih"); 
+        Assert.AreEqual(simp[index+10], "䅂\t"+code); 
         //䅮	tvih Tzai 0     Junda 0     UNI 16750 
-        Assert.AreEqual(simp[index+11], "䅮\ttvih"); 
+        Assert.AreEqual(simp[index+11], "䅮\t"+code); 
         //䆌	tvih Tzai 0     Junda 0     UNI 16780 
-        Assert.AreEqual(simp[index+12], "䆌\ttvih"); 
+        Assert.AreEqual(simp[index+12], "䆌\t"+code); 
         //䵕	tvih Tzai 0     Junda 0     UNI 19797 
-        Assert.AreEqual(simp[index+13], "䵕\ttvih"); 
+        Assert.AreEqual(simp[index+13], "䵕\t"+code); 
         //秴	tvih Tzai 0     Junda 0     UNI 31220 
-        Assert.AreEqual(simp[index+14], "秴\ttvih"); 
+        Assert.AreEqual(simp[index+14], "秴\t"+code); 
         
         Assert.True(true);
     }
@@ -162,39 +163,40 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
     [Test]
     public void TestPrintOrderTVIHcharacters_TzaiList()
     {
+        string code = "tvig"; 
         var trad = traditionalOutputList;
-        var index = trad.IndexOf("秀\ttvih");
+        var index = trad.IndexOf("秀\t"+code);
    
         //秀	tvih Tzai 20948 Junda 24620 UNI 
-        Assert.AreEqual(trad[index], "秀\ttvih");
+        Assert.AreEqual(trad[index], "秀\t"+code);
         //黏	tvih Tzai 2958  Junda 862   UNI  
-        Assert.AreEqual(trad[index+1], "黏\ttvih");
+        Assert.AreEqual(trad[index+1], "黏\t"+code);
         //禿	tvih Tzai 2552  Junda 10    UNI 
-        Assert.AreEqual(trad[index+2], "禿\ttvih");
+        Assert.AreEqual(trad[index+2], "禿\t"+code);
         //稠	tvih Tzai 334   Junda 1194  UNI 
-        Assert.AreEqual(trad[index+3], "稠\ttvih");  
+        Assert.AreEqual(trad[index+3], "稠\t"+code);  
         //穚	tvih Tzai 30    Junda 0     UNI 
-         Assert.AreEqual(trad[index+4], "穚\ttvih");
+         Assert.AreEqual(trad[index+4], "穚\t"+code);
         //秪	tvih Tzai 11    Junda 0     UNI 
-        Assert.AreEqual(trad[index+5], "秪\ttvih");
+        Assert.AreEqual(trad[index+5], "秪\t"+code);
         //秃	tvih Tzai 0     Junda 3640  UNI 
-         Assert.AreEqual(trad[index+6], "秃\ttvih");
+         Assert.AreEqual(trad[index+6], "秃\t"+code);
         //秳	tvih Tzai 0     Junda 1     UNI 31219 
-        Assert.AreEqual(trad[index+7], "秳\ttvih"); 
+        Assert.AreEqual(trad[index+7], "秳\t"+code); 
         //䄧	tvih Tzai 0     Junda 0     UNI 16679 
-        Assert.AreEqual(trad[index+8], "䄧\ttvih"); 
+        Assert.AreEqual(trad[index+8], "䄧\t"+code); 
         //䄪	tvih Tzai 0     Junda 0     UNI 16682 
-        Assert.AreEqual(trad[index+9], "䄪\ttvih"); 
+        Assert.AreEqual(trad[index+9], "䄪\t"+code); 
         //䅂	tvih Tzai 0     Junda 0     UNI 16706 
-        Assert.AreEqual(trad[index+10], "䅂\ttvih"); 
+        Assert.AreEqual(trad[index+10], "䅂\t"+code); 
         //䅮	tvih Tzai 0     Junda 0     UNI 16750 
-        Assert.AreEqual(trad[index+11], "䅮\ttvih"); 
+        Assert.AreEqual(trad[index+11], "䅮\t"+code); 
         //䆌	tvih Tzai 0     Junda 0     UNI 16780 
-        Assert.AreEqual(trad[index+12], "䆌\ttvih"); 
+        Assert.AreEqual(trad[index+12], "䆌\t"+code); 
         //䵕	tvih Tzai 0     Junda 0     UNI 19797 
-        Assert.AreEqual(trad[index+13], "䵕\ttvih"); 
+        Assert.AreEqual(trad[index+13], "䵕\t"+code); 
         //秴	tvih Tzai 0     Junda 0     UNI 31220 
-        Assert.AreEqual(trad[index+14], "秴\ttvih"); 
+        Assert.AreEqual(trad[index+14], "秴\t"+code); 
         
         Assert.True(true);
     }
@@ -244,37 +246,44 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
 
         Assert.True(jundaRecord.Count == 11);
         
-        var sLet = jundaRecord.GetValueOrDefault("s");
+        var sLet = jundaRecord.GetValueOrDefault("l");
         Assert.True(sLet.Count == 238);
-        var dLet = jundaRecord.GetValueOrDefault("d");
+        var dLet = jundaRecord.GetValueOrDefault("k");
          Assert.True(dLet.Count == 42);
-        var fLet = jundaRecord.GetValueOrDefault("f");
-         Assert.True(fLet.Count == 54);
-        var jLet = jundaRecord.GetValueOrDefault("j");
-         Assert.True(jLet.Count == 78);
-        var kLet = jundaRecord.GetValueOrDefault("k");
+        var fLet = jundaRecord.GetValueOrDefault("j");
+         Assert.True(fLet.Count == 78);
+        var jLet = jundaRecord.GetValueOrDefault("f");
+         Assert.True(jLet.Count == 72);
+        var kLet = jundaRecord.GetValueOrDefault("d");
          Assert.True(kLet.Count == 180);
-        var lLet = jundaRecord.GetValueOrDefault("l");
-        Assert.True(lLet.Count == 72);
-        var hLet = jundaRecord.GetValueOrDefault("h");
-         Assert.True(hLet.Count == 2);
+        var lLet = jundaRecord.GetValueOrDefault("s");
+        Assert.True(lLet.Count == 54);
+        var hLet = jundaRecord.GetValueOrDefault("p");
+         Assert.True(hLet.Count == 1);
          // 結 187 hffh
          // 經 469 hamx
-        var vLet = jundaRecord.GetValueOrDefault("v");
-         Assert.True(vLet.Count == 3);
+        var vLet = jundaRecord.GetValueOrDefault("o");
+         Assert.True(vLet.Count == 4);
          // 言 120308 v ggng ygng
          // 變 202 vmuw vmow
          // 這 483 vpy vol vpl
-        var tLet = jundaRecord.GetValueOrDefault("t");
-          Assert.True(tLet.Count == 4); 
+        var tLet = jundaRecord.GetValueOrDefault("i");
+          Assert.True(tLet == null); 
           // 金 167912 t wgbt
           // 鎗 216 twah twph
           // 鏡 184 tyiq 
           // 鑫 670 twgt
-        var nLet = jundaRecord.GetValueOrDefault("n");
-          Assert.True(nLet.Count == 1); //間 207 nng
-        var yLet = jundaRecord.GetValueOrDefault("y");
-        Assert.True(yLet.Count == 1); //食 58110 y wagw wpgw
+        var nLet = jundaRecord.GetValueOrDefault("u");
+        Assert.True(nLet.Count == 2); //間 207 nng
+        
+        var rLet = jundaRecord.GetValueOrDefault("r");
+        Assert.True(rLet == null); //食 58110 y wagw wpgw
+       
+        var eLet = jundaRecord.GetValueOrDefault("e");
+        Assert.True(eLet.Count == 3); //食 58110 y wagw wpgw       
+        
+        var wLet = jundaRecord.GetValueOrDefault("w");
+        Assert.True(wLet.Count == 1); //食 58110 y wagw wpgw        
        //  結經 變這  鎗鏡鑫 //
     }
 

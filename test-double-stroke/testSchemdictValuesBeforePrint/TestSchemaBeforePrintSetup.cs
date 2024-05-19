@@ -37,6 +37,9 @@ public class TestSchemaBeforePrintSetup
     public Dictionary<string, AlternativeCharsetRecord> heisigSimp;
     public Dictionary<string, AlternativeCharsetRecord> heisigTrad;
     
+    
+    public List<Tuple<string, string>> cangjie5;
+    
     [OneTimeSetUp]
     public void Setup()
     {
@@ -78,9 +81,20 @@ public class TestSchemaBeforePrintSetup
         string tzaiPath = Path.Combine(testDirectory, 
                              FilePaths.dotsAndSlash + FilePaths.tzaiPathStr);
         
+        string cangjie5Path = Path.Combine(testDirectory, 
+            FilePaths.dotsAndSlash + FilePaths.cangjie5DictStaticFile);
+        cangjie5 = gen.generateForeignCangjie(cangjie5Path);
+        
         string test = "";
     }
 
+    public static string generateInputDictforRimeFormat(List<string> printSimplified)
+    {
+        return printSimplified.Count > 0 ? 
+            printSimplified.Aggregate((current, next) => 
+                current + "\n" + next) : "";
+    }
+    
     /*
     private Dictionary<string, List<SchemeRecord>> simplifiedDictList;
     private Dictionary<string, List<SchemeRecord>> traditionalDictList;

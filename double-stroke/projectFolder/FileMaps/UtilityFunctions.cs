@@ -1,4 +1,6 @@
 ﻿using System.Text;
+using double_stroke.projectFolder.FileMaps.GenerateFilesController;
+using double_stroke.projectFolder.InputMethodFiles;
 using double_stroke.projectFolder.StaticFileMaps;
 
 namespace double_stroke.projectFolder.FileMaps;
@@ -162,6 +164,18 @@ public static class UtilityFunctions
         return result;
     }
     
+    
+    public static string generateDictIntro(List<string> printSimplified)
+    {
+        
+        string testDirectory = TestContext.CurrentContext.TestDirectory;
+                  
+        string simpDictPath = Path.Combine(testDirectory, 
+            FilePaths.dotsAndSlash + FilePaths.simpDictSourceFile);
+        var simpDictFile = UtilityFunctions.ReadLinesFromFile(simpDictPath);
+        return "";
+    }
+    
     public static UnicodeCharacter firstUnicodeCharacter(string rawCharacter)
     {
         List<UnicodeCharacter> clean  = CreateUnicodeCharacters(rawCharacter);
@@ -259,5 +273,37 @@ public static class UtilityFunctions
         var resultLines = rawLines.Skip(introductoryLineLimmit).ToList();
         return resultLines;
     }
+
+    public static List<string> introTextForSchema(
+        string schemaId,
+        string author,
+        string version,
+        string extradescription,
+        string dictionary,
+        string reverseLookup)
+    {
+        string POFsimp = generatePOFSimpSchema.generate(
+            schemaId,
+            author,
+            version,
+            extradescription,
+            dictionary,
+            reverseLookup
+            );//generatePOFSimpDict.generate(title, title);
+
+        List<string> toLines = POFsimp.Split("\r\n").ToList();
+        
+        return toLines;
+    }
     
+    public static List<string> introTextForDict(string title, string version)
+    {
+        string POFsimp = generatePOFSimpDict.generate(title, title, version);
+
+        List<string> toLines = POFsimp.Split("\r\n").ToList();
+        
+        return toLines;
+    }
+
+
 }

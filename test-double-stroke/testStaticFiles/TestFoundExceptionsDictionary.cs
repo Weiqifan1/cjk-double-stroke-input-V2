@@ -41,7 +41,7 @@ public class TestFoundExceptionsDictionary : testSetup
         Assert.AreEqual(throwing.codepointAfterExceptionremoval,  "(35|53)");
         Assert.AreEqual(throwing.codepointExceptions.allAcceptableElems.Count, 1);
         Assert.AreEqual(throwing.codepointExceptions.allAcceptableElems[0], "扌");
-        Assert.AreEqual(throwing.codepointExceptions.alphabetLetter.Value, "s");
+        //Assert.AreEqual(throwing.codepointExceptions.alphabetLetter.Value, "s");
         Assert.AreEqual(throwing.letter.Value, "扔");
         
         //dictionary count

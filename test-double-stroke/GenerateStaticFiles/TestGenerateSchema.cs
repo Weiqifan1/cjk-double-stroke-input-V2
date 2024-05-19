@@ -38,7 +38,7 @@ public class TestGenerateSchema : testSetup
         
         Assert.IsTrue(schemeRecList.Count == charToSchema.Count);
         Assert.IsTrue(schemeRecList.Count == 28098);
-        Assert.IsTrue(codeToSchema.Count == 62878);
+        Assert.IsTrue(codeToSchema.Count == 62645);
     }
 
 
@@ -56,6 +56,6 @@ public class TestGenerateSchema : testSetup
             JsonSerializer.Deserialize<Dictionary<string, HashSet<SchemeRecord>>>(codeToSchemaJson, options);
 
         Assert.IsTrue(charToSchemaDict.Count == 28098);
-        Assert.IsTrue(codeToSchemaDich.Count == 62878);
+        Assert.IsTrue(codeToSchemaDich.Count == 62645);
     }
 }

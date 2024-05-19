@@ -1,0 +1,14 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=37de2f71_002Da87f_002D4a27_002D85cc_002D0573de1298a8/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GenerateOtherShapeSystemHelpers" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Or&gt;&#xD;
+    &lt;TestAncestor&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::C5D5AADC-B004-7E64-C72B-A390E7158B7F::net8.0::double_stroke.GenerateInputMethodClass.GenerateOtherShapeSystemHelpers&lt;/TestId&gt;&#xD;
+    &lt;/TestAncestor&gt;&#xD;
+    &lt;ProjectFolder&gt;C5D5AADC-B004-7E64-C72B-A390E7158B7F/d:test-double-stroke&lt;/ProjectFolder&gt;&#xD;
+  &lt;/Or&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7d2fa61d_002D0ea4_002D482b_002Dafb8_002D2f03a84aa5b7/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GenerateCangjie" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::C5D5AADC-B004-7E64-C72B-A390E7158B7F::net8.0::double_stroke.GenerateInputMethodClass.GenerateOtherShapeSystemHelpers.GenerateCangjie&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

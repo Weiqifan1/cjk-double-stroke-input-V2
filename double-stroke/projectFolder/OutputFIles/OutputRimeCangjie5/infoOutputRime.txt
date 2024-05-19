@@ -1,0 +1,1 @@
+folder meant for an output file that shows the codes for cangjie5.

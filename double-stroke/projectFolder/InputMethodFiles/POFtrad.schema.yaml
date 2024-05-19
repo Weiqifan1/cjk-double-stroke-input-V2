@@ -6,11 +6,30 @@ schema:
   name: "POFtrad"
   version: "1.0"
   author:
-    - 發明人 郑易里教授
+    - cmlykke
   description: |
-    郑码
-    碼表源自 极点超集郑码20151108
-    敲 ` 鍵進入拼音反查
+    First published 2024-04-21
+    - version 1.0 - 2024-04-21
+    Repository: 
+    https://github.com/Weiqifan1/rime-pof-input-method
+    
+    stoke data source:
+    Compiled manually by Conway (@yawnoc).
+    Part of 'Conway Stroke Data',
+    see <https://github.com/stroke-input/stroke-input-data>.
+    Licensed under Creative Commons Attribution 4.0 International (CC-BY-4.0)
+    
+    IDS data source:
+    # Copyright (c) 2014-2017 CJKVI Database
+    # Based on CHISE IDS Database
+    https://github.com/cjkvi/cjkvi-ids/blob/master/ids.txt
+
+    frequency data source:
+    simplified:
+    https://lingua.mtsu.edu/chinese-computing/statistics/char/list.php?Which=MO
+    traditional:
+    http://technology.chtsai.org/charfreq/sorted.html
+  
   dependencies:
     - pinyin123
 
@@ -74,7 +93,7 @@ key_binder:
 recognizer:
   import_preset: default
   patterns:
-    reverse_lookup: "`[a-z]*$"
+    reverse_lookup: "`[a-z,.]*$"
 
 menu:
   page_size: 9

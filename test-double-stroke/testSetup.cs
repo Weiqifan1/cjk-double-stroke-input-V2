@@ -24,6 +24,7 @@ public class testSetup
     protected static Dictionary<string, FrequencyRecord> tzai5001;
     protected static Dictionary<string, IdsRecur> idsrecur;
 
+
     
     [OneTimeSetUp]
     public void Setup()
@@ -87,6 +88,7 @@ public class testSetup
         charToSchema = getCharToSchema();
         junda5001 = gen.extractFirst5001Junda(jundaPath);
         tzai5001 = gen.extractFirst5001Tzai(tzaiPath);
+        
         //idsrecur = GenerateIdsRecursionMap.readZhengmaWords();
         string test = "";
     }
