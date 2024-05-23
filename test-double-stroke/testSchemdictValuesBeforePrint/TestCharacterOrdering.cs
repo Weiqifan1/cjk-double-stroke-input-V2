@@ -122,7 +122,7 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
     [Test]
     public void TestPrintOrderTVIHcharacters_JundaList()
     {
-        string code = "tvig"; 
+        string code = "yveg";//tvig 
         var simp = simplifiedOutputList;
         var index = simp.IndexOf("秀\t"+code);
    
@@ -163,7 +163,7 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
     [Test]
     public void TestPrintOrderTVIHcharacters_TzaiList()
     {
-        string code = "tvig"; 
+        string code = "yveg"; 
         var trad = traditionalOutputList;
         var index = trad.IndexOf("秀\t"+code);
    

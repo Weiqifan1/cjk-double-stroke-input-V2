@@ -50,6 +50,134 @@ public class TestExceptionSpread : testSetup
         string keyres = "";
     }
 
+    
+    //Test the number of times the hands switch, given that the left hand has to 
+    //be used at the end for selection.
+    [Test]
+    public void testchangesBetweenLeftAndRightHand_Junda()
+    {
+        double shiftsStandard = shiftsBetweenLeftAndRight(new Dictionary<char, char>(), junda);
+        Assert.IsTrue(((long) shiftsStandard) == 347214976);
+        
+        Dictionary<char, char> changesToTheStandard = new Dictionary<char, char>();
+        changesToTheStandard['q'] = 'p';
+        changesToTheStandard['w'] = 'o';
+        changesToTheStandard['e'] = 'i';
+        changesToTheStandard['r'] = 'u';
+        changesToTheStandard['t'] = 'y';
+        double shifts = shiftsBetweenLeftAndRight(changesToTheStandard, junda);
+        string test = "";
+        Assert.IsTrue(((long) shifts) == 348138957);
+    }
+    
+    [Test]
+    public void testchangesBetweenLeftAndRightHand_tzai()
+    {
+        double shiftsStandard = shiftsBetweenLeftAndRight(new Dictionary<char, char>(), tzai);
+        Assert.IsTrue(((long) shiftsStandard) == 326362176);
+        
+        Dictionary<char, char> changesToTheStandard = new Dictionary<char, char>();
+        changesToTheStandard['q'] = 'p';
+        changesToTheStandard['w'] = 'o';
+        changesToTheStandard['e'] = 'i';
+        changesToTheStandard['r'] = 'u';
+        changesToTheStandard['t'] = 'y';
+        double shifts = shiftsBetweenLeftAndRight(changesToTheStandard, tzai);
+        string test = "";
+        Assert.IsTrue(((long) shifts) == 327513059);
+    }
+    
+    private double shiftsBetweenLeftAndRight(
+        Dictionary<char, char> changesToTheStandard, 
+        Dictionary<string, FrequencyRecord> frequencyRecords)
+    {
+        double changes = 0;
+        foreach (var VARIABLE in frequencyRecords)
+        {
+            HashSet<string> codes = charToSchema.GetValueOrDefault(VARIABLE.Key).code4;
+            double currentDouble = 0;
+            foreach (var eachcode in codes)
+            {
+                int changesCount = countChanges(eachcode, changesToTheStandard);
+                currentDouble = currentDouble + ((double)changesCount / (double)codes.Count);
+            }
+            changes = changes + (currentDouble * VARIABLE.Value.frequency);
+        }
+        return changes;
+    }
+
+    private int countChanges(string eachcode, Dictionary<char, char> changesToTheStandard)
+    {
+        List<char> charsRaw = eachcode.ToList();
+        List<char> charsResult = new List<char>();
+        foreach (var VARIABLE in charsRaw)
+        {
+            if (changesToTheStandard.ContainsKey(VARIABLE))
+            {
+                var newKey = changesToTheStandard.GetValueOrDefault(VARIABLE);
+                charsResult.Add(newKey);
+            }
+            else
+            {
+                charsResult.Add(VARIABLE);
+            }
+        }
+
+        var result = calculateChanges(charsResult);
+        return result;
+    }
+
+    private int calculateChanges(List<char> charsResult)
+    {
+        int result = 0;
+        List<Tuple<char, char>> pairs = PairChars(charsResult);
+        foreach (var VARIABLE in pairs)
+        {
+            if (leftHand().Contains(VARIABLE.Item1) && righttHand().Contains(VARIABLE.Item2))
+            {
+                result++;
+            }
+            else if (righttHand().Contains(VARIABLE.Item1) && leftHand().Contains(VARIABLE.Item2))
+            {
+                result++;
+            } 
+        }
+        return result;
+    }
+
+    private static HashSet<char> leftHand()
+    {
+        return new HashSet<char>
+        {
+            'q', 'w', 'e', 'r', 't', 'a', 's', 'd', 'f',
+            'g', 'z', 'x', 'c', 'v', 'b'
+        };
+    }
+    
+    
+    private static HashSet<char> righttHand()
+    {
+        return new HashSet<char>
+        {
+            'y', 'u', 'i', 'o', 'p', 'h', 'j', 'k', 'l',
+            'n', 'm'
+        };
+    }
+
+
+    private List<Tuple<char, char>> PairChars(List<char> charList)
+    {
+        List<Tuple<char, char>> result = new List<Tuple<char, char>>();
+
+        for (int i = 0; i < charList.Count; i++)
+        {
+            char nextChar = (i != charList.Count - 1) ? charList[i + 1] : 'q';
+            result.Add(new Tuple<char, char>(charList[i], nextChar));
+        }
+
+        return result;
+    }
+
     private Dictionary<char, long> shortcutKeyCounterJunda(Dictionary<string, SchemeRecord> charToSchemaDict)
     {
         Dictionary<char, long> result = new Dictionary<char, long>(); 
