@@ -8,19 +8,19 @@ public static class CodeAlphabet
 
         Dictionary<string, string> result =
             new Dictionary<string, string>();
-        result.Add("3", "y");
-        result.Add("31", "y");
-        result.Add("32", "u");
-        result.Add("33", "i");
-        result.Add("34", "o");
-        result.Add("35", "p");
+        result.Add("3", "t");
+        result.Add("31", "t");
+        result.Add("32", "r");
+        result.Add("33", "e");
+        result.Add("34", "w");
+        result.Add("35", "q");
         
-        result.Add("4", "t");
-        result.Add("41", "t");
-        result.Add("42", "r");
-        result.Add("43", "e");
-        result.Add("44", "w");
-        result.Add("45", "q");
+        result.Add("4", "y");
+        result.Add("41", "y");
+        result.Add("42", "u");
+        result.Add("43", "i");
+        result.Add("44", "o");
+        result.Add("45", "p");
         
         result.Add("1", "h");
         result.Add("11", "h");

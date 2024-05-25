@@ -32,7 +32,23 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
         tzai5001 = gen.extractFirst5001Tzai(tzaiPath);
         string test = "";
     }
-    
+
+    [Test]
+    public void testJundaAlphabetCount_5001()
+    {
+        List<Tuple<char, double>> lettersCount = getDoubleFromFreq(charToSchemaDict, junda5001);
+        List<Tuple<char, double>> lettersFingers = getDoubleFromFingers(lettersCount);
+        Assert.AreEqual(true, false);
+    }
+
+    [Test]
+    public void testTzaiAlphabetCount_5001()
+    {
+        List<Tuple<char, double>> lettersCount = getDoubleFromFreq(charToSchemaDict, tzai5001);
+        List<Tuple<char, double>> lettersFingers = getDoubleFromFingers(lettersCount);
+        Assert.AreEqual(true, false);
+    }
+
     [Test]
     public void testJundaAfterNine_heisig()
     { 
@@ -346,7 +362,82 @@ public class TestCharacterOrdering : TestSchemaBeforePrintSetup
         
     }
     
+    private List<Tuple<char, double>> getDoubleFromFreq(
+        Dictionary<string, SchemeRecord> cToSDict, 
+        Dictionary<string, FrequencyRecord> freq5001)
+    {
+        Dictionary<char, double> alphaDict = new Dictionary<char, double>();
+        foreach (var VARIABLE in freq5001)
+        {
+            HashSet<string> codes = cToSDict.GetValueOrDefault(VARIABLE.Key).code4;
+            long frequencyToBeUsed = VARIABLE.Value.frequency;
+            foreach (var eachcode in codes)
+            {
+                foreach (var eachletter in eachcode)
+                {
+                    double currentDouble;
+                    if (alphaDict.ContainsKey(eachletter))
+                    {
+                        currentDouble = alphaDict.GetValueOrDefault(eachletter);
+                    }
+                    else
+                    {
+                        currentDouble = 0;
+                    }
+                    currentDouble = currentDouble + (((double) frequencyToBeUsed) / ((double)codes.Count));
+                    alphaDict[eachletter] = currentDouble;
+                }
+            }
+        }
 
+        foreach (var VARIABLE in alphaDict.Keys)
+        {
+            var rawDouble = alphaDict[VARIABLE];
+            alphaDict[VARIABLE] = rawDouble / 1000000;
+        }
+        var result = SortedTuples(alphaDict);
+        return result;
+    }
+    
+    public List<Tuple<char, double>> SortedTuples(Dictionary<char, double> myDict)
+    {
+        string order = "qwertyuiopasdfghjklzxcvbnm";
+    
+        // Union the dictionary keys with order string to make sure all keys exist in the order list
+        List<char> orderedChars = order.Union(myDict.Keys).ToList();
+
+        orderedChars.Sort((a, b) => order.IndexOf(char.ToLower(a)).CompareTo(order.IndexOf(char.ToLower(b))));
+
+        return orderedChars.Where(c => myDict.ContainsKey(c))
+            .Select(c => new Tuple<char, double>(c, myDict[c]))
+            .ToList();
+    }
+    
+    private List<Tuple<char, double>> getDoubleFromFingers(List<Tuple<char, double>> lettersCount)
+    {
+        List<Tuple<string, double>> = new Lazy<>();
+        foreach (var VARIABLE in lettersCount)
+        {
+            var leftPinkey = new List<char>{'q','a','z'};
+            var leftRing = new List<char>{'w','s','x'};
+            var leftMiddle = new List<char>{'e','d','c'};
+            var leftIndexOne = new List<char>{'r','f','v'};
+            var leftIndexTwo = new List<char>{ 't', 'g', 'b'};
+            var rightIndexTwo = new List<char>{'y','h','n'};
+            var rightIndexOne = new List<char>{ 'u','j','m'};
+            var rightMiddle = new List<char>{'i','k'};
+            var rightRing = new List<char>{'o','l'};
+            var rightPinkey = new List<char>{'p'};
+            if (leftPinkey.Contains(VARIABLE.Item1))
+            {
+                
+                
+            }
+        }
+
+        throw new NotImplementedException();
+    }
+    
     /*
      
      var allAboveThe9th = AllAboveThe9Th(simplifiedDictList,
